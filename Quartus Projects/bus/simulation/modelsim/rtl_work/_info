@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
+vBRAM
+Z1 !s110 1629302231
+!i10b 1
+!s100 Ro@TgCK8B;ZV@PzdSbdH>0
+Ik3NgKl@RA:BCDY@mYG=Se1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1629302012
+8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v
+FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v
+L0 40
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1629302231.000000
+!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus}
+Z7 tCvgOpt 0
+n@b@r@a@m
+vslave_4k
+!s110 1629302230
+!i10b 1
+!s100 R;I[Z^LUOhzTj=RdTmd3k3
+IYVEcBDSDPcRbFh8FAFfKV1
+R2
+R0
+w1629233588
+8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v
+FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1629302230.000000
+!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v|
+!i113 1
+R5
+R6
+R7
+vslave_4k_tb
+!s110 1629306901
+!i10b 1
+!s100 bN?>ebELaB<2PUAEOW8=T1
+ISnUaKPDQ>H3aPoh31I4_D1
+R2
+R0
+w1629306885
+8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v
+FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1629306901.000000
+!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v|
+!i113 1
+R5
+R6
+R7
+vslave_in_port
+R1
+!i10b 1
+!s100 oAdUHSS0HRKJSB`<FPz`O0
+IUBdHaRH8FnB>6QbT9hX6n3
+R2
+R0
+w1629204694
+8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v
+FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v|
+!i113 1
+R5
+R6
+R7
+vslave_out_port
+!s110 1629302893
+!i10b 1
+!s100 b93kB9^4e7XXZ6_W1ThJb3
+Ien5`Tf?Gbm^XD]>me21o:3
+R2
+R0
+w1629302877
+8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v
+FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1629302893.000000
+!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v|
+!i113 1
+R5
+R6
+R7
+vslave_port
+!s110 1629307615
+!i10b 1
+!s100 PYQWI<SY73Go933ceALEN0
+IR8a4?dDnTz9j7nFzQF9gG1
+R2
+R0
+w1629307602
+8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v
+FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1629307615.000000
+!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v|
+!i113 1
+R5
+R6
+R7

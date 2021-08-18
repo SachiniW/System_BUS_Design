@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "slave_ready",
+					"strict" : false
+				},
+				{
+					"name" : "slave_tx_done",
+					"strict" : false
+				},
+				{
+					"name" : "rx_done",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data",
+					"strict" : false
+				},
+				{
+					"name" : "master_ready",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "master_valid",
+					"strict" : false
+				},
+				{
+					"name" : "read_en",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data",
+					"strict" : false
+				},
+				{
+					"name" : "rx_address",
+					"strict" : false
+				},
+				{
+					"name" : "write_en",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

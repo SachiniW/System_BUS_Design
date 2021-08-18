@@ -1,0 +1,40 @@
+
+State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state
+Name data_state.data7 data_state.data6 data_state.data5 data_state.data4 data_state.data3 data_state.data2 data_state.data1 data_state.0000 data_state.data8 
+data_state.0000 0 0 0 0 0 0 0 0 0 
+data_state.data1 0 0 0 0 0 0 1 1 0 
+data_state.data2 0 0 0 0 0 1 0 1 0 
+data_state.data3 0 0 0 0 1 0 0 1 0 
+data_state.data4 0 0 0 1 0 0 0 1 0 
+data_state.data5 0 0 1 0 0 0 0 1 0 
+data_state.data6 0 1 0 0 0 0 0 1 0 
+data_state.data7 1 0 0 0 0 0 0 1 0 
+data_state.data8 0 0 0 0 0 0 0 1 1 
+
+State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
+Name data_state.data7 data_state.data6 data_state.data5 data_state.data4 data_state.data3 data_state.data2 data_state.data1 data_state.0000 data_state.data8 
+data_state.0000 0 0 0 0 0 0 0 0 0 
+data_state.data1 0 0 0 0 0 0 1 1 0 
+data_state.data2 0 0 0 0 0 1 0 1 0 
+data_state.data3 0 0 0 0 1 0 0 1 0 
+data_state.data4 0 0 0 1 0 0 0 1 0 
+data_state.data5 0 0 1 0 0 0 0 1 0 
+data_state.data6 0 1 0 0 0 0 0 1 0 
+data_state.data7 1 0 0 0 0 0 0 1 0 
+data_state.data8 0 0 0 0 0 0 0 1 1 
+
+State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
+Name addr_state.addr12 addr_state.addr11 addr_state.addr10 addr_state.addr9 addr_state.addr8 addr_state.addr7 addr_state.addr6 addr_state.addr5 addr_state.addr4 addr_state.addr3 addr_state.addr2 addr_state.addr1 addr_state.0000 
+addr_state.0000 0 0 0 0 0 0 0 0 0 0 0 0 0 
+addr_state.addr1 0 0 0 0 0 0 0 0 0 0 0 1 1 
+addr_state.addr2 0 0 0 0 0 0 0 0 0 0 1 0 1 
+addr_state.addr3 0 0 0 0 0 0 0 0 0 1 0 0 1 
+addr_state.addr4 0 0 0 0 0 0 0 0 1 0 0 0 1 
+addr_state.addr5 0 0 0 0 0 0 0 1 0 0 0 0 1 
+addr_state.addr6 0 0 0 0 0 0 1 0 0 0 0 0 1 
+addr_state.addr7 0 0 0 0 0 1 0 0 0 0 0 0 1 
+addr_state.addr8 0 0 0 0 1 0 0 0 0 0 0 0 1 
+addr_state.addr9 0 0 0 1 0 0 0 0 0 0 0 0 1 
+addr_state.addr10 0 0 1 0 0 0 0 0 0 0 0 0 1 
+addr_state.addr11 0 1 0 0 0 0 0 0 0 0 0 0 1 
+addr_state.addr12 1 0 0 0 0 0 0 0 0 0 0 0 1 

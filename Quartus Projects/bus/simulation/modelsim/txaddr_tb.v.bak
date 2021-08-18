@@ -1,0 +1,40 @@
+`timescale 1ns/10ps
+
+module txaddr_tb;
+
+	reg clk;
+	reg reset;
+	reg valid;
+	reg ready;
+	wire tx_address;
+	
+	txdata_state_machine UUT(
+	.clk(clk), 
+	.reset(reset),
+	.valid(valid),
+	.ready(ready),
+	.tx_address(tx_address));
+
+
+	initial begin
+		clk = 0;
+		reset = 0;
+		tx_address = 0;
+		valid = 0;
+		ready = 0;
+		
+		#15
+		valid = 1;
+		ready = 1;
+		rx_address = 1;
+		#10 
+		valid = 0;
+		ready = 0;
+
+	end
+
+
+	always
+		#5 clk = !clk;
+
+endmodule 

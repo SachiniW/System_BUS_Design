@@ -1,0 +1,839 @@
+Analysis & Synthesis report for bus
+Wed Aug 18 23:48:22 2021
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state
+ 11. State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
+ 12. State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
+ 13. User-Specified and Inferred Latches
+ 14. Registers Removed During Synthesis
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
+ 19. Parameter Settings for User Entity Instance: slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
+ 20. Parameter Settings for User Entity Instance: slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
+ 21. Parameter Settings for User Entity Instance: BRAM:BRAM|altsyncram:altsyncram_component
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. In-System Memory Content Editor Settings
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Aug 18 23:48:22 2021       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; bus                                         ;
+; Top-level Entity Name              ; slave_4k                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 293                                         ;
+;     Total combinational functions  ; 237                                         ;
+;     Dedicated logic registers      ; 163                                         ;
+; Total registers                    ; 163                                         ;
+; Total pins                         ; 13                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 32,768                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; slave_4k           ; bus                ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                          ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                                ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; slave_4k.v                                                         ; yes             ; User Verilog HDL File                        ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v                                                         ;             ;
+; slave_out_port.v                                                   ; yes             ; User Verilog HDL File                        ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v                                                   ;             ;
+; slave_in_port.v                                                    ; yes             ; User Verilog HDL File                        ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v                                                    ;             ;
+; slave_port.v                                                       ; yes             ; User Verilog HDL File                        ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v                                                       ;             ;
+; BRAM.v                                                             ; yes             ; User Wizard-Generated File                   ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v                                                             ;             ;
+; 4KBRAM.mif                                                         ; yes             ; User Memory Initialization File              ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/4KBRAM.mif                                                         ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                       ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                          ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                       ;             ;
+; aglobal201.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                                       ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                        ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                                           ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                                           ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                                         ;             ;
+; db/altsyncram_lgl1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_lgl1.tdf                                             ;             ;
+; db/altsyncram_ipb2.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_ipb2.tdf                                             ;             ;
+; sld_mod_ram_rom.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd                                                                  ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                                        ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                                    ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                                       ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_hub.vhd                                                                          ; altera_sld  ;
+; db/ip/slddf4920d8/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                                     ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 293                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 237                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 96                       ;
+;     -- 3 input functions                    ; 74                       ;
+;     -- <=2 input functions                  ; 67                       ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 214                      ;
+;     -- arithmetic mode                      ; 23                       ;
+;                                             ;                          ;
+; Total registers                             ; 163                      ;
+;     -- Dedicated logic registers            ; 163                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 13                       ;
+; Total memory bits                           ; 32768                    ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 159                      ;
+; Total fan-out                               ; 1564                     ;
+; Average fan-out                             ; 3.53                     ;
++---------------------------------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |slave_4k                                                                                                                               ; 237 (1)             ; 163 (0)                   ; 32768       ; 0            ; 0       ; 0         ; 13   ; 0            ; |slave_4k                                                                                                                                                                                                                                                                                                                                            ; slave_4k                          ; work         ;
+;    |BRAM:BRAM|                                                                                                                          ; 64 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|BRAM:BRAM                                                                                                                                                                                                                                                                                                                                  ; BRAM                              ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 64 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                                  ; altsyncram                        ; work         ;
+;          |altsyncram_lgl1:auto_generated|                                                                                               ; 64 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated                                                                                                                                                                                                                                                                   ; altsyncram_lgl1                   ; work         ;
+;             |altsyncram_ipb2:altsyncram1|                                                                                               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1                                                                                                                                                                                                                                       ; altsyncram_ipb2                   ; work         ;
+;             |sld_mod_ram_rom:mgl_prim2|                                                                                                 ; 64 (40)             ; 41 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                                         ; sld_mod_ram_rom                   ; work         ;
+;                |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                     ; 24 (24)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                                                      ; sld_rom_sr                        ; work         ;
+;    |slave_port:SLAVE_PORT|                                                                                                              ; 52 (9)              ; 36 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                                      ; slave_port                        ; work         ;
+;       |slave_in_port:SLAVE_IN_PORT|                                                                                                     ; 31 (31)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                                          ; slave_in_port                     ; work         ;
+;       |slave_out_port:SLAVE_OUT_PORT|                                                                                                   ; 12 (12)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT                                                                                                                                                                                                                                                                                        ; slave_out_port                    ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 120 (1)             ; 86 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 119 (0)             ; 86 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 119 (0)             ; 86 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 119 (1)             ; 86 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 118 (0)             ; 81 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 118 (82)            ; 81 (53)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 18 (18)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------------+
+; Name                                                                                                            ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF        ;
++-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------------+
+; BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 4096         ; 8            ; 4096         ; 8            ; 32768 ; 4KBRAM.mif ;
++-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                           ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                               ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |slave_4k|BRAM:BRAM                                                                                                                                                                                                                                                           ; BRAM.v          ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |slave_4k|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state                                                                                                   ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+------------------+
+; Name             ; data_state.data7 ; data_state.data6 ; data_state.data5 ; data_state.data4 ; data_state.data3 ; data_state.data2 ; data_state.data1 ; data_state.0000 ; data_state.data8 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+------------------+
+; data_state.0000  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0                ;
+; data_state.data1 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1               ; 0                ;
+; data_state.data2 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1               ; 0                ;
+; data_state.data3 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data4 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data5 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data6 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data7 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data8 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 1                ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                     ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+------------------+
+; Name             ; data_state.data7 ; data_state.data6 ; data_state.data5 ; data_state.data4 ; data_state.data3 ; data_state.data2 ; data_state.data1 ; data_state.0000 ; data_state.data8 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+------------------+
+; data_state.0000  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0                ;
+; data_state.data1 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1               ; 0                ;
+; data_state.data2 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1               ; 0                ;
+; data_state.data3 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data4 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data5 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data6 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data7 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0                ;
+; data_state.data8 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 1                ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                                                                                                     ;
++-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+
+; Name              ; addr_state.addr12 ; addr_state.addr11 ; addr_state.addr10 ; addr_state.addr9 ; addr_state.addr8 ; addr_state.addr7 ; addr_state.addr6 ; addr_state.addr5 ; addr_state.addr4 ; addr_state.addr3 ; addr_state.addr2 ; addr_state.addr1 ; addr_state.0000 ;
++-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+
+; addr_state.0000   ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ;
+; addr_state.addr1  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1               ;
+; addr_state.addr2  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1               ;
+; addr_state.addr3  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1               ;
+; addr_state.addr4  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr5  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr6  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr7  ; 0                 ; 0                 ; 0                 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr8  ; 0                 ; 0                 ; 0                 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr9  ; 0                 ; 0                 ; 0                 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr10 ; 0                 ; 0                 ; 1                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr11 ; 0                 ; 1                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
+; addr_state.addr12 ; 1                 ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ;
++-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                          ;
++---------------------------------------------------------------+---------------------------------------------------------------------+------------------------+
+; Latch Name                                                    ; Latch Enable Signal                                                 ; Free of Timing Hazards ;
++---------------------------------------------------------------+---------------------------------------------------------------------+------------------------+
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle   ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|WideOr2           ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle   ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|WideOr0           ; yes                    ;
+; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle ; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|WideOr0         ; yes                    ;
+; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done ; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|WideOr1         ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_done   ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|WideOr1           ; yes                    ;
+; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|tx_data   ; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state.0000 ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[7]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data8  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[0]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr1  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[1]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr2  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[2]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr3  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[3]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr4  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[4]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr5  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[5]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr6  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[6]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr7  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[7]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr8  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[8]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr9  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[9]  ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr10 ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[10] ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr11 ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[11] ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr12 ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[6]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data7  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[5]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data6  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[4]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data5  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[3]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data4  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[2]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data3  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[1]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data2  ; yes                    ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[0]     ; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data1  ; yes                    ;
+; Number of user-specified and inferred latches = 26            ;                                                                     ;                        ;
++---------------------------------------------------------------+---------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                     ; Reason for Removal                     ;
++-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; slave_port:SLAVE_PORT|slave_valid                                                                                                 ; Stuck at VCC due to stuck port data_in ;
+; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state~4                                                                  ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state~5                                                                  ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state~6                                                                  ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~4                                                                    ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~5                                                                    ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~6                                                                    ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~4                                                                    ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~5                                                                    ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~6                                                                    ; Lost fanout                            ;
+; slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~7                                                                    ; Lost fanout                            ;
+; BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 12                                                                                            ;                                        ;
++-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 163   ;
+; Number of registers using Synchronous Clear  ; 17    ;
+; Number of registers using Synchronous Load   ; 22    ;
+; Number of registers using Asynchronous Clear ; 88    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[2]                                                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[9]                                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |slave_4k|slave_port:SLAVE_PORT|write_en_in1                                                                                                                                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1] ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |slave_4k|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[1]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1 ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                            ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                             ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; IDLE           ; 0     ; Signed Integer                                                        ;
+; addr1          ; 1     ; Signed Integer                                                        ;
+; addr2          ; 2     ; Signed Integer                                                        ;
+; addr3          ; 3     ; Signed Integer                                                        ;
+; addr4          ; 4     ; Signed Integer                                                        ;
+; addr5          ; 5     ; Signed Integer                                                        ;
+; addr6          ; 6     ; Signed Integer                                                        ;
+; addr7          ; 7     ; Signed Integer                                                        ;
+; addr8          ; 8     ; Signed Integer                                                        ;
+; addr9          ; 9     ; Signed Integer                                                        ;
+; addr10         ; 10    ; Signed Integer                                                        ;
+; addr11         ; 11    ; Signed Integer                                                        ;
+; addr12         ; 12    ; Signed Integer                                                        ;
+; data1          ; 1     ; Signed Integer                                                        ;
+; data2          ; 2     ; Signed Integer                                                        ;
+; data3          ; 3     ; Signed Integer                                                        ;
+; data4          ; 4     ; Signed Integer                                                        ;
+; data5          ; 5     ; Signed Integer                                                        ;
+; data6          ; 6     ; Signed Integer                                                        ;
+; data7          ; 7     ; Signed Integer                                                        ;
+; data8          ; 8     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; IDLE           ; 0     ; Signed Integer                                                          ;
+; data1          ; 1     ; Signed Integer                                                          ;
+; data2          ; 2     ; Signed Integer                                                          ;
+; data3          ; 3     ; Signed Integer                                                          ;
+; data4          ; 4     ; Signed Integer                                                          ;
+; data5          ; 5     ; Signed Integer                                                          ;
+; data6          ; 6     ; Signed Integer                                                          ;
+; data7          ; 7     ; Signed Integer                                                          ;
+; data8          ; 8     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BRAM:BRAM|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------+
+; Parameter Name                     ; Value                ; Type                       ;
++------------------------------------+----------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                    ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                    ;
+; WIDTH_A                            ; 8                    ; Signed Integer             ;
+; WIDTHAD_A                          ; 12                   ; Signed Integer             ;
+; NUMWORDS_A                         ; 4096                 ; Signed Integer             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; CLEAR0               ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                    ;
+; WIDTH_B                            ; 1                    ; Untyped                    ;
+; WIDTHAD_B                          ; 1                    ; Untyped                    ;
+; NUMWORDS_B                         ; 1                    ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                    ;
+; INIT_FILE                          ; 4KBRAM.mif           ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_lgl1      ; Untyped                    ;
++------------------------------------+----------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                      ;
++-------------------------------------------+-------------------------------------------+
+; Name                                      ; Value                                     ;
++-------------------------------------------+-------------------------------------------+
+; Number of entity instances                ; 1                                         ;
+; Entity Instance                           ; BRAM:BRAM|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                               ;
+;     -- WIDTH_A                            ; 8                                         ;
+;     -- NUMWORDS_A                         ; 4096                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 1                                         ;
+;     -- NUMWORDS_B                         ; 1                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ;
++-------------------------------------------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; In-System Memory Content Editor Settings                                                                                             ;
++----------------+-------------+-------+-------+------------+--------------------------------------------------------------------------+
+; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                       ;
++----------------+-------------+-------+-------+------------+--------------------------------------------------------------------------+
+; 0              ; BRAM        ; 8     ; 4096  ; Read/Write ; BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated ;
++----------------+-------------+-------+-------+------------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 40                          ;
+; cycloneiii_ff         ; 77                          ;
+;     CLR               ; 36                          ;
+;     ENA               ; 14                          ;
+;     ENA CLR           ; 7                           ;
+;     ENA CLR SLD       ; 12                          ;
+;     ENA SCLR          ; 5                           ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 117                         ;
+;     arith             ; 15                          ;
+;         2 data inputs ; 15                          ;
+;     normal            ; 102                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 45                          ;
+; cycloneiii_ram_block  ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.66                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Wed Aug 18 23:48:03 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file slave_4k_tb.v
+    Info (12023): Found entity 1: slave_4k_tb File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file slave_4k.v
+    Info (12023): Found entity 1: slave_4k File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slave_out_port_tb.v
+    Info (12023): Found entity 1: slave_out_port_tb File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file slave_out_port.v
+    Info (12023): Found entity 1: slave_out_port File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slave_in_port_tb.v
+    Info (12023): Found entity 1: slave_in_port_tb File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file slave_in_port.v
+    Info (12023): Found entity 1: slave_in_port File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file scaledclock.v
+    Info (12023): Found entity 1: scaledclock File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/scaledclock.v Line: 4
+Info (12021): Found 2 design units, including 2 entities, in source file bin27.v
+    Info (12023): Found entity 1: decoder File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/bin27.v Line: 1
+    Info (12023): Found entity 2: bin27 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/bin27.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file slave_port.v
+    Info (12023): Found entity 1: slave_port File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slave_port_tb.v
+    Info (12023): Found entity 1: slave_port_tb File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file bram.v
+    Info (12023): Found entity 1: BRAM File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file bram_test.v
+    Info (12023): Found entity 1: BRAM_test File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM_test.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at slave_4k.v(44): created implicit net for "read_en_in" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v Line: 44
+Warning (10236): Verilog HDL Implicit Net warning at slave_4k.v(45): created implicit net for "write_en_in" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v Line: 45
+Info (12127): Elaborating entity "slave_4k" for the top level hierarchy
+Info (12128): Elaborating entity "slave_port" for hierarchy "slave_port:SLAVE_PORT" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v Line: 45
+Info (12128): Elaborating entity "slave_in_port" for hierarchy "slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v Line: 54
+Warning (10036): Verilog HDL or VHDL warning at slave_in_port.v(20): object "data_done" assigned a value but never read File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 20
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(52): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(56): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 56
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(58): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(60): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(62): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(64): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(66): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 66
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(68): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(70): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 70
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(72): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 72
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(74): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 74
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(77): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 77
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(81): variable "rx_address" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 81
+Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(42): inferring latch(es) for variable "addr_idle", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(42): inferring latch(es) for variable "addr_done", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(42): inferring latch(es) for variable "address", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(147): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 147
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(151): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 151
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(153): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 153
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(155): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(157): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 157
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(159): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 159
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(161): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 161
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(164): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 164
+Warning (10235): Verilog HDL Always Construct warning at slave_in_port.v(168): variable "rx_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 168
+Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(137): inferring latch(es) for variable "data_idle", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(137): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[0]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[1]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[2]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[3]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[4]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[5]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[6]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data[7]" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "data_idle" at slave_in_port.v(137) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 137
+Info (10041): Inferred latch for "address[0]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[1]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[2]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[3]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[4]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[5]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[6]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[7]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[8]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[9]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[10]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "address[11]" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "addr_done" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (10041): Inferred latch for "addr_idle" at slave_in_port.v(42) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+Info (12128): Elaborating entity "slave_out_port" for hierarchy "slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(41): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 41
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(45): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 45
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(47): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 47
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(49): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 49
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(51): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 51
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(53): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 53
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(55): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(58): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at slave_out_port.v(62): variable "datain" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 62
+Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(31): inferring latch(es) for variable "data_idle", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(31): inferring latch(es) for variable "data_done", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(31): inferring latch(es) for variable "tx_data", which holds its previous value in one or more paths through the always construct File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+Info (10041): Inferred latch for "tx_data" at slave_out_port.v(31) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+Info (10041): Inferred latch for "data_done" at slave_out_port.v(31) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+Info (10041): Inferred latch for "data_idle" at slave_out_port.v(31) File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+Info (12128): Elaborating entity "BRAM" for hierarchy "BRAM:BRAM" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v Line: 54
+Info (12128): Elaborating entity "altsyncram" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v Line: 92
+Info (12130): Elaborated megafunction instantiation "BRAM:BRAM|altsyncram:altsyncram_component" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v Line: 92
+Info (12133): Instantiated megafunction "BRAM:BRAM|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v Line: 92
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "4KBRAM.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=BRAM"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "4096"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "CLEAR0"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "12"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lgl1.tdf
+    Info (12023): Found entity 1: altsyncram_lgl1 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_lgl1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_lgl1" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ipb2.tdf
+    Info (12023): Found entity 1: altsyncram_ipb2 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_ipb2.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_ipb2" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_lgl1.tdf Line: 39
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_lgl1.tdf Line: 40
+Info (12130): Elaborated megafunction instantiation "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_lgl1.tdf Line: 40
+Info (12133): Instantiated megafunction "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/altsyncram_lgl1.tdf Line: 40
+    Info (12134): Parameter "CVALUE" = "00000000"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
+    Info (12134): Parameter "IS_READABLE" = "1"
+    Info (12134): Parameter "NODE_NAME" = "1112686925"
+    Info (12134): Parameter "NUMWORDS" = "4096"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
+    Info (12134): Parameter "WIDTH_WORD" = "8"
+    Info (12134): Parameter "WIDTHAD" = "12"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2021.08.18.23:48:15 Progress: Loading slddf4920d8/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (13012): Latch slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle has unsafe behavior File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 18
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.data1 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 16
+Warning (13012): Latch slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle has unsafe behavior File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr1 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 15
+Warning (13012): Latch slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle has unsafe behavior File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state.data1 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 11
+Warning (13012): Latch slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done has unsafe behavior File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 31
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state.data8 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v Line: 11
+Warning (13012): Latch slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_done has unsafe behavior File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 42
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.addr12 File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v Line: 15
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "slave_valid" is stuck at VCC File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v Line: 11
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 323 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 297 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Wed Aug 18 23:48:22 2021
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:42
+
+
