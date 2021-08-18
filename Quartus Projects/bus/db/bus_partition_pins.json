@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "slave_valid",
+					"strict" : false
+				},
+				{
 					"name" : "slave_ready",
 					"strict" : false
 				},
@@ -20,11 +24,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "master_ready",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "read_en",
+					"strict" : false
+				},
+				{
+					"name" : "master_ready",
 					"strict" : false
 				},
 				{
@@ -33,10 +41,6 @@
 				},
 				{
 					"name" : "master_valid",
-					"strict" : false
-				},
-				{
-					"name" : "read_en",
 					"strict" : false
 				},
 				{

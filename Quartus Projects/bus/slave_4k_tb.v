@@ -116,10 +116,8 @@ initial begin
 		rx_address = 0;
 		#10
 		master_valid = 0;
-		#25
-		#40
 		master_ready = 1;
-		#50 
+		#90 
 		master_ready = 0;
 
 	end

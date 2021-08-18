@@ -117,10 +117,7 @@ initial begin
 		#10
 		master_valid = 0;
 		master_ready = 1;
-		#25
-		#10
-		master_ready = 1;
-		#50 
+		#80 
 		master_ready = 0;
 
 	end

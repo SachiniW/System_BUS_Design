@@ -1,3 +1,18 @@
+/* 
+ file name : slave_in_port.v
+
+ Description:
+	This file contains the input port of the slave port.
+	It is responsible for receiving the address and data from 
+	the master.
+
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
+
 module slave_in_port (
 	input clk, 
 	input reset,
@@ -12,8 +27,8 @@ module slave_in_port (
 	output reg[7:0]data);
 	
 
-reg     [3:0]addr_state = 0;
-reg     [3:0]data_state = 0;
+reg [3:0]addr_state = 0;
+reg [3:0]data_state = 0;
 reg addr_idle = 1;
 reg data_idle = 1;
 reg addr_done = 0;
@@ -24,20 +39,23 @@ assign rx_done = addr_done;
 
 wire handshake = master_valid & slave_ready;
 
+
+// Statemachine to capture the 12 bit address
+
 parameter 
 IDLE = 0, 
-addr1 = 1, 
-addr2 = 2, 
-addr3 = 3, 
-addr4 = 4,
-addr5 = 5, 
-addr6 = 6, 
-addr7 = 7, 
-addr8 = 8, 
-addr9 = 9, 
-addr10 = 10, 
-addr11 = 11,
-addr12 = 12;
+ADDR1 = 1, 
+ADDR2 = 2, 
+ADDR3 = 3, 
+ADDR4 = 4,
+ADDR5 = 5, 
+ADDR6 = 6, 
+ADDR7 = 7, 
+ADDR8 = 8, 
+ADDR9 = 9, 
+ADDR10 = 10, 
+ADDR11 = 11,
+ADDR12 = 12;
 
 always @ (addr_state) 
 begin
@@ -47,32 +65,32 @@ begin
 		addr_idle = 1;
 		addr_done = 0;
 	end
-	addr1:
+	ADDR1:
 	begin
 		address[0] = rx_address;
 		addr_idle = 0;
 	end
-	addr2:
+	ADDR2:
 		address[1] = rx_address;
-	addr3:
+	ADDR3:
 		address[2] = rx_address;
-	addr4:
+	ADDR4:
 		address[3] = rx_address;
-	addr5:
+	ADDR5:
 		address[4] = rx_address;
-	addr6:
+	ADDR6:
 		address[5] = rx_address;
-	addr7:
+	ADDR7:
 		address[6] = rx_address;
-	addr8:
+	ADDR8:
 		address[7] = rx_address;
-	addr9:
+	ADDR9:
 		address[8] = rx_address;
-	addr10:
+	ADDR10:
 		address[9] = rx_address;
-	addr11:
+	ADDR11:
 		address[10] = rx_address;
-	addr12:
+	ADDR12:
 	begin
 		address[11] = rx_address;
 		addr_done = 1;
@@ -91,48 +109,50 @@ begin
 			IDLE:
 				if (handshake == 1)
 				begin
-					addr_state <= addr1;
+					addr_state <= ADDR1;
 				end
 				else
 					addr_state <= IDLE;
-			addr1:
-				addr_state <= addr2;
-			addr2:
-				addr_state <= addr3;
-			addr3:
-				addr_state <= addr4;
-			addr4:
-				addr_state <= addr5;
-			addr5:
-				addr_state <= addr6;
-			addr6:
-				addr_state <= addr7;
-			addr7:
-				addr_state <= addr8;
-			addr8:
-				addr_state <= addr9;
-			addr9:
-				addr_state <= addr10;
-			addr10:
-				addr_state <= addr11;
-			addr11:
-				addr_state <= addr12;
-			addr12:
+			ADDR1:
+				addr_state <= ADDR2;
+			ADDR2:
+				addr_state <= ADDR3;
+			ADDR3:
+				addr_state <= ADDR4;
+			ADDR4:
+				addr_state <= ADDR5;
+			ADDR5:
+				addr_state <= ADDR6;
+			ADDR6:
+				addr_state <= ADDR7;
+			ADDR7:
+				addr_state <= ADDR8;
+			ADDR8:
+				addr_state <= ADDR9;
+			ADDR9:
+				addr_state <= ADDR10;
+			ADDR10:
+				addr_state <= ADDR11;
+			ADDR11:
+				addr_state <= ADDR12;
+			ADDR12:
 				addr_state <= IDLE;
 				
 		endcase
 end
 
 
+// Statemachine to capture the 8 bit data
+
 parameter 
-data1 = 1, 
-data2 = 2, 
-data3 = 3, 
-data4 = 4,
-data5 = 5, 
-data6 = 6, 
-data7 = 7, 
-data8 = 8;
+DATA1 = 1, 
+DATA2 = 2, 
+DATA3 = 3, 
+DATA4 = 4,
+DATA5 = 5, 
+DATA6 = 6, 
+DATA7 = 7, 
+DATA8 = 8;
 
 always @ (data_state) 
 begin
@@ -142,24 +162,24 @@ begin
 		data_idle = 1;
 		data_done = 0;
 	end
-	data1:
+	DATA1:
 	begin
 		data[0] = rx_data;
 		data_idle = 0;
 	end
-	data2:
+	DATA2:
 		data[1] = rx_data;
-	data3:
+	DATA3:
 		data[2] = rx_data;
-	data4:
+	DATA4:
 		data[3] = rx_data;
-	data5:
+	DATA5:
 		data[4] = rx_data;
-	data6:
+	DATA6:
 		data[5] = rx_data;
-	data7:
+	DATA7:
 		data[6] = rx_data;
-	data8:
+	DATA8:
 	begin
 		data[7] = rx_data;
 		data_done = 1;
@@ -178,25 +198,25 @@ begin
 			IDLE:
 				if (handshake == 1)
 				begin
-					data_state <= data1;
+					data_state <= DATA1;
 				end
 				else
 					data_state <= IDLE;
-			data1:
-				data_state <= data2;
-			data2:
-				data_state <= data3;
-			data3:
-				data_state <= data4;
-			data4:
-				data_state <= data5;
-			data5:
-				data_state <= data6;
-			data6:
-				data_state <= data7;
-			data7:
-				data_state <= data8;	
-			data8:
+			DATA1:
+				data_state <= DATA2;
+			DATA2:
+				data_state <= DATA3;
+			DATA3:
+				data_state <= DATA4;
+			DATA4:
+				data_state <= DATA5;
+			DATA5:
+				data_state <= DATA6;
+			DATA6:
+				data_state <= DATA7;
+			DATA7:
+				data_state <= DATA8;	
+			DATA8:
 				data_state <= IDLE;
 		endcase
 end

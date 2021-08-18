@@ -1,4 +1,20 @@
+/* 
+ file name : slave_port.v
+
+ Description:
+	This file contains the slave port 
+	It encapsulated the input and output ports.
+	Sets the control signals of the bus
+	
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
+
 module slave_port(
+
 	input clk, 
 	input reset,
 
@@ -30,10 +46,8 @@ module slave_port(
 wire slave_ready_IN;
 wire slave_ready_OUT;
 
-
 reg temp2 = 0;
 reg temp3 = 0;
-reg slave_valid_in = 0;
 reg read_en_in1 = 0;
 reg write_en_in1 = 0;
 
@@ -67,22 +81,25 @@ slave_out_port SLAVE_OUT_PORT(
 always @ (posedge clk)
 begin
 
-	if ((read_en_in1 == 1) & (rx_done == 1) & (slave_valid_in == 0)) 
+	//Driving the data valid signal at slave
+	if ((read_en_in1 == 1) & (rx_done == 1)) 
 		slave_valid <= 1;
-	else if((slave_tx_done == 1) & (slave_valid_in == 1))
+	else if((slave_tx_done == 1) & (slave_valid == 1))
 		slave_valid <= 0;
 	
-	
+	//Driving and latching the read_en signal
 	if (read_en == 1)
 		read_en_in1 <= 1;
-	else if (write_en == 1)
+	if ((rx_done==1) & (read_en_in1 == 1))
+		read_en_in1 <= 0;
+	
+	//Driving and latching the write_en signal
+	if (write_en == 1)
 	begin
 		write_en_in1 <= 1;
 		temp2 <= 1;
 		temp3 <= 1;
 	end
-
-	
 	else if ((write_en_in1 == 1) & (rx_done == 1))
 		temp2 <= 0;
 	else 
@@ -95,9 +112,7 @@ begin
 		write_en_in <= 1;
 	if ((write_en_in1 == 0) & (write_en_in == 1))
 		write_en_in <= 0;
-	if ((rx_done==1) & (read_en_in1 == 1))
-		read_en_in1 <= 0;
-
+		
 end
 	
 endmodule

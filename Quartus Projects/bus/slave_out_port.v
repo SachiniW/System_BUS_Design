@@ -1,3 +1,18 @@
+/* 
+ file name : slave_out_port.v
+
+ Description:
+	This file contains the output port of the slave port.
+	It is responsible for sending the requested data back 
+	to master.
+
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
+
 module slave_out_port (
 	input clk, 
 	input reset,
@@ -12,21 +27,20 @@ reg [3:0]data_state = 0;
 reg data_idle;
 reg data_done;
 wire handshake = slave_valid & master_ready;
-//reg [7:0]data = 0;
 
 assign slave_ready = data_idle;
 assign slave_tx_done = data_done;
 
 parameter 
 IDLE  = 0,
-data1 = 1, 
-data2 = 2, 
-data3 = 3, 
-data4 = 4,
-data5 = 5, 
-data6 = 6, 
-data7 = 7, 
-data8 = 8;
+DATA1 = 1, 
+DATA2 = 2, 
+DATA3 = 3, 
+DATA4 = 4,
+DATA5 = 5, 
+DATA6 = 6, 
+DATA7 = 7, 
+DATA8 = 8;
 
 always @ (data_state) 
 begin
@@ -36,24 +50,24 @@ begin
 		data_idle = 1;
 		data_done = 0;
 	end
-	data1:
+	DATA1:
 	begin
 		tx_data = datain[0];
 		data_idle = 0;
 	end
-	data2:
+	DATA2:
 		tx_data = datain[1];
-	data3:
+	DATA3:
 		tx_data = datain[2];
-	data4:
+	DATA4:
 		tx_data = datain[3];
-	data5:
+	DATA5:
 		tx_data = datain[4];
-	data6:
+	DATA6:
 		tx_data = datain[5];
-	data7:
+	DATA7:
 		tx_data = datain[6];
-	data8:
+	DATA8:
 	begin
 		tx_data = datain[7];
 		data_done = 1;
@@ -71,29 +85,24 @@ begin
 		case (data_state)
 			IDLE:
 				if (handshake == 1)
-				begin
-					data_state <= data1;
-				end
+					data_state <= DATA1;
 				else
-				begin
 					data_state <= IDLE;
-//					data <= datain;
-				end
-			data1:
-				data_state <= data2;
-			data2:
-				data_state <= data3;
-			data3:
-				data_state <= data4;
-			data4:
-				data_state <= data5;
-			data5:
-				data_state <= data6;
-			data6:
-				data_state <= data7;
-			data7:
-				data_state <= data8;	
-			data8:
+			DATA1:
+				data_state <= DATA2;
+			DATA2:
+				data_state <= DATA3;
+			DATA3:
+				data_state <= DATA4;
+			DATA4:
+				data_state <= DATA5;
+			DATA5:
+				data_state <= DATA6;
+			DATA6:
+				data_state <= DATA7;
+			DATA7:
+				data_state <= DATA8;	
+			DATA8:
 				data_state <= IDLE;
 		endcase
 end

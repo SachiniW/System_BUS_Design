@@ -7,137 +7,137 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
+Z0 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
 vBRAM
-Z1 !s110 1629302231
+Z1 !s110 1629319721
 !i10b 1
 !s100 Ro@TgCK8B;ZV@PzdSbdH>0
-Ik3NgKl@RA:BCDY@mYG=Se1
+Id_eG3SU9_ESJ[]E9;j?000
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
 w1629302012
-8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v
-FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v
+8D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/BRAM.v
+FD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/BRAM.v
 L0 40
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1629302231.000000
-!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v|
+!s108 1629319721.000000
+!s107 D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/BRAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus|D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/BRAM.v|
 !i113 1
-Z5 o-vlog01compat -work work
-Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus}
-Z7 tCvgOpt 0
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus}
+Z6 tCvgOpt 0
 n@b@r@a@m
 vslave_4k
-!s110 1629302230
+Z7 !s110 1629319720
 !i10b 1
-!s100 R;I[Z^LUOhzTj=RdTmd3k3
-IYVEcBDSDPcRbFh8FAFfKV1
+!s100 X81jHcJSjHWTUI=OPU8]L0
+IZWAdJ<f`5Om@O=>7c^6o^0
 R2
 R0
-w1629233588
-8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v
-FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v
-L0 1
+w1629319681
+8D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k.v
+FD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k.v
+L0 14
 R3
 r1
 !s85 0
 31
-!s108 1629302230.000000
-!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v|
+Z8 !s108 1629319720.000000
+!s107 D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus|D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k.v|
 !i113 1
+R4
 R5
 R6
-R7
 vslave_4k_tb
-!s110 1629306901
+!s110 1629320771
 !i10b 1
-!s100 bN?>ebELaB<2PUAEOW8=T1
-ISnUaKPDQ>H3aPoh31I4_D1
+!s100 D;F1JSjJXFFHQH9Q3UI=83
+IQ[SonB@;TaDS=n311Xh@:1
 R2
 R0
-w1629306885
-8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v
-FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v
+w1629320763
+8D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k_tb.v
+FD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k_tb.v
 L0 3
 R3
 r1
 !s85 0
 31
-!s108 1629306901.000000
-!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v|
+!s108 1629320771.000000
+!s107 D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus|D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k_tb.v|
 !i113 1
+R4
 R5
 R6
-R7
 vslave_in_port
 R1
 !i10b 1
-!s100 oAdUHSS0HRKJSB`<FPz`O0
-IUBdHaRH8FnB>6QbT9hX6n3
+!s100 6cmonDWJlQ`6bJ9=3k[Hi2
+IYUTAGn;5RKnI^kZ>O@4hJ2
 R2
 R0
-w1629204694
-8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v
-FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v
-L0 1
+w1629319509
+8D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_in_port.v
+FD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_in_port.v
+Z9 L0 16
 R3
 r1
 !s85 0
 31
+R8
+!s107 D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_in_port.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus|D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_in_port.v|
+!i113 1
 R4
-!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v|
-!i113 1
 R5
 R6
-R7
 vslave_out_port
-!s110 1629302893
+R7
 !i10b 1
-!s100 b93kB9^4e7XXZ6_W1ThJb3
-Ien5`Tf?Gbm^XD]>me21o:3
+!s100 Y]NhFdOQ<TP6ziH3m6VAH3
+I>?`0Bd[HHf=PTel^d:jT>2
 R2
 R0
-w1629302877
-8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v
-FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v
-L0 1
+w1629319510
+8D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_out_port.v
+FD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_out_port.v
+R9
 R3
 r1
 !s85 0
 31
-!s108 1629302893.000000
-!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v|
+R8
+!s107 D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_out_port.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus|D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_out_port.v|
 !i113 1
+R4
 R5
 R6
-R7
 vslave_port
-!s110 1629307615
+!s110 1629320005
 !i10b 1
-!s100 PYQWI<SY73Go933ceALEN0
-IR8a4?dDnTz9j7nFzQF9gG1
+!s100 3FiB?TiOHiEfj=46]W^zh1
+I7^L5<:nFKfiJzVGm:Y1Jn0
 R2
 R0
-w1629307602
-8C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v
-FC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v
-L0 1
+w1629319903
+8D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_port.v
+FD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_port.v
+R9
 R3
 r1
 !s85 0
 31
-!s108 1629307615.000000
-!s107 C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus|C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v|
+!s108 1629320004.000000
+!s107 D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_port.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus|D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_port.v|
 !i113 1
+R4
 R5
 R6
-R7

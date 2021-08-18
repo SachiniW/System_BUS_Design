@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Aug 18 23:48:22 2021
+Analysis & Synthesis Status : Successful - Thu Aug 19 02:22:15 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : bus
 Top-level Entity Name : slave_4k
 Family : Cyclone IV E
 Total logic elements : 293
     Total combinational functions : 237
-    Dedicated logic registers : 163
-Total registers : 163
+    Dedicated logic registers : 164
+Total registers : 164
 Total pins : 13
 Total virtual pins : 0
 Total memory bits : 32,768

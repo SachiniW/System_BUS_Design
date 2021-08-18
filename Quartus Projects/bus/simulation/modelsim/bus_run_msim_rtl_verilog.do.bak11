@@ -33,13 +33,13 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/sthir/OneDrive\ -\ University\ of\ Moratuwa/Desktop/ADS\ Lecture/bus {C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k.v}
-vlog -vlog01compat -work work +incdir+C:/Users/sthir/OneDrive\ -\ University\ of\ Moratuwa/Desktop/ADS\ Lecture/bus {C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_out_port.v}
-vlog -vlog01compat -work work +incdir+C:/Users/sthir/OneDrive\ -\ University\ of\ Moratuwa/Desktop/ADS\ Lecture/bus {C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_in_port.v}
-vlog -vlog01compat -work work +incdir+C:/Users/sthir/OneDrive\ -\ University\ of\ Moratuwa/Desktop/ADS\ Lecture/bus {C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_port.v}
-vlog -vlog01compat -work work +incdir+C:/Users/sthir/OneDrive\ -\ University\ of\ Moratuwa/Desktop/ADS\ Lecture/bus {C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/BRAM.v}
+vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k.v}
+vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_out_port.v}
+vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_in_port.v}
+vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_port.v}
+vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/BRAM.v}
 
-vlog -vlog01compat -work work +incdir+C:/Users/sthir/OneDrive\ -\ University\ of\ Moratuwa/Desktop/ADS\ Lecture/bus {C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/slave_4k_tb.v}
+vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/slave_4k_tb.v}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  slave_4k_tb
 
