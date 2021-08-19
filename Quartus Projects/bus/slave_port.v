@@ -40,7 +40,7 @@ module slave_port(
 	output [7:0]data,
 	
 	output read_en_in,
-	output reg write_en_in = 0);
+	output write_en_in);
 	
 	
 wire slave_ready_IN;
@@ -53,6 +53,7 @@ reg write_en_in1 = 0;
 
 assign slave_ready = slave_ready_IN & slave_ready_OUT;
 assign read_en_in = rx_done & read_en_in1;
+assign write_en_in = rx_done & write_en_in1;
 	
 slave_in_port SLAVE_IN_PORT(
 	.clk(clk), 
@@ -93,25 +94,12 @@ begin
 	if ((rx_done==1) & (read_en_in1 == 1))
 		read_en_in1 <= 0;
 	
+
 	//Driving and latching the write_en signal
 	if (write_en == 1)
-	begin
 		write_en_in1 <= 1;
-		temp2 <= 1;
-		temp3 <= 1;
-	end
-	else if ((write_en_in1 == 1) & (rx_done == 1))
-		temp2 <= 0;
-	else 
-	begin
-		temp3 <= temp2;
-		write_en_in1 <= temp3;
-	end
-	
-	if ((write_en_in1 == 1) & (rx_done == 1))
-		write_en_in <= 1;
-	if ((write_en_in1 == 0) & (write_en_in == 1))
-		write_en_in <= 0;
+	if ((rx_done==1) & (write_en_in1 == 1))
+		write_en_in1 <= 0;
 		
 end
 	

@@ -44,15 +44,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "write_en",
+					"strict" : false
+				},
+				{
 					"name" : "rx_data",
 					"strict" : false
 				},
 				{
 					"name" : "rx_address",
-					"strict" : false
-				},
-				{
-					"name" : "write_en",
 					"strict" : false
 				},
 				{

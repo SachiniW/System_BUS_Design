@@ -57,7 +57,7 @@ data[5] <= slave_in_port:SLAVE_IN_PORT.data
 data[6] <= slave_in_port:SLAVE_IN_PORT.data
 data[7] <= slave_in_port:SLAVE_IN_PORT.data
 read_en_in <= always0.DB_MAX_OUTPUT_PORT_TYPE
-write_en_in <= write_en_in~reg0.DB_MAX_OUTPUT_PORT_TYPE
+write_en_in <= write_en_in.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT

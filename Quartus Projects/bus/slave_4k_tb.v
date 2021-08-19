@@ -73,15 +73,15 @@ initial begin
 		rx_data = 1;
 		#10 
 		rx_address = 0;
-		rx_data = 0;
+		rx_data = 1;
 		#10
 		rx_address = 0;
 		#10 
 		rx_address = 0;
 		#10 
-		rx_address = 0;
+		rx_address = 1;
 		#10 
-		rx_address = 0;
+		rx_address = 1;
 		#10
 		master_valid = 0;
 		
