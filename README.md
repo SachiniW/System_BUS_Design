@@ -1,7 +1,7 @@
 # System_BUS
 A point to point multiplexed serial bus design.
 
-# Slave Signals
+# 1. Slave Signals
 | Wire | Description |
 | --- | --- |
 | `clk` | Clock signal: should be supplied externally |
@@ -17,3 +17,16 @@ A point to point multiplexed serial bus design.
 | `rx_address` | Receives address serially; driven by master |
 | `rx_data` | Receives data serially; driven by master |
 | `tx_data` | Transmits data serially; driven by slave |
+
+# 2. Slave Top View
+
+![Slave Top View](https://github.com/SachiniW/System_BUS_Design/blob/main/Images/Slave_top_view.png)
+
+# 3. Slave Data Read Operation
+
+![Read](https://github.com/SachiniW/System_BUS_Design/blob/main/Images/Slave_read.png)
+
+
+# 4. Slave Data Write Operation
+
+![Write](https://github.com/SachiniW/System_BUS_Design/blob/main/Images/Slave_write.png)
