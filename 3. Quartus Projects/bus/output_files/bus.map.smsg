@@ -1,1 +1,2 @@
-Info (10281): Verilog HDL Declaration information at addr_state_machine.v(16): object "idle" differs only in case from object "IDLE" in the same scope File: C:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/addr_state_machine.v Line: 16
+Warning (10268): Verilog HDL information at Bus_Arbiter.v(36): always construct contains both blocking and non-blocking assignments File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 36
+Warning (10268): Verilog HDL information at Bus_Arbiter.v(80): always construct contains both blocking and non-blocking assignments File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 80

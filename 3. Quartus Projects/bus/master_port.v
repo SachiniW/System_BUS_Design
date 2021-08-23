@@ -1,8 +1,8 @@
 /* 
- file name : slave_port.v
+ file name : master_port.v
 
  Description:
-	This file contains the slave port 
+	This file contains the master port 
 	It encapsulated the input and output ports.
 	Sets the control signals of the bus
 	
@@ -13,94 +13,110 @@
  Revision : v1.0 
 */
 
-module slave_port(
+module master_port #(SLAVE_LEN=2, ADDR_LEN=12, DATA_LEN=8)(
 
 	input clk, 
 	input reset,
-
-	input read_en,
-	input write_en,
-
-	input master_ready,
-	input master_valid,
 	
-	output reg slave_valid,
-	output slave_ready,
-
-	input rx_address,
-	input rx_data,
-
-	output slave_tx_done,
+	input [1:0]instrucution,
+	input [SLAVE_LEN-1:0]slave_select,
+	input [ADDR_LEN-1:0]address,
+	input [DATA_LEN-1:0]data_out,
+	output [DATA_LEN-1:0]data_in,
 	output rx_done,
+	output tx_done,
+	
+	input arbitor_busy,
+	input bus_busy,
+	input approval_grant,
+	output approval_request,
+	output tx_slave_select,
+	output trans_done,
+	
+	input rx_data,
+	output tx_address,
 	output tx_data,
-
-
-	input [7:0]datain,
-	output [11:0]address,
-	output [7:0]data,
 	
-	output read_en_in,
-	output write_en_in);
+	input slave_valid,
+	input slave_ready,
+	output master_valid,
+	output master_ready,
+	output write_en,
+	output read_en);
 	
 	
-wire slave_ready_IN;
-wire slave_ready_OUT;
+wire master_ready_IN;
+wire master_ready_OUT;
 
-reg temp2 = 0;
-reg temp3 = 0;
-reg read_en_in1 = 0;
-reg write_en_in1 = 0;
+assign master_ready = master_ready_IN && master_ready_OUT;
 
-assign slave_ready = slave_ready_IN & slave_ready_OUT;
-assign read_en_in = rx_done & read_en_in1;
-assign write_en_in = rx_done & write_en_in1;
-	
-slave_in_port SLAVE_IN_PORT(
+wire read_en_IN;
+wire read_en_OUT;
+
+assign read_en = read_en_IN || read_en_OUT;
+
+assign trans_done = (instruction==2'b10) ? tx_done : (instruction==2'b11) ? rx_done : 0 ;
+
+master_in_port #(.DATA_LEN(DATA_LEN)) MASTER_IN_PORT(
 	.clk(clk), 
 	.reset(reset),
-	.rx_address(rx_address),
-	.rx_data(rx_data),
-	.master_valid(master_valid),
-	.read_en(read_en),
-	.write_en(write_en),
-	.slave_ready(slave_ready_IN),
+	
+	.tx_done(tx_done),
+	.instrucution(instruction),
+	.data(data_in),
 	.rx_done(rx_done),
-	.address(address),
-	.data(data));
 	
-slave_out_port SLAVE_OUT_PORT(
+	.rx_data(rx_data),
+	.slave_valid(slave_valid),
+	.master_ready(master_ready_IN),
+	.read_en(read_en_IN));
+
+master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER_OUT_PORT(
 	.clk(clk), 
 	.reset(reset),
-	.master_ready(master_ready),
-	.datain(datain),
-	.slave_valid(slave_valid),
-	.slave_ready(slave_ready_OUT),
-	.slave_tx_done(slave_tx_done),
+	
+	.slave_select(slave_select),
+	.instruction(instruction), 
+	.address(address),
+	.data(data_out),
+	.tx_done(tx_done),
+	
+	.slave_ready(slave_ready),
+	.arbitor_busy(arbitor_busy),
+	.bus_busy(bus_busy),	
+	.approval_grant(approval_grant),
+	.master_ready(master_ready_OUT),
+	.approval_request(approval_request),
+	.tx_slave_select(tx_slave_select),
+	.master_valid(master_valid),
+	.write_en(write_en),
+	.read_en(read_en_OUT),	
+	.tx_address(tx_address),
 	.tx_data(tx_data));
 	
 
-always @ (posedge clk)
-begin
-
-	//Driving the data valid signal at slave
-	if ((read_en_in1 == 1) & (rx_done == 1)) 
-		slave_valid <= 1;
-	else if((slave_tx_done == 1) & (slave_valid == 1))
-		slave_valid <= 0;
-	
-	//Driving and latching the read_en signal
-	if (read_en == 1)
-		read_en_in1 <= 1;
-	if ((rx_done==1) & (read_en_in1 == 1))
-		read_en_in1 <= 0;
-	
-
-	//Driving and latching the write_en signal
-	if (write_en == 1)
-		write_en_in1 <= 1;
-	if ((rx_done==1) & (write_en_in1 == 1))
-		write_en_in1 <= 0;
-		
-end
+//always @ (posedge clk)
+//begin
+//
+//	//Driving the data valid signal at slave
+//	if ((read_en_in1 == 1) & (rx_done == 1)) 
+//		slave_valid <= 1;
+//	else if((slave_tx_done == 1) & (slave_valid == 1))
+//		slave_valid <= 0;
+//	
+//	//Driving and latching the read_en signal
+//	if (read_en == 1)
+//		read_en_in1 <= 1;
+//	if ((rx_done==1) & (read_en_in1 == 1))
+//		read_en_in1 <= 0;
+//	
+//
+//	//Driving and latching the write_en signal
+//	if (write_en == 1)
+//		write_en_in1 <= 1;
+//	if ((rx_done==1) & (write_en_in1 == 1))
+//		write_en_in1 <= 0;
+//		
+//end
 	
 endmodule

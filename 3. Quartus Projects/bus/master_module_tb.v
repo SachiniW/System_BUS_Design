@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module slave_4k_tb;
+module master_4k_tb;
 
 reg clk; 
 reg reset;

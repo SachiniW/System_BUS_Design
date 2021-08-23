@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module master_port_tb;
+module slave_4k_tb;
 
 reg clk; 
 reg reset;
@@ -21,13 +21,7 @@ wire slave_tx_done;
 wire rx_done;
 wire tx_data;
 
-
-reg [7:0]datain;
-wire[11:0]address;
-wire[7:0]data;
-
-
-slave_port UUT(
+slave_4k UUT(
 	.clk(clk), 
 	.reset(reset),
 	.read_en(read_en),
@@ -40,12 +34,9 @@ slave_port UUT(
 	.rx_data(rx_data),
 	.slave_tx_done(slave_tx_done),
 	.rx_done(rx_done),
-	.tx_data(tx_data),
-	.datain(datain),
-	.address(address),
-	.data(data));
+	.tx_data(tx_data));
 	
-	initial begin
+initial begin
 	
 		clk = 0; 
 		reset = 0;
@@ -55,7 +46,6 @@ slave_port UUT(
 		master_valid = 0;
 		rx_address = 0;
 		rx_data = 0;
-		datain = 8'd0;
 		
 		#15
 		master_valid = 1;
@@ -63,44 +53,71 @@ slave_port UUT(
 		rx_address = 1;
 		rx_data = 1;
 		#10 
-		rx_address = 0;
-		rx_data = 0;
 		write_en = 0;
-		#10 
 		rx_address = 1;
+		rx_data = 0;
+		#10 
+		rx_address = 0;
 		rx_data = 0;
 		#10 
 		rx_address = 0;
 		rx_data = 1;
 		#10 
-		rx_address = 1;
-		rx_data = 1;
-		#10 
-		rx_address = 1;
+		rx_address = 0;
 		rx_data = 1;
 		#10 
 		rx_address = 0;
 		rx_data = 1;
 		#10 
-		rx_address = 1;
-		rx_data = 0;
+		rx_address = 0;
+		rx_data = 1;
+		#10 
+		rx_address = 0;
+		rx_data = 1;
 		#10
-		rx_address = 1;
-		#10 
 		rx_address = 0;
 		#10 
 		rx_address = 0;
 		#10 
 		rx_address = 1;
+		#10 
+		rx_address = 1;
+		#10
 		master_valid = 0;
 		
 		
 		#200
-
-		datain = 8'b11001100;
-		#15
-		master_ready = 1;
+		#20
+		master_valid = 1;
+		read_en = 1;
+		rx_address = 0;
 		#10 
+		read_en = 0;
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10 
+		rx_address = 1;
+		#10 
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10 
+		rx_address = 0;
+		#10
+		master_valid = 0;
+		master_ready = 1;
+		#90 
 		master_ready = 0;
 
 	end

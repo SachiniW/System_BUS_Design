@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module master_out_port_tb;
+module slave_out_port_tb;
 
 	reg clk;
 	reg reset;

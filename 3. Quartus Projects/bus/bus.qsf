@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY slave_4k
+set_global_assignment -name TOP_LEVEL_ENTITY master_module
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:51:29  AUGUST 14, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -118,9 +118,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME slave_out_port_tb -sectio
 set_global_assignment -name EDA_TEST_BENCH_NAME slave_port_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id slave_port_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME slave_port_tb -section_id slave_port_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_NAME slave_4k_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id slave_4k_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME slave_4k_tb -section_id slave_4k_tb
@@ -128,7 +125,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE slave_4k_tb.v -section_id slave_
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_in_port_tb.v -section_id slave_in_port_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_out_port_tb.v -section_id slave_out_port_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_port_tb.v -section_id slave_port_tb
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE tester.v
 set_global_assignment -name VERILOG_FILE master_port_tb.v
 set_global_assignment -name VERILOG_FILE master_port.v
@@ -157,3 +153,8 @@ set_global_assignment -name VERILOG_FILE slave_port_tb.v
 set_global_assignment -name QIP_FILE BRAM.qip
 set_global_assignment -name VERILOG_FILE BRAM_test.v
 set_global_assignment -name MIF_FILE 4KBRAM.mif
+set_global_assignment -name VERILOG_FILE button_event1.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

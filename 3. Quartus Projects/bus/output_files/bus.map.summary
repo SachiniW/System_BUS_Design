@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Aug 19 12:32:14 2021
-Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Analysis & Synthesis Status : Failed - Mon Aug 23 17:22:09 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : bus
-Top-level Entity Name : slave_4k
+Top-level Entity Name : master_module
 Family : Cyclone IV E
-Total logic elements : 290
-    Total combinational functions : 234
-    Dedicated logic registers : 161
-Total registers : 161
-Total pins : 13
-Total virtual pins : 0
-Total memory bits : 32,768
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
