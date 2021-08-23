@@ -20,6 +20,7 @@ module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter
 	input [1:0]instruction, 
 	input [ADDR_LEN-1:0]address,
 	input [DATA_LEN-1:0]data,
+	input rx_done,
 	output reg tx_done,
 	
 	input slave_ready,
@@ -49,7 +50,7 @@ module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter
 reg [3:0]state = 0;
 
 parameter IDLE=0, WAIT_ARBITOR=1, TRANSMIT_SELECT=2, WAIT_APPROVAL=3, WAIT_HANDSHAKE=4, 
-				TRANSMIT_DATA_ADDR=5, TRANSMIT_DATA=6, TRANSMIT_ADDR=7, WAIT_BUS=8;
+				TRANSMIT_DATA_ADDR=5, TRANSMIT_DATA=6, TRANSMIT_ADDR=7, WAIT_BUS=8, FINISH=9, READ_WAIT=10;
 parameter INACTIVE=2'b00, WRITE=2'b10, READ=2'b11;
 
 integer count = 0;
@@ -111,11 +112,19 @@ begin
 		begin
 			if (arbitor_busy==0 && approval_request==1)
 			begin
-				count <= count+1;
 				if (count >= SLAVE_LEN-1)
-					state <=WAIT_APPROVAL;
+				begin
+					count<=0;
+					if (bus_busy==0)
+						state <=WAIT_APPROVAL;
+					else	
+						state <=WAIT_BUS;
+				end
 				else
+				begin
+					count <= count+1;
 					state <=TRANSMIT_SELECT;
+				end
 				master_ready <= 0;
 				approval_request <= 1;
 				tx_slave_select <= slave_select[count];
@@ -278,7 +287,7 @@ begin
 			if (master_valid==1 && slave_ready==1)
 			begin
 				count <= count+1;
-				state <=TRANSMIT_DATA;
+				state <=TRANSMIT_DATA_ADDR;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -311,7 +320,10 @@ begin
 			if (count >= DATA_LEN-1 && count >= ADDR_LEN-1)
 			begin
 				count <= 0;
-				state <=IDLE;
+				if (instruction[0]==0)
+					state <= FINISH;
+				else
+					state <= READ_WAIT;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -374,7 +386,10 @@ begin
 			if (count >= DATA_LEN-1)
 			begin
 				count <= 0;
-				state <=IDLE;
+				if (instruction[0]==0)
+					state <= FINISH;
+				else
+					state <= READ_WAIT;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -407,7 +422,10 @@ begin
 			if (count >= ADDR_LEN-1)
 			begin
 				count <= 0;
-				state <=IDLE;
+				if (instruction[0]==0)
+					state <= FINISH;
+				else
+					state <= READ_WAIT;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -433,6 +451,39 @@ begin
 				tx_data <= tx_data;
 				tx_done <= 0;
 			end
+		end
+		
+		READ_WAIT:
+		begin
+			count <= count;
+			if (rx_done == 1)
+				state <= IDLE;
+			else
+				state <= READ_WAIT;
+			master_ready <= 1;
+			approval_request <= 0;
+			tx_slave_select <= tx_slave_select;
+			master_valid <= 0;
+			write_en <= 0;
+			read_en <= 0;	
+			tx_address <= tx_address;
+			tx_data <= tx_data;
+			tx_done <= 0;
+		end
+		
+		FINISH:
+		begin
+			count <= count;
+			state <=IDLE;
+			master_ready <= 1;
+			approval_request <= 0;
+			tx_slave_select <= tx_slave_select;
+			master_valid <= 0;
+			write_en <= 0;
+			read_en <= 0;	
+			tx_address <= tx_address;
+			tx_data <= tx_data;
+			tx_done <= 0;
 		end
 		
 		default:

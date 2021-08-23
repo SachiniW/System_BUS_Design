@@ -50,8 +50,8 @@ begin
 				if (start == 1 & arbiter_busy == 0)
 				begin
 					slave_addr_state <= addr1;
-                rx_m1_slave[1] <= m1_slave_sel;
-                rx_m2_slave[1] <= m2_slave_sel;
+                rx_m1_slave[0] <= m1_slave_sel;
+                rx_m2_slave[0] <= m2_slave_sel;
                slave_sel_done <= 1'b0;
 				end
 				else
@@ -60,8 +60,8 @@ begin
             end    
 	   addr1:begin
 		slave_addr_state <= addr2;
-                rx_m1_slave[0] <= m1_slave_sel;
-                rx_m2_slave[0] <= m2_slave_sel;
+                rx_m1_slave[1] <= m1_slave_sel;
+                rx_m2_slave[1] <= m2_slave_sel;
             end
             addr2: begin
 		slave_addr_state <= idle;

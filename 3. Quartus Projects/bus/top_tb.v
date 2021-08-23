@@ -29,13 +29,13 @@ initial begin
 	#CLK_PERIOD
 	button1 <= 1'b1;
 	
-	#(200*CLK_PERIOD)
+	#(20*CLK_PERIOD)
 	
 	button2 <= 1'b0;
 	#CLK_PERIOD
 	button2 <= 1'b1;
 	
-	#(200*CLK_PERIOD)
+	#(40*CLK_PERIOD)
 	
 //	i_dram_read <= 1'b1;
 //	i_dram_addr <= 16'b0000000000100100;

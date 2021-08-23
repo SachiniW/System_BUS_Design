@@ -79,6 +79,7 @@ master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN
 	.instruction(instruction), 
 	.address(address),
 	.data(data_out),
+	.rx_done(rx_done),
 	.tx_done(tx_done),
 	
 	.slave_ready(slave_ready),
