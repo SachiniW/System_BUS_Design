@@ -10,6 +10,7 @@ input m2_slave_sel,
 
 output m1_grant,
 output m2_grant,
+output arbiter_busy;
 
 input m1_clk, 
 input m1_rst,
@@ -76,6 +77,7 @@ wire [1:0] slave_sel;
 .m2_slave_sel(m2_slave_sel),
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
+.arbiter_busy(arbiter_busy),
 .bus_grant(bus_grant), 
 .slave_sel(slave_sel));
  

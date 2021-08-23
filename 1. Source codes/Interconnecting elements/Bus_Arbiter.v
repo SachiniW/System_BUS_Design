@@ -10,6 +10,7 @@ input m2_slave_sel,
 
 output reg m1_grant,
 output reg m2_grant,
+output reg arbiter_busy;
 output reg[1:0] bus_grant, //to mux
 output reg[1:0] slave_sel //to mux
 );
@@ -23,7 +24,6 @@ reg [1:0] rx_m1_slave;
 reg [1:0] rx_m2_slave;
 reg [1:0] clk_count;
 reg slave_sel_done;
-reg arbiter_busy;
 
 reg [1:0] slave_addr_state = 0;
 wire start = m1_request || m2_request;

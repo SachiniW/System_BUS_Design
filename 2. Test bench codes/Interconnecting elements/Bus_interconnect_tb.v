@@ -14,6 +14,7 @@ reg m2_slave = 0;
 
 wire m1_grant;
 wire m2_grant;
+wire arbiter_busy;
 
 
 wire s1_clk; 
@@ -51,6 +52,7 @@ Bus_interconnect UUT(
 
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
+.arbiter_busy(arbiter_busy),
 
 .m1_clk(m1_clk), 
 .m1_rst(m1_rst),
