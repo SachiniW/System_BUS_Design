@@ -12,7 +12,7 @@
  Revision : v1.0 
 */
 
-module master_out_port #(SLAVE_LEN=2, ADDR_LEN=12, DATA_LEN=8)(
+module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
 	input clk, 
 	input reset,
 	
@@ -112,7 +112,7 @@ begin
 			if (arbitor_busy==0 && approval_request==1)
 			begin
 				count <= count+1;
-				if (count >= SELECT_LEN-1)
+				if (count >= SLAVE_LEN-1)
 					state <=WAIT_APPROVAL;
 				else
 					state <=TRANSMIT_SELECT;
@@ -145,7 +145,7 @@ begin
 		
 		TRANSMIT_SELECT:
 		begin
-			if (count >= SELECT_LEN-1)
+			if (count >= SLAVE_LEN-1)
 			begin
 				count <= 0;
 				if (bus_busy==0)

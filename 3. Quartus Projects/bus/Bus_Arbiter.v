@@ -10,6 +10,7 @@ input m2_slave_sel,
 
 output reg m1_grant,
 output reg m2_grant,
+output reg arbiter_busy,
 output reg[1:0] bus_grant, //to mux
 output reg[1:0] slave_sel //to mux
 );
@@ -23,7 +24,6 @@ reg [1:0] rx_m1_slave;
 reg [1:0] rx_m2_slave;
 reg [1:0] clk_count;
 reg slave_sel_done;
-reg arbiter_busy;
 
 reg [1:0] slave_addr_state = 0;
 wire start = m1_request || m2_request;
@@ -47,31 +47,29 @@ begin
     begin
 		case (slave_addr_state)
 			idle:begin
-				if (start == 1 && arbiter_busy == 0)
+				if (start == 1 & arbiter_busy == 0)
 				begin
 					slave_addr_state <= addr1;
-               rx_m1_slave[1] <= m1_slave_sel;
-               rx_m2_slave[1] <= m2_slave_sel;
+                rx_m1_slave[1] <= m1_slave_sel;
+                rx_m2_slave[1] <= m2_slave_sel;
                slave_sel_done <= 1'b0;
 				end
 				else
-				begin`
 					slave_addr_state <= idle;
                slave_sel_done <= 1'b0;
-				end
-         end    
-			addr1:begin
-				slave_addr_state <= addr2;
-            rx_m1_slave[0] <= m1_slave_sel;
-            rx_m2_slave[0] <= m2_slave_sel;
-         end
-         addr2: begin
-				slave_addr_state <= idle;
-            slave_sel_done = 1'b1;
-         end
-         default: begin
-            slave_addr_state <= idle;
-         end  
+            end    
+	   addr1:begin
+		slave_addr_state <= addr2;
+                rx_m1_slave[0] <= m1_slave_sel;
+                rx_m2_slave[0] <= m2_slave_sel;
+            end
+            addr2: begin
+		slave_addr_state <= idle;
+                slave_sel_done = 1'b1;
+            end
+            default: begin
+                slave_addr_state <= idle;
+            end  
         endcase
     end
 end   
@@ -106,6 +104,7 @@ else
             else
             begin
                 arbiter_state <= IDLE_STATE ;
+					 arbiter_busy = 0;
             end
         end
     MASTER1_REQUEST_STATE :begin

@@ -13,12 +13,12 @@
  Revision : v1.0 
 */
 
-module master_port #(SLAVE_LEN=2, ADDR_LEN=12, DATA_LEN=8)(
+module master_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
 
 	input clk, 
 	input reset,
 	
-	input [1:0]instrucution,
+	input [1:0]instruction,
 	input [SLAVE_LEN-1:0]slave_select,
 	input [ADDR_LEN-1:0]address,
 	input [DATA_LEN-1:0]data_out,
@@ -55,14 +55,14 @@ wire read_en_OUT;
 
 assign read_en = read_en_IN || read_en_OUT;
 
-assign trans_done = (instruction==2'b10) ? tx_done : (instruction==2'b11) ? rx_done : 0 ;
+assign trans_done = (instruction==2'b10) ? tx_done : ((instruction==2'b11) ? rx_done : 0) ;
 
 master_in_port #(.DATA_LEN(DATA_LEN)) MASTER_IN_PORT(
 	.clk(clk), 
 	.reset(reset),
 	
 	.tx_done(tx_done),
-	.instrucution(instruction),
+	.instruction(instruction),
 	.data(data_in),
 	.rx_done(rx_done),
 	

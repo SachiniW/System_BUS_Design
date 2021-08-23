@@ -11,6 +11,7 @@ reg m2_slave = 0;
 
 wire m1_grant;
 wire m2_grant;
+wire arbiter_busy;
 wire [1:0] bus_grant; 
 wire [1:0] slave_sel; 
 
@@ -23,6 +24,7 @@ Bus_Arbiter UUT(
 .m2_slave_sel(m2_slave),
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
+.arbiter_busy(arbiter_busy),
 .bus_grant(bus_grant), 
 .slave_sel(slave_sel));
 

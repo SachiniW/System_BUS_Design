@@ -13,12 +13,12 @@
  Revision : v1.0 
 */
 
-module master_in_port #(DATA_LEN=8)(
+module master_in_port #(parameter DATA_LEN=8)(
 	input clk, 
 	input reset,
 	
 	input tx_done,
-	input [1:0]instrucution,
+	input [1:0]instruction,
 	output reg[DATA_LEN-1:0]data,
 	output reg rx_done,
 	
@@ -78,7 +78,7 @@ begin
 				count <= count + 1;
 				state <= RECEIVE_DATA;
 				data[count] <= rx_data;
-				data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
+				//data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
 				rx_done <= 0;
 				master_ready <= 0;
 				read_en <= 1;
@@ -101,7 +101,7 @@ begin
 			begin
 				count <= 0;
 				state <= IDLE;
-				data[count-1:0] <= data[count-1:0];
+				//data[count-1:0] <= data[count-1:0];
 				data[count] <= rx_data;
 				rx_done <= 1;
 				master_ready <= 0;
@@ -112,9 +112,9 @@ begin
 			begin
 				count <= count + 1;
 				state <= RECEIVE_DATA;
-				data[count-1:0] <= data[count-1:0];
+				//data[count-1:0] <= data[count-1:0];
 				data[count] <= rx_data;
-				data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
+				//data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
 				rx_done <= 0;
 				master_ready <= 0;
 				read_en <= 1;

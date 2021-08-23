@@ -11,18 +11,18 @@
  Revision : v1.0 
 */
 
-module button_event1 #(SLAVE_LEN=2, ADDR_LEN=12, DATA_LEN=8)(
+module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
 	input clk, 
 	input reset,
 	input button1,
 	input button2,
-	output busy,
+	output reg busy,
 	
 	input [DATA_LEN-1:0]data_in,
 	input rx_done,
 	input tx_done,
 	input trans_done,
-	output reg [1:0]instrucution,
+	output reg [1:0]instruction,
 	output reg [SLAVE_LEN-1:0]slave_select,
 	output reg [ADDR_LEN-1:0]address,
 	output reg [DATA_LEN-1:0]data_out);
@@ -38,7 +38,7 @@ begin
 	begin
 		state <= IDLE;
 		instruction <= 2'b00;
-		slave_select <= 0;
+		slave_select <= 1;
 		address <= 0;
 		data_out <= 0;
 		rx_val <= 0;
@@ -54,7 +54,7 @@ begin
 			begin
 				state <= BUTTON_EVENT_1;
 				instruction <= 2'b10;
-				slave_select <= 0;
+				slave_select <= 1;
 				address <= 898;
 				data_out <= 77;
 				rx_val <= rx_val;
@@ -64,7 +64,7 @@ begin
 			begin
 				state <= BUTTON_EVENT_2;
 				instruction <= 2'b11;
-				slave_select <= 0;
+				slave_select <= 1;
 				address <= 898;
 				data_out <= 85;
 				rx_val <= rx_val;

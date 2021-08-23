@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module master_module #(SLAVE_LEN=2, ADDR_LEN=12, DATA_LEN=8)(
+module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
 	input clk, 
 	input reset,
 	input button1,
@@ -48,9 +48,9 @@ wire tx_done;
 
 master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER_PORT(
 	.clk(clk), 
-	.reset,
+	.reset(reset),
 	
-	.instrucution(instrucution),
+	.instruction(instruction),
 	.slave_select(slave_select),
 	.address(address),
 	.data_out(data_out),
@@ -88,7 +88,7 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.rx_done(rx_done),
 	.tx_done(tx_done),
 	.trans_done(trans_done),
-	.instrucution(instrucution),
+	.instruction(instruction),
 	.slave_select(slave_select),
 	.address(address),
 	.data_out(data_out));

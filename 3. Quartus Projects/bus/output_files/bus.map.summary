@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Failed - Mon Aug 23 17:22:09 2021
+Analysis & Synthesis Status : Successful - Mon Aug 23 22:32:11 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : bus
-Top-level Entity Name : master_module
+Top-level Entity Name : top
 Family : Cyclone IV E
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
+Total logic elements : 442
+    Total combinational functions : 379
+    Dedicated logic registers : 265
+Total registers : 265
+Total pins : 5
+Total virtual pins : 0
+Total memory bits : 32,768
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
