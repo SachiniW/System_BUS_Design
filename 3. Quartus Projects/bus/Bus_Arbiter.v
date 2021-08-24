@@ -11,6 +11,7 @@ input m2_slave_sel,
 output reg m1_grant,
 output reg m2_grant,
 output reg arbiter_busy,
+
 output reg[1:0] bus_grant, //to mux
 output reg[1:0] slave_sel //to mux
 );
