@@ -4,23 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "slave_valid",
+					"name" : "busy",
 					"strict" : false
 				},
 				{
-					"name" : "slave_ready",
+					"name" : "button1",
 					"strict" : false
 				},
 				{
-					"name" : "slave_tx_done",
-					"strict" : false
-				},
-				{
-					"name" : "rx_done",
-					"strict" : false
-				},
-				{
-					"name" : "tx_data",
+					"name" : "button2",
 					"strict" : false
 				},
 				{
@@ -28,31 +20,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "read_en",
-					"strict" : false
-				},
-				{
-					"name" : "master_ready",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "master_valid",
-					"strict" : false
-				},
-				{
-					"name" : "write_en",
-					"strict" : false
-				},
-				{
-					"name" : "rx_data",
-					"strict" : false
-				},
-				{
-					"name" : "rx_address",
 					"strict" : false
 				},
 				{

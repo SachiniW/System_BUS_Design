@@ -1,5 +1,5 @@
 
-State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state
+State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_state
 Name data_state.DATA7 data_state.DATA6 data_state.DATA5 data_state.DATA4 data_state.DATA3 data_state.DATA2 data_state.DATA1 data_state.0000 data_state.DATA8 
 data_state.0000 0 0 0 0 0 0 0 0 0 
 data_state.DATA1 0 0 0 0 0 0 1 1 0 
@@ -11,7 +11,7 @@ data_state.DATA6 0 1 0 0 0 0 0 1 0
 data_state.DATA7 1 0 0 0 0 0 0 1 0 
 data_state.DATA8 0 0 0 0 0 0 0 1 1 
 
-State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
+State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
 Name data_state.DATA7 data_state.DATA6 data_state.DATA5 data_state.DATA4 data_state.DATA3 data_state.DATA2 data_state.DATA1 data_state.0000 data_state.DATA8 
 data_state.0000 0 0 0 0 0 0 0 0 0 
 data_state.DATA1 0 0 0 0 0 0 1 1 0 
@@ -23,7 +23,7 @@ data_state.DATA6 0 1 0 0 0 0 0 1 0
 data_state.DATA7 1 0 0 0 0 0 0 1 0 
 data_state.DATA8 0 0 0 0 0 0 0 1 1 
 
-State Machine - |slave_4k|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
+State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
 Name addr_state.ADDR12 addr_state.ADDR11 addr_state.ADDR10 addr_state.ADDR9 addr_state.ADDR8 addr_state.ADDR7 addr_state.ADDR6 addr_state.ADDR5 addr_state.ADDR4 addr_state.ADDR3 addr_state.ADDR2 addr_state.ADDR1 addr_state.0000 
 addr_state.0000 0 0 0 0 0 0 0 0 0 0 0 0 0 
 addr_state.ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -38,3 +38,39 @@ addr_state.ADDR9 0 0 0 1 0 0 0 0 0 0 0 0 1
 addr_state.ADDR10 0 0 1 0 0 0 0 0 0 0 0 0 1 
 addr_state.ADDR11 0 1 0 0 0 0 0 0 0 0 0 0 1 
 addr_state.ADDR12 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_state
+Name arbiter_state.IDLE_STATE arbiter_state.MASTER2_REQUEST_STATE arbiter_state.MASTER1_REQUEST_STATE 
+arbiter_state.IDLE_STATE 0 0 0 
+arbiter_state.MASTER1_REQUEST_STATE 1 0 1 
+arbiter_state.MASTER2_REQUEST_STATE 1 1 0 
+
+State Machine - |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_addr_state
+Name slave_addr_state.00 slave_addr_state.addr2 slave_addr_state.addr1 
+slave_addr_state.00 0 0 0 
+slave_addr_state.addr1 1 0 1 
+slave_addr_state.addr2 1 1 0 
+
+State Machine - |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|state
+Name state.00 state.BUTTON_EVENT_2 state.BUTTON_EVENT_1 
+state.00 0 0 0 
+state.BUTTON_EVENT_1 1 0 1 
+state.BUTTON_EVENT_2 1 1 0 
+
+State Machine - |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state
+Name state.TRANSMIT_ADDR state.TRANSMIT_DATA state.TRANSMIT_DATA_ADDR state.WAIT_HANDSHAKE state.WAIT_APPROVAL state.TRANSMIT_SELECT state.WAIT_ARBITOR state.0000 state.WAIT_BUS 
+state.0000 0 0 0 0 0 0 0 0 0 
+state.WAIT_ARBITOR 0 0 0 0 0 0 1 1 0 
+state.TRANSMIT_SELECT 0 0 0 0 0 1 0 1 0 
+state.WAIT_APPROVAL 0 0 0 0 1 0 0 1 0 
+state.WAIT_HANDSHAKE 0 0 0 1 0 0 0 1 0 
+state.TRANSMIT_DATA_ADDR 0 0 1 0 0 0 0 1 0 
+state.TRANSMIT_DATA 0 1 0 0 0 0 0 1 0 
+state.TRANSMIT_ADDR 1 0 0 0 0 0 0 1 0 
+state.WAIT_BUS 0 0 0 0 0 0 0 1 1 
+
+State Machine - |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state
+Name state.000 state.RECEIVE_DATA state.WAIT_HANDSHAKE 
+state.000 0 0 0 
+state.WAIT_HANDSHAKE 1 0 1 
+state.RECEIVE_DATA 1 1 0 

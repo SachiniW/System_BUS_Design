@@ -10,7 +10,7 @@ input m2_slave_sel,
 
 output m1_grant,
 output m2_grant,
-output arbiter_busy;
+output arbiter_busy,
 
 input m1_clk, 
 input m1_rst,
