@@ -52,10 +52,12 @@ Bus_interconnect UUT(
 .m2_request(m2_req),
 .m1_slave_sel(m1_slave),
 .m2_slave_sel(m2_slave),
+.trans_done(trans_done),
 
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
 .arbiter_busy(arbiter_busy),
+.bus_busy(bus_busy),
 
 .m1_clk(m1_clk), 
 .m1_rst(m1_rst),

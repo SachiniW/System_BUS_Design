@@ -90,8 +90,7 @@ wire s2_slave_valid;
 wire s3_slave_valid;
 
 
-
-assign bus_busy=0;
+//assign bus_busy=0;
 
 
 master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
@@ -102,11 +101,11 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.busy(busy),
 	
 	.arbitor_busy(arbiter_busy),
-	.bus_busy(bus_busy),  //include in bus
+	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
 	.approval_grant(m1_grant),
 	.approval_request(m1_request),
 	.tx_slave_select(m1_slave_sel),
-	.trans_done(trans_done), //include in bus
+	.trans_done(trans_done), //include in bus  ----> INCLUDED
 	
 	.rx_data(m1_rx_data),
 	.tx_address(m1_tx_address),
@@ -126,10 +125,12 @@ Bus_interconnect BUS(
 	.m2_request(m2_request),
 	.m1_slave_sel(m1_slave_sel),
 	.m2_slave_sel(m2_slave_sel),
+	.trans_done(trans_done),
 	
 	.m1_grant(m1_grant),
 	.m2_grant(m2_grant),
 	.arbiter_busy(arbiter_busy),
+	.bus_busy(bus_busy),
 	
 	.m1_clk(clk), 
 	.m1_rst(reset),

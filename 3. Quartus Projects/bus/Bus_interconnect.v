@@ -19,10 +19,12 @@ input m1_request,
 input m2_request,
 input m1_slave_sel,
 input m2_slave_sel,
+input trans_done,
 
 output m1_grant,
 output m2_grant,
 output arbiter_busy,
+output bus_busy,
 
 input m1_clk, 
 input m1_rst,
@@ -97,9 +99,11 @@ wire [1:0] slave_sel;
 .m2_request(m2_request),
 .m1_slave_sel(m1_slave_sel),
 .m2_slave_sel(m2_slave_sel),
+.trans_done(trans_done),
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
 .arbiter_busy(arbiter_busy),
+.bus_busy(bus_busy),
 .bus_grant(bus_grant), 
 .slave_sel(slave_sel));
  
