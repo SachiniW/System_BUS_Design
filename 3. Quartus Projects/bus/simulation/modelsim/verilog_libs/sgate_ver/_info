@@ -9,12 +9,12 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 vio_buf_opdrn
-Z0 !s110 1629356546
+Z0 !s110 1629980799
 !i10b 1
 !s100 VhizJG_UoJ<b<SS=?:bCT2
 I7o:4Lo1czaGalI]SLYkAM0
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
+Z2 dD:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 Z3 w1591419716
 Z4 8c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v
 Z5 Fc:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1629356546.000000
+Z7 !s108 1629980799.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|sgate_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v|
 !i113 1
@@ -114,7 +114,7 @@ R9
 R10
 R11
 voper_bus_mux
-Z12 !s110 1629356547
+R0
 !i10b 1
 !s100 <QAOZae4<L6l]N?[hZ6cV0
 Ij;QMThA[@Rlg:4kZQ2nCm0
@@ -135,7 +135,7 @@ R9
 R10
 R11
 voper_decoder
-R12
+R0
 !i10b 1
 !s100 WF@i7V0YS>liZCkHzI1]g2
 INg32oBmB==D`z5bBzO^YS0
@@ -177,7 +177,7 @@ R9
 R10
 R11
 voper_latch
-R12
+R0
 !i10b 1
 !s100 [26OEODU?jK0WVIPH6H@12
 I=JXIVXV>0di0?7V1>gYnM2
@@ -219,7 +219,7 @@ R9
 R10
 R11
 voper_less_than
-R12
+R0
 !i10b 1
 !s100 7]>dQPEcF[:0Yfl:?a`Sd0
 IM1RH`OFdN6nfa[9Ofg@lR1
@@ -282,7 +282,7 @@ R9
 R10
 R11
 voper_mux
-R12
+R0
 !i10b 1
 !s100 =OXiOUmAaVXl6FLDLY8Fg3
 In=<WG=T7UTI2kcDEo542j3
@@ -366,7 +366,7 @@ R9
 R10
 R11
 voper_selector
-R12
+R0
 !i10b 1
 !s100 7T8d]AYhJ_?U?SDL236<k2
 IC5KVO`hWTg]42jI4ciTaT3

@@ -10,14 +10,14 @@ cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 valtera_arriav_pll
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1629356549
+Z1 !s110 1629980801
 !i10b 1
 !s100 =P7CDUZSG9W8kBfd_h_CR2
 ISPGB@FIPhF:0bKfo:B_z71
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 !s105 altera_lnsim_sv_unit
 S1
-Z4 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
+Z4 dD:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 Z5 w1591397263
 Z6 8c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv
 Z7 Fc:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1629356548.000000
+Z9 !s108 1629980800.000000
 Z10 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|altera_lnsim_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv|
 !i113 1
@@ -82,7 +82,7 @@ R12
 R13
 Xaltera_generic_pll_functions
 R0
-Z14 !s110 1629356548
+Z14 !s110 1629980800
 !i10b 1
 !s100 mD8bbQ0]E6AUDh:Z`2gV<3
 Igc_hzSXK2=[:GZSQD@SHC0
@@ -201,7 +201,7 @@ R13
 n@a@l@t@e@r@a_@l@n@s@i@m_@m@e@m@o@r@y_@i@n@i@t@i@a@l@i@z@a@t@i@o@n
 valtera_mult_add
 R0
-R1
+R14
 !i10b 1
 !s100 lIPz3<GBAkW`2Hjd9La8F1
 IPj0eN:B`GQTXPUaI<Ol6Y3
@@ -706,7 +706,7 @@ R12
 R13
 vcommon_14nm_lutram_register
 R0
-R1
+R14
 !i10b 1
 !s100 TmcRfBb6^JZ1oEDiiEoiK2
 ICNJGPN@3;1<mmQOcoHZ0k1
@@ -730,7 +730,7 @@ R12
 R13
 vcommon_28nm_lutram_register
 R0
-R1
+R14
 !i10b 1
 !s100 _<]KKb15bdU7?PL_cBcZY2
 IHAcl>_KQl?JC`4G];2fzb2
@@ -924,7 +924,7 @@ R12
 R13
 vcommon_porta_registers
 R0
-R1
+R14
 !i10b 1
 !s100 ZkbW^G47F:JJ3?`CYB;`20
 ImHd;4U]mYePDPf6_3UE_@0
@@ -1169,7 +1169,7 @@ R13
 vgeneric_14nm_mlab_cell_impl
 R0
 R15
-R1
+R14
 !i10b 1
 !s100 eI?UE`Jl>SmE;NX[3`f0@0
 IEDGAJ`C[>9_iC7nGllmcQ3
@@ -1219,7 +1219,7 @@ R13
 vgeneric_28nm_lc_mlab_cell_impl
 R0
 R15
-R1
+R14
 !i10b 1
 !s100 C3bjQFoCn?Oh@>X6=g2lV2
 IFB@YRo=oU5FR2_:PPlaoG0
@@ -1269,7 +1269,7 @@ R13
 vgeneric_device_pll
 R0
 R15
-R1
+R14
 !i10b 1
 !s100 06J>giFG9c`3oMYg4g]d^1
 IIT_XMER@0>RYXCNOP7;5j1
@@ -1341,7 +1341,7 @@ R12
 R13
 vgeneric_mux
 R0
-R1
+R14
 !i10b 1
 !s100 Rz^hk`W19YKO26F>CN0YV0
 I0dihR;1f:Acm=K:bM@j=c3

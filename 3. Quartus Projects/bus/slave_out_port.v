@@ -42,42 +42,7 @@ DATA6 = 6,
 DATA7 = 7, 
 DATA8 = 8;
 
-// always @ (data_state) 
-// begin
-// 	case (data_state)
-// 	IDLE:
-// 	begin
-// 		data_idle = 1;
-// 		data_done = 0;
-// 	end
-// 	DATA1:
-// 	begin
-// 		tx_data = datain[0];
-// 		data_idle = 0;
-// 	end
-// 	DATA2:
-// 		tx_data = datain[1];
-// 	DATA3:
-// 		tx_data = datain[2];
-// 	DATA4:
-// 		tx_data = datain[3];
-// 	DATA5:
-// 		tx_data = datain[4];
-// 	DATA6:
-// 		tx_data = datain[5];
-// 	DATA7:
-// 		tx_data = datain[6];
-// 	DATA8:
-// 	begin
-// 		tx_data = datain[7];
-// 		data_done = 1;
-// 	end
-// 	default:
-// 		tx_data = datain[0];
-// 	endcase
-// end
-
-always @ (posedge clk or posedge reset) 
+always @ (posedge clk or posedge reset or posedge handshake) 
 begin
 	if (reset)
 		data_state <= IDLE;
@@ -86,60 +51,74 @@ begin
 		case (data_state)
 			IDLE:
 			begin
-				data_idle <= 1;
-				data_done <= 0;
 				if (handshake == 1)
+				begin
 					data_state <= DATA1;
+					data_idle <= 0;
+					data_done <= 0;
+				end
 				else
+				begin 
 					data_state <= IDLE;
+					data_idle <= 1;
+					data_done <= 0;
+				end
 			end
 			DATA1:
 			begin 
 				data_state <= DATA2;
 				tx_data <= datain[0];
 				data_idle <= 0;
+				data_done <= 0;
 			end 
 			DATA2:
 			begin 
 				data_state <= DATA3;
 				tx_data <= datain[1];
 				data_idle <= 0;
+				data_done <= 0;
 			end 
 			DATA3:
 			begin 
 				data_state <= DATA4;
 				tx_data <= datain[2];
 				data_idle <= 0;
+			    data_done <= 0;
 			end 
 			DATA4:
 			begin 
 				data_state <= DATA5;
 				tx_data <= datain[3];
 				data_idle <= 0;
+				data_done <= 0;
 			end 
 			DATA5:
 			begin 
 				data_state <= DATA6;
 				tx_data <= datain[4];
 				data_idle <= 0;
+				data_done <= 0;
 			end 
 			DATA6:
 			begin 
 				data_state <= DATA7;
 				tx_data <= datain[5];
 				data_idle <= 0;
+			    data_done <= 0;
 			end 
 			DATA7:
 			begin 
 				data_state <= DATA8;
 				tx_data <= datain[6];
 				data_idle <= 0;
+				data_done <= 0;
 			end 	
 			DATA8:
 			begin 
 				data_state <= IDLE;
 				tx_data <= datain[7];
 				data_idle <= 0;
+				data_done <= 1;
 			end 
 			default:
 				tx_data = datain[0];

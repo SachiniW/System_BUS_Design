@@ -9,12 +9,12 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 va_graycounter
-Z0 !s110 1629356548
+Z0 !s110 1629980800
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IC?X<0nLZ@W@[X_ZK?`3n60
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
+Z2 dD:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 Z3 w1591397353
 Z4 8c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v
 Z5 Fc:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1629356547.000000
+Z7 !s108 1629980799.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_mf_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z12 !s110 1629356547
+Z12 !s110 1629980799
 !i10b 1
 !s100 LWTeFO?a^6l3ea7?@d<9?0
 IEFR]79G0_Qza;MW8DYh7I1
@@ -642,7 +642,7 @@ R9
 R10
 R11
 valtpll
-R12
+R0
 !i10b 1
 !s100 [SX62M8C0J@z:hfdAbBD;3
 Ii8Y@e=jk:cA?nF=5a7P;g1
@@ -894,7 +894,7 @@ R9
 R10
 R11
 vcda_m_cntr
-R12
+R0
 !i10b 1
 !s100 :_<zBWUomnj5alzgCU8:]0
 I7KfQgKE6QAEzG@PMQe_DE1
@@ -915,7 +915,7 @@ R9
 R10
 R11
 vcda_n_cntr
-R12
+R0
 !i10b 1
 !s100 nV^XiEi5JIcj0HOIXaGc03
 IGjb^bOH1`d4lh5ODNGNHI0
@@ -936,7 +936,7 @@ R9
 R10
 R11
 vcda_scale_cntr
-R12
+R0
 !i10b 1
 !s100 4J1MoLY9=kLfU@38IMIjc2
 I?R?SK:QUB65M38C@Yc[`h1
@@ -957,7 +957,7 @@ R9
 R10
 R11
 vcycloneiiigl_post_divider
-R12
+R0
 !i10b 1
 !s100 @9Y`?FFYTN>9NX;gW1OfG1
 I0EE^[4HHAJAoYBN>]WJJn0
@@ -1251,7 +1251,7 @@ R9
 R10
 R11
 vMF_cycloneiii_pll
-R12
+R0
 !i10b 1
 !s100 i8Pz?4iB:f]]S6g?8liLj1
 Iem[`Bibl@M5AON=bYcH1W2
@@ -1273,7 +1273,7 @@ R10
 R11
 n@m@f_cycloneiii_pll
 vMF_cycloneiiigl_m_cntr
-R12
+R0
 !i10b 1
 !s100 ;Ham8kVCc_eoORKCnKBCm2
 ICFI53?SF8^c<6I@8OWSYK0
@@ -1295,7 +1295,7 @@ R10
 R11
 n@m@f_cycloneiiigl_m_cntr
 vMF_cycloneiiigl_n_cntr
-R12
+R0
 !i10b 1
 !s100 Y6P6>dF6[=ng@eP]XcCbT1
 IJR5NPFf9F4Y8<fCJ]890D0
@@ -1317,7 +1317,7 @@ R10
 R11
 n@m@f_cycloneiiigl_n_cntr
 vMF_cycloneiiigl_pll
-R12
+R0
 !i10b 1
 !s100 ?zF?YB::hdSOAl`J3dMKg0
 IP=?P3TITDkQZ<>OMklX]e2
@@ -1339,7 +1339,7 @@ R10
 R11
 n@m@f_cycloneiiigl_pll
 vMF_cycloneiiigl_scale_cntr
-R12
+R0
 !i10b 1
 !s100 F@V]ZGa7Ngd1a`457Y=:J3
 IMM>hB`eER6@8hgJ2XQ0bV2
@@ -1427,7 +1427,7 @@ R10
 R11
 n@m@f_stratixii_pll
 vMF_stratixiii_pll
-R12
+R0
 !i10b 1
 !s100 >>583Yjn4HPZb7`:4`;I@1
 I1mhMNzj?gmmze?=5bYST^3
