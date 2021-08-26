@@ -1,5 +1,5 @@
 Flow report for bus
-Thu Aug 26 17:56:01 2021
+Thu Aug 26 18:47:13 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Aug 26 17:56:01 2021       ;
+; Flow Status                        ; Successful - Thu Aug 26 18:47:13 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
-; Top-level Entity Name              ; slave_4k                                    ;
+; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 219                                         ;
-;     Total combinational functions  ; 188                                         ;
-;     Dedicated logic registers      ; 127                                         ;
-; Total registers                    ; 127                                         ;
-; Total pins                         ; 13                                          ;
+; Total logic elements               ; 401                                         ;
+;     Total combinational functions  ; 364                                         ;
+;     Dedicated logic registers      ; 235                                         ;
+; Total registers                    ; 235                                         ;
+; Total pins                         ; 5                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 32,768                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/26/2021 17:55:41 ;
+; Start date & time ; 08/26/2021 18:46:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bus                 ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 57715618760964.162998074107088         ; --            ; --          ; --                ;
+; COMPILER_SIGNATURE_ID                ; 57715618760964.162998381202624         ; --            ; --          ; --                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; slave_out_port_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; slave_4k_tb       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; slave_port_tb     ;
@@ -111,13 +111,13 @@ https://fpgasoftware.intel.com/eula.
 ; MISC_FILE                            ; BRAM.cmp                               ; --            ; --          ; --                ;
 ; MISC_FILE                            ; BRAM_syn.v                             ; --            ; --          ; --                ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; slave_4k    ; Top               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; slave_4k    ; Top               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; slave_4k    ; Top               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; top         ; Top               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; top         ; Top               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; top         ; Top               ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                ;
-; TOP_LEVEL_ENTITY                     ; slave_4k                               ; bus           ; --          ; --                ;
+; TOP_LEVEL_ENTITY                     ; top                                    ; bus           ; --          ; --                ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
 
 
@@ -126,8 +126,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4807 MB             ; 00:00:42                           ;
-; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:42                           ;
+; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4819 MB             ; 00:00:43                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:43                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

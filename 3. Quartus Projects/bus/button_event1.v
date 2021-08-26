@@ -55,7 +55,7 @@ begin
 				state <= BUTTON_EVENT_1;
 				instruction <= 2'b10;
 				slave_select <= 1;
-				address <= 898;
+				address <= 2;
 				data_out <= 77;
 				rx_val <= rx_val;
 				busy <= 1;
@@ -65,7 +65,7 @@ begin
 				state <= BUTTON_EVENT_2;
 				instruction <= 2'b11;
 				slave_select <= 1;
-				address <= 898;
+				address <=  1;
 				data_out <= 85;
 				rx_val <= rx_val;
 				busy <= 1; 

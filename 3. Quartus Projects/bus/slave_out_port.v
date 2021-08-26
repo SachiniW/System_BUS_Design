@@ -54,6 +54,7 @@ begin
 				if (handshake == 1)
 				begin
 					data_state <= DATA1;
+					// tx_data <= datain[0];
 					data_idle <= 0;
 					data_done <= 0;
 				end

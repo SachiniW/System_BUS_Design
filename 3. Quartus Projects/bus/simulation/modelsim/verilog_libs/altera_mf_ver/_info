@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 va_graycounter
-Z0 !s110 1629980800
+Z0 !s110 1629983936
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IC?X<0nLZ@W@[X_ZK?`3n60
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1629980799.000000
+Z7 !s108 1629983936.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_mf_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -219,7 +219,7 @@ R9
 R10
 R11
 valt_fault_injection
-R0
+Z12 !s110 1629983937
 !i10b 1
 !s100 VJoWGAl]MK3ig9;O`4bhb3
 ImUzTTk9R<T^@P4GOb<NzV0
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z12 !s110 1629980799
+R0
 !i10b 1
 !s100 LWTeFO?a^6l3ea7?@d<9?0
 IEFR]79G0_Qza;MW8DYh7I1
@@ -388,7 +388,7 @@ R10
 R11
 n@a@l@t@e@r@a_@d@e@v@i@c@e_@f@a@m@i@l@i@e@s
 vALTERA_MF_HINT_EVALUATION
-R12
+R0
 !i10b 1
 !s100 PH5i_RH6C@2cMRnc4>ae12
 I;YFY1UiU^idobbbl3kZ1o1
@@ -410,7 +410,7 @@ R10
 R11
 n@a@l@t@e@r@a_@m@f_@h@i@n@t_@e@v@a@l@u@a@t@i@o@n
 vALTERA_MF_MEMORY_INITIALIZATION
-R12
+R0
 !i10b 1
 !s100 nTma^h04MOBz8;HdmmAdW1
 IEh5@=aj<2odR8>Y`3RPN>0
@@ -621,7 +621,7 @@ R9
 R10
 R11
 valtparallel_flash_loader
-R0
+R12
 !i10b 1
 !s100 l5@8GIdLTLzmOe??91YXf3
 I;XbkK4I;GzMOJ;VnCikHO2
@@ -663,7 +663,7 @@ R9
 R10
 R11
 valtserial_flash_loader
-R0
+R12
 !i10b 1
 !s100 EaRF`7<5?]9dA?`LT<07V1
 IIGoOz>4Q[?hTb9F0RTf2:3
@@ -705,7 +705,7 @@ R9
 R10
 R11
 valtsource_probe
-R0
+R12
 !i10b 1
 !s100 KQ?M2Jc4^@;XBJRANEANe0
 Ii_LD]gVznGN;bWaYkZMhB2
@@ -768,7 +768,7 @@ R9
 R10
 R11
 valtstratixii_oct
-R0
+R12
 !i10b 1
 !s100 ignJe:gQMC?XzbB?A<V^a0
 IH1zWDK:0?Pd]fn<Z0:SoK1
@@ -831,7 +831,7 @@ R9
 R10
 R11
 varm_m_cntr
-R12
+R0
 !i10b 1
 !s100 aE>Dk`dHV;WL1F5DL`IJe0
 IONckX_KLoEF=g@8F6YYUZ3
@@ -852,7 +852,7 @@ R9
 R10
 R11
 varm_n_cntr
-R12
+R0
 !i10b 1
 !s100 XVOhjdU?l`B?8Uf;M45`N2
 ID@KM`B9C<QfNbm`j2fhZL3
@@ -873,7 +873,7 @@ R9
 R10
 R11
 varm_scale_cntr
-R12
+R0
 !i10b 1
 !s100 j]gN?cGBNo4nUKi^cZIh[0
 Io<YdKAzWCN7<gNoc3Ba`l1
@@ -1125,7 +1125,7 @@ R9
 R10
 R11
 vdffp
-R12
+R0
 !i10b 1
 !s100 SnNjJNaU3KC[OThjodVFi2
 IBh1JK241KQO<UGbCgAG<l0
@@ -1146,7 +1146,7 @@ R9
 R10
 R11
 vdummy_hub
-R0
+R12
 !i10b 1
 !s100 i8_deI@ZM`MghmlNU7?Vi2
 I^83a0KgEVA;NNd;5kFzGF2
@@ -1230,7 +1230,7 @@ R9
 R10
 R11
 vlcell
-R12
+R0
 !i10b 1
 !s100 5QGV:R[KdXJ5TR1bkQiUU0
 I@jndPG3?<:dF`Wib[@GTi2
@@ -1361,7 +1361,7 @@ R10
 R11
 n@m@f_cycloneiiigl_scale_cntr
 vMF_pll_reg
-R12
+R0
 !i10b 1
 !s100 0HDLA_Ae606hC35WQ6^7]2
 IQaiQHd<bVIh;<E1ZQ]1>61
@@ -1383,7 +1383,7 @@ R10
 R11
 n@m@f_pll_reg
 vMF_stratix_pll
-R12
+R0
 !i10b 1
 !s100 kITDCAAk7nE?EU[@=@9Oo1
 I2GzeSbB3mYTD<<O<>8T0:2
@@ -1405,7 +1405,7 @@ R10
 R11
 n@m@f_stratix_pll
 vMF_stratixii_pll
-R12
+R0
 !i10b 1
 !s100 m<j8S?b80d7m:cRfTMSCR0
 IabGb:W;haGAB><QZ_je]W2
@@ -1470,7 +1470,7 @@ R9
 R10
 R11
 vpll_iobuf
-R12
+R0
 !i10b 1
 !s100 Y>n^z1AP@XWBOng[;X`=B1
 IkO<mG:@FK2K2a1[`L9`391
@@ -1533,7 +1533,7 @@ R9
 R10
 R11
 vsld_signaltap
-R0
+R12
 !i10b 1
 !s100 ;bNfnE=JkH5`M:Gei65gh3
 Icg16TWkO04zbTb?]k4>Y?0
@@ -1554,7 +1554,7 @@ R9
 R10
 R11
 vsld_virtual_jtag
-R0
+R12
 !i10b 1
 !s100 =dP0:]MZD42oAG]526k0F0
 IYFdGee7PA@4T=98ULYe1J1
@@ -1575,7 +1575,7 @@ R9
 R10
 R11
 vsld_virtual_jtag_basic
-R0
+R12
 !i10b 1
 !s100 4=QY<mcj^X^`A]];EEmFH3
 I=nH7DPdan8<kFHoO<V_5V3
@@ -1785,7 +1785,7 @@ R9
 R10
 R11
 vstx_m_cntr
-R12
+R0
 !i10b 1
 !s100 ?>o7Q<XCBPSD4HoGd5:>A0
 IWI09XhjUf]Y=jc@EHk7ie1
@@ -1806,7 +1806,7 @@ R9
 R10
 R11
 vstx_n_cntr
-R12
+R0
 !i10b 1
 !s100 ?P@b:4DafJ_^m9ka]DFD53
 IL^S8RkCdalIIBA9J4m1NX2
@@ -1827,7 +1827,7 @@ R9
 R10
 R11
 vstx_scale_cntr
-R12
+R0
 !i10b 1
 !s100 a@[2eTC]]LIFm0QFl5WUj2
 IKG^k@B=OXEn8DQ<Si:SX;3
@@ -1848,7 +1848,7 @@ R9
 R10
 R11
 vttn_m_cntr
-R12
+R0
 !i10b 1
 !s100 ;3NK]8TY<L]eQ[IJY0gF32
 I:e=Ol]F:c3hJdml?Va8Ld3
@@ -1869,7 +1869,7 @@ R9
 R10
 R11
 vttn_n_cntr
-R12
+R0
 !i10b 1
 !s100 7nCN0ZiXcEmbIBT5Y>_4a1
 INfQRFXghmIiXRanPIJm_C0
@@ -1890,7 +1890,7 @@ R9
 R10
 R11
 vttn_scale_cntr
-R12
+R0
 !i10b 1
 !s100 _jZZ0@3D`H8_VG516F<O_0
 Ib9lb1dJ_XWUQRmQfN9ch?3

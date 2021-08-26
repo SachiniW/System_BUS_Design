@@ -79,28 +79,20 @@ slave_out_port SLAVE_OUT_PORT(
 	.tx_data(tx_data));
 	
 
+always @ (posedge read_en) 		 read_en_in1 <= 1;
+always @ (posedge write_en)      write_en_in1 <= 1;
+always @ (negedge rx_done)      
+always @ (posedge slave_tx_done) slave_valid <= 0;
+begin
+	read_en_in1 <= 0;
+	write_en_in1 <= 0;
+end  
+
 always @ (posedge clk)
 begin
-
 	//Driving the data valid signal at slave
 	if ((read_en_in1 == 1) & (rx_done == 1)) 
-		slave_valid <= 1;
-	else if((slave_tx_done == 1) & (slave_valid == 1))
-		slave_valid <= 0;
-	
-	//Driving and latching the read_en signal
-	if (read_en == 1)
-		read_en_in1 <= 1;
-	if ((rx_done==1) & (read_en_in1 == 1))
-		read_en_in1 <= 0;
-	
-
-	//Driving and latching the write_en signal
-	if (write_en == 1)
-		write_en_in1 <= 1;
-	if ((rx_done==1) & (write_en_in1 == 1))
-		write_en_in1 <= 0;
-		
+		slave_valid <= 1;		
 end
 	
 endmodule

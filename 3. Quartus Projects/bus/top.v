@@ -165,7 +165,7 @@ Bus_interconnect BUS(
 	.s1_tx_data(s1_tx_data),
 	.s1_write_en(s1_write_en),
 	.s1_read_en(s1_read_en),
-	.s1_slave_valid(s1_slave_ready),
+	.s1_slave_valid(s1_slave_valid),
 	.s1_slave_ready(s1_slave_ready),
 	
 	.s2_clk(s2_clk), 
