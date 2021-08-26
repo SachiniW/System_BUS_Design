@@ -1,0 +1,110 @@
+/* 
+ file name : slave_out_port.v
+
+ Description:
+	This file contains the output port of the slave port.
+	It is responsible for sending the requested data back 
+	to master.
+
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
+
+module slave_out_port (
+	input clk, 
+	input reset,
+	input master_ready,
+	input [7:0]datain,
+	input slave_valid,
+	output slave_ready,
+	output slave_tx_done,
+	output reg tx_data);
+
+reg [3:0]data_state = 0;
+reg data_idle;
+reg data_done;
+wire handshake = slave_valid & master_ready;
+
+assign slave_ready = data_idle;
+assign slave_tx_done = data_done;
+
+parameter 
+IDLE  = 0,
+DATA1 = 1, 
+DATA2 = 2, 
+DATA3 = 3, 
+DATA4 = 4,
+DATA5 = 5, 
+DATA6 = 6, 
+DATA7 = 7, 
+DATA8 = 8;
+
+always @ (data_state) 
+begin
+	case (data_state)
+	IDLE:
+	begin
+		data_idle = 1;
+		data_done = 0;
+	end
+	DATA1:
+	begin
+		tx_data = datain[0];
+		data_idle = 0;
+	end
+	DATA2:
+		tx_data = datain[1];
+	DATA3:
+		tx_data = datain[2];
+	DATA4:
+		tx_data = datain[3];
+	DATA5:
+		tx_data = datain[4];
+	DATA6:
+		tx_data = datain[5];
+	DATA7:
+		tx_data = datain[6];
+	DATA8:
+	begin
+		tx_data = datain[7];
+		data_done = 1;
+	end
+	default:
+		tx_data = datain[0];
+	endcase
+end
+
+always @ (posedge clk or posedge reset) 
+begin
+	if (reset)
+		data_state <= IDLE;
+	else
+		case (data_state)
+			IDLE:
+				if (handshake == 1)
+					data_state <= DATA1;
+				else
+					data_state <= IDLE;
+			DATA1:
+				data_state <= DATA2;
+			DATA2:
+				data_state <= DATA3;
+			DATA3:
+				data_state <= DATA4;
+			DATA4:
+				data_state <= DATA5;
+			DATA5:
+				data_state <= DATA6;
+			DATA6:
+				data_state <= DATA7;
+			DATA7:
+				data_state <= DATA8;	
+			DATA8:
+				data_state <= IDLE;
+		endcase
+end
+
+endmodule

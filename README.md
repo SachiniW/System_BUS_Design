@@ -20,13 +20,13 @@ A point to point multiplexed serial bus design.
 
 # 2. Slave Top View
 
-![Slave Top View](https://github.com/SachiniW/System_BUS_Design/blob/main/Images/Slave_top_view.png)
+![Slave Top View](https://github.com/SachiniW/System_BUS_Design/blob/main/4.%20Images/Slave_top_view.png)
 
 # 3. Slave Data Read Operation
 
-![Read](https://github.com/SachiniW/System_BUS_Design/blob/main/Images/Slave_read.png)
+![Read](https://github.com/SachiniW/System_BUS_Design/blob/main/4.%20Images/Slave_read.png)
 
 
 # 4. Slave Data Write Operation
 
-![Write](https://github.com/SachiniW/System_BUS_Design/blob/main/Images/Slave_write.png)
+![Write](https://github.com/SachiniW/System_BUS_Design/blob/main/4.%20Images/Slave_write.png)
