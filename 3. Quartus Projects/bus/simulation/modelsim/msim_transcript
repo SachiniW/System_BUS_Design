@@ -658,3 +658,8 @@ run
 run
 run
 run
+add wave -position insertpoint  \
+sim:/slave_4k_tb/UUT/SLAVE_PORT/SLAVE_OUT_PORT/data_state
+restart -f
+run
+run
