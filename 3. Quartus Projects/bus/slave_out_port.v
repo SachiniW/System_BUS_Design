@@ -54,13 +54,14 @@ begin
 				if (handshake == 1)
 				begin
 					data_state <= DATA1;
-					// tx_data <= datain[0];
+					tx_data <= datain[0];
 					data_idle <= 0;
 					data_done <= 0;
 				end
 				else
 				begin 
 					data_state <= IDLE;
+					tx_data <= 0;
 					data_idle <= 1;
 					data_done <= 0;
 				end
@@ -68,61 +69,61 @@ begin
 			DATA1:
 			begin 
 				data_state <= DATA2;
-				tx_data <= datain[0];
+				tx_data <= datain[1];
 				data_idle <= 0;
 				data_done <= 0;
 			end 
 			DATA2:
 			begin 
 				data_state <= DATA3;
-				tx_data <= datain[1];
+				tx_data <= datain[2];
 				data_idle <= 0;
 				data_done <= 0;
 			end 
 			DATA3:
 			begin 
 				data_state <= DATA4;
-				tx_data <= datain[2];
+				tx_data <= datain[3];
 				data_idle <= 0;
 			    data_done <= 0;
 			end 
 			DATA4:
 			begin 
 				data_state <= DATA5;
-				tx_data <= datain[3];
+				tx_data <= datain[4];
 				data_idle <= 0;
 				data_done <= 0;
 			end 
 			DATA5:
 			begin 
 				data_state <= DATA6;
-				tx_data <= datain[4];
+				tx_data <= datain[5];
 				data_idle <= 0;
 				data_done <= 0;
 			end 
 			DATA6:
 			begin 
 				data_state <= DATA7;
-				tx_data <= datain[5];
+				tx_data <= datain[6];
 				data_idle <= 0;
 			    data_done <= 0;
 			end 
 			DATA7:
 			begin 
-				data_state <= DATA8;
-				tx_data <= datain[6];
-				data_idle <= 0;
-				data_done <= 0;
-			end 	
-			DATA8:
-			begin 
 				data_state <= IDLE;
 				tx_data <= datain[7];
 				data_idle <= 0;
 				data_done <= 1;
-			end 
+			end 	
+			// DATA8:
+			// begin 
+			// 	data_state <= IDLE;
+			// 	tx_data <= datain[7];
+			// 	data_idle <= 0;
+			// 	data_done <= 1;
+			// end 
 			default:
-				tx_data = datain[0];
+				tx_data <= 0;
 		endcase
 	end
 end

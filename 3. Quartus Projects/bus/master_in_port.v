@@ -75,9 +75,9 @@ begin
 		begin
 			if (slave_valid == 1 && master_ready == 1)
 			begin
-				// count <= count + 1;
+				count <= count + 1;
 				state <= RECEIVE_DATA;
-				// data[count] <= rx_data;
+				data[count] <= rx_data;
 				//data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
 				rx_done <= 0;
 				master_ready <= 0;

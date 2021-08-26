@@ -46,7 +46,7 @@ module slave_port(
 wire slave_ready_IN;
 wire slave_ready_OUT;
 
-reg temp2 = 0;
+reg temp = 0;
 reg temp3 = 0;
 reg read_en_in1 = 0;
 reg write_en_in1 = 0;
@@ -79,20 +79,60 @@ slave_out_port SLAVE_OUT_PORT(
 	.tx_data(tx_data));
 	
 
-always @ (posedge read_en) 		 read_en_in1 <= 1;
-always @ (posedge write_en)      write_en_in1 <= 1;
-always @ (negedge rx_done)      
-always @ (posedge slave_tx_done) slave_valid <= 0;
-begin
-	read_en_in1 <= 0;
-	write_en_in1 <= 0;
-end  
+// always @ (posedge read_en) 		 read_en_in1 <= 1;
+// always @ (posedge write_en)      write_en_in1 <= 1;
+// always @ (negedge rx_done) 
+// begin
+// 	read_en_in1 <= 0;
+// 	write_en_in1 <= 0;
+// end       
+// always @ (posedge slave_tx_done) 
+// begin
+// 	slave_valid <= 0;
+// 	temp <= 0;
+// end
+
+
+
+// always @ (posedge clk)
+// begin
+// 	//Driving the data valid signal at slave
+// 	if ((read_en_in1 == 1) & (rx_done == 1)) 
+// 		temp <= 1;	
+// 	else
+// 		slave_valid <= temp;	
+// end
+
 
 always @ (posedge clk)
 begin
+
 	//Driving the data valid signal at slave
 	if ((read_en_in1 == 1) & (rx_done == 1)) 
-		slave_valid <= 1;		
+		temp <= 1;
+	else if((slave_tx_done == 1) & (slave_valid == 1))
+	begin
+		slave_valid <= 0;
+		temp <= 0;
+	end
+	else
+		slave_valid <= temp;
+	
+	//Driving and latching the read_en signal
+	if (read_en == 1)
+		read_en_in1 <= 1;
+	if ((rx_done==1) & (read_en_in1 == 1))
+		read_en_in1 <= 0;
+	
+
+	//Driving and latching the write_en signal
+	if (write_en == 1)
+		write_en_in1 <= 1;
+	if ((rx_done==1) & (write_en_in1 == 1))
+		write_en_in1 <= 0;
+		
 end
+	
+	
 	
 endmodule
