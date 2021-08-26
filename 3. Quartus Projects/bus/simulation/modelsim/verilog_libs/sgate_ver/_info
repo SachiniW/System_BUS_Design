@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 vio_buf_opdrn
-Z0 !s110 1629983935
+Z0 !s110 1630000297
 !i10b 1
 !s100 VhizJG_UoJ<b<SS=?:bCT2
 I7o:4Lo1czaGalI]SLYkAM0
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1629983935.000000
+Z7 !s108 1630000296.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|sgate_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v|
 !i113 1
@@ -72,7 +72,7 @@ R9
 R10
 R11
 voper_add
-R0
+Z12 !s110 1630000296
 !i10b 1
 !s100 F]260k47e_6ji=Hl0aMn90
 IO7ofVWKFkU^j8nURkmXhc1
@@ -93,7 +93,7 @@ R9
 R10
 R11
 voper_addsub
-R0
+R12
 !i10b 1
 !s100 PzGM7DT:m1:V^R;Wk6A9U0
 I=m0eSn7McMoXL7P@Clk8J2
