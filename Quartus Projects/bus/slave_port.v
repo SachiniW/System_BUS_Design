@@ -46,8 +46,6 @@ module slave_port(
 wire slave_ready_IN;
 wire slave_ready_OUT;
 
-reg temp2 = 0;
-reg temp3 = 0;
 reg read_en_in1 = 0;
 reg write_en_in1 = 0;
 
