@@ -160,21 +160,28 @@ else
                 arbiter_state <= MASTER2_REQUEST_STATE ;
             end
         end
-		  
     BUS_BUSY_STATE :begin
             if (trans_done == 1'b1)            
             begin
                 arbiter_state <= IDLE_STATE;
-					 bus_busy = 0;
-					 m1_grant = 0;
+				bus_busy = 0;
+			    m1_grant = 0;
                 m2_grant = 0;
             end
+            // else if (slave_split_en == 1'b1)
+			// begin
+            //     arbiter_state <= SPLIT_TRANSACTION_STATE;
+			//     previous_grant <= bus_grant;
+			// 	previous_slave_select <= slave_sel;
+			// 	bus_busy = 0;
+			// end
             else
             begin
                 arbiter_state <= BUS_BUSY_STATE ;
 					 bus_busy = 1;
             end
         end
+
         default : begin
             arbiter_state <= IDLE_STATE ;
             m1_grant = 0;
