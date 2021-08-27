@@ -12,6 +12,32 @@ slave_addr_state.00 0 0 0
 slave_addr_state.addr1 1 0 1 
 slave_addr_state.addr2 1 1 0 
 
+State Machine - |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|state
+Name state.00 state.BUTTON_EVENT_2 state.BUTTON_EVENT_1 
+state.00 0 0 0 
+state.BUTTON_EVENT_1 1 0 1 
+state.BUTTON_EVENT_2 1 1 0 
+
+State Machine - |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state
+Name state.READ_WAIT state.FINISH state.WAIT_BUS state.TRANSMIT_ADDR state.TRANSMIT_DATA state.TRANSMIT_DATA_ADDR state.WAIT_HANDSHAKE state.WAIT_APPROVAL state.TRANSMIT_SELECT state.WAIT_ARBITOR state.0000 
+state.0000 0 0 0 0 0 0 0 0 0 0 0 
+state.WAIT_ARBITOR 0 0 0 0 0 0 0 0 0 1 1 
+state.TRANSMIT_SELECT 0 0 0 0 0 0 0 0 1 0 1 
+state.WAIT_APPROVAL 0 0 0 0 0 0 0 1 0 0 1 
+state.WAIT_HANDSHAKE 0 0 0 0 0 0 1 0 0 0 1 
+state.TRANSMIT_DATA_ADDR 0 0 0 0 0 1 0 0 0 0 1 
+state.TRANSMIT_DATA 0 0 0 0 1 0 0 0 0 0 1 
+state.TRANSMIT_ADDR 0 0 0 1 0 0 0 0 0 0 1 
+state.WAIT_BUS 0 0 1 0 0 0 0 0 0 0 1 
+state.FINISH 0 1 0 0 0 0 0 0 0 0 1 
+state.READ_WAIT 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state
+Name state.000 state.RECEIVE_DATA state.WAIT_HANDSHAKE 
+state.000 0 0 0 
+state.WAIT_HANDSHAKE 1 0 1 
+state.RECEIVE_DATA 1 1 0 
+
 State Machine - |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|state
 Name state.00 state.BUTTON_EVENT_2 state.BUTTON_EVENT_1 
 state.00 0 0 0 

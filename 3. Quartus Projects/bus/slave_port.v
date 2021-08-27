@@ -30,8 +30,8 @@ module slave_port(
 	input rx_address,
 	input rx_data,
 
-	output slave_tx_done,
-	output rx_done,
+	// output slave_tx_done,
+	// output rx_done,
 	output tx_data,
 
 
@@ -45,6 +45,8 @@ module slave_port(
 	
 wire slave_ready_IN;
 wire slave_ready_OUT;
+wire rx_done;
+wire slave_tx_done;
 
 reg temp = 0;
 reg temp3 = 0;

@@ -4,15 +4,19 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "busy",
+					"name" : "m1_busy",
 					"strict" : false
 				},
 				{
-					"name" : "button1",
+					"name" : "m2_busy",
 					"strict" : false
 				},
 				{
-					"name" : "button2",
+					"name" : "m1_button1",
+					"strict" : false
+				},
+				{
+					"name" : "m1_button2",
 					"strict" : false
 				},
 				{
@@ -21,6 +25,14 @@
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "m2_button1",
+					"strict" : false
+				},
+				{
+					"name" : "m2_button2",
 					"strict" : false
 				},
 				{
