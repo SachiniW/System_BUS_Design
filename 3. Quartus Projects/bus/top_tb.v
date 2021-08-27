@@ -25,6 +25,8 @@ initial begin
 	reset <= 1'b0;
 	m1_button1 <= 1'b1;
 	m1_button2 <= 1'b1;
+	m2_button1 <= 1'b1;
+	m2_button2 <= 1'b1;
 	
 	#CLK_PERIOD
 	
@@ -38,24 +40,20 @@ initial begin
 	#CLK_PERIOD
 	m1_button2 <= 1'b1;
 	
+
 	#(40*CLK_PERIOD)
 
 
-	m2_button1 <= 1'b1;
-	m2_button2 <= 1'b1;
-	
-	#CLK_PERIOD
-	
 	m2_button1 <= 1'b0;
 	#CLK_PERIOD
 	m2_button1 <= 1'b1;
 	
-	#(20*CLK_PERIOD)
+    #(20*CLK_PERIOD)
 	
 	m2_button2 <= 1'b0;
 	#CLK_PERIOD
 	m2_button2 <= 1'b1;
-
+	
 	#(40*CLK_PERIOD)
 	
 //	i_dram_read <= 1'b1;

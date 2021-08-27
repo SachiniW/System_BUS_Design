@@ -1,5 +1,5 @@
 Flow report for bus
-Fri Aug 27 10:28:08 2021
+Fri Aug 27 23:17:13 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Aug 27 10:28:08 2021       ;
+; Flow Status                        ; Successful - Fri Aug 27 23:17:13 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 692                                         ;
-;     Total combinational functions  ; 644                                         ;
+; Total logic elements               ; 705                                         ;
+;     Total combinational functions  ; 657                                         ;
 ;     Dedicated logic registers      ; 385                                         ;
 ; Total registers                    ; 385                                         ;
 ; Total pins                         ; 8                                           ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/27/2021 10:27:38 ;
+; Start date & time ; 08/27/2021 23:16:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bus                 ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 57715618760964.163004025803968         ; --            ; --          ; --                ;
+; COMPILER_SIGNATURE_ID                ; 57715618760964.163008640201224         ; --            ; --          ; --                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; slave_out_port_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; slave_4k_tb       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; slave_port_tb     ;
@@ -126,7 +126,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:29     ; 1.0                     ; 4826 MB             ; 00:01:08                           ;
+; Analysis & Synthesis ; 00:00:29     ; 1.0                     ; 4827 MB             ; 00:01:08                           ;
 ; Total                ; 00:00:29     ; --                      ; --                  ; 00:01:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 

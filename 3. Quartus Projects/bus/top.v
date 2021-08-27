@@ -97,6 +97,9 @@ wire s3_slave_valid;
 
 //assign bus_busy=0;
 
+//testing split
+wire split_en;
+
 
 master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.clk(clk), 
@@ -212,7 +215,7 @@ Bus_interconnect BUS(
 	
 	.s3_clk(s3_clk), 
 	.s3_rst(s3_rst),
-	.s3_master_valid(s3_valid),
+	.s3_master_valid(s3_master_valid),
 	.s3_master_ready(s3_master_ready),
 	.s3_rx_address(s3_rx_address),
 	.s3_rx_data(s3_rx_data),
@@ -237,7 +240,8 @@ slave_4k SLAVE_4K(
 
 	.rx_address(s1_rx_address),
 	.rx_data(s1_rx_data),
-	.tx_data(s1_tx_data));
+	.tx_data(s1_tx_data),
+	.split_en(split_en));
 
 slave_4k SLAVE_2K1(
 	.clk(clk), 
@@ -254,7 +258,8 @@ slave_4k SLAVE_2K1(
 
 	.rx_address(s2_rx_address),
 	.rx_data(s2_rx_data),				
-	.tx_data(s2_tx_data));
+	.tx_data(s2_tx_data),
+	.split_en(split_en));
 
 slave_4k SLAVE_2K2(
 	.clk(clk), 
@@ -271,6 +276,7 @@ slave_4k SLAVE_2K2(
 
 	.rx_address(s3_rx_address),
 	.rx_data(s3_rx_data),					
-	.tx_data(s3_tx_data));
+	.tx_data(s3_tx_data),
+	.split_en(split_en));
 
 endmodule
