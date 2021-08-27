@@ -29,7 +29,8 @@ module slave_4k(
 
 	// output slave_tx_done,
 	// output rx_done,
-	output tx_data);
+	output tx_data,
+	output split_en);
 	
 	
 wire [7:0]datain;
@@ -55,7 +56,8 @@ wire [7:0]data;
 	.address(address),
 	.data(data),
 	.read_en_in(read_en_in),
-	.write_en_in(write_en_in));
+	.write_en_in(write_en_in),
+	.split_en(split_en));
 	
 	BRAM BRAM(
 	.aclr(reset),
