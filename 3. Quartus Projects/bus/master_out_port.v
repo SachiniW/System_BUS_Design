@@ -110,15 +110,15 @@ begin
 		
 		WAIT_ARBITOR:
 		begin
-			if (arbitor_busy==0 && approval_request==1)
+			if (arbitor_busy==0 && approval_request==1 && bus_busy == 0)
 			begin
 				if (count >= SLAVE_LEN-1)
 				begin
 					count<=0;
-					if (bus_busy==0)
-						state <=WAIT_APPROVAL;
-					else	
-						state <=WAIT_BUS;
+					//if (bus_busy==0)
+					state <= WAIT_APPROVAL;
+					//else	
+					//	state <=WAIT_BUS;
 				end
 				else
 				begin
