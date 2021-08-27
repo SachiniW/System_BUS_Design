@@ -54,9 +54,9 @@ reg read_en_in1 = 0;
 reg write_en_in1 = 0;
 
 assign slave_ready = slave_ready_IN & slave_ready_OUT;
-// assign read_en_in = rx_done & read_en_in1;
+assign read_en_in = rx_done & read_en_in1;
 assign write_en_in = rx_done & write_en_in1;
-assign read_en_in = rx_done & read_en;
+// assign read_en_in = rx_done & read_en;
 // assign write_en_in = rx_done & write_en;
 	
 slave_in_port SLAVE_IN_PORT(
@@ -112,8 +112,8 @@ always @ (posedge clk)
 begin
 
 	//Driving the data valid signal at slave
-	// if ((read_en_in1 == 1) & (rx_done == 1)) 
-	if ((read_en == 1) & (rx_done == 1)) 
+	if ((read_en_in1 == 1) & (rx_done == 1)) 
+	// if ((read_en == 1) & (rx_done == 1)) 
 		temp <= 1;
 	else if((slave_tx_done == 1) & (slave_valid == 1))
 	begin
@@ -124,10 +124,10 @@ begin
 		slave_valid <= temp;
 	
 	//Driving and latching the read_en signal
-	// if (read_en == 1)
-	// 	read_en_in1 <= 1;
-	// if (((rx_done==1) & (read_en_in1 == 1)) | (slave_valid == 1))
-	// 	read_en_in1 <= 0;
+	if (read_en == 1)
+		read_en_in1 <= 1;
+	if (((rx_done==1) & (read_en_in1 == 1)) | (slave_valid == 1))
+		read_en_in1 <= 0;
 	
 
 	//Driving and latching the write_en signal
