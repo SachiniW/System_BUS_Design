@@ -18,6 +18,8 @@ module slave_port(
 	input clk, 
 	input reset,
 
+	input [5:0]slave_delay,
+
 	input read_en,
 	input write_en,
 
@@ -41,7 +43,7 @@ module slave_port(
 	
 	output read_en_in,
 	output write_en_in,
-	output reg split_en);
+	output reg split_en = 0);
 	
 	
 wire slave_ready_IN;
@@ -49,8 +51,8 @@ wire slave_ready_OUT;
 wire rx_done;
 wire slave_tx_done;
 
-reg temp = 0;
-reg temp3 = 0;
+// reg temp = 0;
+// reg temp3 = 0;
 reg [3:0]counterReg = 0; 
 reg read_en_in1 = 0;
 reg write_en_in1 = 0;
@@ -121,35 +123,42 @@ begin
 	case (state)
 		NORMAL:
 		begin
-			if ((read_en_in1 == 1) & (rx_done == 1))  
+			if ((read_en_in1 == 1) & (rx_done == 1) & (slave_delay < 5)) 
 			begin
-				counterReg <= 0;
-				slave_valid <= 0;
-				split_en <= 1;
+				counterReg <= 4'b0;
+				slave_valid <= 1'b0;
 				state <= SPLIT;
+				split_en <= 1'b0;
+			end
+			else if ((read_en_in1 == 1) & (rx_done == 1) & (~(slave_delay < 5)))
+			begin
+				counterReg <= 4'b0;
+				slave_valid <= 1'b0;
+				state <= SPLIT;
+				split_en <= 1'b1;
 			end
 			else
 			begin
-				counterReg <= 0;
-				slave_valid <= 0;
-				split_en <= 0;
+				counterReg <= 4'b0;
+				slave_valid <= 1'b0;
+				split_en <= 1'b0;
 				state <= NORMAL;
 			end
 		end 
 		SPLIT:
 		begin
-			if (counterReg < 0)
+			if (counterReg < slave_delay)
 			begin
-				counterReg <= counterReg + 1;
-				slave_valid <= 0;
-				split_en <= 1;
+				counterReg <= counterReg + 4'b1;
+				slave_valid <= 1'b0;
+				split_en = 1'b1;
 				state <= SPLIT;
 			end
 			else
 			begin
-				counterReg <= 0;
-				slave_valid <= 1;
-				split_en <= 0;
+				counterReg <= 4'b0;
+				slave_valid <= 1'b1;
+				split_en <= 1'b0;
 				state <= VALID;
 			end
 		end
@@ -157,16 +166,16 @@ begin
 		begin
 			if((slave_tx_done == 1) & (slave_valid == 1))
 			begin
-				counterReg <= 0;
-				slave_valid <= 0;
-				split_en <= 0;
+				counterReg <= 4'b0;
+				slave_valid <= 1'b0;
+				split_en <= 1'b0;
 				state <= NORMAL;
 			end
 			else
 			begin
-				counterReg <= 0;
-				slave_valid <= 1;
-				split_en <= 0;
+				counterReg <= 4'b0;
+				slave_valid <= 1'b1;
+				split_en <= 1'b0;
 				state <= VALID;
 			end
 

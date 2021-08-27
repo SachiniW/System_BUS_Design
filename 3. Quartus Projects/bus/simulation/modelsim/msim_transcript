@@ -14,7 +14,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:22 on Aug 27,2021
+# Start time: 01:36:37 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
@@ -96,7 +96,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 23:17:23 on Aug 27,2021, Elapsed time: 0:00:01
+# End time: 01:36:37 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -107,7 +107,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work lpm_ver {c:/intelfpga_lite/20.1/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:24 on Aug 27,2021
+# Start time: 01:36:38 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/intelfpga_lite/20.1/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
@@ -171,7 +171,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 23:17:24 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:38 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -182,7 +182,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work sgate_ver {c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:24 on Aug 27,2021
+# Start time: 01:36:38 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
@@ -224,7 +224,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 23:17:24 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:38 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -235,7 +235,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_mf_ver {c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:25 on Aug 27,2021
+# Start time: 01:36:38 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -365,7 +365,7 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 23:17:27 on Aug 27,2021, Elapsed time: 0:00:02
+# End time: 01:36:39 on Aug 28,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_lnsim_ver
@@ -376,7 +376,7 @@
 # Modifying modelsim.ini
 # vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:27 on Aug 27,2021
+# Start time: 01:36:39 on Aug 28,2021
 # vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
@@ -459,7 +459,7 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 23:17:28 on Aug 27,2021, Elapsed time: 0:00:01
+# End time: 01:36:40 on Aug 28,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cycloneive_ver
@@ -470,7 +470,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cycloneive_ver {c:/intelfpga_lite/20.1/quartus/eda/sim_lib/cycloneive_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:28 on Aug 27,2021
+# Start time: 01:36:40 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work cycloneive_ver c:/intelfpga_lite/20.1/quartus/eda/sim_lib/cycloneive_atoms.v 
 # -- Compiling UDP CYCLONEIVE_PRIM_DFFE
 # -- Compiling UDP CYCLONEIVE_PRIM_DFFEAS
@@ -548,7 +548,7 @@
 # 	cycloneive_jtag
 # 	cycloneive_crcblock
 # 	cycloneive_oscillator
-# End time: 23:17:29 on Aug 27,2021, Elapsed time: 0:00:01
+# End time: 01:36:41 on Aug 28,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -562,159 +562,159 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:29 on Aug 27,2021
+# Start time: 01:36:41 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v 
 # -- Compiling module master_port
 # 
 # Top level modules:
 # 	master_port
-# End time: 23:17:29 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:41 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:29 on Aug 27,2021
+# Start time: 01:36:41 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v 
 # -- Compiling module master_out_port
 # 
 # Top level modules:
 # 	master_out_port
-# End time: 23:17:29 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:41 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:41 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module.v 
 # -- Compiling module master_module
 # 
 # Top level modules:
 # 	master_module
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:41 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:41 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v 
 # -- Compiling module master_in_port
 # 
 # Top level modules:
 # 	master_in_port
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:41 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v 
 # -- Compiling module Bus_mux
 # 
 # Top level modules:
 # 	Bus_mux
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v 
 # -- Compiling module Bus_interconnect
 # 
 # Top level modules:
 # 	Bus_interconnect
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v 
 # -- Compiling module Bus_Arbiter
 # 
 # Top level modules:
 # 	Bus_Arbiter
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v 
 # -- Compiling module slave_4k
 # 
 # Top level modules:
 # 	slave_4k
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v 
 # -- Compiling module slave_out_port
 # 
 # Top level modules:
 # 	slave_out_port
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v 
 # -- Compiling module slave_in_port
 # 
 # Top level modules:
 # 	slave_in_port
-# End time: 23:17:30 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:30 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
 # -- Compiling module slave_port
 # 
 # Top level modules:
 # 	slave_port
-# End time: 23:17:31 on Aug 27,2021, Elapsed time: 0:00:01
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:31 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v 
 # -- Compiling module BRAM
 # 
 # Top level modules:
 # 	BRAM
-# End time: 23:17:31 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/button_event1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:31 on Aug 27,2021
+# Start time: 01:36:42 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/button_event1.v 
 # -- Compiling module button_event1
 # 
 # Top level modules:
 # 	button_event1
-# End time: 23:17:31 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:42 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:31 on Aug 27,2021
+# Start time: 01:36:43 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 23:17:31 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:43 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+D:/ADS_BUS/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:31 on Aug 27,2021
+# Start time: 01:36:43 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v 
 # -- Compiling module top_tb
 # 
 # Top level modules:
 # 	top_tb
-# End time: 23:17:31 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:36:43 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  top_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" top_tb 
-# Start time: 23:17:31 on Aug 27,2021
+# Start time: 01:36:43 on Aug 28,2021
 # Loading work.top_tb
 # Loading work.top
 # Loading work.master_module
@@ -738,9 +738,9 @@
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: sthir  Hostname: LAPTOP-14NKNLC1  ProcessID: 8308
-#           Attempting to use alternate WLF file "./wlftdyyy5m".
+#           Attempting to use alternate WLF file "./wlft3r65kn".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdyyy5m
+#           Using alternate file: ./wlft3r65kn
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -751,6 +751,15 @@
 # 1
 # Break in Module top_tb at D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v line 224
 add wave -position insertpoint sim:/top_tb/DUT/BUS/*
+add wave -position insertpoint  \
+sim:/top_tb/DUT/SLAVE_4K/split_en
+add wave -position insertpoint  \
+sim:/top_tb/DUT/SLAVE_4K/SLAVE_PORT/state
+run
+run
+run
+run
+run
 restart -f
 run
 run
@@ -760,61 +769,6 @@ run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# ** Note: $finish    : D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v(224)
-#    Time: 2530 ns  Iteration: 0  Instance: /top_tb
-# 1
-# Break in Module top_tb at D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v line 224
-add wave -position insertpoint  \
-sim:/top_tb/DUT/SLAVE_4K/SLAVE_PORT/SLAVE_OUT_PORT/slave_valid \
-sim:/top_tb/DUT/SLAVE_4K/SLAVE_PORT/SLAVE_OUT_PORT/slave_tx_done \
-sim:/top_tb/DUT/SLAVE_4K/SLAVE_PORT/SLAVE_OUT_PORT/data_state
-add wave -position insertpoint  \
-sim:/top_tb/DUT/SLAVE_4K/BRAM/rden \
-sim:/top_tb/DUT/SLAVE_4K/BRAM/q
-add wave -position insertpoint  \
-sim:/top_tb/DUT/MASTER1/MASTER_PORT/MASTER_IN_PORT/data
-restart -f
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/top_tb/DUT/SLAVE_4K/SLAVE_PORT/SLAVE_IN_PORT/addr_state
-restart -f
-run
-run
-run
-mem load -filltype value -filldata 11011001 -fillradix symbolic /top_tb/DUT/SLAVE_4K/BRAM/altsyncram_component/m_default/altsyncram_inst/mem_data(1)
 run
 run
 run
@@ -825,13 +779,13 @@ run
 run
 vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:26:04 on Aug 27,2021
+# Start time: 01:40:11 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
 # -- Compiling module slave_port
 # 
 # Top level modules:
 # 	slave_port
-# End time: 23:26:04 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:40:11 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 restart -f
 # Loading work.slave_port
@@ -846,16 +800,38 @@ run
 run
 run
 run
+run
+run
+run
+run
+vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:41:54 on Aug 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
+# -- Compiling module slave_port
+# 
+# Top level modules:
+# 	slave_port
+# End time: 01:41:54 on Aug 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 restart -f
-restart -f
+# Loading work.slave_port
 run
 run
 run
 run
-restart -f
 run
 run
-mem load -filltype value -filldata 11000011 -fillradix symbolic /top_tb/DUT/SLAVE_4K/BRAM/altsyncram_component/m_default/altsyncram_inst/mem_data(1)
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run
 run
@@ -866,19 +842,18 @@ run
 run
 vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:29:34 on Aug 27,2021
+# Start time: 01:45:58 on Aug 28,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
 # -- Compiling module slave_port
 # 
 # Top level modules:
 # 	slave_port
-# End time: 23:29:34 on Aug 27,2021, Elapsed time: 0:00:00
+# End time: 01:45:58 on Aug 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 restart -f
 # Loading work.slave_port
 run
 run
-mem load -filltype value -filldata 11000110 -fillradix symbolic /top_tb/DUT/SLAVE_4K/BRAM/altsyncram_component/m_default/altsyncram_inst/mem_data(1)
 run
 run
 run
@@ -893,19 +868,18 @@ run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
+vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:47:45 on Aug 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
+# -- Compiling module slave_port
+# 
+# Top level modules:
+# 	slave_port
+# End time: 01:47:45 on Aug 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 restart -f
-run
-run
-mem load -filltype value -filldata 11011011 -fillradix symbolic /top_tb/DUT/SLAVE_4K/BRAM/altsyncram_component/m_default/altsyncram_inst/mem_data(1)
-run
+# Loading work.slave_port
 run
 run
 run
@@ -913,11 +887,6 @@ run
 run
 run
 run
-run
-run
-run
-run
-mem load -filltype value -filldata 11000011 -fillradix symbolic /top_tb/DUT/SLAVE_4K/BRAM/altsyncram_component/m_default/altsyncram_inst/mem_data(1)
 run
 run
 run
@@ -930,7 +899,7 @@ run
 run
 run
 add wave -position insertpoint  \
-sim:/top_tb/DUT/MASTER2/MASTER_PORT/MASTER_IN_PORT/data
+sim:/top_tb/DUT/SLAVE_4K/SLAVE_PORT/split_en
 restart -f
 run
 run
@@ -943,6 +912,70 @@ run
 run
 run
 run
+vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:49:51 on Aug 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
+# -- Compiling module slave_port
+# 
+# Top level modules:
+# 	slave_port
+# End time: 01:49:51 on Aug 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.slave_port
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:50:57 on Aug 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v 
+# -- Compiling module slave_port
+# 
+# Top level modules:
+# 	slave_port
+# End time: 01:50:57 on Aug 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.slave_port
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:51:27 on Aug 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 01:51:27 on Aug 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.top
 run
 run
 run
@@ -958,7 +991,16 @@ run
 run
 run
 run
-# ** Note: $finish    : D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v(224)
-#    Time: 2530 ns  Iteration: 0  Instance: /top_tb
-# 1
-# Break in Module top_tb at D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v line 224
+run
+run
+run
+vlog -vlog01compat -work work {+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus} {D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:01:50 on Aug 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus" D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 02:01:50 on Aug 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
