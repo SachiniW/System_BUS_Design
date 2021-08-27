@@ -1,17 +1,20 @@
 `timescale 1 ns / 1 ps
 module top_tb();
 
-reg clk, reset, button1, button2;
-wire busy; 
+reg clk, reset, m1_button1, m1_button2, m2_button1, m2_button2;
+wire m1_busy,m2_busy; 
 
 parameter CLK_PERIOD=20;
 
 top DUT (
 	.clk(clk), 
 	.reset(reset), 
-	.button1(button1),
-	.button2(button2),
-	.busy(busy));
+	.m1_button1(m1_button1),
+	.m1_button2(m1_button2),
+	.m2_button1(m2_button1),
+	.m2_button2(m2_button2),
+	.m1_busy(m1_busy),
+	.m2_busy(m2_busy));
 						
 always
 		#(CLK_PERIOD/2) clk = ~clk; 
@@ -20,21 +23,39 @@ initial begin
 
 	clk <= 1'b0;
 	reset <= 1'b0;
-	button1 <= 1'b1;
-	button2 <= 1'b1;
+	m1_button1 <= 1'b1;
+	m1_button2 <= 1'b1;
 	
 	#CLK_PERIOD
 	
-	button1 <= 1'b0;
+	m1_button1 <= 1'b0;
 	#CLK_PERIOD
-	button1 <= 1'b1;
+	m1_button1 <= 1'b1;
 	
 	#(20*CLK_PERIOD)
 	
-	button2 <= 1'b0;
+	m1_button2 <= 1'b0;
 	#CLK_PERIOD
-	button2 <= 1'b1;
+	m1_button2 <= 1'b1;
 	
+	#(40*CLK_PERIOD)
+
+
+	m2_button1 <= 1'b1;
+	m2_button2 <= 1'b1;
+	
+	#CLK_PERIOD
+	
+	m2_button1 <= 1'b0;
+	#CLK_PERIOD
+	m2_button1 <= 1'b1;
+	
+	#(20*CLK_PERIOD)
+	
+	m2_button2 <= 1'b0;
+	#CLK_PERIOD
+	m2_button2 <= 1'b1;
+
 	#(40*CLK_PERIOD)
 	
 //	i_dram_read <= 1'b1;

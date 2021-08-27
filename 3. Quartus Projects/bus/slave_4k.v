@@ -27,8 +27,8 @@ module slave_4k(
 	input rx_address,
 	input rx_data,
 
-	output slave_tx_done,
-	output rx_done,
+	// output slave_tx_done,
+	// output rx_done,
 	output tx_data);
 	
 	
@@ -48,8 +48,8 @@ wire [7:0]data;
 	.slave_ready(slave_ready),
 	.rx_address(rx_address),
 	.rx_data(rx_data),
-	.slave_tx_done(slave_tx_done),
-	.rx_done(rx_done),
+	// .slave_tx_done(slave_tx_done),
+	// .rx_done(rx_done),
 	.tx_data(tx_data),
 	.datain(datain),
 	.address(address),

@@ -9,12 +9,12 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 valt_bidir_buf
-Z0 !s110 1629356545
+Z0 !s110 1630040319
 !i10b 1
 !s100 `k9N_NNE[omlCfHHm=PO53
 IHGd`aUaPlCfzg=cK;zT9@3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
+Z2 dD:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 Z3 w1591397269
 Z4 8c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v
 Z5 Fc:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1629356545.000000
+Z7 !s108 1630040319.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v|
 !i113 1
@@ -618,7 +618,7 @@ R9
 R10
 R11
 UPRIM_GDFF_HIGH
-Z12 !s110 1629356546
+Z12 !s110 1630040320
 !i10b 1
 !s100 SScBZ?gdYFgRTOVYmj^Jh2
 IPz7D5UKZ8]JM8aW2RhBYn3
@@ -684,7 +684,7 @@ R10
 R11
 n@p@r@i@m_@g@d@f@f_@l@o@w
 UPRIM_GDFF_LOW_SCLR_PRIORITY
-R0
+R12
 !i10b 1
 !s100 `gUo^mjm:1ILUg``]kfOO1
 I_lPedYA0Z<S8:nY_lF7IK3

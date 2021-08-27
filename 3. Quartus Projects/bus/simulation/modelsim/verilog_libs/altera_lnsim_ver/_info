@@ -10,14 +10,14 @@ cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 valtera_arriav_pll
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1629356549
+Z1 !s110 1630040324
 !i10b 1
 !s100 =P7CDUZSG9W8kBfd_h_CR2
 ISPGB@FIPhF:0bKfo:B_z71
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 !s105 altera_lnsim_sv_unit
 S1
-Z4 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
+Z4 dD:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 Z5 w1591397263
 Z6 8c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv
 Z7 Fc:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1629356548.000000
+Z9 !s108 1630040323.000000
 Z10 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|altera_lnsim_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv|
 !i113 1
@@ -82,7 +82,7 @@ R12
 R13
 Xaltera_generic_pll_functions
 R0
-Z14 !s110 1629356548
+Z14 !s110 1630040323
 !i10b 1
 !s100 mD8bbQ0]E6AUDh:Z`2gV<3
 Igc_hzSXK2=[:GZSQD@SHC0
@@ -924,7 +924,7 @@ R12
 R13
 vcommon_porta_registers
 R0
-R1
+R14
 !i10b 1
 !s100 ZkbW^G47F:JJ3?`CYB;`20
 ImHd;4U]mYePDPf6_3UE_@0
@@ -1219,7 +1219,7 @@ R13
 vgeneric_28nm_lc_mlab_cell_impl
 R0
 R15
-R1
+R14
 !i10b 1
 !s100 C3bjQFoCn?Oh@>X6=g2lV2
 IFB@YRo=oU5FR2_:PPlaoG0

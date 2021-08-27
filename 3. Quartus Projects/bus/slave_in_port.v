@@ -57,88 +57,91 @@ ADDR10 = 10,
 ADDR11 = 11,
 ADDR12 = 12;
 
-always @ (addr_state) 
-begin
-	case (addr_state)
-	IDLE:
-	begin
-		addr_idle = 1;
-		addr_done = 0;
-	end
-	ADDR1:
-	begin
-		address[0] = rx_address;
-		addr_idle = 0;
-	end
-	ADDR2:
-		address[1] = rx_address;
-	ADDR3:
-		address[2] = rx_address;
-	ADDR4:
-		address[3] = rx_address;
-	ADDR5:
-		address[4] = rx_address;
-	ADDR6:
-		address[5] = rx_address;
-	ADDR7:
-		address[6] = rx_address;
-	ADDR8:
-		address[7] = rx_address;
-	ADDR9:
-		address[8] = rx_address;
-	ADDR10:
-		address[9] = rx_address;
-	ADDR11:
-		address[10] = rx_address;
-	ADDR12:
-	begin
-		address[11] = rx_address;
-		addr_done = 1;
-	end
-	default:
-		address[0] = rx_address;
-	endcase
-end
-
-always @ (posedge clk or posedge reset) 
+always @ (posedge clk or posedge reset or posedge handshake) 
 begin
 	if (reset)
 		addr_state <= IDLE;
 	else
+	begin
 		case (addr_state)
 			IDLE:
+			begin
 				if (handshake == 1)
 				begin
 					addr_state <= ADDR1;
+					addr_idle <= 0;
 				end
 				else
 					addr_state <= IDLE;
+					addr_idle <= 1;
+					addr_done <= 0;
+			end
 			ADDR1:
+			begin
 				addr_state <= ADDR2;
+				address[0] <= rx_address;
+				addr_idle <= 0;
+			end
 			ADDR2:
+			begin
 				addr_state <= ADDR3;
+				address[1] <= rx_address;
+			end
 			ADDR3:
+			begin
 				addr_state <= ADDR4;
+				address[2] <= rx_address;
+			end
 			ADDR4:
+			begin
 				addr_state <= ADDR5;
+				address[3] <= rx_address;
+			end
 			ADDR5:
+			begin
 				addr_state <= ADDR6;
+				address[4] <= rx_address;
+			end
 			ADDR6:
+			begin 
 				addr_state <= ADDR7;
+				address[5] <= rx_address;
+			end
 			ADDR7:
+			begin 
 				addr_state <= ADDR8;
+				address[6] <= rx_address;
+			end 
 			ADDR8:
+			begin 
 				addr_state <= ADDR9;
+				address[7] <= rx_address;
+			end
 			ADDR9:
+			begin
 				addr_state <= ADDR10;
+				address[8] <= rx_address;
+			end
 			ADDR10:
+			begin 
 				addr_state <= ADDR11;
+				address[9] <= rx_address;
+			end 
 			ADDR11:
+			begin
 				addr_state <= ADDR12;
+				address[10] <= rx_address;
+			end
 			ADDR12:
+			begin
 				addr_state <= IDLE;
-				
+				address[11] <= rx_address;
+				addr_done = 1;
+			end
+			default:
+				address[0] <= rx_address;	
 		endcase
+	end 
 end
 
 
@@ -154,70 +157,76 @@ DATA6 = 6,
 DATA7 = 7, 
 DATA8 = 8;
 
-always @ (data_state) 
-begin
-	case (data_state)
-	IDLE:
-	begin
-		data_idle = 1;
-		data_done = 0;
-	end
-	DATA1:
-	begin
-		data[0] = rx_data;
-		data_idle = 0;
-	end
-	DATA2:
-		data[1] = rx_data;
-	DATA3:
-		data[2] = rx_data;
-	DATA4:
-		data[3] = rx_data;
-	DATA5:
-		data[4] = rx_data;
-	DATA6:
-		data[5] = rx_data;
-	DATA7:
-		data[6] = rx_data;
-	DATA8:
-	begin
-		data[7] = rx_data;
-		data_done = 1;
-	end
-	default:
-		data[0] = rx_data;
-	endcase
-end
-
-always @ (posedge clk or posedge reset) 
+always @ (posedge clk or posedge reset or posedge handshake) 
 begin
 	if (reset)
 		data_state <= IDLE;
 	else
+	begin
 		case (data_state)
 			IDLE:
+			begin
 				if (handshake == 1)
 				begin
 					data_state <= DATA1;
+					data_idle <= 0;
 				end
 				else
 					data_state <= IDLE;
+					data_idle <= 1;
+					data_done <= 0;
+			end
 			DATA1:
+			begin
 				data_state <= DATA2;
+				data[0] <= rx_data;
+				data_idle <= 0;
+			end
 			DATA2:
+			begin
 				data_state <= DATA3;
+				data[1] <= rx_data;
+				data_idle <= 0;
+			end
 			DATA3:
+			begin
 				data_state <= DATA4;
+				data[2] <= rx_data;
+				data_idle <= 0;
+			end
 			DATA4:
+			begin
 				data_state <= DATA5;
+				data[3] <= rx_data;
+				data_idle <= 0;
+			end
 			DATA5:
+			begin
 				data_state <= DATA6;
+				data[4] <= rx_data;
+				data_idle <= 0;
+			end
 			DATA6:
+			begin
 				data_state <= DATA7;
+				data[5] <= rx_data;
+				data_idle <= 0;
+			end
 			DATA7:
-				data_state <= DATA8;	
+			begin
+				data_state <= DATA8;
+				data[6] <= rx_data;
+				data_idle <= 0;
+			end	
 			DATA8:
+			begin
 				data_state <= IDLE;
+				data[7] <= rx_data;
+				data_idle <= 0;
+			end
+			default:
+				data[0] = rx_data;
 		endcase
+	end
 end
 endmodule

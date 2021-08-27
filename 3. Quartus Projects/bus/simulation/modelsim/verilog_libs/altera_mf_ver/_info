@@ -9,12 +9,12 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 va_graycounter
-Z0 !s110 1629356548
+Z0 !s110 1630040323
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IC?X<0nLZ@W@[X_ZK?`3n60
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dD:/ADS_BUS/System_BUS_Design/Quartus Projects/bus/simulation/modelsim
+Z2 dD:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 Z3 w1591397353
 Z4 8c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v
 Z5 Fc:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1629356547.000000
+Z7 !s108 1630040322.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_mf_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z12 !s110 1629356547
+Z12 !s110 1630040322
 !i10b 1
 !s100 LWTeFO?a^6l3ea7?@d<9?0
 IEFR]79G0_Qza;MW8DYh7I1
@@ -537,7 +537,7 @@ R9
 R10
 R11
 valtlvds_rx
-R0
+R12
 !i10b 1
 !s100 gb9XVzURj:[>Z`zA6Q=b@1
 I4;V1261Mial]PHUJbOHX82
@@ -1167,7 +1167,7 @@ R9
 R10
 R11
 vflexible_lvds_rx
-R0
+R12
 !i10b 1
 !s100 W9z8MEh:V@SWRS`?S3m8z0
 I5eJZj1[AcM??;zh@gzgWh0
@@ -1596,7 +1596,7 @@ R9
 R10
 R11
 vstratix_lvds_rx
-R0
+R12
 !i10b 1
 !s100 UTKR]VdDeZT>LbSY;S:H_1
 IV`W@5BT>LX;J4USjKlBBm2
@@ -1638,7 +1638,7 @@ R9
 R10
 R11
 vstratixgx_dpa_lvds_rx
-R0
+R12
 !i10b 1
 !s100 _X]M>KzVkG7lUE9h]U`5`2
 I`mgkD48h?>NVY3?lj2P^Q0
@@ -1659,7 +1659,7 @@ R9
 R10
 R11
 vstratixii_lvds_rx
-R0
+R12
 !i10b 1
 !s100 knHlz:fg3PUY;ldPQU=DZ2
 IJTZI^3L1hA>MdSE@AB^FB2
@@ -1701,7 +1701,7 @@ R9
 R10
 R11
 vstratixiii_lvds_rx
-R0
+R12
 !i10b 1
 !s100 40^Sl2;KWo@`CV8djg@0E0
 I3i@DmBMJ=@YN]Ejh?Xe7U0
@@ -1722,7 +1722,7 @@ R9
 R10
 R11
 vstratixiii_lvds_rx_channel
-R0
+R12
 !i10b 1
 !s100 nZ15@anWcG^ZUo9aDeUok0
 I4f_8^E621j:h[m_LiD^N42
@@ -1743,7 +1743,7 @@ R9
 R10
 R11
 vstratixiii_lvds_rx_dpa
-R0
+R12
 !i10b 1
 !s100 UYlQ7Hb1fEX5K=N[1TOTO1
 In6l807;g]F1Tfg^Q2;`0l1
