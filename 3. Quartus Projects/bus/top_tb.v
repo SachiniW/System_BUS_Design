@@ -40,6 +40,7 @@ initial begin
 	
 	#(40*CLK_PERIOD)
 
+
 	m2_button1 <= 1'b1;
 	m2_button2 <= 1'b1;
 	
@@ -54,6 +55,8 @@ initial begin
 	m2_button2 <= 1'b0;
 	#CLK_PERIOD
 	m2_button2 <= 1'b1;
+
+	#(40*CLK_PERIOD)
 	
 //	i_dram_read <= 1'b1;
 //	i_dram_addr <= 16'b0000000000100100;
