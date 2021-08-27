@@ -77,7 +77,9 @@ wire s3_slave_ready;
 
 // master
 wire bus_busy;
-wire trans_done;
+wire m1_trans_done;
+wire m2_trans_done;
+wire trans_done = m1_trans_done || m2_trans_done;
 
 //new master to slave connections
 wire m1_master_ready;
@@ -133,7 +135,7 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER2(
 	.approval_grant(m2_grant),
 	.approval_request(m2_request),
 	.tx_slave_select(m2_slave_sel),
-	.trans_done(trans_done), //include in bus  ----> INCLUDED
+	.trans_done(m2_trans_done), //include in bus  ----> INCLUDED
 	
 	.rx_data(m2_rx_data),
 	.tx_address(m2_tx_address),
@@ -153,7 +155,7 @@ Bus_interconnect BUS(
 	.m2_request(m2_request),
 	.m1_slave_sel(m1_slave_sel),
 	.m2_slave_sel(m2_slave_sel),
-	.trans_done(m1_trans_done),
+	.trans_done(trans_done),
 	
 	.m1_grant(m1_grant),
 	.m2_grant(m2_grant),
