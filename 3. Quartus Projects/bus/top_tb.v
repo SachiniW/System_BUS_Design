@@ -38,34 +38,35 @@ initial begin
 	//m2_button2 <= 1'b1;
 	
 	#(10*CLK_PERIOD)
-	
-	button1_val <= 0;
-	#(10*CLK_PERIOD)
-	button1_val <= 1;
-	
-	#(200*CLK_PERIOD)
-	
+
 	button1_sel <= 1;
 	button1_val <= 0;
 	#(10*CLK_PERIOD)
 	button1_val <= 1;
 	
 
-	#(400*CLK_PERIOD)
-
-
+	//#(400*CLK_PERIOD)
+	
 	button2_val <= 0;
 	#(10*CLK_PERIOD)
 	button2_val <= 1;
 	
-	#(200*CLK_PERIOD)
+	#(16000*CLK_PERIOD)
 	
-	button2_sel <= 1;
-	button2_val <= 0;
-	#(10*CLK_PERIOD)
-	button2_val <= 1;
+
+
+	// button2_val <= 0;
+	// #(10*CLK_PERIOD)
+	// button2_val <= 1;
 	
-	#(400*CLK_PERIOD)
+	// #(200*CLK_PERIOD)
+	
+	// button2_sel <= 1;
+	// button2_val <= 0;
+	// #(10*CLK_PERIOD)
+	// button2_val <= 1;
+	
+	// #(400*CLK_PERIOD)
 	
 //	i_dram_read <= 1'b1;
 //	i_dram_addr <= 16'b0000000000100100;
