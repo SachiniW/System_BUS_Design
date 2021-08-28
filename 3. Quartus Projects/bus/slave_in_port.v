@@ -21,10 +21,12 @@ module slave_in_port (
 	input master_valid,
 	input read_en,
 	input write_en,
+	output [3:0]temp_state, ///temp
+	output temp_signal,  ////temp
 	output slave_ready,
 	output rx_done,
-	output reg[11:0]address = 12'b0,
-	output reg[7:0]data = 8'b0);
+	output reg[11:0]address,
+	output reg[7:0]data);
 	
 
 reg [3:0]addr_state = 0;
@@ -38,6 +40,9 @@ assign slave_ready = data_idle & addr_idle;
 assign rx_done = addr_done;
 
 wire handshake = master_valid & slave_ready;
+
+assign temp_state = data_state; ///temp
+assign temp_signal = handshake; ///temp
 
 
 // Statemachine to capture the 12 bit address
@@ -77,10 +82,10 @@ begin
 					addr_done <= 0;
 			end
 			ADDR1:
-			begin;
+			begin
+				addr_state <= ADDR2;
 				address[0] <= rx_address;
 				addr_idle <= 0;
-				addr_state <= ADDR2;
 			end
 			ADDR2:
 			begin
@@ -139,7 +144,10 @@ begin
 				addr_done = 1;
 			end
 			default:
+			begin
 				address[0] <= rx_address;	
+				addr_state <= IDLE;
+			end
 		endcase
 	end 
 end
@@ -225,7 +233,10 @@ begin
 				data_idle <= 0;
 			end
 			default:
+			begin
 				data[0] = rx_data;
+				data_state <= IDLE;
+			end
 		endcase
 	end
 end

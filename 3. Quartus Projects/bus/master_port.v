@@ -25,6 +25,8 @@ module master_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DAT
 	output [DATA_LEN-1:0]data_in,
 	output rx_done,
 	output tx_done,
+	output [2:0]state,  ////temp
+	output [3:0]temp_state,  ////temp
 	
 	input arbitor_busy,
 	input bus_busy,
@@ -65,6 +67,7 @@ master_in_port #(.DATA_LEN(DATA_LEN)) MASTER_IN_PORT(
 	.instruction(instruction),
 	.data(data_in),
 	.rx_done(rx_done),
+	.temp_state(state),  ///temp
 	
 	.rx_data(rx_data),
 	.slave_valid(slave_valid),
@@ -81,6 +84,7 @@ master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN
 	.data(data_out),
 	.rx_done(rx_done),
 	.tx_done(tx_done),
+	.temp_state(temp_state),  ///temp
 	
 	.slave_ready(slave_ready),
 	.arbitor_busy(arbitor_busy),

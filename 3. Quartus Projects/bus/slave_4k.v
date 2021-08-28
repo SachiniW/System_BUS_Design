@@ -15,8 +15,6 @@ module slave_4k(
 	input clk, 
 	input reset,
 
-	input [5:0]slave_delay,
-
 	input read_en,
 	input write_en,
 
@@ -29,6 +27,8 @@ module slave_4k(
 	input rx_address,
 	input rx_data,
 	output [7:0]data_out,   ////temp
+	output [3:0]temp_state, ///temp
+	output temp_signal, ///temp
 
 	// output slave_tx_done,
 	// output rx_done,
@@ -39,15 +39,12 @@ module slave_4k(
 wire [7:0]datain;
 wire [11:0]address;
 wire [7:0]data;
-wire read_en_in;
-wire write_en_in;
 	
 assign data_out = data;   ///temp
 
 	slave_port SLAVE_PORT(
 	.clk(clk), 
 	.reset(reset),
-	.slave_delay(slave_delay),
 	.read_en(read_en),
 	.write_en(write_en),
 	.master_ready(master_ready),
@@ -62,6 +59,8 @@ assign data_out = data;   ///temp
 	.datain(datain),
 	.address(address),
 	.data(data),
+	.temp_state(temp_state),  ////temp
+	.temp_signal(temp_signal),  /////temp
 	.read_en_in(read_en_in),
 	.write_en_in(write_en_in),
 	.split_en(split_en));

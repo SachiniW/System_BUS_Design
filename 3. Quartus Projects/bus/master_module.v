@@ -20,6 +20,9 @@ module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter D
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
 	
+	input [7:0]data_out1,   /////temp
+	input [3:0]temp_state1, /////temp
+	
 	input arbitor_busy,
 	input bus_busy,
 	input approval_grant,
@@ -46,6 +49,9 @@ wire [DATA_LEN-1:0]data_out;
 wire [DATA_LEN-1:0]data_in;
 wire rx_done;
 wire tx_done;
+
+wire [2:0]state; ///temp
+wire [3:0]temp_state; ///temp
 	
 
 master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER_PORT(
@@ -59,6 +65,8 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) M
 	.data_in(data_in),
 	.rx_done(rx_done),
 	.tx_done(tx_done),
+	.state(state),   ///temp
+	.temp_state(temp_state),   ///temp
 	
 	.arbitor_busy(arbitor_busy),
 	.bus_busy(bus_busy),
@@ -84,7 +92,7 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.reset(reset),
 	.button1(button1),
 	.button2(button2),
-	.busy(busy),
+	.busy1(busy),
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
 	
@@ -95,7 +103,10 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.instruction(instruction),
 	.slave_select(slave_select),
 	.address(address),
-	.data_out(data_out));
+	.data_out(data_out),
+	.tx_data(tx_data), ///temp
+	.state1(temp_state1),///temp
+	.temp_state(temp_state)); /////temp
 	
 	
 endmodule 

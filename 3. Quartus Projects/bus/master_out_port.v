@@ -22,6 +22,7 @@ module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter
 	input [DATA_LEN-1:0]data,
 	input rx_done,
 	output reg tx_done,
+	output [3:0]temp_state,   ////temp
 	
 	input slave_ready,
 	input arbitor_busy,
@@ -36,16 +37,6 @@ module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter
 	output reg tx_address,
 	output reg tx_data);
 
-//reg [3:0]address_state = 0;
-//reg [3:0]data_state = 0;
-//reg address_idle;
-//reg address_done;
-//reg data_idle;
-//reg data_done;
-//wire handshake = master_valid & slave_ready;
-//
-//assign master_ready = data_idle && address_idle;
-//assign master_tx_done = address_done;
 
 reg [3:0]state = 0;
 
@@ -54,6 +45,8 @@ parameter IDLE=0, WAIT_ARBITOR=1, TRANSMIT_SELECT=2, WAIT_APPROVAL=3, WAIT_HANDS
 parameter INACTIVE=2'b00, WRITE=2'b10, READ=2'b11;
 
 integer count = 0;
+
+assign temp_state = count;  ////temp
 
 always @ (posedge clk or posedge reset) 
 begin

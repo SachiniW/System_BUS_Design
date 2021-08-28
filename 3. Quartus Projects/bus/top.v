@@ -129,6 +129,14 @@ assign m2_button1 = (button2_sel == 1) ? 1:button2_val;
 assign m2_button2 = (button2_sel == 1) ? button2_val:1;
 
 
+wire [7:0] data_out1, data_out2, data_out3;  /////////////temp
+
+wire [3:0] temp_state1, temp_state2, temp_state3;  /////////////temp
+
+wire temp_signal1, temp_signal2, temp_signal3;  /////////////temp
+
+wire m2_busy1;   /////temp
+assign m2_busy = temp_signal1;   ////temp
 
 
 master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
@@ -139,6 +147,9 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.busy(m1_busy),
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
+	
+	.data_out1(data_out1),    ////////////temp
+	.temp_state1(temp_state1),    ////////////temp
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
@@ -163,9 +174,12 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER2(
 	.reset(reset),
 	.button1(m2_button1),
 	.button2(m2_button2),
-	.busy(m2_busy),
+	.busy(m2_busy1), //////changed
 	.display1_pin(display3_pin),
 	.display2_pin(display4_pin),
+	
+	.data_out1(data_out2),   ////////////temp
+	.temp_state1(temp_state2),    ////////////temp
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
@@ -263,8 +277,6 @@ slave_4k SLAVE_4K(
 	.clk(clk), 
 	.reset(reset),
 
-	.slave_delay(6'd0),
-
 	.read_en(s1_read_en),
 	.write_en(s1_write_en),
 
@@ -276,14 +288,16 @@ slave_4k SLAVE_4K(
 
 	.rx_address(s1_rx_address),
 	.rx_data(s1_rx_data),
+	.data_out(data_out1),    ////temp
+	.temp_state(temp_state1),    ////temp
+	.temp_signal(temp_signal1),  /////temp
+	
 	.tx_data(s1_tx_data),
 	.split_en(split_en));
 
 slave_4k SLAVE_2K1(
 	.clk(clk), 
 	.reset(reset),
-
-	.slave_delay(6'd0),	
 
 	.read_en(s2_read_en),
 	.write_en(s2_write_en),
@@ -295,15 +309,16 @@ slave_4k SLAVE_2K1(
 	.slave_ready(s2_slave_ready),
 
 	.rx_address(s2_rx_address),
-	.rx_data(s2_rx_data),				
+	.rx_data(s2_rx_data),
+	.data_out(data_out2),    ////temp
+	.temp_state(temp_state2),    ////temp	
+	.temp_signal(temp_signal2),  /////temp			
 	.tx_data(s2_tx_data),
 	.split_en(split_en));
 
 slave_4k SLAVE_2K2(
 	.clk(clk), 
 	.reset(reset),
-
-	.slave_delay(6'd10),
 
 	.read_en(s3_read_en),
 	.write_en(s3_write_en),
@@ -315,7 +330,10 @@ slave_4k SLAVE_2K2(
 	.slave_ready(s3_slave_ready),
 
 	.rx_address(s3_rx_address),
-	.rx_data(s3_rx_data),					
+	.rx_data(s3_rx_data),	
+	.data_out(data_out3),    ////temp	
+	.temp_state(temp_state3),    ////temp
+	.temp_signal(temp_signal3),  /////temp			
 	.tx_data(s3_tx_data),
 	.split_en(split_en));
 

@@ -21,14 +21,18 @@ module master_in_port #(parameter DATA_LEN=8)(
 	input [1:0]instruction,
 	output reg[DATA_LEN-1:0]data,
 	output reg rx_done,
+	output [2:0]temp_state,   ////temp
 	
 	input rx_data,
 	input slave_valid,
 	output reg master_ready);
 	//output reg read_en);
-	
+
 reg [2:0]state = 0;
 parameter IDLE=0, WAIT_HANDSHAKE=1, RECEIVE_DATA=2;
+
+	
+assign temp_state = state;  ////temp
 
 
 integer count = 0;
