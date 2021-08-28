@@ -115,10 +115,10 @@ assign s1_rst         = ((bus_grant == 2'd1) & (slave_sel == 2'd1)) ? m1_rst:
                         ((bus_grant == 2'd2) & (slave_sel == 2'd1)) ? m2_rst: 1'b0;
 
 assign s1_master_valid= ((bus_grant == 2'd1) & (slave_sel == 2'd1)) ? m1_master_valid:
-							   ((bus_grant == 2'd2) & (slave_sel == 2'd1)) ? m2_master_valid: 1'b0;
+						((bus_grant == 2'd2) & (slave_sel == 2'd1)) ? m2_master_valid: 1'b0;
 
 assign s1_master_ready= ((bus_grant == 2'd1) & (slave_sel == 2'd1)) ? m1_master_ready:
-							   ((bus_grant == 2'd2) & (slave_sel == 2'd1)) ? m2_master_ready: 1'b0;
+						((bus_grant == 2'd2) & (slave_sel == 2'd1)) ? m2_master_ready: 1'b0;
 								
 assign s1_rx_address  = ((bus_grant == 2'd1) & (slave_sel == 2'd1)) ? m1_tx_address:
                         ((bus_grant == 2'd2) & (slave_sel == 2'd1)) ? m2_tx_address: 1'b0;

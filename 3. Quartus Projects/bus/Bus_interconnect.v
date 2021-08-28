@@ -84,15 +84,18 @@ input s3_tx_data,
 output s3_write_en,
 output s3_read_en,
 input s3_slave_valid,
-input s3_slave_ready
+input s3_slave_ready,
+
+input s1_slave_split_en,
+input s2_slave_split_en,
+input s3_slave_split_en
 
 );
 
 wire [1:0] bus_grant; 
 wire [1:0] slave_sel;  
 
- 
- Bus_Arbiter Bus_Arbiter1(
+Bus_Arbiter Bus_Arbiter1(
 .sys_clk(sys_clk), 
 .sys_rst(sys_rst),
 .m1_request (m1_request), 
@@ -100,6 +103,9 @@ wire [1:0] slave_sel;
 .m1_slave_sel(m1_slave_sel),
 .m2_slave_sel(m2_slave_sel),
 .trans_done(trans_done),
+.s1_slave_split_en(s1_slave_split_en),
+.s2_slave_split_en(s2_slave_split_en),
+.s3_slave_split_en(s3_slave_split_en),
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
 .arbiter_busy(arbiter_busy),
@@ -111,6 +117,7 @@ wire [1:0] slave_sel;
  Bus_mux Bus_mux1(
 .bus_grant(bus_grant), 
 .slave_sel(slave_sel),
+
 .m1_clk(m1_clk), 
 .m1_rst(m1_rst),
 .m1_master_valid(m1_master_valid),
