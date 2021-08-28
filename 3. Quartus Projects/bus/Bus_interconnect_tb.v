@@ -11,6 +11,7 @@ reg m1_req = 0;
 reg m2_req = 0;
 reg m1_slave = 0;
 reg m2_slave = 0;
+reg trans_done = 0;
 
 wire m1_grant;
 wire m2_grant;
@@ -42,6 +43,10 @@ wire s3_rx_address;
 wire s3_rx_data;
 wire s3_write_en;
 wire s3_read_en;
+
+reg s1_slave_split_en = 0;
+reg s2_slave_split_en = 0;
+reg s3_slave_split_en = 0;
 
 
 Bus_interconnect UUT(
@@ -117,7 +122,11 @@ Bus_interconnect UUT(
 .s3_write_en(s3_write_en),
 .s3_read_en(s3_read_en),
 .s3_slave_valid(1'b1),
-.s3_slave_ready(1'b1)
+.s3_slave_ready(1'b1),
+
+.s1_slave_split_en(s1_slave_split_en),
+.s2_slave_split_en(s2_slave_split_en),
+.s3_slave_split_en(s3_slave_split_en)
 
 );
 
@@ -133,31 +142,45 @@ initial begin
 	    m2_rst = 0;
 
 	#10 m1_req = 1;
+	m2_req = 1;
 	m1_slave = 1;
+	m2_slave = 1;
 	#10 m1_slave = 0;
+	#10 m2_slave = 0;
    #10 m1_req = 0; 
-
-	#10 m2_req = 1;
-	m2_slave = 1;
-	#10 m2_slave = 1;
-   #10 m2_req = 0;
-
-	#10 m1_req = 1;
-	m1_slave = 1;
-	#10 m1_slave = 0;
-   #10 m1_req = 0;  
-
-	#50 m1_req = 1;
-	m1_slave = 1;
-	#10 m1_slave = 0;
-   #10 m1_req = 0;
-
-	#50 m2_req = 1;
-	m1_req = 1;
-	m2_slave = 1;
-	#10 m2_slave = 1;
    #10 m2_req = 0; 
-	m1_req = 0; 		 
+
+   #20 s1_slave_split_en = 1;
+   	#10 m2_req = 1;
+	m2_slave = 1;
+	#10 m2_slave = 1;
+	m2_req = 0;
+	#50 s1_slave_split_en = 0;	
+
+        #50 trans_done = 1;
+	#10 trans_done = 0;
+
+// 	#10 m2_req = 1;
+// 	m2_slave = 1;
+// 	#10 m2_slave = 1;
+//    #10 m2_req = 0;
+
+// 	#10 m1_req = 1;
+// 	m1_slave = 1;
+// 	#10 m1_slave = 0;
+//    #10 m1_req = 0;  
+
+// 	#50 m1_req = 1;
+// 	m1_slave = 1;
+// 	#10 m1_slave = 0;
+//    #10 m1_req = 0;
+
+// 	#50 m2_req = 1;
+// 	m1_req = 1;
+// 	m2_slave = 1;
+// 	#10 m2_slave = 1;
+//    #10 m2_req = 0; 
+// 	m1_req = 0; 		 
 
 
 
