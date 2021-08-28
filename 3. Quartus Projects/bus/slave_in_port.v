@@ -72,11 +72,9 @@ begin
 					addr_idle <= 0;
 				end
 				else
-				begin
 					addr_state <= IDLE;
 					addr_idle <= 1;
 					addr_done <= 0;
-				end
 			end
 			ADDR1:
 			begin
@@ -159,7 +157,7 @@ DATA6 = 6,
 DATA7 = 7, 
 DATA8 = 8;
 
-always @ (posedge clk or posedge reset) 
+always @ (posedge clk or posedge reset or posedge handshake) 
 begin
 	if (reset)
 		data_state <= IDLE;

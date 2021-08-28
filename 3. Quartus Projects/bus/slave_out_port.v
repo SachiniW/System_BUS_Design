@@ -42,7 +42,7 @@ DATA6 = 6,
 DATA7 = 7, 
 DATA8 = 8;
 
-always @ (posedge clk or posedge reset) 
+always @ (posedge clk or posedge reset or posedge handshake) 
 begin
 	if (reset)
 		data_state <= IDLE;
