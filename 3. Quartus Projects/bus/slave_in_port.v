@@ -23,8 +23,8 @@ module slave_in_port (
 	input write_en,
 	output slave_ready,
 	output rx_done,
-	output reg[11:0]address,
-	output reg[7:0]data);
+	output reg[11:0]address = 12'b0,
+	output reg[7:0]data = 8'b0);
 	
 
 reg [3:0]addr_state = 0;
@@ -77,10 +77,10 @@ begin
 					addr_done <= 0;
 			end
 			ADDR1:
-			begin
-				addr_state <= ADDR2;
+			begin;
 				address[0] <= rx_address;
 				addr_idle <= 0;
+				addr_state <= ADDR2;
 			end
 			ADDR2:
 			begin

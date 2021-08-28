@@ -37,6 +37,8 @@ module slave_4k_slow(
 wire [7:0]datain;
 wire [11:0]address;
 wire [7:0]data;
+wire read_en_in;
+wire write_en_in;
 	
 
 	slave_port_slow SLAVE_PORT(
