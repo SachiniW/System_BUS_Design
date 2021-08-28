@@ -64,7 +64,7 @@ DATA_RECIEVE = 2;
 reg [3:0]addr_counter = 4'd0;
 reg [3:0]data_counter = 4'd0;
 
-always @ (posedge clk or posedge reset or posedge handshake) 
+always @ (posedge trig_event) 
 begin
 	if (reset)
 	begin
@@ -124,7 +124,7 @@ end
 
 // Statemachine to capture the 8 bit data
 
-always @ (posedge clk or posedge reset or posedge handshake) 
+always @ (posedge trig_event) 
 // always @ (posedge clk or posedge reset)
 begin
 	if (reset)

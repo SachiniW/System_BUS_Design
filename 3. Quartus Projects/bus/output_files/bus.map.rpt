@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus
-Sat Aug 28 19:58:10 2021
+Sat Aug 28 20:16:08 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -16,66 +16,71 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|state
- 11. State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|state
- 12. State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|state
- 13. State Machine - |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_state
- 14. State Machine - |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_addr_state
- 15. State Machine - |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|state
- 16. State Machine - |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state
- 17. State Machine - |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state
- 18. State Machine - |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|state
- 19. State Machine - |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state
- 20. State Machine - |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state
- 21. User-Specified and Inferred Latches
- 22. Logic Cells Representing Combinational Loops
- 23. Registers Removed During Synthesis
- 24. General Register Statistics
- 25. Inverted Register Statistics
- 26. Multiplexer Restructuring Statistics (Restructuring Performed)
- 27. Source assignments for slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
- 28. Source assignments for slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
- 29. Source assignments for slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
- 30. Parameter Settings for User Entity Instance: scaledclock:CLK_DIV
- 31. Parameter Settings for User Entity Instance: master_module:MASTER1
- 32. Parameter Settings for User Entity Instance: master_module:MASTER1|master_port:MASTER_PORT
- 33. Parameter Settings for User Entity Instance: master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT
- 34. Parameter Settings for User Entity Instance: master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT
- 35. Parameter Settings for User Entity Instance: master_module:MASTER1|button_event1:BUTTON_EVENT1
- 36. Parameter Settings for User Entity Instance: master_module:MASTER2
- 37. Parameter Settings for User Entity Instance: master_module:MASTER2|master_port:MASTER_PORT
- 38. Parameter Settings for User Entity Instance: master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT
- 39. Parameter Settings for User Entity Instance: master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT
- 40. Parameter Settings for User Entity Instance: master_module:MASTER2|button_event1:BUTTON_EVENT1
- 41. Parameter Settings for User Entity Instance: Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1
- 42. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|slave_port:SLAVE_PORT
- 43. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
- 44. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
- 45. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component
- 46. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT
- 47. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
- 48. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
- 49. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component
- 50. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT
- 51. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
- 52. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
- 53. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component
- 54. altsyncram Parameter Settings by Entity Instance
- 55. Port Connectivity Checks: "slave_4k:SLAVE_2K2"
- 56. Port Connectivity Checks: "slave_4k:SLAVE_2K1"
- 57. Port Connectivity Checks: "slave_4k:SLAVE_4K"
- 58. Port Connectivity Checks: "Bus_interconnect:BUS"
- 59. Port Connectivity Checks: "master_module:MASTER2"
- 60. Port Connectivity Checks: "master_module:MASTER1|master_port:MASTER_PORT"
- 61. Port Connectivity Checks: "master_module:MASTER1"
- 62. Port Connectivity Checks: "bin27:DISPLAY8"
- 63. Port Connectivity Checks: "bin27:DISPLAY7"
- 64. Port Connectivity Checks: "bin27:DISPLAY6"
- 65. Port Connectivity Checks: "bin27:DISPLAY5"
- 66. In-System Memory Content Editor Settings
- 67. Post-Synthesis Netlist Statistics for Top Partition
- 68. Elapsed Time Per Partition
- 69. Analysis & Synthesis Messages
- 70. Analysis & Synthesis Suppressed Messages
+ 11. State Machine - |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
+ 12. State Machine - |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
+ 13. State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|state
+ 14. State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
+ 15. State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
+ 16. State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|state
+ 17. State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state
+ 18. State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state
+ 19. State Machine - |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_state
+ 20. State Machine - |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_addr_state
+ 21. State Machine - |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|state
+ 22. State Machine - |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state
+ 23. State Machine - |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state
+ 24. State Machine - |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|state
+ 25. State Machine - |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state
+ 26. State Machine - |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state
+ 27. User-Specified and Inferred Latches
+ 28. Registers Removed During Synthesis
+ 29. General Register Statistics
+ 30. Inverted Register Statistics
+ 31. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 32. Source assignments for slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
+ 33. Source assignments for slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
+ 34. Source assignments for slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1
+ 35. Parameter Settings for User Entity Instance: scaledclock:CLK_DIV
+ 36. Parameter Settings for User Entity Instance: master_module:MASTER1
+ 37. Parameter Settings for User Entity Instance: master_module:MASTER1|master_port:MASTER_PORT
+ 38. Parameter Settings for User Entity Instance: master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT
+ 39. Parameter Settings for User Entity Instance: master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT
+ 40. Parameter Settings for User Entity Instance: master_module:MASTER1|button_event1:BUTTON_EVENT1
+ 41. Parameter Settings for User Entity Instance: master_module:MASTER2
+ 42. Parameter Settings for User Entity Instance: master_module:MASTER2|master_port:MASTER_PORT
+ 43. Parameter Settings for User Entity Instance: master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT
+ 44. Parameter Settings for User Entity Instance: master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT
+ 45. Parameter Settings for User Entity Instance: master_module:MASTER2|button_event1:BUTTON_EVENT1
+ 46. Parameter Settings for User Entity Instance: Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1
+ 47. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|slave_port:SLAVE_PORT
+ 48. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
+ 49. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
+ 50. Parameter Settings for User Entity Instance: slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component
+ 51. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT
+ 52. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
+ 53. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
+ 54. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component
+ 55. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT
+ 56. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT
+ 57. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT
+ 58. Parameter Settings for User Entity Instance: slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component
+ 59. altsyncram Parameter Settings by Entity Instance
+ 60. Port Connectivity Checks: "slave_4k:SLAVE_2K2"
+ 61. Port Connectivity Checks: "slave_4k:SLAVE_2K1"
+ 62. Port Connectivity Checks: "slave_4k:SLAVE_4K"
+ 63. Port Connectivity Checks: "Bus_interconnect:BUS"
+ 64. Port Connectivity Checks: "master_module:MASTER2"
+ 65. Port Connectivity Checks: "master_module:MASTER1|master_port:MASTER_PORT"
+ 66. Port Connectivity Checks: "master_module:MASTER1"
+ 67. Port Connectivity Checks: "bin27:DISPLAY8"
+ 68. Port Connectivity Checks: "bin27:DISPLAY7"
+ 69. Port Connectivity Checks: "bin27:DISPLAY6"
+ 70. Port Connectivity Checks: "bin27:DISPLAY5"
+ 71. In-System Memory Content Editor Settings
+ 72. Post-Synthesis Netlist Statistics for Top Partition
+ 73. Elapsed Time Per Partition
+ 74. Analysis & Synthesis Messages
+ 75. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -102,15 +107,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 28 19:58:10 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 28 20:16:08 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,237                                       ;
-;     Total combinational functions  ; 1,191                                       ;
-;     Dedicated logic registers      ; 507                                         ;
-; Total registers                    ; 507                                         ;
+; Total logic elements               ; 1,196                                       ;
+;     Total combinational functions  ; 1,150                                       ;
+;     Dedicated logic registers      ; 603                                         ;
+; Total registers                    ; 603                                         ;
 ; Total pins                         ; 67                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 98,304                                      ;
@@ -277,20 +282,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 1,237                    ;
+; Estimated Total logic elements              ; 1,196                    ;
 ;                                             ;                          ;
-; Total combinational functions               ; 1191                     ;
+; Total combinational functions               ; 1150                     ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 550                      ;
-;     -- 3 input functions                    ; 251                      ;
-;     -- <=2 input functions                  ; 390                      ;
+;     -- 4 input functions                    ; 608                      ;
+;     -- 3 input functions                    ; 204                      ;
+;     -- <=2 input functions                  ; 338                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 986                      ;
+;     -- normal mode                          ; 945                      ;
 ;     -- arithmetic mode                      ; 205                      ;
 ;                                             ;                          ;
-; Total registers                             ; 507                      ;
-;     -- Dedicated logic registers            ; 507                      ;
+; Total registers                             ; 603                      ;
+;     -- Dedicated logic registers            ; 603                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 67                       ;
@@ -300,7 +305,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 311                      ;
-; Total fan-out                               ; 6514                     ;
+; Total fan-out                               ; 6701                     ;
 ; Average fan-out                             ; 3.49                     ;
 +---------------------------------------------+--------------------------+
 
@@ -310,58 +315,58 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                             ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |top                                                                                                                                    ; 1191 (3)            ; 507 (0)                   ; 98304       ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                                                                                                                                                                                                                                                                                                                            ; top                               ; work         ;
+; |top                                                                                                                                    ; 1150 (3)            ; 603 (0)                   ; 98304       ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                                                                                                                                                                                                                                                                                                                            ; top                               ; work         ;
 ;    |Bus_interconnect:BUS|                                                                                                               ; 38 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Bus_interconnect:BUS                                                                                                                                                                                                                                                                                                                       ; Bus_interconnect                  ; work         ;
 ;       |Bus_Arbiter:Bus_Arbiter1|                                                                                                        ; 22 (22)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                                                                                                                                                                                                                                                                              ; Bus_Arbiter                       ; work         ;
 ;       |Bus_mux:Bus_mux1|                                                                                                                ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                                                                                                                                                                                                                                                                                      ; Bus_mux                           ; work         ;
-;    |bin27:DISPLAY7|                                                                                                                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY7                                                                                                                                                                                                                                                                                                                             ; bin27                             ; work         ;
-;       |decoder:display|                                                                                                                 ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY7|decoder:display                                                                                                                                                                                                                                                                                                             ; decoder                           ; work         ;
-;    |bin27:DISPLAY8|                                                                                                                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY8                                                                                                                                                                                                                                                                                                                             ; bin27                             ; work         ;
-;       |decoder:display|                                                                                                                 ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY8|decoder:display                                                                                                                                                                                                                                                                                                             ; decoder                           ; work         ;
-;    |master_module:MASTER1|                                                                                                              ; 223 (0)             ; 95 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1                                                                                                                                                                                                                                                                                                                      ; master_module                     ; work         ;
+;    |bin27:DISPLAY7|                                                                                                                     ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY7                                                                                                                                                                                                                                                                                                                             ; bin27                             ; work         ;
+;       |decoder:display|                                                                                                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY7|decoder:display                                                                                                                                                                                                                                                                                                             ; decoder                           ; work         ;
+;    |bin27:DISPLAY8|                                                                                                                     ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY8                                                                                                                                                                                                                                                                                                                             ; bin27                             ; work         ;
+;       |decoder:display|                                                                                                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|bin27:DISPLAY8|decoder:display                                                                                                                                                                                                                                                                                                             ; decoder                           ; work         ;
+;    |master_module:MASTER1|                                                                                                              ; 221 (0)             ; 95 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1                                                                                                                                                                                                                                                                                                                      ; master_module                     ; work         ;
 ;       |button_event1:BUTTON_EVENT1|                                                                                                     ; 13 (5)              ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1                                                                                                                                                                                                                                                                                          ; button_event1                     ; work         ;
 ;          |bin27:DISPLAY2|                                                                                                               ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|bin27:DISPLAY2                                                                                                                                                                                                                                                                           ; bin27                             ; work         ;
 ;             |decoder:display|                                                                                                           ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|bin27:DISPLAY2|decoder:display                                                                                                                                                                                                                                                           ; decoder                           ; work         ;
-;       |master_port:MASTER_PORT|                                                                                                         ; 210 (1)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|master_port:MASTER_PORT                                                                                                                                                                                                                                                                                              ; master_port                       ; work         ;
+;       |master_port:MASTER_PORT|                                                                                                         ; 208 (1)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|master_port:MASTER_PORT                                                                                                                                                                                                                                                                                              ; master_port                       ; work         ;
 ;          |master_in_port:MASTER_IN_PORT|                                                                                                ; 54 (54)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT                                                                                                                                                                                                                                                                ; master_in_port                    ; work         ;
-;          |master_out_port:MASTER_OUT_PORT|                                                                                              ; 155 (155)           ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT                                                                                                                                                                                                                                                              ; master_out_port                   ; work         ;
-;    |master_module:MASTER2|                                                                                                              ; 225 (0)             ; 95 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2                                                                                                                                                                                                                                                                                                                      ; master_module                     ; work         ;
-;       |button_event1:BUTTON_EVENT1|                                                                                                     ; 13 (5)              ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1                                                                                                                                                                                                                                                                                          ; button_event1                     ; work         ;
-;          |bin27:DISPLAY2|                                                                                                               ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|bin27:DISPLAY2                                                                                                                                                                                                                                                                           ; bin27                             ; work         ;
-;             |decoder:display|                                                                                                           ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|bin27:DISPLAY2|decoder:display                                                                                                                                                                                                                                                           ; decoder                           ; work         ;
-;       |master_port:MASTER_PORT|                                                                                                         ; 212 (1)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|master_port:MASTER_PORT                                                                                                                                                                                                                                                                                              ; master_port                       ; work         ;
-;          |master_in_port:MASTER_IN_PORT|                                                                                                ; 54 (54)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT                                                                                                                                                                                                                                                                ; master_in_port                    ; work         ;
-;          |master_out_port:MASTER_OUT_PORT|                                                                                              ; 157 (157)           ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT                                                                                                                                                                                                                                                              ; master_out_port                   ; work         ;
+;          |master_out_port:MASTER_OUT_PORT|                                                                                              ; 153 (153)           ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT                                                                                                                                                                                                                                                              ; master_out_port                   ; work         ;
+;    |master_module:MASTER2|                                                                                                              ; 220 (0)             ; 95 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2                                                                                                                                                                                                                                                                                                                      ; master_module                     ; work         ;
+;       |button_event1:BUTTON_EVENT1|                                                                                                     ; 12 (5)              ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1                                                                                                                                                                                                                                                                                          ; button_event1                     ; work         ;
+;          |bin27:DISPLAY2|                                                                                                               ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|bin27:DISPLAY2                                                                                                                                                                                                                                                                           ; bin27                             ; work         ;
+;             |decoder:display|                                                                                                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|bin27:DISPLAY2|decoder:display                                                                                                                                                                                                                                                           ; decoder                           ; work         ;
+;       |master_port:MASTER_PORT|                                                                                                         ; 208 (1)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|master_port:MASTER_PORT                                                                                                                                                                                                                                                                                              ; master_port                       ; work         ;
+;          |master_in_port:MASTER_IN_PORT|                                                                                                ; 53 (53)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT                                                                                                                                                                                                                                                                ; master_in_port                    ; work         ;
+;          |master_out_port:MASTER_OUT_PORT|                                                                                              ; 154 (154)           ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT                                                                                                                                                                                                                                                              ; master_out_port                   ; work         ;
 ;    |scaledclock:CLK_DIV|                                                                                                                ; 51 (51)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|scaledclock:CLK_DIV                                                                                                                                                                                                                                                                                                                        ; scaledclock                       ; work         ;
-;    |slave_4k:SLAVE_2K1|                                                                                                                 ; 143 (0)             ; 46 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1                                                                                                                                                                                                                                                                                                                         ; slave_4k                          ; work         ;
+;    |slave_4k:SLAVE_2K1|                                                                                                                 ; 133 (0)             ; 78 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1                                                                                                                                                                                                                                                                                                                         ; slave_4k                          ; work         ;
 ;       |BRAM:BRAM|                                                                                                                       ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM                                                                                                                                                                                                                                                                                                               ; BRAM                              ; work         ;
 ;          |altsyncram:altsyncram_component|                                                                                              ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                               ; altsyncram                        ; work         ;
 ;             |altsyncram_lgl1:auto_generated|                                                                                            ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated                                                                                                                                                                                                                                                ; altsyncram_lgl1                   ; work         ;
 ;                |altsyncram_ipb2:altsyncram1|                                                                                            ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1                                                                                                                                                                                                                    ; altsyncram_ipb2                   ; work         ;
 ;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 61 (39)             ; 41 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                      ; sld_mod_ram_rom                   ; work         ;
 ;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 22 (22)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                                   ; sld_rom_sr                        ; work         ;
-;       |slave_port:SLAVE_PORT|                                                                                                           ; 82 (11)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                   ; slave_port                        ; work         ;
-;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 67 (67)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                       ; slave_in_port                     ; work         ;
+;       |slave_port:SLAVE_PORT|                                                                                                           ; 72 (9)              ; 37 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                   ; slave_port                        ; work         ;
+;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 59 (59)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                       ; slave_in_port                     ; work         ;
 ;          |slave_out_port:SLAVE_OUT_PORT|                                                                                                ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT                                                                                                                                                                                                                                                                     ; slave_out_port                    ; work         ;
-;    |slave_4k:SLAVE_2K2|                                                                                                                 ; 143 (0)             ; 46 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2                                                                                                                                                                                                                                                                                                                         ; slave_4k                          ; work         ;
+;    |slave_4k:SLAVE_2K2|                                                                                                                 ; 134 (0)             ; 78 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2                                                                                                                                                                                                                                                                                                                         ; slave_4k                          ; work         ;
 ;       |BRAM:BRAM|                                                                                                                       ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM                                                                                                                                                                                                                                                                                                               ; BRAM                              ; work         ;
 ;          |altsyncram:altsyncram_component|                                                                                              ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                               ; altsyncram                        ; work         ;
 ;             |altsyncram_lgl1:auto_generated|                                                                                            ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated                                                                                                                                                                                                                                                ; altsyncram_lgl1                   ; work         ;
 ;                |altsyncram_ipb2:altsyncram1|                                                                                            ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1                                                                                                                                                                                                                    ; altsyncram_ipb2                   ; work         ;
 ;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 61 (39)             ; 41 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                      ; sld_mod_ram_rom                   ; work         ;
 ;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 22 (22)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                                   ; sld_rom_sr                        ; work         ;
-;       |slave_port:SLAVE_PORT|                                                                                                           ; 82 (9)              ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                   ; slave_port                        ; work         ;
-;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 69 (69)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                       ; slave_in_port                     ; work         ;
+;       |slave_port:SLAVE_PORT|                                                                                                           ; 73 (9)              ; 37 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                   ; slave_port                        ; work         ;
+;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 60 (60)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                       ; slave_in_port                     ; work         ;
 ;          |slave_out_port:SLAVE_OUT_PORT|                                                                                                ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT                                                                                                                                                                                                                                                                     ; slave_out_port                    ; work         ;
-;    |slave_4k:SLAVE_4K|                                                                                                                  ; 144 (0)             ; 46 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K                                                                                                                                                                                                                                                                                                                          ; slave_4k                          ; work         ;
+;    |slave_4k:SLAVE_4K|                                                                                                                  ; 131 (0)             ; 78 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K                                                                                                                                                                                                                                                                                                                          ; slave_4k                          ; work         ;
 ;       |BRAM:BRAM|                                                                                                                       ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|BRAM:BRAM                                                                                                                                                                                                                                                                                                                ; BRAM                              ; work         ;
 ;          |altsyncram:altsyncram_component|                                                                                              ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                ; altsyncram                        ; work         ;
 ;             |altsyncram_lgl1:auto_generated|                                                                                            ; 61 (0)              ; 41 (0)                    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated                                                                                                                                                                                                                                                 ; altsyncram_lgl1                   ; work         ;
 ;                |altsyncram_ipb2:altsyncram1|                                                                                            ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1                                                                                                                                                                                                                     ; altsyncram_ipb2                   ; work         ;
 ;                |sld_mod_ram_rom:mgl_prim2|                                                                                              ; 61 (39)             ; 41 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                       ; sld_mod_ram_rom                   ; work         ;
 ;                   |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                  ; 22 (22)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                                    ; sld_rom_sr                        ; work         ;
-;       |slave_port:SLAVE_PORT|                                                                                                           ; 83 (14)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                    ; slave_port                        ; work         ;
-;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                        ; slave_in_port                     ; work         ;
+;       |slave_port:SLAVE_PORT|                                                                                                           ; 70 (10)             ; 37 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                    ; slave_port                        ; work         ;
+;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 55 (55)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                        ; slave_in_port                     ; work         ;
 ;          |slave_out_port:SLAVE_OUT_PORT|                                                                                                ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT                                                                                                                                                                                                                                                                      ; slave_out_port                    ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 205 (1)             ; 130 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 204 (0)             ; 130 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
@@ -415,6 +420,28 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state ;
++-------------------------+----------------------------------------------------------------------------+
+; Name                    ; data_state.DATA_RECIEVE                                                    ;
++-------------------------+----------------------------------------------------------------------------+
+; data_state.1101         ; 0                                                                          ;
+; data_state.DATA_RECIEVE ; 1                                                                          ;
++-------------------------+----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state ;
++-------------------------+----------------------------------------------------------------------------+
+; Name                    ; addr_state.ADDR_RECIEVE                                                    ;
++-------------------------+----------------------------------------------------------------------------+
+; addr_state.1101         ; 0                                                                          ;
+; addr_state.ADDR_RECIEVE ; 1                                                                          ;
++-------------------------+----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
 +---------------------------------------------------------------------+
 ; State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|state ;
 +-------------+-------------+----------+------------------------------+
@@ -427,6 +454,28 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state ;
++-------------------------+----------------------------------------------------------------------------+
+; Name                    ; data_state.DATA_RECIEVE                                                    ;
++-------------------------+----------------------------------------------------------------------------+
+; data_state.1101         ; 0                                                                          ;
+; data_state.DATA_RECIEVE ; 1                                                                          ;
++-------------------------+----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state ;
++-------------------------+----------------------------------------------------------------------------+
+; Name                    ; addr_state.ADDR_RECIEVE                                                    ;
++-------------------------+----------------------------------------------------------------------------+
+; addr_state.1101         ; 0                                                                          ;
+; addr_state.ADDR_RECIEVE ; 1                                                                          ;
++-------------------------+----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
 +--------------------------------------------------------------------+
 ; State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|state ;
 +-------------+-------------+----------+-----------------------------+
@@ -436,6 +485,28 @@ Encoding Type:  One-Hot
 ; state.SPLIT ; 0           ; 1        ; 1                           ;
 ; state.VALID ; 1           ; 1        ; 0                           ;
 +-------------+-------------+----------+-----------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state ;
++-------------------------+---------------------------------------------------------------------------+
+; Name                    ; data_state.DATA_RECIEVE                                                   ;
++-------------------------+---------------------------------------------------------------------------+
+; data_state.1101         ; 0                                                                         ;
+; data_state.DATA_RECIEVE ; 1                                                                         ;
++-------------------------+---------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state ;
++-------------------------+---------------------------------------------------------------------------+
+; Name                    ; addr_state.ADDR_RECIEVE                                                   ;
++-------------------------+---------------------------------------------------------------------------+
+; addr_state.1101         ; 0                                                                         ;
+; addr_state.ADDR_RECIEVE ; 1                                                                         ;
++-------------------------+---------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -551,129 +622,20 @@ Encoding Type:  One-Hot
 +----------------------+-----------+--------------------+------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                                                                       ;
-+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------------+
-; Latch Name                                                                       ; Latch Enable Signal                                                           ; Free of Timing Hazards ;
-+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------------+
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle  ; rst                                                                           ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle ; rst                                                                           ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle ; rst                                                                           ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done  ; rst                                                                           ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[0]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[0]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[1]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[2]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[3]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[4]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[5]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[6]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[7]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[8]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[9]   ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[10]  ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[11]  ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[0]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[0]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[1]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[2]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[3]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[4]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[5]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[6]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[7]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[8]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[9]  ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[10] ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[11] ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[0]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[0]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[1]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[2]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[3]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[4]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[5]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[6]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[7]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[8]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[9]  ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[10] ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|address[11] ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder0 ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done ; rst                                                                           ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done ; rst                                                                           ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[1]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[1]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[1]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[2]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[2]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[2]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[3]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[3]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[3]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[4]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[4]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[4]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[5]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[5]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[5]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[6]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[6]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[6]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[7]      ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1  ; yes                    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[7]     ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data[7]     ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|Decoder1 ; yes                    ;
-; Number of user-specified and inferred latches = 66                               ;                                                                               ;                        ;
-+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                             ;
++----------------------------------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                                                       ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------------------------------------+---------------------+------------------------+
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle  ; rst                 ; yes                    ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle ; rst                 ; yes                    ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_idle ; rst                 ; yes                    ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done  ; rst                 ; yes                    ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done ; rst                 ; yes                    ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_done ; rst                 ; yes                    ;
+; Number of user-specified and inferred latches = 6                                ;                     ;                        ;
++----------------------------------------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                                                   ;
-+-------------------------------------------------------------------------------------------+----+
-; Logic Cell Name                                                                           ;    ;
-+-------------------------------------------------------------------------------------------+----+
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_signal           ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~1          ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~1          ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~4        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~4        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_data_counter[3]  ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~5        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~6        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~7        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_addr_counter[3]  ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~5        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~6        ;    ;
-; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~7        ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_signal          ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~1         ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~1         ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_signal          ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~1         ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~1         ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~4       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~4       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~4       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~4       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_addr_counter[3] ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~5       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~6       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~7       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_data_counter[3] ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~5       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~6       ;    ;
-; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~7       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_addr_counter[3] ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~5       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~6       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter~7       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_data_counter[3] ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~5       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~6       ;    ;
-; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter~7       ;    ;
-; Number of logic cells representing combinational loops                                    ; 39 ;
-+-------------------------------------------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -696,6 +658,24 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|counterReg[0..3]                                                                                             ; Stuck at GND due to stuck port data_in                                    ;
 ; master_module:MASTER1|button_event1:BUTTON_EVENT1|slave_select[0]                                                                                    ; Stuck at VCC due to stuck port data_in                                    ;
 ; master_module:MASTER2|button_event1:BUTTON_EVENT1|slave_select[0]                                                                                    ; Stuck at VCC due to stuck port data_in                                    ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~4                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~5                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~6                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~3                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~4                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~6                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~4                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~5                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~6                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~3                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~4                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~6                                                                    ; Lost fanout                                                               ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~4                                                                     ; Lost fanout                                                               ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~5                                                                     ; Lost fanout                                                               ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state~6                                                                     ; Lost fanout                                                               ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~3                                                                     ; Lost fanout                                                               ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~4                                                                     ; Lost fanout                                                               ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~6                                                                     ; Lost fanout                                                               ;
 ; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_state~6                                                                                        ; Lost fanout                                                               ;
 ; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_state~7                                                                                        ; Lost fanout                                                               ;
 ; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_state~8                                                                                        ; Lost fanout                                                               ;
@@ -716,10 +696,13 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|state.VALID                                                                                                  ; Merged with slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_valid           ;
 ; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|state.VALID                                                                                                 ; Merged with slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_valid          ;
 ; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|state.VALID                                                                                                 ; Merged with slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_valid          ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[3]                                                                  ; Stuck at GND due to stuck port data_in                                    ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[3]                                                                 ; Stuck at GND due to stuck port data_in                                    ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[3]                                                                 ; Stuck at GND due to stuck port data_in                                    ;
 ; slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]  ; Stuck at GND due to stuck port data_in                                    ;
 ; slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in                                    ;
 ; slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in                                    ;
-; Total Number of Removed Registers = 73                                                                                                               ;                                                                           ;
+; Total Number of Removed Registers = 94                                                                                                               ;                                                                           ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 
@@ -728,8 +711,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 507   ;
-; Number of registers using Synchronous Clear  ; 93    ;
+; Total registers                              ; 603   ;
+; Number of registers using Synchronous Clear  ; 101   ;
 ; Number of registers using Synchronous Load   ; 45    ;
 ; Number of registers using Asynchronous Clear ; 358   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -743,13 +726,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle                                                                                                                                                                                                                                                   ; 4       ;
+; slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle                                                                                                                                                                                                                                                   ; 4       ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle                                                                                                                                                                                                                                                  ; 2       ;
+; slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle                                                                                                                                                                                                                                                  ; 2       ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle                                                                                                                                                                                                                                                  ; 3       ;
+; slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle                                                                                                                                                                                                                                                  ; 3       ;
 ; master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|master_ready                                                                                                                                                                                                                                        ; 4       ;
 ; master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready                                                                                                                                                                                                                                      ; 3       ;
 ; master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|master_ready                                                                                                                                                                                                                                        ; 2       ;
 ; master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready                                                                                                                                                                                                                                      ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
-; Total number of inverted registers = 6                                                                                                                                                                                                                                                                                          ;         ;
+; Total number of inverted registers = 12                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -760,45 +749,49 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[2]                                      ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[3]                                                 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[2]                                                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[2]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[4]                                                ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[7]                                                 ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[6]                                                ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[8]                                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[2]  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[5]                                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[3]                                                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[3]                                                 ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[1]                                                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[3]                                                ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0]  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[2] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[0]                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[2]                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[1]                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[0]                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[2]                                                                                                      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[3]                                                                                                      ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|data_out[4]                                                                                                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|data_out[3]                                                                                                                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_grant[0]                                                                                                                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[0]                                                                                                                               ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|write_en                                                                                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|data_out[4]                                                                                                                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_grant[1]                                                                                                                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[1]                                                                                                                               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|read_en                                                                                                    ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|write_en                                                                                                   ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[16]                                                                                                    ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[16]                                                                                                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[24]                                                                                                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[20]                                                                                                    ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m2_grant                                                                                                                                   ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]       ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]      ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[1]      ;
-; 16:1               ; 31 bits   ; 310 LEs       ; 31 LEs               ; 279 LEs                ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[28]                                                                                                  ;
-; 16:1               ; 31 bits   ; 310 LEs       ; 31 LEs               ; 279 LEs                ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[9]                                                                                                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_addr_counter[0]                                                                                                 ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_RECIEVE                                                                                              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_data_counter[0]                                                                                                 ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.DATA_RECIEVE                                                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|rx_done                                                                                                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|rx_done                                                                                                             ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_master_valid                                                                                                                                    ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_master_valid                                                                                                                                    ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_write_en                                                                                                                                        ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_data_counter[1]                                                                                                ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|temp_data_counter[0]                                                                                                ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[3]       ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]      ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]      ;
+; 16:1               ; 31 bits   ; 310 LEs       ; 31 LEs               ; 279 LEs                ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[30]                                                                                                  ;
+; 16:1               ; 31 bits   ; 310 LEs       ; 31 LEs               ; 279 LEs                ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[30]                                                                                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                           ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_rx_address                                                                                                                                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_read_en                                                                                                                                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_read_en                                                                                                                                         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state                                                                                                      ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state                                                                                                      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m2_slave_ready                                                                                                                                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m1_slave_valid                                                                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m2_slave_valid                                                                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m1_slave_ready                                                                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1473,28 +1466,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 148                         ;
-; cycloneiii_ff         ; 377                         ;
+; cycloneiii_ff         ; 473                         ;
 ;     CLR               ; 71                          ;
 ;     ENA               ; 64                          ;
 ;     ENA CLR           ; 111                         ;
 ;     ENA CLR SCLR      ; 64                          ;
 ;     ENA CLR SLD       ; 36                          ;
 ;     ENA SCLR          ; 15                          ;
-;     SCLR              ; 1                           ;
-;     plain             ; 15                          ;
-; cycloneiii_lcell_comb ; 993                         ;
+;     SCLR              ; 9                           ;
+;     plain             ; 103                         ;
+; cycloneiii_lcell_comb ; 954                         ;
 ;     arith             ; 196                         ;
 ;         2 data inputs ; 196                         ;
-;     normal            ; 797                         ;
+;     normal            ; 758                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 20                          ;
-;         2 data inputs ; 137                         ;
-;         3 data inputs ; 170                         ;
-;         4 data inputs ; 468                         ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 85                          ;
+;         3 data inputs ; 123                         ;
+;         4 data inputs ; 526                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.38                        ;
+; Average LUT depth     ; 3.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1503,7 +1496,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1513,7 +1506,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Aug 28 19:57:46 2021
+    Info: Processing started: Sat Aug 28 20:15:48 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
 Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1617,29 +1610,6 @@ Info (12128): Elaborating entity "slave_port" for hierarchy "slave_4k:SLAVE_4K|s
 Warning (10230): Verilog HDL assignment warning at slave_port.v(152): truncated value with size 32 to match size of target (4) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 152
 Info (12128): Elaborating entity "slave_in_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 91
 Warning (10036): Verilog HDL or VHDL warning at slave_in_port.v(40): object "data_done" assigned a value but never read File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 40
-Warning (10036): Verilog HDL or VHDL warning at slave_in_port.v(46): object "trig_event" assigned a value but never read File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 46
-Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(67): inferring latch(es) for variable "address", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Warning (10240): Verilog HDL Always Construct warning at slave_in_port.v(127): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[0]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[1]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[2]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[3]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[4]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[5]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[6]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "data[7]" at slave_in_port.v(127) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 127
-Info (10041): Inferred latch for "address[0]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[1]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[2]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[3]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[4]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[5]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[6]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[7]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[8]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[9]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[10]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
-Info (10041): Inferred latch for "address[11]" at slave_in_port.v(67) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 67
 Info (12128): Elaborating entity "slave_out_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 101
 Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "tx_data", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
 Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "data_idle", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
@@ -1687,7 +1657,7 @@ Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "slav
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2021.08.28.19:57:59 Progress: Loading slddf4920d8/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2021.08.28.20:15:59 Progress: Loading slddf4920d8/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1710,6 +1680,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_master_valid File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 69
+    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_master_valid File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 57
+    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_master_valid File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 45
 Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 28
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -1738,20 +1712,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "display6_pin[2]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
     Warning (13410): Pin "display6_pin[5]" is stuck at VCC File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (17049): 35 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1344 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1307 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 61 output pins
-    Info (21061): Implemented 1248 logic cells
+    Info (21061): Implemented 1211 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Sat Aug 28 19:58:10 2021
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:50
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Sat Aug 28 20:16:08 2021
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:42
 
 
 +------------------------------------------+
