@@ -46,7 +46,7 @@ parameter INACTIVE=2'b00, WRITE=2'b10, READ=2'b11;
 
 integer count = 0;
 
-assign temp_state = count;  ////temp
+assign temp_state = state;  ////temp
 
 always @ (posedge clk or posedge reset) 
 begin
