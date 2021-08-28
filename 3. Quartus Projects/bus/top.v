@@ -12,15 +12,27 @@
 */
 
 module top(
-	input clk, 
-	input reset,
-	input m1_button1,
-	input m1_button2,
-	input m2_button1,
-	input m2_button2,
+	input clock, 
+	input rst,
+	input button1_val,
+	input button2_val,
+	input button1_sel,
+	input button2_sel,
 	output m1_busy,
-	output m2_busy);
+	output m2_busy,
+	output [6:0]display1_pin,
+	output [6:0]display2_pin,
+	output [6:0]display3_pin,
+	output [6:0]display4_pin);
 
+
+//wire m1_busy1;
+//wire m2_busy2;
+
+//assign m1_busy = m1_button1;
+//assign m2_busy = m1_button2;
+	
+	
 // Wires in interconnect
 wire m1_request; 
 wire m2_request;
@@ -100,6 +112,24 @@ wire s3_slave_valid;
 //testing split
 wire split_en;
 
+wire reset;
+
+assign reset = ~rst;
+
+scaledclock CLK_DIV(.inclk(clock), .ena(1), .clk(clk));
+
+wire m1_button1;
+wire m1_button2;
+wire m2_button1;
+wire m2_button2;
+
+assign m1_button1 = (button1_sel == 1) ? 1:button1_val;
+assign m1_button2 = (button1_sel == 1) ? button1_val:1;
+assign m2_button1 = (button2_sel == 1) ? 1:button2_val;
+assign m2_button2 = (button2_sel == 1) ? button2_val:1;
+
+
+
 
 master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.clk(clk), 
@@ -107,6 +137,8 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.button1(m1_button1),
 	.button2(m1_button2),
 	.busy(m1_busy),
+	.display1_pin(display1_pin),
+	.display2_pin(display2_pin),
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
@@ -132,6 +164,8 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER2(
 	.button1(m2_button1),
 	.button2(m2_button2),
 	.busy(m2_busy),
+	.display1_pin(display3_pin),
+	.display2_pin(display4_pin),
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED

@@ -17,6 +17,8 @@ module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter D
 	input button1,
 	input button2,
 	output busy,
+	output [6:0]display1_pin,
+	output [6:0]display2_pin,
 	
 	input arbitor_busy,
 	input bus_busy,
@@ -83,6 +85,8 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.button1(button1),
 	.button2(button2),
 	.busy(busy),
+	.display1_pin(display1_pin),
+	.display2_pin(display2_pin),
 	
 	.data_in(data_in),
 	.rx_done(rx_done),

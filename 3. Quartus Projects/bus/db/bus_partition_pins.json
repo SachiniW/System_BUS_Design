@@ -12,27 +12,115 @@
 					"strict" : false
 				},
 				{
-					"name" : "m1_button1",
+					"name" : "display1_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "m1_button2",
+					"name" : "display1_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "display1_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "display1_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "m2_button1",
+					"name" : "display2_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "m2_button2",
+					"name" : "display2_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display2_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display2_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display2_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display2_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display2_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "button1_val",
+					"strict" : false
+				},
+				{
+					"name" : "button1_sel",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "button2_val",
+					"strict" : false
+				},
+				{
+					"name" : "button2_sel",
 					"strict" : false
 				},
 				{

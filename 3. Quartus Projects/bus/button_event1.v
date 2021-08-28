@@ -17,6 +17,8 @@ module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter D
 	input button1,
 	input button2,
 	output reg busy,
+	output [6:0]display1_pin,
+	output [6:0]display2_pin,
 	
 	input [DATA_LEN-1:0]data_in,
 	input rx_done,
@@ -31,6 +33,9 @@ reg [1:0]state = 0;
 parameter IDLE=0, BUTTON_EVENT_1=1, BUTTON_EVENT_2=2;
 
 reg [DATA_LEN-1:0]rx_val = 0; 
+
+bin27 DISPLAY1 (.clock(clk), .reset(reset), .io_bin(rx_val[3:0]), .io_seven(display1_pin));
+bin27 DISPLAY2 (.clock(clk), .reset(reset), .io_bin(rx_val[7:4]), .io_seven(display2_pin));
 
 always @ (posedge clk or posedge reset) 
 begin
@@ -55,7 +60,7 @@ begin
 				state <= BUTTON_EVENT_1;
 				instruction <= 2'b10;
 				slave_select <= 1;
-				address <= 2;
+				address <= 186;
 				data_out <= 77;
 				rx_val <= rx_val;
 				busy <= 1;
@@ -65,7 +70,7 @@ begin
 				state <= BUTTON_EVENT_2;
 				instruction <= 2'b11;
 				slave_select <= 1;
-				address <=  1;
+				address <=  186;
 				data_out <= 85;
 				rx_val <= rx_val;
 				busy <= 1; 

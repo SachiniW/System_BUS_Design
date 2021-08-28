@@ -26,6 +26,7 @@ module slave_4k(
 
 	input rx_address,
 	input rx_data,
+	output [7:0]data_out,   ////temp
 
 	// output slave_tx_done,
 	// output rx_done,
@@ -37,6 +38,7 @@ wire [7:0]datain;
 wire [11:0]address;
 wire [7:0]data;
 	
+assign data_out = data;   ///temp
 
 	slave_port SLAVE_PORT(
 	.clk(clk), 

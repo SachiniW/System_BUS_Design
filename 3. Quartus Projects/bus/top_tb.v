@@ -1,18 +1,23 @@
 `timescale 1 ns / 1 ps
 module top_tb();
 
-reg clk, reset, m1_button1, m1_button2, m2_button1, m2_button2;
+reg clk, reset, button1_val, button2_val, button1_sel, button2_sel;
+// m1_button1, m1_button2, m2_button1, m2_button2;
 wire m1_busy,m2_busy; 
 
 parameter CLK_PERIOD=20;
 
 top DUT (
-	.clk(clk), 
-	.reset(reset), 
-	.m1_button1(m1_button1),
-	.m1_button2(m1_button2),
-	.m2_button1(m2_button1),
-	.m2_button2(m2_button2),
+	.clock(clk), 
+	.rst(reset), 
+	.button1_val(button1_val),
+	.button2_val(button2_val),
+	.button1_sel(button1_sel),
+	.button2_sel(button2_sel),
+	//.m1_button1(m1_button1),
+	//.m1_button2(m1_button2),
+	//.m2_button1(m2_button1),
+	//.m2_button2(m2_button2),
 	.m1_busy(m1_busy),
 	.m2_busy(m2_busy));
 						
@@ -22,39 +27,45 @@ always
 initial begin
 
 	clk <= 1'b0;
-	reset <= 1'b0;
-	m1_button1 <= 1'b1;
-	m1_button2 <= 1'b1;
-	m2_button1 <= 1'b1;
-	m2_button2 <= 1'b1;
+	reset <= 1'b1;
+	button1_val <= 1;
+	button2_val <= 1;
+	button1_sel <= 0;
+	button2_sel <= 0;
+	//m1_button1 <= 1'b1;
+	//m1_button2 <= 1'b1;
+	//m2_button1 <= 1'b1;
+	//m2_button2 <= 1'b1;
 	
-	#CLK_PERIOD
+	#(10*CLK_PERIOD)
 	
-	m1_button1 <= 1'b0;
-	#CLK_PERIOD
-	m1_button1 <= 1'b1;
+	button1_val <= 0;
+	#(10*CLK_PERIOD)
+	button1_val <= 1;
 	
-	#(20*CLK_PERIOD)
+	#(200*CLK_PERIOD)
 	
-	m1_button2 <= 1'b0;
-	#CLK_PERIOD
-	m1_button2 <= 1'b1;
+	button1_sel <= 1;
+	button1_val <= 0;
+	#(10*CLK_PERIOD)
+	button1_val <= 1;
 	
 
-	#(40*CLK_PERIOD)
+	#(400*CLK_PERIOD)
 
 
-	m2_button1 <= 1'b0;
-	#CLK_PERIOD
-	m2_button1 <= 1'b1;
+	button2_val <= 0;
+	#(10*CLK_PERIOD)
+	button2_val <= 1;
 	
-    #(20*CLK_PERIOD)
+	#(200*CLK_PERIOD)
 	
-	m2_button2 <= 1'b0;
-	#CLK_PERIOD
-	m2_button2 <= 1'b1;
+	button2_sel <= 1;
+	button2_val <= 0;
+	#(10*CLK_PERIOD)
+	button2_val <= 1;
 	
-	#(40*CLK_PERIOD)
+	#(400*CLK_PERIOD)
 	
 //	i_dram_read <= 1'b1;
 //	i_dram_addr <= 16'b0000000000100100;
