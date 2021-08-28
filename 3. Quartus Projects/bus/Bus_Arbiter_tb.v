@@ -9,7 +9,7 @@ reg m2_req = 0;
 reg m1_slave = 0;
 reg m2_slave = 0;
 reg trans_done = 0;
-
+reg s1_slave_split_en = 0;
 
 wire m1_grant;
 wire m2_grant;
@@ -26,6 +26,12 @@ Bus_Arbiter UUT(
 .m1_slave_sel(m1_slave),
 .m2_slave_sel(m2_slave),
 .trans_done(trans_done),
+.s1_slave_split_en(s1_slave_split_en),
+.s2_slave_split_en(0),
+.s3_slave_split_en(0),
+.s1_split_enabled(s1_split_enabled),
+.s2_split_enabled(s2_split_enabled),
+.s3_split_enabled(s3_split_enabled),
 .m1_grant(m1_grant),
 .m2_grant(m2_grant),
 .arbiter_busy(arbiter_busy),
@@ -42,10 +48,21 @@ Bus_Arbiter UUT(
 	#10 m1_req = 1;
 	m1_slave = 1;
 	#10 m1_slave = 0;
-   m1_req = 0; 
-	
+	m1_req = 0; 
+
+	#20 s1_slave_split_en = 1;
+	#10 m2_req = 1;
+	m2_slave = 1;
+	#10 m2_slave = 0;
+	m2_req = 0;
+	#50 s1_slave_split_en = 0;	
+
    #50 trans_done = 1;
 	#10 trans_done = 0;
+	
+
+//	#20 trans_done = 1;
+	//#10 trans_done = 0;
 	
 //	#10 m2_req = 1;
 //	m2_slave = 1;
