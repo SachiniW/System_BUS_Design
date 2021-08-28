@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Aug 28 10:13:31 2021
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Sat Aug 28 19:58:10 2021
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : bus
 Top-level Entity Name : top
 Family : Cyclone IV E
-Total logic elements : 846
-    Total combinational functions : 798
-    Dedicated logic registers : 414
-Total registers : 414
-Total pins : 36
+Total logic elements : 1,237
+    Total combinational functions : 1,191
+    Dedicated logic registers : 507
+Total registers : 507
+Total pins : 67
 Total virtual pins : 0
 Total memory bits : 98,304
 Embedded Multiplier 9-bit elements : 0

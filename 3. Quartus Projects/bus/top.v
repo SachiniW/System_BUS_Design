@@ -14,16 +14,23 @@
 module top(
 	input clock, 
 	input rst,
+	input ena,
 	input button1_val,
 	input button2_val,
 	input button1_sel,
 	input button2_sel,
+	output clkLED,
 	output m1_busy,
 	output m2_busy,
+	output slave_ready,
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
 	output [6:0]display3_pin,
-	output [6:0]display4_pin);
+	output [6:0]display4_pin,
+	output [6:0]display5_pin,
+	output [6:0]display6_pin,
+	output [6:0]display7_pin,
+	output [6:0]display8_pin);
 
 
 //wire m1_busy1;
@@ -116,7 +123,8 @@ wire reset;
 
 assign reset = ~rst;
 
-scaledclock CLK_DIV(.inclk(clock), .ena(1), .clk(clk));
+scaledclock CLK_DIV(.inclk(clock), .ena(ena), .clk(clk));
+assign clkLED = clk;
 
 wire m1_button1;
 wire m1_button2;
@@ -136,8 +144,22 @@ wire [3:0] temp_state1, temp_state2, temp_state3;  /////////////temp
 wire temp_signal1, temp_signal2, temp_signal3;  /////////////temp
 
 wire m2_busy1;   /////temp
-assign m2_busy = temp_signal1;   ////temp
+assign m2_busy = temp_signal1; //temp  
+assign slave_ready = s1_slave_ready; ////temp
 
+wire [3:0]s1_data_state;
+wire [3:0]s1_addr_state;
+wire [3:0]s2_data_state;
+wire [3:0]s2_addr_state;
+wire [3:0]s3_data_state;
+wire [3:0]s3_addr_state;
+wire [3:0]s1_data_counter;
+wire [3:0]s1_addr_counter;
+
+bin27 DISPLAY5 (.clock(0), .reset(0), .io_bin(s1_data_state), .io_seven(display5_pin));
+bin27 DISPLAY6 (.clock(0), .reset(0), .io_bin(s1_addr_state), .io_seven(display6_pin));
+bin27 DISPLAY7 (.clock(0), .reset(0), .io_bin(s1_data_counter), .io_seven(display7_pin));
+bin27 DISPLAY8 (.clock(0), .reset(0), .io_bin(s1_addr_counter), .io_seven(display8_pin));
 
 master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.clk(clk), 
@@ -148,8 +170,8 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
 	
-	.data_out1(data_out1),    ////////////temp
-	.temp_state1(temp_state1),    ////////////temp
+	.data_out1(0),    ////////////temp
+	.temp_state1(0),    ////////////temp
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
@@ -178,8 +200,8 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER2(
 	.display1_pin(display3_pin),
 	.display2_pin(display4_pin),
 	
-	.data_out1(data_out2),   ////////////temp
-	.temp_state1(temp_state2),    ////////////temp
+	.data_out1(0),   ////////////temp
+	.temp_state1(0),    ////////////temp
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
@@ -289,7 +311,10 @@ slave_4k SLAVE_4K(
 	.rx_address(s1_rx_address),
 	.rx_data(s1_rx_data),
 	.data_out(data_out1),    ////temp
-	.temp_state(temp_state1),    ////temp
+	.temp_data_state(s1_data_state),    ////temp
+	.temp_addr_state(s1_addr_state),    ////temp
+	.temp_data_counter(s1_data_counter),    ////temp
+	.temp_addr_counter(s1_addr_counter),    ////temp
 	.temp_signal(temp_signal1),  /////temp
 	
 	.tx_data(s1_tx_data),
@@ -311,7 +336,10 @@ slave_4k SLAVE_2K1(
 	.rx_address(s2_rx_address),
 	.rx_data(s2_rx_data),
 	.data_out(data_out2),    ////temp
-	.temp_state(temp_state2),    ////temp	
+	.temp_data_state(s2_data_state),    ////temp
+	.temp_addr_state(s2_addr_state),    ////temp
+	.temp_data_counter(),    ////temp
+	.temp_addr_counter(),    ////temp
 	.temp_signal(temp_signal2),  /////temp			
 	.tx_data(s2_tx_data),
 	.split_en(split_en));
@@ -332,7 +360,10 @@ slave_4k SLAVE_2K2(
 	.rx_address(s3_rx_address),
 	.rx_data(s3_rx_data),	
 	.data_out(data_out3),    ////temp	
-	.temp_state(temp_state3),    ////temp
+	.temp_data_state(s3_data_state),    ////temp
+	.temp_addr_state(s3_addr_state),    ////temp
+	.temp_data_counter(),    ////temp
+	.temp_addr_counter(),    ////temp
 	.temp_signal(temp_signal3),  /////temp			
 	.tx_data(s3_tx_data),
 	.split_en(split_en));

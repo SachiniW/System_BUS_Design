@@ -27,7 +27,10 @@ module slave_4k(
 	input rx_address,
 	input rx_data,
 	output [7:0]data_out,   ////temp
-	output [3:0]temp_state, ///temp
+	output [3:0]temp_data_state, ///temp
+	output [3:0]temp_addr_state, ///temp
+	output [3:0]temp_data_counter, ///temp
+	output [3:0]temp_addr_counter, ///temp	
 	output temp_signal, ///temp
 
 	// output slave_tx_done,
@@ -59,7 +62,10 @@ assign data_out = data;   ///temp
 	.datain(datain),
 	.address(address),
 	.data(data),
-	.temp_state(temp_state),  ////temp
+	.temp_data_state(temp_data_state),  ////temp
+	.temp_addr_state(temp_addr_state),  //temp
+	.temp_data_counter(temp_data_counter),  ////temp
+	.temp_addr_counter(temp_addr_counter),  ///temp
 	.temp_signal(temp_signal),  /////temp
 	.read_en_in(read_en_in),
 	.write_en_in(write_en_in),

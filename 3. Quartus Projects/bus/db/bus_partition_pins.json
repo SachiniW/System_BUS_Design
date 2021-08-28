@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "clkLED",
+					"strict" : false
+				},
+				{
 					"name" : "m1_busy",
 					"strict" : false
 				},
@@ -12,19 +16,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display1_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display1_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display1_pin[6]",
+					"name" : "slave_ready",
 					"strict" : false
 				},
 				{
@@ -56,22 +48,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[6]",
-					"strict" : false
-				},
-				{
 					"name" : "display4_pin[0]",
 					"strict" : false
 				},
@@ -100,7 +76,91 @@
 					"strict" : false
 				},
 				{
+					"name" : "display5_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[6]",
+					"strict" : false
+				},
+				{
 					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "ena",
 					"strict" : false
 				},
 				{
@@ -109,10 +169,6 @@
 				},
 				{
 					"name" : "button1_sel",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
 					"strict" : false
 				},
 				{

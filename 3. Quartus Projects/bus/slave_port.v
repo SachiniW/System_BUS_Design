@@ -39,7 +39,10 @@ module slave_port(
 	output [11:0]address,
 	output [7:0]data,
 	
-	output [3:0]temp_state, ///temp
+	output [3:0]temp_data_state, ///temp
+	output [3:0]temp_addr_state, ///temp
+	output [3:0]temp_data_counter, ///temp	
+	output [3:0]temp_addr_counter, ///temp	
 	output temp_signal,  ////temp
 	
 	output read_en_in,
@@ -52,8 +55,6 @@ wire slave_ready_OUT;
 wire rx_done;
 wire slave_tx_done;
 
-reg temp = 0;
-reg temp3 = 0;
 reg [3:0]counterReg = 0; 
 reg read_en_in1 = 0;
 reg write_en_in1 = 0;
@@ -79,7 +80,10 @@ slave_in_port SLAVE_IN_PORT(
 	.master_valid(master_valid),
 	.read_en(read_en),
 	.write_en(write_en),
-	.temp_state(temp_state),  /////temp
+	.temp_data_state(temp_data_state),
+	.temp_addr_state(temp_addr_state),  /////temp
+	.temp_data_counter(temp_data_counter), ///temp
+	.temp_addr_counter(temp_addr_counter), ///temp
 	.temp_signal(temp_signal),  /////temp
 	.slave_ready(slave_ready_IN),
 	.rx_done(rx_done),
