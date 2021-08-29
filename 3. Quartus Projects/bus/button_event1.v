@@ -41,8 +41,8 @@ parameter IDLE=0, BUTTON_EVENT_1=1, BUTTON_EVENT_2=2;
 
 reg [DATA_LEN-1:0]rx_val = 0; 
 
-bin27 DISPLAY1 (.clock(clk), .reset(reset), .io_bin(state1), .io_seven(display1_pin));///changed
-bin27 DISPLAY2 (.clock(clk), .reset(reset), .io_bin(temp_state), .io_seven(display2_pin));///changed
+bin27 DISPLAY1 (.clock(clk), .reset(reset), .io_bin(rx_val[3:0]), .io_seven(display1_pin));///changed
+bin27 DISPLAY2 (.clock(clk), .reset(reset), .io_bin(rx_val[7:4]), .io_seven(display2_pin));///changed
 
 always @ (posedge clk or posedge reset) 
 begin

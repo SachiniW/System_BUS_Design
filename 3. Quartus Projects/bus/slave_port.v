@@ -47,7 +47,9 @@ module slave_port(
 	
 	output read_en_in,
 	output write_en_in,
-	output reg split_en);
+	output reg split_en,
+	output [3:0]temp_tx_data_counter,
+	output [3:0]tx_data_state);
 	
 	
 wire slave_ready_IN;
@@ -98,7 +100,9 @@ slave_out_port SLAVE_OUT_PORT(
 	.slave_valid(slave_valid),
 	.slave_ready(slave_ready_OUT),
 	.slave_tx_done(slave_tx_done),
-	.tx_data(tx_data));
+	.tx_data(tx_data),
+	.temp_tx_data_counter(temp_tx_data_counter), //temp
+	.tx_data_state(tx_data_state)); //temp
 	
 
 // always @ (posedge read_en) 		 read_en_in1 <= 1;

@@ -155,7 +155,12 @@ wire [3:0]s3_data_state;
 wire [3:0]s3_addr_state;
 wire [3:0]s1_data_counter;
 wire [3:0]s1_addr_counter;
+wire [3:0]s1_temp_tx_data_counter;
+wire [3:0]s1_tx_data_state;
 
+
+bin27 DISPLAY3 (.clock(0), .reset(0), .io_bin(s1_temp_tx_data_counter), .io_seven(display3_pin));
+bin27 DISPLAY4 (.clock(0), .reset(0), .io_bin(s1_tx_data_state), .io_seven(display4_pin));
 bin27 DISPLAY5 (.clock(0), .reset(0), .io_bin(s1_data_state), .io_seven(display5_pin));
 bin27 DISPLAY6 (.clock(0), .reset(0), .io_bin(s1_addr_state), .io_seven(display6_pin));
 bin27 DISPLAY7 (.clock(0), .reset(0), .io_bin(s1_data_counter), .io_seven(display7_pin));
@@ -197,8 +202,8 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER2(
 	.button1(m2_button1),
 	.button2(m2_button2),
 	.busy(m2_busy1), //////changed
-	.display1_pin(display3_pin),
-	.display2_pin(display4_pin),
+	.display1_pin(),
+	.display2_pin(),
 	
 	.data_out1(0),   ////////////temp
 	.temp_state1(0),    ////////////temp
@@ -318,7 +323,9 @@ slave_4k SLAVE_4K(
 	.temp_signal(temp_signal1),  /////temp
 	
 	.tx_data(s1_tx_data),
-	.split_en(split_en));
+	.split_en(split_en),
+	.temp_tx_data_counter(s1_temp_tx_data_counter),
+	.tx_data_state(s1_tx_data_state));
 
 slave_4k SLAVE_2K1(
 	.clk(clk), 
@@ -342,7 +349,9 @@ slave_4k SLAVE_2K1(
 	.temp_addr_counter(),    ////temp
 	.temp_signal(temp_signal2),  /////temp			
 	.tx_data(s2_tx_data),
-	.split_en(split_en));
+	.split_en(split_en),
+	.temp_tx_data_counter(),
+	.tx_data_state());
 
 slave_4k SLAVE_2K2(
 	.clk(clk), 
@@ -366,6 +375,8 @@ slave_4k SLAVE_2K2(
 	.temp_addr_counter(),    ////temp
 	.temp_signal(temp_signal3),  /////temp			
 	.tx_data(s3_tx_data),
-	.split_en(split_en));
+	.split_en(split_en),
+	.temp_tx_data_counter(),
+	.tx_data_state());
 
 endmodule

@@ -36,8 +36,11 @@ module slave_4k(
 	// output slave_tx_done,
 	// output rx_done,
 	output tx_data,
-	output split_en);
+	output split_en,
 	
+	output [3:0]temp_tx_data_counter,
+	output [3:0]tx_data_state);
+
 	
 wire [7:0]datain;
 wire [11:0]address;
@@ -69,7 +72,9 @@ assign data_out = data;   ///temp
 	.temp_signal(temp_signal),  /////temp
 	.read_en_in(read_en_in),
 	.write_en_in(write_en_in),
-	.split_en(split_en));
+	.split_en(split_en),
+	.temp_tx_data_counter(temp_tx_data_counter),
+	.tx_data_state(tx_data_state));
 	
 	BRAM BRAM(
 	.aclr(reset),

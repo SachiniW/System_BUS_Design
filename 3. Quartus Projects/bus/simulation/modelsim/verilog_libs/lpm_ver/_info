@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 vlpm_abs
-Z0 !s110 1630229840
+Z0 !s110 1630232622
 !i10b 1
 !s100 O9i<YS?ECZC8XU2m2T>HQ0
 I1Y=m`41ILeH;DTYOEJMzV2
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1630229840.000000
+Z7 !s108 1630232622.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/220model.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|lpm_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/220model.v|
 !i113 1
@@ -72,7 +72,7 @@ R9
 R10
 R11
 vlpm_bipad
-R0
+Z12 !s110 1630232623
 !i10b 1
 !s100 2eZaafdWMNbm_oGJD`IS61
 IBOkf9Jcef2ohRTH0cLR[L1
@@ -304,7 +304,7 @@ R9
 R10
 R11
 vlpm_fifo_dc
-R0
+R12
 !i10b 1
 !s100 OX@8oU3SO:LJ;3_=8UL@^3
 IISillAd3OzE;ZIbDJKH3k1
@@ -325,7 +325,7 @@ R9
 R10
 R11
 vlpm_fifo_dc_async
-R0
+R12
 !i10b 1
 !s100 W7]nBZXG1HNLF0lVB9i:n0
 II<CgfkZ4Va@n?2RbBRcYk0
@@ -346,7 +346,7 @@ R9
 R10
 R11
 vlpm_fifo_dc_dffpipe
-R0
+R12
 !i10b 1
 !s100 <2OGni`F^Mh0HMAddVi2B3
 Ik?BUZiZ1L2a5FQZ@f?8lc0
@@ -367,7 +367,7 @@ R9
 R10
 R11
 vlpm_fifo_dc_fefifo
-R0
+R12
 !i10b 1
 !s100 RlCXejU>]z0ZLYIBZPn^`2
 IjaTC>=8TPbcgahJV9^SHZ0
@@ -410,7 +410,7 @@ R10
 R11
 n@l@p@m_@h@i@n@t_@e@v@a@l@u@a@t@i@o@n
 vlpm_inpad
-R0
+R12
 !i10b 1
 !s100 V5b_N<Y1MO:^NFkHi2nm:1
 IY`U_j;FX?ffbnKc:=48M>2
@@ -558,7 +558,7 @@ R9
 R10
 R11
 vlpm_outpad
-R0
+R12
 !i10b 1
 !s100 co;D>HcBWR;nkbnW:TU;e3
 IOeFAoJF;jElAQD=CeZ1N43
