@@ -1,11 +1,39 @@
 module lcdlab3(
 	input clock,
 	input rst,
-  //input [17:0] SW,	//	Toggle Switch[17:0] 
-  //output [6:0]	HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,HEX6,HEX7,  // Seven Segment Digits
-  //output [8:0] LEDG,  //	LED Green
-  //output [17:0] LEDR,  //	LED Red
-  //inout [35:0] GPIO_0,GPIO_1,	//	GPIO Connections
+	input [7:0] Line11,
+   input [7:0] Line12,
+   input [7:0] Line13,
+   input [7:0] Line14,
+   input [7:0] Line15,
+   input [7:0] Line16,
+   input [7:0] Line17,
+   input [7:0] Line18,
+   input [7:0] Line19,
+   input [7:0] Line110,
+   input [7:0] Line111,
+   input [7:0] Line112,
+   input [7:0] Line113,
+   input [7:0] Line114,
+   input [7:0] Line115,
+   input [7:0] Line116,
+
+	input [7:0] Line21,
+   input [7:0] Line22,
+   input [7:0] Line23,
+   input [7:0] Line24,
+   input [7:0] Line25,
+   input [7:0] Line26,
+   input [7:0] Line27,
+   input [7:0] Line28,
+   input [7:0] Line29,
+   input [7:0] Line210,
+   input [7:0] Line211,
+   input [7:0] Line212,
+   input [7:0] Line213,
+   input [7:0] Line214,
+   input [7:0] Line215,
+   input [7:0] Line216,
 //	LCD Module 16X2
   output LCD_ON,	// LCD Power ON/OFF
   output LCD_BLON,	// LCD Back Light ON/OFF
@@ -57,7 +85,41 @@ LCD_Display u1(
    .DATA_BUS(LCD_DATA),
    .LCD_RW(LCD_RW),
    .LCD_E(LCD_EN),
-   .LCD_RS(LCD_RS)
+   .LCD_RS(LCD_RS),
+
+	.Line11(Line11),
+	.Line12(Line12),
+	.Line13(Line13),
+	.Line14(Line14),
+   .Line15(Line15),
+	.Line16(Line16),
+	.Line17(Line17),
+	.Line18(Line18),
+	.Line19(Line19),
+	.Line110(Line110),
+	.Line111(Line111),
+	.Line112(Line112),
+	.Line113(Line113),
+	.Line114(Line114),
+	.Line115(Line115),
+	.Line116(Line116),
+	
+	.Line21(Line21),
+	.Line22(Line22),
+	.Line23(Line23),
+	.Line24(Line24),
+    .Line25(Line25),
+	.Line26(Line26),
+	.Line27(Line27),
+	.Line28(Line28),
+	.Line29(Line29),
+	.Line210(Line210),
+	.Line211(Line211),
+	.Line212(Line212),
+	.Line213(Line213),
+	.Line214(Line214),
+	.Line215(Line215),
+	.Line216(Line216)
 );
 
 

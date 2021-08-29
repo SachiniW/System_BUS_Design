@@ -1,6 +1,6 @@
 Info (10281): Verilog HDL Declaration information at lcdlab3.v(3): object "rst" differs only in case from object "RST" in the same scope File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 3
-Info (10281): Verilog HDL Declaration information at lcdlab3.v(19): object "HEX1" differs only in case from object "hex1" in the same scope File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Info (10281): Verilog HDL Declaration information at lcdlab3.v(19): object "HEX0" differs only in case from object "hex0" in the same scope File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
+Info (10281): Verilog HDL Declaration information at lcdlab3.v(47): object "HEX1" differs only in case from object "hex1" in the same scope File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Info (10281): Verilog HDL Declaration information at lcdlab3.v(47): object "HEX0" differs only in case from object "hex0" in the same scope File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
 Warning (10268): Verilog HDL information at Bus_Arbiter.v(69): always construct contains both blocking and non-blocking assignments File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 69
 Warning (10268): Verilog HDL information at Bus_Arbiter.v(112): always construct contains both blocking and non-blocking assignments File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 112
 Warning (10268): Verilog HDL information at slave_in_port.v(60): always construct contains both blocking and non-blocking assignments File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 60

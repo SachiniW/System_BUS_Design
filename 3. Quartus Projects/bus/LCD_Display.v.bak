@@ -38,81 +38,7 @@ ENTITY LCD_Display IS
 */
 		
 module LCD_Display(iCLK_50MHZ, iRST_N, hex1, hex0, 
-	LCD_RS,LCD_E,LCD_RW,DATA_BUS,
-    Line11,
-    Line12,
-    Line13,
-    Line14,
-    Line15,
-    Line16,
-    Line17,
-    Line18,
-    Line19,
-    Line110,
-    Line111,
-    Line112,
-    Line113,
-    Line114,
-    Line115,
-    Line116,
-
-    Line21,
-    Line22,
-    Line23,
-    Line24,
-    Line25,
-    Line26,
-    Line27,
-    Line28,
-    Line29,
-    Line210,
-    Line211,
-    Line212,
-    Line213,
-    Line214,
-    Line215,
-    Line216
-	);
-
-
-
-
-    input [7:0] Line11;
-    input [7:0] Line12;
-    input [7:0] Line13;
-    input [7:0] Line14;
-    input [7:0] Line15;
-    input [7:0] Line16;
-    input [7:0] Line17;
-    input [7:0] Line18;
-    input [7:0] Line19;
-    input [7:0] Line110;
-    input [7:0] Line111;
-    input [7:0] Line112;
-    input [7:0] Line113;
-    input [7:0] Line114;
-    input [7:0] Line115;
-    input [7:0] Line116;
-
-    input [7:0] Line21;
-    input [7:0] Line22;
-    input [7:0] Line23;
-    input [7:0] Line24;
-    input [7:0] Line25;
-    input [7:0] Line26;
-    input [7:0] Line27;
-    input [7:0] Line28;
-    input [7:0] Line29;
-    input [7:0] Line210;
-    input [7:0] Line211;
-    input [7:0] Line212;
-    input [7:0] Line213;
-    input [7:0] Line214;
-    input [7:0] Line215;
-    input [7:0] Line216;
-
-// input [127:0] Line1;
-// input [127:0] Line2;
+	LCD_RS,LCD_E,LCD_RW,DATA_BUS);
 input iCLK_50MHZ, iRST_N;
 input [3:0] hex1, hex0;
 output LCD_RS, LCD_E, LCD_RW;
@@ -331,76 +257,7 @@ always @(posedge CLK_400HZ or negedge iRST_N)
 	endcase
 endmodule
 
-module LCD_display_string(index,out,hex0,hex1,
-    Line11,
-    Line12,
-    Line13,
-    Line14,
-    Line15,
-    Line16,
-    Line17,
-    Line18,
-    Line19,
-    Line110,
-    Line111,
-    Line112,
-    Line113,
-    Line114,
-    Line115,
-    Line116,
-
-    Line21,
-    Line22,
-    Line23,
-    Line24,
-    Line25,
-    Line26,
-    Line27,
-    Line28,
-    Line29,
-    Line210,
-    Line211,
-    Line212,
-    Line213,
-    Line214,
-    Line215,
-    Line216
-	);
-
-	input [7:0] Line11;
-   input [7:0] Line12;
-   input [7:0] Line13;
-   input [7:0] Line14;
-   input [7:0] Line15;
-   input [7:0] Line16;
-   input [7:0] Line17;
-   input [7:0] Line18;
-   input [7:0] Line19;
-   input [7:0] Line110;
-   input [7:0] Line111;
-   input [7:0] Line112;
-   input [7:0] Line113;
-   input [7:0] Line114;
-   input [7:0] Line115;
-   input [7:0] Line116;
-   input [7:0] Line21;
-   input [7:0] Line22;
-   input [7:0] Line23;
-   input [7:0] Line24;
-   input [7:0] Line25;
-   input [7:0] Line26;
-   input [7:0] Line27;
-   input [7:0] Line28;
-   input [7:0] Line29;
-   input [7:0] Line210;
-   input [7:0] Line211;
-   input [7:0] Line212;
-   input [7:0] Line213;
-   input [7:0] Line214;
-   input [7:0] Line215;
-   input [7:0] Line216;
-// input [127:0] Line1;
-// input [127:0] Line2;
+module LCD_display_string(index,out,hex0,hex1);
 input [4:0] index;
 input [3:0] hex0,hex1;
 output [7:0] out;
@@ -412,82 +269,26 @@ reg [7:0] out;
 //| Count=XX                  |
 //| DE2                       |
 //----------------------------
-
 // Line 1
    always 
      case (index)
-	5'h00: out <= Line11;
-	5'h01: out <= Line12;
-	5'h02: out <= Line13;
-	5'h03: out <= Line14;
-	5'h04: out <= Line15;
-	5'h05: out <= Line16;
-	5'h06: out <= Line17;
-	5'h07: out <= Line18;
-	5'h08: out <= Line19;
-	5'h09: out <= Line110;
-	5'h0A: out <= Line111;
-	5'h0B: out <= Line112;
-	5'h0C: out <= Line113;
-	5'h0D: out <= Line114;
-	5'h0E: out <= Line115;
-	5'h0F: out <= Line116;
-
+	5'h00: out <= 8'h53;
+	5'h01: out <= 8'h41;
+	5'h02: out <= 8'h4E;
+	5'h03: out <= 8'h4A;
+	5'h04: out <= 8'h55;
+	5'h05: out <= 8'h4C;
+	5'h06: out <= 8'h41;
+//	5'h07: out <= 4'h0;	
+//	5'h06: out <= {4'h0,hex1};
+//	5'h07: out <= {4'h0,hex0};
 // Line 2
-	5'h10: out <= Line21;
-	5'h11: out <= Line22;
-	5'h12: out <= Line23;
-	5'h13: out <= Line24;
-	5'h14: out <= Line25;
-	5'h15: out <= Line26;
-	5'h16: out <= Line27;
-	5'h17: out <= Line28;
-	5'h18: out <= Line29;
-	5'h19: out <= Line210;
-	5'h1A: out <= Line211;
-	5'h1B: out <= Line212;
-	5'h1C: out <= Line213;
-	5'h1D: out <= Line214;
-	5'h1E: out <= Line215;
-	5'h1F: out <= Line216;
-
-// // Line 1
-//    always 
-//      case (index)
-// 	5'h00: out <= Line1[127:120];
-// 	5'h01: out <= Line1[119:112];
-// 	5'h02: out <= Line1[111:104];
-// 	5'h03: out <= Line1[103:96];
-// 	5'h04: out <= Line1[95:88];
-// 	5'h05: out <= Line1[87:80];
-// 	5'h06: out <= Line1[79:72];
-// 	5'h07: out <= Line1[71:64];
-// 	5'h08: out <= Line1[63:56];
-// 	5'h09: out <= Line1[55:48];
-// 	5'h0A: out <= Line1[47:40];
-// 	5'h0B: out <= Line1[39:32];
-// 	5'h0C: out <= Line1[31:24];
-// 	5'h0D: out <= Line1[23:16];
-// 	5'h0E: out <= Line1[15:8];
-// 	5'h0F: out <= Line1[7:0];
-
-// // Line 2
-// 	5'h10: out <= Line2[127:120];
-// 	5'h11: out <= Line2[119:112];
-// 	5'h12: out <= Line2[111:104];
-// 	5'h13: out <= Line2[103:96];
-// 	5'h14: out <= Line2[95:88];
-// 	5'h15: out <= Line2[87:80];
-// 	5'h16: out <= Line2[79:72];
-// 	5'h17: out <= Line2[71:64];
-// 	5'h18: out <= Line2[63:56];
-// 	5'h19: out <= Line2[55:48];
-// 	5'h1A: out <= Line2[47:40];
-// 	5'h1B: out <= Line2[39:32];
-// 	5'h1C: out <= Line2[31:24];
-// 	5'h1D: out <= Line2[23:16];
-// 	5'h1E: out <= Line2[15:8];
-// 	5'h1F: out <= Line2[7:0];
+	5'h10: out <= 8'h4B;
+	5'h11: out <= 8'h41;
+	5'h12: out <= 8'h56;
+	5'h13: out <= 8'h49;
+	5'h14: out <= 8'h53;
+	5'h15: out <= 8'h48;
 	
 	default: out <= 8'h20;
      endcase

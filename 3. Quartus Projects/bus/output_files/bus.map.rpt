@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus
-Sun Aug 29 15:37:32 2021
+Sun Aug 29 18:17:41 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,17 +13,18 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |lcdlab3|LCD_Display:u1|next_command
-  9. State Machine - |lcdlab3|LCD_Display:u1|state
+  8. State Machine - |LCD_in|lcdlab3:LCD|LCD_Display:u1|next_command
+  9. State Machine - |LCD_in|lcdlab3:LCD|LCD_Display:u1|state
  10. Registers Removed During Synthesis
  11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: LCD_Display:u1
- 14. Port Connectivity Checks: "LCD_Display:u1"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+ 12. Parameter Settings for User Entity Instance: lcdlab3:LCD|LCD_Display:u1
+ 13. Port Connectivity Checks: "lcdlab3:LCD|LCD_Display:u1|LCD_display_string:u1"
+ 14. Port Connectivity Checks: "lcdlab3:LCD|LCD_Display:u1"
+ 15. Port Connectivity Checks: "lcdlab3:LCD"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,15 +51,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 29 15:37:32 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug 29 18:17:41 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
-; Top-level Entity Name              ; lcdlab3                                     ;
+; Top-level Entity Name              ; LCD_in                                      ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 117                                         ;
-;     Total combinational functions  ; 115                                         ;
-;     Dedicated logic registers      ; 80                                          ;
-; Total registers                    ; 80                                          ;
+; Total logic elements               ; 104                                         ;
+;     Total combinational functions  ; 102                                         ;
+;     Dedicated logic registers      ; 79                                          ;
+; Total registers                    ; 79                                          ;
 ; Total pins                         ; 15                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -73,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; lcdlab3            ; bus                ;
+; Top-level entity name                                            ; LCD_in             ; bus                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -166,7 +167,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -178,57 +179,58 @@ https://fpgasoftware.intel.com/eula.
 ; reset_delay.v                    ; yes             ; User Verilog HDL File  ; C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/reset_delay.v ;         ;
 ; lcdlab3.v                        ; yes             ; User Verilog HDL File  ; C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v     ;         ;
 ; LCD_Display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v ;         ;
+; LCD_in.v                         ; yes             ; User Verilog HDL File  ; C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v      ;         ;
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                         ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Estimated Total logic elements              ; 117                   ;
-;                                             ;                       ;
-; Total combinational functions               ; 115                   ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 47                    ;
-;     -- 3 input functions                    ; 5                     ;
-;     -- <=2 input functions                  ; 63                    ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 74                    ;
-;     -- arithmetic mode                      ; 41                    ;
-;                                             ;                       ;
-; Total registers                             ; 80                    ;
-;     -- Dedicated logic registers            ; 80                    ;
-;     -- I/O registers                        ; 0                     ;
-;                                             ;                       ;
-; I/O pins                                    ; 15                    ;
-;                                             ;                       ;
-; Embedded Multiplier 9-bit elements          ; 0                     ;
-;                                             ;                       ;
-; Maximum fan-out node                        ; Reset_Delay:r0|oRESET ;
-; Maximum fan-out                             ; 58                    ;
-; Total fan-out                               ; 625                   ;
-; Average fan-out                             ; 2.68                  ;
-+---------------------------------------------+-----------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                     ;
++---------------------------------------------+-----------------------------------+
+; Resource                                    ; Usage                             ;
++---------------------------------------------+-----------------------------------+
+; Estimated Total logic elements              ; 104                               ;
+;                                             ;                                   ;
+; Total combinational functions               ; 102                               ;
+; Logic element usage by number of LUT inputs ;                                   ;
+;     -- 4 input functions                    ; 34                                ;
+;     -- 3 input functions                    ; 5                                 ;
+;     -- <=2 input functions                  ; 63                                ;
+;                                             ;                                   ;
+; Logic elements by mode                      ;                                   ;
+;     -- normal mode                          ; 61                                ;
+;     -- arithmetic mode                      ; 41                                ;
+;                                             ;                                   ;
+; Total registers                             ; 79                                ;
+;     -- Dedicated logic registers            ; 79                                ;
+;     -- I/O registers                        ; 0                                 ;
+;                                             ;                                   ;
+; I/O pins                                    ; 15                                ;
+;                                             ;                                   ;
+; Embedded Multiplier 9-bit elements          ; 0                                 ;
+;                                             ;                                   ;
+; Maximum fan-out node                        ; lcdlab3:LCD|Reset_Delay:r0|oRESET ;
+; Maximum fan-out                             ; 58                                ;
+; Total fan-out                               ; 570                               ;
+; Average fan-out                             ; 2.60                              ;
++---------------------------------------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name        ; Library Name ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------------+--------------+
-; |lcdlab3                      ; 115 (0)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |lcdlab3                                      ; lcdlab3            ; work         ;
-;    |LCD_Display:u1|           ; 88 (82)             ; 59 (59)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdlab3|LCD_Display:u1                       ; LCD_Display        ; work         ;
-;       |LCD_display_string:u1| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdlab3|LCD_Display:u1|LCD_display_string:u1 ; LCD_display_string ; work         ;
-;    |Reset_Delay:r0|           ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdlab3|Reset_Delay:r0                       ; Reset_Delay        ; work         ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------+--------------+
+; |LCD_in                    ; 102 (0)             ; 79 (0)                    ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |LCD_in                            ; LCD_in      ; work         ;
+;    |lcdlab3:LCD|           ; 102 (0)             ; 79 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LCD_in|lcdlab3:LCD                ; lcdlab3     ; work         ;
+;       |LCD_Display:u1|     ; 75 (75)             ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LCD_in|lcdlab3:LCD|LCD_Display:u1 ; LCD_Display ; work         ;
+;       |Reset_Delay:r0|     ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LCD_in|lcdlab3:LCD|Reset_Delay:r0 ; Reset_Delay ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |lcdlab3|LCD_Display:u1|next_command                                                                                                                                                                                                                                 ;
+; State Machine - |LCD_in|lcdlab3:LCD|LCD_Display:u1|next_command                                                                                                                                                                                                                      ;
 +----------------------------+----------------------------+--------------------------+---------------------+---------------------+--------------------------+--------------------+---------------------------+-----------------------+-------------------------+-----------------------+
 ; Name                       ; next_command.DISPLAY_CLEAR ; next_command.DISPLAY_OFF ; next_command.RESET3 ; next_command.RESET2 ; next_command.RETURN_HOME ; next_command.LINE2 ; next_command.Print_String ; next_command.MODE_SET ; next_command.DISPLAY_ON ; next_command.FUNC_SET ;
 +----------------------------+----------------------------+--------------------------+---------------------+---------------------+--------------------------+--------------------+---------------------------+-----------------------+-------------------------+-----------------------+
@@ -247,7 +249,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |lcdlab3|LCD_Display:u1|state                                                                                                                                                                                                          ;
+; State Machine - |LCD_in|lcdlab3:LCD|LCD_Display:u1|state                                                                                                                                                                                               ;
 +---------------------+---------------------+-------------------+--------------+--------------+------------+------------------+-------------------+-------------+--------------------+----------------+------------------+----------------+--------------+
 ; Name                ; state.DISPLAY_CLEAR ; state.DISPLAY_OFF ; state.RESET3 ; state.RESET2 ; state.HOLD ; state.DROP_LCD_E ; state.RETURN_HOME ; state.LINE2 ; state.Print_String ; state.MODE_SET ; state.DISPLAY_ON ; state.FUNC_SET ; state.RESET1 ;
 +---------------------+---------------------+-------------------+--------------+--------------+------------+------------------+-------------------+-------------+--------------------+----------------+------------------+----------------+--------------+
@@ -267,22 +269,23 @@ Encoding Type:  One-Hot
 +---------------------+---------------------+-------------------+--------------+--------------+------------+------------------+-------------------+-------------+--------------------+----------------+------------------+----------------+--------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; LCD_Display:u1|LCD_RW_INT             ; Stuck at GND due to stuck port data_in ;
-; LCD_Display:u1|next_command~2         ; Lost fanout                            ;
-; LCD_Display:u1|next_command~3         ; Lost fanout                            ;
-; LCD_Display:u1|next_command~4         ; Lost fanout                            ;
-; LCD_Display:u1|next_command~5         ; Lost fanout                            ;
-; LCD_Display:u1|state~14               ; Lost fanout                            ;
-; LCD_Display:u1|state~15               ; Lost fanout                            ;
-; LCD_Display:u1|state~16               ; Lost fanout                            ;
-; LCD_Display:u1|state~17               ; Lost fanout                            ;
-; Total Number of Removed Registers = 9 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++----------------------------------------------+----------------------------------------------------------+
+; Register name                                ; Reason for Removal                                       ;
++----------------------------------------------+----------------------------------------------------------+
+; lcdlab3:LCD|LCD_Display:u1|LCD_RW_INT        ; Stuck at GND due to stuck port data_in                   ;
+; lcdlab3:LCD|LCD_Display:u1|DATA_BUS_VALUE[5] ; Merged with lcdlab3:LCD|LCD_Display:u1|DATA_BUS_VALUE[4] ;
+; lcdlab3:LCD|LCD_Display:u1|next_command~2    ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|next_command~3    ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|next_command~4    ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|next_command~5    ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|state~14          ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|state~15          ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|state~16          ; Lost fanout                                              ;
+; lcdlab3:LCD|LCD_Display:u1|state~17          ; Lost fanout                                              ;
+; Total Number of Removed Registers = 10       ;                                                          ;
++----------------------------------------------+----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -290,55 +293,158 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 80    ;
+; Total registers                              ; 79    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 34    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Clock Enable       ; 42    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |lcdlab3|LCD_Display:u1|DATA_BUS_VALUE[4] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-
-
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LCD_Display:u1 ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; HOLD           ; 0000  ; Unsigned Binary                    ;
-; FUNC_SET       ; 0001  ; Unsigned Binary                    ;
-; DISPLAY_ON     ; 0010  ; Unsigned Binary                    ;
-; MODE_SET       ; 0011  ; Unsigned Binary                    ;
-; Print_String   ; 0100  ; Unsigned Binary                    ;
-; LINE2          ; 0101  ; Unsigned Binary                    ;
-; RETURN_HOME    ; 0110  ; Unsigned Binary                    ;
-; DROP_LCD_E     ; 0111  ; Unsigned Binary                    ;
-; RESET1         ; 1000  ; Unsigned Binary                    ;
-; RESET2         ; 1001  ; Unsigned Binary                    ;
-; RESET3         ; 1010  ; Unsigned Binary                    ;
-; DISPLAY_OFF    ; 1011  ; Unsigned Binary                    ;
-; DISPLAY_CLEAR  ; 1100  ; Unsigned Binary                    ;
-+----------------+-------+------------------------------------+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcdlab3:LCD|LCD_Display:u1 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; HOLD           ; 0000  ; Unsigned Binary                                ;
+; FUNC_SET       ; 0001  ; Unsigned Binary                                ;
+; DISPLAY_ON     ; 0010  ; Unsigned Binary                                ;
+; MODE_SET       ; 0011  ; Unsigned Binary                                ;
+; Print_String   ; 0100  ; Unsigned Binary                                ;
+; LINE2          ; 0101  ; Unsigned Binary                                ;
+; RETURN_HOME    ; 0110  ; Unsigned Binary                                ;
+; DROP_LCD_E     ; 0111  ; Unsigned Binary                                ;
+; RESET1         ; 1000  ; Unsigned Binary                                ;
+; RESET2         ; 1001  ; Unsigned Binary                                ;
+; RESET3         ; 1010  ; Unsigned Binary                                ;
+; DISPLAY_OFF    ; 1011  ; Unsigned Binary                                ;
+; DISPLAY_CLEAR  ; 1100  ; Unsigned Binary                                ;
++----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------+
-; Port Connectivity Checks: "LCD_Display:u1" ;
-+------+-------+----------+------------------+
-; Port ; Type  ; Severity ; Details          ;
-+------+-------+----------+------------------+
-; hex0 ; Input ; Info     ; Stuck at GND     ;
-; hex1 ; Input ; Info     ; Stuck at GND     ;
-+------+-------+----------+------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcdlab3:LCD|LCD_Display:u1|LCD_display_string:u1"                                                                                              ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Line11  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line12  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line13  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line14  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line15  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line16  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line17  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line18  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line19  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line110 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line111 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line112 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line113 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line114 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line115 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line116 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line21  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line22  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line23  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line24  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line25  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line26  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line27  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line28  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line29  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line210 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line211 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line212 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line213 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line214 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line215 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Line216 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "lcdlab3:LCD|LCD_Display:u1" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; hex0 ; Input ; Info     ; Stuck at GND                 ;
+; hex1 ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcdlab3:LCD"                                                                                                                                      ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Line11  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line11[7..1]" will be connected to GND.  ;
+; Line11  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line12  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line12[7..1]" will be connected to GND.  ;
+; Line12  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line13  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line13[7..1]" will be connected to GND.  ;
+; Line13  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line14  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line14[7..1]" will be connected to GND.  ;
+; Line14  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line15  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line15[7..1]" will be connected to GND.  ;
+; Line15  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line16  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line16[7..1]" will be connected to GND.  ;
+; Line16  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line17  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line17[7..1]" will be connected to GND.  ;
+; Line17  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line18  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line18[7..1]" will be connected to GND.  ;
+; Line18  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line19  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line19[7..1]" will be connected to GND.  ;
+; Line19  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line110 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line110[7..1]" will be connected to GND. ;
+; Line110 ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line111 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line111[7..1]" will be connected to GND. ;
+; Line111 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line112 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line112[7..1]" will be connected to GND. ;
+; Line112 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line113 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line113[7..1]" will be connected to GND. ;
+; Line113 ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line114 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line114[7..1]" will be connected to GND. ;
+; Line114 ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line115 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line115[7..1]" will be connected to GND. ;
+; Line115 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line116 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line116[7..1]" will be connected to GND. ;
+; Line116 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line21  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line21[7..1]" will be connected to GND.  ;
+; Line21  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line22  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line22[7..1]" will be connected to GND.  ;
+; Line22  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line23  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line23[7..1]" will be connected to GND.  ;
+; Line23  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line24  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line24[7..1]" will be connected to GND.  ;
+; Line24  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line25  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line25[7..1]" will be connected to GND.  ;
+; Line25  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line26  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line26[7..1]" will be connected to GND.  ;
+; Line26  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line27  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line27[7..1]" will be connected to GND.  ;
+; Line27  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line28  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line28[7..1]" will be connected to GND.  ;
+; Line28  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line29  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line29[7..1]" will be connected to GND.  ;
+; Line29  ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line210 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line210[7..1]" will be connected to GND. ;
+; Line210 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line211 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line211[7..1]" will be connected to GND. ;
+; Line211 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line212 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line212[7..1]" will be connected to GND. ;
+; Line212 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line213 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line213[7..1]" will be connected to GND. ;
+; Line213 ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Line214 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line214[7..1]" will be connected to GND. ;
+; Line214 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line215 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line215[7..1]" will be connected to GND. ;
+; Line215 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
+; Line216 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "Line216[7..1]" will be connected to GND. ;
+; Line216 ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -347,26 +453,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 15                          ;
-; cycloneiii_ff         ; 80                          ;
+; cycloneiii_ff         ; 79                          ;
 ;     CLR               ; 14                          ;
 ;     CLR SCLR          ; 20                          ;
-;     ENA               ; 38                          ;
+;     ENA               ; 37                          ;
 ;     ENA SLD           ; 5                           ;
 ;     plain             ; 3                           ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 117                         ;
+; cycloneiii_lcell_comb ; 104                         ;
 ;     arith             ; 41                          ;
 ;         2 data inputs ; 40                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 76                          ;
+;     normal            ; 63                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 20                          ;
 ;         3 data inputs ; 4                           ;
-;         4 data inputs ; 47                          ;
+;         4 data inputs ; 34                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.28                        ;
+; Average LUT depth     ; 2.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -375,7 +481,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -385,7 +491,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun Aug 29 15:37:06 2021
+    Info: Processing started: Sun Aug 29 18:17:27 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -395,7 +501,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file lcdlab3
     Info (12023): Found entity 1: lcdlab3 File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file lcd_display.v
     Info (12023): Found entity 1: LCD_Display File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 40
-    Info (12023): Found entity 2: LCD_display_string File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 260
+    Info (12023): Found entity 2: LCD_display_string File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 334
 Info (12021): Found 1 design units, including 1 entities, in source file slave_port_slow.v
     Info (12023): Found entity 1: slave_port_slow File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/slave_port_slow.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file slave_4k_slow.v
@@ -461,63 +567,131 @@ Info (12021): Found 1 design units, including 1 entities, in source file top.v
     Info (12023): Found entity 1: top File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file top_tb.v
     Info (12023): Found entity 1: top_tb File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/top_tb.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_in.v
+    Info (12023): Found entity 1: LCD_in File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at Bus_interconnect_tb.v(65): created implicit net for "bus_busy" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 65
 Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(32): created implicit net for "s1_split_enabled" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 32
 Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(33): created implicit net for "s2_split_enabled" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 33
 Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(34): created implicit net for "s3_split_enabled" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 34
 Warning (10236): Verilog HDL Implicit Net warning at top.v(122): created implicit net for "clk" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 122
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(20): created implicit net for "Line11" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(21): created implicit net for "Line12" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(22): created implicit net for "Line13" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(23): created implicit net for "Line14" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(24): created implicit net for "Line15" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(25): created implicit net for "Line16" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(26): created implicit net for "Line17" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(27): created implicit net for "Line18" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(28): created implicit net for "Line19" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(29): created implicit net for "Line110" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 29
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(30): created implicit net for "Line111" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 30
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(31): created implicit net for "Line112" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 31
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(32): created implicit net for "Line113" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 32
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(33): created implicit net for "Line114" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(34): created implicit net for "Line115" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(35): created implicit net for "Line116" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 35
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(37): created implicit net for "Line21" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(38): created implicit net for "Line22" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(39): created implicit net for "Line23" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(40): created implicit net for "Line24" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(41): created implicit net for "Line25" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(42): created implicit net for "Line26" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(43): created implicit net for "Line27" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 43
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(44): created implicit net for "Line28" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 44
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(45): created implicit net for "Line29" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(46): created implicit net for "Line210" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(47): created implicit net for "Line211" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(48): created implicit net for "Line212" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(49): created implicit net for "Line213" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 49
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(50): created implicit net for "Line214" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(51): created implicit net for "Line215" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 51
+Warning (10236): Verilog HDL Implicit Net warning at LCD_in.v(52): created implicit net for "Line216" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 52
 Warning (10222): Verilog HDL Parameter Declaration warning at master_in_port.v(31): Parameter Declaration in module "master_in_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 31
 Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(53): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 53
 Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(54): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 54
 Warning (10222): Verilog HDL Parameter Declaration warning at button_event1.v(33): Parameter Declaration in module "button_event1" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 33
-Info (12127): Elaborating entity "lcdlab3" for the top level hierarchy
-Warning (10858): Verilog HDL warning at lcdlab3.v(18): object SW used but never assigned File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 18
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX0" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX1" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX2" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX3" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX4" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX5" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX6" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(19): object "HEX7" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(21): object "LEDR" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 21
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(22): object "GPIO_0" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 22
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(22): object "GPIO_1" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 22
-Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(29): object "RST" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 29
-Warning (10030): Net "SW[7..0]" at lcdlab3.v(18) has no driver or initial value, using a default initial value '0' File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 18
-Info (12128): Elaborating entity "Reset_Delay" for hierarchy "Reset_Delay:r0" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 36
-Info (12128): Elaborating entity "LCD_Display" for hierarchy "LCD_Display:u1" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 61
-Info (12128): Elaborating entity "LCD_display_string" for hierarchy "LCD_Display:u1|LCD_display_string:u1" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 77
+Info (12127): Elaborating entity "LCD_in" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(60): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 60
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(61): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 61
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(62): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 62
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(63): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 63
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(64): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 64
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(65): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 65
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(66): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 66
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(67): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 67
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(68): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 68
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(69): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 69
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(70): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 70
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(71): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 71
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(72): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 72
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(73): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 73
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(74): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 74
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(75): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 75
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(78): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 78
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(79): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 79
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(80): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 80
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(81): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 81
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(82): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 82
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(83): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 83
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(84): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 84
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(85): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 85
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(86): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 86
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(87): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 87
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(88): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 88
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(89): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 89
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(90): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 90
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(91): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 91
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(92): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 92
+Warning (10230): Verilog HDL assignment warning at LCD_in.v(93): truncated value with size 8 to match size of target (1) File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 93
+Info (12128): Elaborating entity "lcdlab3" for hierarchy "lcdlab3:LCD" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 58
+Warning (10858): Verilog HDL warning at lcdlab3.v(46): object SW used but never assigned File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 46
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX0" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX1" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX2" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX3" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX4" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX5" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX6" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(47): object "HEX7" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 47
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(49): object "LEDR" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 49
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(50): object "GPIO_0" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 50
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(50): object "GPIO_1" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 50
+Warning (10036): Verilog HDL or VHDL warning at lcdlab3.v(57): object "RST" assigned a value but never read File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 57
+Warning (10030): Net "SW[7..0]" at lcdlab3.v(46) has no driver or initial value, using a default initial value '0' File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 46
+Info (12128): Elaborating entity "Reset_Delay" for hierarchy "lcdlab3:LCD|Reset_Delay:r0" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 64
+Info (12128): Elaborating entity "LCD_Display" for hierarchy "lcdlab3:LCD|LCD_Display:u1" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 123
+Info (12128): Elaborating entity "LCD_display_string" for hierarchy "lcdlab3:LCD|LCD_Display:u1|LCD_display_string:u1" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 151
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[0]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[1]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[2]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[3]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[4]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[5]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[6]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
-    Warning (13010): Node "LCD_Display:u1|DATA_BUS[7]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 45
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[0]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[1]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[2]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[3]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[4]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[5]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[6]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
+    Warning (13010): Node "lcdlab3:LCD|LCD_Display:u1|DATA_BUS[7]~synth" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v Line: 119
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LCD_ON" is stuck at VCC File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 10
-    Warning (13410): Pin "LCD_BLON" is stuck at VCC File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 11
-    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 12
+    Warning (13410): Pin "LCD_ON" is stuck at VCC File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 6
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 7
+    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v Line: 3
-Info (21057): Implemented 134 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "rst" File: C:/Users/sswic/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v Line: 3
+Info (21057): Implemented 121 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 5 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 119 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
-    Info: Peak virtual memory: 4743 megabytes
-    Info: Processing ended: Sun Aug 29 15:37:32 2021
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:34
+    Info (21061): Implemented 106 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 104 warnings
+    Info: Peak virtual memory: 4738 megabytes
+    Info: Processing ended: Sun Aug 29 18:17:41 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
