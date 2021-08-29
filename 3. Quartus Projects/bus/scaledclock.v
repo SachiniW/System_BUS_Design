@@ -5,7 +5,10 @@ module scaledclock(input inclk,
 						 input ena,
 					    output reg clk = 1);
 
-parameter maxcount=28'd4;// input 10MHz clock and output 1Hz clk 
+						 
+// input 10MHz clock and output 1Hz clk 
+//parameter maxcount=28'd4; //for testbench
+parameter maxcount=28'd50000000;// for FPGA 
 //28'd50000000
 reg [27:0] count=28'd0;
 

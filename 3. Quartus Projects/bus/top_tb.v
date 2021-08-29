@@ -1,7 +1,7 @@
 `timescale 1 ns / 1 ps
 module top_tb();
 
-reg clk, reset, button1_val, button2_val, button1_sel, button2_sel;
+reg clk, reset, enable, button1_val, button2_val, button1_sel, button2_sel;
 // m1_button1, m1_button2, m2_button1, m2_button2;
 wire m1_busy,m2_busy; 
 
@@ -10,6 +10,7 @@ parameter CLK_PERIOD=20;
 top DUT (
 	.clock(clk), 
 	.rst(reset), 
+	.enable(enable),
 	.button1_val(button1_val),
 	.button2_val(button2_val),
 	.button1_sel(button1_sel),
@@ -28,6 +29,7 @@ initial begin
 
 	clk <= 1'b0;
 	reset <= 1'b1;
+	enable <= 1'b1;
 	button1_val <= 1;
 	button2_val <= 1;
 	button1_sel <= 0;

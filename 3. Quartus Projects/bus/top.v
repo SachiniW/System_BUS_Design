@@ -12,18 +12,38 @@
 */
 
 module top(
-	input clock, 
+	input clock,	
 	input rst,
+	input enable,
 	input button1_val,
 	input button2_val,
 	input button1_sel,
 	input button2_sel,
+	output scaled_clk,
 	output m1_busy,
 	output m2_busy,
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
 	output [6:0]display3_pin,
-	output [6:0]display4_pin);
+	output [6:0]display4_pin,
+	
+	output LCD_ON,	// LCD Power ON/OFF
+   output LCD_BLON,	// LCD Back Light ON/OFF
+   output LCD_RW,	// LCD Read/Write Select, 0 = Write, 1 = Read
+   output LCD_EN,	// LCD Enable
+   output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
+   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
+	);
+	
+LCD_in LCD(
+	.clock(clock),
+	.rst(rst),
+   .LCD_ON(LCD_ON),	
+   .LCD_BLON(LCD_BLON),	
+   .LCD_RW(LCD_RW),	
+   .LCD_EN(LCD_EN),	
+   .LCD_RS(LCD_RS),	
+   .LCD_DATA(LCD_DATA));
 
 
 //wire m1_busy1;
@@ -118,8 +138,9 @@ wire split_en;
 wire reset;
 
 assign reset = ~rst;
+assign scaled_clk = clk;
 
-scaledclock CLK_DIV(.inclk(clock), .ena(1), .clk(clk));
+scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 wire m1_button1;
 wire m1_button2;
