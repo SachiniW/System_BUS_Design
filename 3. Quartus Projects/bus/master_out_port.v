@@ -78,22 +78,39 @@ begin
 		begin
 			if (instruction[1]==1)
 			begin
-				count <= count+1;
-				state <= WAIT_ARBITOR;
-				master_ready<= 0;
-				approval_request <= 1;
-				tx_slave_select <= slave_select[count];
-				master_valid <= 0;
-				write_en <= 0;
-				read_en <= 0;	
-				tx_address <= tx_address;
-				tx_data <= tx_data;
-				tx_done <= 0;
+				if (bus_busy == 0 && arbitor_busy == 0)
+				begin
+					count <= count+1;
+					state <= TRANSMIT_SELECT;
+					master_ready<= 0;
+					approval_request <= 1;
+					tx_slave_select <= slave_select[count];
+					master_valid <= 0;
+					write_en <= 0;
+					read_en <= 0;	
+					tx_address <= tx_address;
+					tx_data <= tx_data;
+					tx_done <= 0;
+				end
+				else
+				begin
+					count <= count;
+					state <= WAIT_ARBITOR;
+					master_ready<= 0;
+					approval_request <= 0;
+					tx_slave_select <= tx_slave_select;
+					master_valid <= 0;
+					write_en <= 0;
+					read_en <= 0;	
+					tx_address <= tx_address;
+					tx_data <= tx_data;
+					tx_done <= 0;
+				end
 			end
 			
 			else
 			begin
-				count <= count;
+				count <= 0;
 				state <=IDLE;
 				master_ready <= 1;
 				approval_request <= 0;
@@ -110,22 +127,11 @@ begin
 		
 		WAIT_ARBITOR:
 		begin
-			if (arbitor_busy==0 && approval_request==1 && bus_busy == 0)
+			if (bus_busy == 0 && arbitor_busy == 0)
 			begin
-				if (count >= SLAVE_LEN-1)
-				begin
-					count<=0;
-					//if (bus_busy==0)
-					state <= WAIT_APPROVAL;
-					//else	
-					//	state <=WAIT_BUS;
-				end
-				else
-				begin
-					count <= count+1;
-					state <=TRANSMIT_SELECT;
-				end
-				master_ready <= 0;
+				count <= count+1;
+				state <= TRANSMIT_SELECT;
+				master_ready<= 0;
 				approval_request <= 1;
 				tx_slave_select <= slave_select[count];
 				master_valid <= 0;
@@ -135,13 +141,12 @@ begin
 				tx_data <= tx_data;
 				tx_done <= 0;
 			end
-			
 			else
 			begin
 				count <= count;
-				state <=WAIT_ARBITOR;
-				master_ready <= 0;
-				approval_request <= 1;
+				state <= WAIT_ARBITOR;
+				master_ready<= 0;
+				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
 				master_valid <= 0;
 				write_en <= 0;
@@ -251,7 +256,7 @@ begin
 			
 				if (bus_busy == 1) 
 				begin
-					count <= count+1;
+					count <= 0;
 					state <= WAIT_ARBITOR;
 					master_ready<= 0;
 					approval_request <= 1;
@@ -455,7 +460,7 @@ begin
 		
 		READ_WAIT:
 		begin
-			count <= count;
+			count <= 0;
 			if (rx_done == 1)
 				state <= IDLE;
 			else
@@ -473,7 +478,7 @@ begin
 		
 		FINISH:
 		begin
-			count <= count;
+			count <= 0;
 			state <=IDLE;
 			master_ready <= 1;
 			approval_request <= 0;

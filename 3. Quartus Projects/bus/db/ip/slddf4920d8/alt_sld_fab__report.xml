@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
-<<<<<<< HEAD
- date="2021.08.28.06:01:26"
+ date="2021.08.29.01:34:42"
  outputDirectory="D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/">
-=======
- date="2021.08.28.02:09:30"
- outputDirectory="D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/">
->>>>>>> 5b0bba1ba2a3fb7fe864d9ba9dd2181ece03fcf0
  <perimeter>
   <parameter
      name="AUTO_DEVICE_FAMILY"

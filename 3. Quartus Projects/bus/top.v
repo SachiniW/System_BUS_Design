@@ -82,6 +82,9 @@ wire s3_tx_data;
 wire s3_write_en;
 wire s3_read_en;
 wire s3_slave_ready;
+wire s1_slave_split_en;
+wire s2_slave_split_en;
+wire s3_slave_split_en;
 
 // // slave
 // wire slave_tx_done;
@@ -257,13 +260,17 @@ Bus_interconnect BUS(
 	.s3_write_en(s3_write_en),
 	.s3_read_en(s3_read_en),
 	.s3_slave_valid(s3_slave_valid),
-	.s3_slave_ready(s3_slave_ready));
+	.s3_slave_ready(s3_slave_ready),
+	
+	.s1_slave_split_en(s1_slave_split_en),
+	.s2_slave_split_en(s2_slave_split_en),
+	.s3_slave_split_en(s3_slave_split_en));
 
 slave_4k SLAVE_4K(
 	.clk(clk), 
 	.reset(reset),
 
-	.slave_delay(6'd0),
+	.slave_delay(6'd10),
 
 	.read_en(s1_read_en),
 	.write_en(s1_write_en),
@@ -277,7 +284,7 @@ slave_4k SLAVE_4K(
 	.rx_address(s1_rx_address),
 	.rx_data(s1_rx_data),
 	.tx_data(s1_tx_data),
-	.split_en(split_en));
+	.split_en(s1_slave_split_en));
 
 slave_4k SLAVE_2K1(
 	.clk(clk), 
@@ -297,7 +304,7 @@ slave_4k SLAVE_2K1(
 	.rx_address(s2_rx_address),
 	.rx_data(s2_rx_data),				
 	.tx_data(s2_tx_data),
-	.split_en(split_en));
+	.split_en(s2_slave_split_en));
 
 slave_4k SLAVE_2K2(
 	.clk(clk), 
@@ -317,6 +324,6 @@ slave_4k SLAVE_2K2(
 	.rx_address(s3_rx_address),
 	.rx_data(s3_rx_data),					
 	.tx_data(s3_tx_data),
-	.split_en(split_en));
+	.split_en(s3_slave_split_en));
 
 endmodule
