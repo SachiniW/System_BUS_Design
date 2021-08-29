@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Aug 29 01:34:48 2021
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Sun Aug 29 15:37:32 2021
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : bus
-Top-level Entity Name : top
+Top-level Entity Name : lcdlab3
 Family : Cyclone IV E
-Total logic elements : 826
-    Total combinational functions : 753
-    Dedicated logic registers : 476
-Total registers : 476
-Total pins : 36
+Total logic elements : 117
+    Total combinational functions : 115
+    Dedicated logic registers : 80
+Total registers : 80
+Total pins : 15
 Total virtual pins : 0
-Total memory bits : 98,304
+Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

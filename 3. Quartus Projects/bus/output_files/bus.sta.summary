@@ -2,64 +2,124 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
-Slack : 44.329
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -3.544
+TNS   : -101.331
+
+Type  : Slow 1200mV 85C Model Setup 'LCD_Display:u1|CLK_400HZ'
+Slack : -1.601
+TNS   : -32.345
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.392
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.402
+Type  : Slow 1200mV 85C Model Hold 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.403
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 96.665
+Type  : Slow 1200mV 85C Model Recovery 'clock'
+Slack : -1.008
+TNS   : -14.947
+
+Type  : Slow 1200mV 85C Model Recovery 'LCD_Display:u1|CLK_400HZ'
+Slack : -0.320
+TNS   : -3.620
+
+Type  : Slow 1200mV 85C Model Removal 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.624
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
-Slack : 1.164
+Type  : Slow 1200mV 85C Model Removal 'clock'
+Slack : 0.813
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.565
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -56.970
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'LCD_Display:u1|CLK_400HZ'
+Slack : -1.285
+TNS   : -48.830
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -3.186
+TNS   : -89.127
+
+Type  : Slow 1200mV 0C Model Setup 'LCD_Display:u1|CLK_400HZ'
+Slack : -1.388
+TNS   : -25.922
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.351
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 44.852
+Type  : Slow 1200mV 0C Model Hold 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.353
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.354
+Type  : Slow 1200mV 0C Model Recovery 'clock'
+Slack : -0.826
+TNS   : -11.353
+
+Type  : Slow 1200mV 0C Model Recovery 'LCD_Display:u1|CLK_400HZ'
+Slack : -0.210
+TNS   : -2.298
+
+Type  : Slow 1200mV 0C Model Removal 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.575
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 96.986
+Type  : Slow 1200mV 0C Model Removal 'clock'
+Slack : 0.749
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 1.065
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -56.970
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'LCD_Display:u1|CLK_400HZ'
+Slack : -1.285
+TNS   : -48.830
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -1.242
+TNS   : -27.760
+
+Type  : Fast 1200mV 0C Model Setup 'LCD_Display:u1|CLK_400HZ'
+Slack : -0.295
+TNS   : -1.805
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.181
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.490
+Type  : Fast 1200mV 0C Model Hold 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.182
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 47.363
+Type  : Fast 1200mV 0C Model Recovery 'clock'
+Slack : -0.036
+TNS   : -0.252
+
+Type  : Fast 1200mV 0C Model Recovery 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.290
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.178
+Type  : Fast 1200mV 0C Model Removal 'LCD_Display:u1|CLK_400HZ'
+Slack : 0.264
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 98.288
+Type  : Fast 1200mV 0C Model Removal 'clock'
+Slack : 0.379
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.553
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -47.867
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.455
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'LCD_Display:u1|CLK_400HZ'
+Slack : -1.000
+TNS   : -38.000
 
 ------------------------------------------------------------

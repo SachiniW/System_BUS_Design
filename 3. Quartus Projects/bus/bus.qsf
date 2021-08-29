@@ -39,10 +39,10 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name TOP_LEVEL_ENTITY lcdlab3
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:51:29  AUGUST 14, 2021"
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -70,42 +70,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME slave_4k_tb -section_id s
 set_global_assignment -name EDA_TEST_BENCH_NAME top_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id top_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME top_tb -section_id top_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE slave_port_slow.v
-set_global_assignment -name VERILOG_FILE slave_4k_slow.v
-set_global_assignment -name VERILOG_FILE tester.v
-set_global_assignment -name VERILOG_FILE master_port_tb.v
-set_global_assignment -name VERILOG_FILE master_port.v
-set_global_assignment -name VERILOG_FILE master_out_port_tb.v
-set_global_assignment -name VERILOG_FILE master_out_port.v
-set_global_assignment -name VERILOG_FILE master_module_tb.v
-set_global_assignment -name VERILOG_FILE master_module.v
-set_global_assignment -name VERILOG_FILE master_in_port_tb.v
-set_global_assignment -name VERILOG_FILE master_in_port.v
-set_global_assignment -name VERILOG_FILE Bus_mux_tb.v
-set_global_assignment -name VERILOG_FILE Bus_mux.v
-set_global_assignment -name VERILOG_FILE Bus_interconnect_tb.v
-set_global_assignment -name VERILOG_FILE Bus_interconnect.v
-set_global_assignment -name VERILOG_FILE Bus_Arbiter_tb.v
-set_global_assignment -name VERILOG_FILE Bus_Arbiter.v
-set_global_assignment -name VERILOG_FILE slave_4k_tb.v
-set_global_assignment -name VERILOG_FILE slave_4k.v
-set_global_assignment -name VERILOG_FILE slave_out_port_tb.v
-set_global_assignment -name VERILOG_FILE slave_out_port.v
-set_global_assignment -name VERILOG_FILE slave_in_port_tb.v
-set_global_assignment -name VERILOG_FILE slave_in_port.v
-set_global_assignment -name VERILOG_FILE scaledclock.v
-set_global_assignment -name VERILOG_FILE bin27.v
-set_global_assignment -name VERILOG_FILE slave_port.v
-set_global_assignment -name VERILOG_FILE slave_port_tb.v
-set_global_assignment -name QIP_FILE BRAM.qip
-set_global_assignment -name VERILOG_FILE BRAM_test.v
-set_global_assignment -name MIF_FILE 4KBRAM.mif
-set_global_assignment -name VERILOG_FILE button_event1.v
-set_global_assignment -name VERILOG_FILE top.v
-set_global_assignment -name VERILOG_FILE top_tb.v
 set_location_assignment PIN_Y2 -to clock
 set_location_assignment PIN_H22 -to display1_pin[6]
 set_location_assignment PIN_J22 -to display1_pin[5]
@@ -147,4 +111,56 @@ set_global_assignment -name EDA_TEST_BENCH_FILE slave_out_port_tb.v -section_id 
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_port_tb.v -section_id slave_port_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_4k_tb.v -section_id slave_4k_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE top_tb.v -section_id top_tb
+set_global_assignment -name VERILOG_FILE reset_delay.v
+set_global_assignment -name VERILOG_FILE lcdlab3.v
+set_global_assignment -name VERILOG_FILE LCD_Display.v
+set_global_assignment -name VERILOG_FILE slave_port_slow.v
+set_global_assignment -name VERILOG_FILE slave_4k_slow.v
+set_global_assignment -name VERILOG_FILE tester.v
+set_global_assignment -name VERILOG_FILE master_port_tb.v
+set_global_assignment -name VERILOG_FILE master_port.v
+set_global_assignment -name VERILOG_FILE master_out_port_tb.v
+set_global_assignment -name VERILOG_FILE master_out_port.v
+set_global_assignment -name VERILOG_FILE master_module_tb.v
+set_global_assignment -name VERILOG_FILE master_module.v
+set_global_assignment -name VERILOG_FILE master_in_port_tb.v
+set_global_assignment -name VERILOG_FILE master_in_port.v
+set_global_assignment -name VERILOG_FILE Bus_mux_tb.v
+set_global_assignment -name VERILOG_FILE Bus_mux.v
+set_global_assignment -name VERILOG_FILE Bus_interconnect_tb.v
+set_global_assignment -name VERILOG_FILE Bus_interconnect.v
+set_global_assignment -name VERILOG_FILE Bus_Arbiter_tb.v
+set_global_assignment -name VERILOG_FILE Bus_Arbiter.v
+set_global_assignment -name VERILOG_FILE slave_4k_tb.v
+set_global_assignment -name VERILOG_FILE slave_4k.v
+set_global_assignment -name VERILOG_FILE slave_out_port_tb.v
+set_global_assignment -name VERILOG_FILE slave_out_port.v
+set_global_assignment -name VERILOG_FILE slave_in_port_tb.v
+set_global_assignment -name VERILOG_FILE slave_in_port.v
+set_global_assignment -name VERILOG_FILE scaledclock.v
+set_global_assignment -name VERILOG_FILE bin27.v
+set_global_assignment -name VERILOG_FILE slave_port.v
+set_global_assignment -name VERILOG_FILE slave_port_tb.v
+set_global_assignment -name QIP_FILE BRAM.qip
+set_global_assignment -name VERILOG_FILE BRAM_test.v
+set_global_assignment -name MIF_FILE 4KBRAM.mif
+set_global_assignment -name VERILOG_FILE button_event1.v
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name VERILOG_FILE top_tb.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_L6 -to LCD_BLON
+set_location_assignment PIN_M5 -to LCD_DATA[7]
+set_location_assignment PIN_M3 -to LCD_DATA[6]
+set_location_assignment PIN_K2 -to LCD_DATA[5]
+set_location_assignment PIN_K1 -to LCD_DATA[4]
+set_location_assignment PIN_K7 -to LCD_DATA[3]
+set_location_assignment PIN_L2 -to LCD_DATA[2]
+set_location_assignment PIN_L1 -to LCD_DATA[1]
+set_location_assignment PIN_L3 -to LCD_DATA[0]
+set_location_assignment PIN_L4 -to LCD_EN
+set_location_assignment PIN_L5 -to LCD_ON
+set_location_assignment PIN_M2 -to LCD_RS
+set_location_assignment PIN_M1 -to LCD_RW
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
