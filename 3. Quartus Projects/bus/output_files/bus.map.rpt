@@ -1,6 +1,6 @@
 Analysis & Synthesis report for bus
-Sun Aug 29 02:04:34 2021
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Sun Aug 29 13:02:58 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -78,18 +78,19 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  70. Port Connectivity Checks: "bin27:DISPLAY5"
  71. In-System Memory Content Editor Settings
  72. Post-Synthesis Netlist Statistics for Top Partition
- 73. Elapsed Time Per Partition
- 74. Analysis & Synthesis Messages
- 75. Analysis & Synthesis Suppressed Messages
+ 73. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
+ 74. Elapsed Time Per Partition
+ 75. Analysis & Synthesis Messages
+ 76. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -99,23 +100,22 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 29 02:04:34 2021       ;
-; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug 29 13:02:58 2021       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,128                                       ;
-;     Total combinational functions  ; 1,082                                       ;
-;     Dedicated logic registers      ; 603                                         ;
-; Total registers                    ; 603                                         ;
+; Total logic elements               ; 1,132                                       ;
+;     Total combinational functions  ; 1,084                                       ;
+;     Dedicated logic registers      ; 605                                         ;
+; Total registers                    ; 605                                         ;
 ; Total pins                         ; 67                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 98,304                                      ;
@@ -229,52 +229,52 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                      ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                            ; Library     ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-------------+
-; master_port.v                                                      ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v                                                      ;             ;
-; master_out_port.v                                                  ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v                                                  ;             ;
-; master_module.v                                                    ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module.v                                                    ;             ;
-; master_in_port.v                                                   ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v                                                   ;             ;
-; Bus_mux.v                                                          ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v                                                          ;             ;
-; Bus_interconnect.v                                                 ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v                                                 ;             ;
-; Bus_Arbiter.v                                                      ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v                                                      ;             ;
-; slave_4k.v                                                         ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v                                                         ;             ;
-; slave_out_port.v                                                   ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v                                                   ;             ;
-; slave_in_port.v                                                    ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v                                                    ;             ;
-; scaledclock.v                                                      ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v                                                      ;             ;
-; bin27.v                                                            ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/bin27.v                                                            ;             ;
-; slave_port.v                                                       ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v                                                       ;             ;
-; BRAM.v                                                             ; yes             ; User Wizard-Generated File                   ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v                                                             ;             ;
-; 4KBRAM.mif                                                         ; yes             ; User Memory Initialization File              ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/4KBRAM.mif                                                         ;             ;
-; button_event1.v                                                    ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/button_event1.v                                                    ;             ;
-; top.v                                                              ; yes             ; User Verilog HDL File                        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v                                                              ;             ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                   ;             ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                            ;             ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                      ;             ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                   ;             ;
-; aglobal201.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                   ;             ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                    ;             ;
-; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                       ;             ;
-; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                       ;             ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                     ;             ;
-; db/altsyncram_lgl1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf                                             ;             ;
-; db/altsyncram_ipb2.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_ipb2.tdf                                             ;             ;
-; sld_mod_ram_rom.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd                                              ;             ;
-; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                    ;             ;
-; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                ;             ;
-; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                   ;             ;
-; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_hub.vhd                                                      ; altera_sld  ;
-; db/ip/slddf4920d8/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/alt_sld_fab.v                                    ; alt_sld_fab ;
-; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
-; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
-; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
-; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
-; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
-; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                 ;             ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                                      ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; master_port.v                                                      ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v                                                      ;             ;
+; master_out_port.v                                                  ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v                                                  ;             ;
+; master_module.v                                                    ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v                                                    ;             ;
+; master_in_port.v                                                   ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v                                                   ;             ;
+; Bus_mux.v                                                          ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v                                                          ;             ;
+; Bus_interconnect.v                                                 ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v                                                 ;             ;
+; Bus_Arbiter.v                                                      ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v                                                      ;             ;
+; slave_4k.v                                                         ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v                                                         ;             ;
+; slave_out_port.v                                                   ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v                                                   ;             ;
+; slave_in_port.v                                                    ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v                                                    ;             ;
+; scaledclock.v                                                      ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v                                                      ;             ;
+; bin27.v                                                            ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v                                                            ;             ;
+; slave_port.v                                                       ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v                                                       ;             ;
+; BRAM.v                                                             ; yes             ; User Wizard-Generated File                   ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v                                                             ;             ;
+; 4KBRAM.mif                                                         ; yes             ; User Memory Initialization File              ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/4KBRAM.mif                                                         ;             ;
+; button_event1.v                                                    ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v                                                    ;             ;
+; top.v                                                              ; yes             ; User Verilog HDL File                        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v                                                              ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                          ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                   ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                                             ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                                          ;             ;
+; aglobal181.inc                                                     ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                          ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                           ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                                                              ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                                              ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                                            ;             ;
+; db/altsyncram_lgl1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf                                             ;             ;
+; db/altsyncram_ipb2.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_ipb2.tdf                                             ;             ;
+; sld_mod_ram_rom.vhd                                                ; yes             ; Encrypted Megafunction                       ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd                                                     ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                           ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                       ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                          ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_hub.vhd                                                             ; altera_sld  ;
+; db/ip/slddf4920d8/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                        ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 
 +------------------------------------------------------------------------+
@@ -282,20 +282,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 1,128                    ;
+; Estimated Total logic elements              ; 1,132                    ;
 ;                                             ;                          ;
-; Total combinational functions               ; 1082                     ;
+; Total combinational functions               ; 1084                     ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 543                      ;
+;     -- 4 input functions                    ; 545                      ;
 ;     -- 3 input functions                    ; 198                      ;
 ;     -- <=2 input functions                  ; 341                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 877                      ;
+;     -- normal mode                          ; 879                      ;
 ;     -- arithmetic mode                      ; 205                      ;
 ;                                             ;                          ;
-; Total registers                             ; 603                      ;
-;     -- Dedicated logic registers            ; 603                      ;
+; Total registers                             ; 605                      ;
+;     -- Dedicated logic registers            ; 605                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 67                       ;
@@ -304,8 +304,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
-; Maximum fan-out                             ; 311                      ;
-; Total fan-out                               ; 6495                     ;
+; Maximum fan-out                             ; 313                      ;
+; Total fan-out                               ; 6512                     ;
 ; Average fan-out                             ; 3.51                     ;
 +---------------------------------------------+--------------------------+
 
@@ -315,7 +315,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                             ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |top                                                                                                                                    ; 1082 (3)            ; 603 (0)                   ; 98304       ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                                                                                                                                                                                                                                                                                                                            ; top                               ; work         ;
+; |top                                                                                                                                    ; 1084 (3)            ; 605 (0)                   ; 98304       ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                                                                                                                                                                                                                                                                                                                            ; top                               ; work         ;
 ;    |Bus_interconnect:BUS|                                                                                                               ; 38 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Bus_interconnect:BUS                                                                                                                                                                                                                                                                                                                       ; Bus_interconnect                  ; work         ;
 ;       |Bus_Arbiter:Bus_Arbiter1|                                                                                                        ; 22 (22)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                                                                                                                                                                                                                                                                              ; Bus_Arbiter                       ; work         ;
 ;       |Bus_mux:Bus_mux1|                                                                                                                ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                                                                                                                                                                                                                                                                                      ; Bus_mux                           ; work         ;
@@ -368,12 +368,12 @@ https://fpgasoftware.intel.com/eula.
 ;       |slave_port:SLAVE_PORT|                                                                                                           ; 75 (10)             ; 37 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT                                                                                                                                                                                                                                                                                                    ; slave_port                        ; work         ;
 ;          |slave_in_port:SLAVE_IN_PORT|                                                                                                  ; 60 (60)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT                                                                                                                                                                                                                                                                        ; slave_in_port                     ; work         ;
 ;          |slave_out_port:SLAVE_OUT_PORT|                                                                                                ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT                                                                                                                                                                                                                                                                      ; slave_out_port                    ; work         ;
-;    |sld_hub:auto_hub|                                                                                                                   ; 205 (1)             ; 130 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
-;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 204 (0)             ; 130 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
-;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 204 (0)             ; 130 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
-;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 204 (1)             ; 130 (7)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
-;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 203 (0)             ; 123 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
-;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 203 (162)           ; 123 (94)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 207 (1)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 206 (0)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 206 (0)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 206 (1)             ; 132 (7)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 205 (0)             ; 125 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 205 (164)           ; 125 (96)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
 ;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 23 (23)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
 ;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
@@ -711,12 +711,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 603   ;
+; Total registers                              ; 605   ;
 ; Number of registers using Synchronous Clear  ; 165   ;
 ; Number of registers using Synchronous Load   ; 45    ;
-; Number of registers using Asynchronous Clear ; 358   ;
+; Number of registers using Asynchronous Clear ; 360   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 394   ;
+; Number of registers using Clock Enable       ; 397   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -742,57 +742,69 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[0]                                                 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[3]                                                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[1]                                                ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[3]                                                 ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[1]                                                ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[6]                                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[4]  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[0]                                                                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[3]                                                                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[1]                                                                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[2]                                                                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[3]                                                                                                      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[1]                                                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|data_out[3]                                                                                                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|data_out[3]                                                                                                                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_grant[1]                                                                                                                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[0]                                                                                                                               ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|read_en                                                                                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|read_en                                                                                                    ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[24]                                                                                                    ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[20]                                                                                                    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m2_grant                                                                                                                                   ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[1]       ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[3]      ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]      ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 32 LEs               ; 288 LEs                ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[30]                                                                                                  ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 32 LEs               ; 288 LEs                ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[21]                                                                                                  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_master_ready                                                                                                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_rx_address                                                                                                                                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_write_en                                                                                                                                        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state                                                                                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state                                                                                                      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m2_slave_valid                                                                                                                                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m1_slave_ready                                                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                                                                                                                                                                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[0]                                                                                                                                                                                                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[0]                                                                                                                                                                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[3]                                                                                                                                                                                                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                                                                                                                                                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[1]                                                                                                                                                                                                                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[3]                                                                                                                                                                                                                 ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[1]                                                                                                                                                                                                                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[6]                                                                                                                                                                                                                ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[4]                                                                                                                                                                  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1]                                                                                                                                                                 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[1]                                                                                                                                                                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[0]                                                                                                                                                                                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[3]                                                                                                                                                                                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[1]                                                                                                                                                                                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[2]                                                                                                                                                                                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[3]                                                                                                                                                                                                                                                                      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[1]                                                                                                                                                                                                                                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER2|button_event1:BUTTON_EVENT1|data_out[3]                                                                                                                                                                                                                                                                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|master_module:MASTER1|button_event1:BUTTON_EVENT1|data_out[3]                                                                                                                                                                                                                                                                                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_grant[1]                                                                                                                                                                                                                                                                                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[0]                                                                                                                                                                                                                                                                                               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|read_en                                                                                                                                                                                                                                                                    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|read_en                                                                                                                                                                                                                                                                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[24]                                                                                                                                                                                                                                                                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[20]                                                                                                                                                                                                                                                                    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m2_grant                                                                                                                                                                                                                                                                                                   ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[1]                                                                                                                                                                       ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K1|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[3]                                                                                                                                                                      ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 44 LEs               ; 24 LEs                 ; Yes        ; |top|slave_4k:SLAVE_2K2|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]                                                                                                                                                                      ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 32 LEs               ; 288 LEs                ; Yes        ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[30]                                                                                                                                                                                                                                                                  ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 32 LEs               ; 288 LEs                ; Yes        ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[21]                                                                                                                                                                                                                                                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                                                                                                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K2|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                                                                                                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                                                                                                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_2K1|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                                                                                                                                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state                                                                                                                                                                                                                                                                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state                                                                                                                                                                                                                                                                           ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_master_ready                                                                                                                                                                                                                                                                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_rx_address                                                                                                                                                                                                                                                                                                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_write_en                                                                                                                                                                                                                                                                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|master_module:MASTER2|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state                                                                                                                                                                                                                                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state                                                                                                                                                                                                                                                                      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m2_slave_valid                                                                                                                                                                                                                                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m1_slave_ready                                                                                                                                                                                                                                                                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[1][2]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][3]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[3][1]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[0]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][7]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][2]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[3][3]                           ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[3]              ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[0]                             ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                      ;
+; 36:1               ; 4 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[1]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1491,13 +1503,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:02     ;
-+----------------+--------------+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
++-----------------------+------------------------------------------+
+; Type                  ; Count                                    ;
++-----------------------+------------------------------------------+
+; boundary_port         ; 227                                      ;
+; cycloneiii_ff         ; 132                                      ;
+;     CLR               ; 4                                        ;
+;     ENA               ; 16                                       ;
+;     ENA CLR           ; 74                                       ;
+;     ENA SCLR          ; 6                                        ;
+;     ENA SLD           ; 9                                        ;
+;     SCLR              ; 7                                        ;
+;     plain             ; 16                                       ;
+; cycloneiii_lcell_comb ; 207                                      ;
+;     arith             ; 9                                        ;
+;         2 data inputs ; 9                                        ;
+;     normal            ; 198                                      ;
+;         0 data inputs ; 1                                        ;
+;         1 data inputs ; 6                                        ;
+;         2 data inputs ; 26                                       ;
+;         3 data inputs ; 81                                       ;
+;         4 data inputs ; 84                                       ;
+;                       ;                                          ;
+; Max LUT depth         ; 4.00                                     ;
+; Average LUT depth     ; 1.88                                     ;
++-----------------------+------------------------------------------+
+
+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:05     ;
+; sld_hub:auto_hub ; 00:00:01     ;
++------------------+--------------+
 
 
 +-------------------------------+
@@ -1505,121 +1547,120 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Aug 29 02:04:15 2021
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Aug 29 13:02:02 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
-Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file slave_port_slow.v
-    Info (12023): Found entity 1: slave_port_slow File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port_slow.v Line: 17
+    Info (12023): Found entity 1: slave_port_slow File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port_slow.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file slave_4k_slow.v
-    Info (12023): Found entity 1: slave_4k_slow File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k_slow.v Line: 14
+    Info (12023): Found entity 1: slave_4k_slow File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k_slow.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file tester.v
-    Info (12023): Found entity 1: tester File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/tester.v Line: 1
+    Info (12023): Found entity 1: tester File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/tester.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file master_port_tb.v
-    Info (12023): Found entity 1: master_port_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port_tb.v Line: 3
+    Info (12023): Found entity 1: master_port_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file master_port.v
-    Info (12023): Found entity 1: master_port File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 16
+    Info (12023): Found entity 1: master_port File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file master_out_port_tb.v
-    Info (12023): Found entity 1: master_out_port_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port_tb.v Line: 3
+    Info (12023): Found entity 1: master_out_port_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file master_out_port.v
-    Info (12023): Found entity 1: master_out_port File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 15
+    Info (12023): Found entity 1: master_out_port File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file master_module_tb.v
-    Info (12023): Found entity 1: master_4k_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module_tb.v Line: 3
+    Info (12023): Found entity 1: master_4k_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file master_module.v
-    Info (12023): Found entity 1: master_module File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module.v Line: 14
+    Info (12023): Found entity 1: master_module File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file master_in_port_tb.v
-    Info (12023): Found entity 1: master_in_port_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port_tb.v Line: 3
+    Info (12023): Found entity 1: master_in_port_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file master_in_port.v
-    Info (12023): Found entity 1: master_in_port File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 16
+    Info (12023): Found entity 1: master_in_port File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file bus_mux_tb.v
-    Info (12023): Found entity 1: Bus_mux_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux_tb.v Line: 3
+    Info (12023): Found entity 1: Bus_mux_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file bus_mux.v
-    Info (12023): Found entity 1: Bus_mux File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 14
+    Info (12023): Found entity 1: Bus_mux File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file bus_interconnect_tb.v
-    Info (12023): Found entity 1: Bus_interconnect_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 3
+    Info (12023): Found entity 1: Bus_interconnect_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file bus_interconnect.v
-    Info (12023): Found entity 1: Bus_interconnect File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 14
+    Info (12023): Found entity 1: Bus_interconnect File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file bus_arbiter_tb.v
-    Info (12023): Found entity 1: Bus_Arbiter_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 3
+    Info (12023): Found entity 1: Bus_Arbiter_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file bus_arbiter.v
-    Info (12023): Found entity 1: Bus_Arbiter File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 14
+    Info (12023): Found entity 1: Bus_Arbiter File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file slave_4k_tb.v
-    Info (12023): Found entity 1: slave_4k_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k_tb.v Line: 3
+    Info (12023): Found entity 1: slave_4k_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file slave_4k.v
-    Info (12023): Found entity 1: slave_4k File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 14
+    Info (12023): Found entity 1: slave_4k File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file slave_out_port_tb.v
-    Info (12023): Found entity 1: slave_out_port_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port_tb.v Line: 3
+    Info (12023): Found entity 1: slave_out_port_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file slave_out_port.v
-    Info (12023): Found entity 1: slave_out_port File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 16
+    Info (12023): Found entity 1: slave_out_port File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file slave_in_port_tb.v
-    Info (12023): Found entity 1: slave_in_port_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port_tb.v Line: 3
+    Info (12023): Found entity 1: slave_in_port_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file slave_in_port.v
-    Info (12023): Found entity 1: slave_in_port File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 16
+    Info (12023): Found entity 1: slave_in_port File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scaledclock.v
-    Info (12023): Found entity 1: scaledclock File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v Line: 4
+    Info (12023): Found entity 1: scaledclock File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v Line: 4
 Info (12021): Found 2 design units, including 2 entities, in source file bin27.v
-    Info (12023): Found entity 1: decoder File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 1
-    Info (12023): Found entity 2: bin27 File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 39
+    Info (12023): Found entity 1: decoder File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 1
+    Info (12023): Found entity 2: bin27 File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file slave_port.v
-    Info (12023): Found entity 1: slave_port File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 16
+    Info (12023): Found entity 1: slave_port File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file slave_port_tb.v
-    Info (12023): Found entity 1: slave_port_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port_tb.v Line: 3
+    Info (12023): Found entity 1: slave_port_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file bram.v
-    Info (12023): Found entity 1: BRAM File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 40
+    Info (12023): Found entity 1: BRAM File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file bram_test.v
-    Info (12023): Found entity 1: BRAM_test File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM_test.v Line: 1
+    Info (12023): Found entity 1: BRAM_test File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM_test.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file button_event1.v
-    Info (12023): Found entity 1: button_event1 File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 14
+    Info (12023): Found entity 1: button_event1 File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file top.v
-    Info (12023): Found entity 1: top File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 14
+    Info (12023): Found entity 1: top File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file top_tb.v
-    Info (12023): Found entity 1: top_tb File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top_tb.v Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at Bus_interconnect_tb.v(55): created implicit net for "trans_done" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 55
-Warning (10236): Verilog HDL Implicit Net warning at Bus_interconnect_tb.v(60): created implicit net for "bus_busy" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 60
-Warning (10236): Verilog HDL Implicit Net warning at slave_4k.v(70): created implicit net for "read_en_in" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 70
-Warning (10236): Verilog HDL Implicit Net warning at slave_4k.v(71): created implicit net for "write_en_in" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 71
-Warning (10236): Verilog HDL Implicit Net warning at top.v(126): created implicit net for "clk" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 126
-Warning (10222): Verilog HDL Parameter Declaration warning at master_in_port.v(32): Parameter Declaration in module "master_in_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 32
-Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(44): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 44
-Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(45): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 45
-Warning (10222): Verilog HDL Parameter Declaration warning at button_event1.v(40): Parameter Declaration in module "button_event1" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 40
+    Info (12023): Found entity 1: top_tb File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at Bus_interconnect_tb.v(55): created implicit net for "trans_done" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 55
+Warning (10236): Verilog HDL Implicit Net warning at Bus_interconnect_tb.v(60): created implicit net for "bus_busy" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect_tb.v Line: 60
+Warning (10236): Verilog HDL Implicit Net warning at slave_4k.v(70): created implicit net for "read_en_in" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 70
+Warning (10236): Verilog HDL Implicit Net warning at slave_4k.v(71): created implicit net for "write_en_in" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 71
+Warning (10236): Verilog HDL Implicit Net warning at top.v(126): created implicit net for "clk" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 126
+Warning (10222): Verilog HDL Parameter Declaration warning at master_in_port.v(32): Parameter Declaration in module "master_in_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 32
+Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(44): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 44
+Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(45): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v Line: 45
+Warning (10222): Verilog HDL Parameter Declaration warning at button_event1.v(40): Parameter Declaration in module "button_event1" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 40
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(134): truncated value with size 32 to match size of target (1) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 134
-Warning (10230): Verilog HDL assignment warning at top.v(135): truncated value with size 32 to match size of target (1) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 135
-Warning (10230): Verilog HDL assignment warning at top.v(136): truncated value with size 32 to match size of target (1) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 136
-Warning (10230): Verilog HDL assignment warning at top.v(137): truncated value with size 32 to match size of target (1) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 137
-Info (12128): Elaborating entity "scaledclock" for hierarchy "scaledclock:CLK_DIV" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 126
-Warning (10230): Verilog HDL assignment warning at scaledclock.v(23): truncated value with size 32 to match size of target (28) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v Line: 23
-Info (12128): Elaborating entity "bin27" for hierarchy "bin27:DISPLAY5" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 159
-Info (12128): Elaborating entity "decoder" for hierarchy "bin27:DISPLAY5|decoder:display" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 50
-Info (12128): Elaborating entity "master_module" for hierarchy "master_module:MASTER1" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 192
-Info (12128): Elaborating entity "master_port" for hierarchy "master_module:MASTER1|master_port:MASTER_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module.v Line: 88
-Warning (10230): Verilog HDL assignment warning at master_port.v(60): truncated value with size 32 to match size of target (1) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 60
-Info (12128): Elaborating entity "master_in_port" for hierarchy "master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 74
-Info (12128): Elaborating entity "master_out_port" for hierarchy "master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 100
-Info (12128): Elaborating entity "button_event1" for hierarchy "master_module:MASTER1|button_event1:BUTTON_EVENT1" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_module.v Line: 109
-Warning (10036): Verilog HDL or VHDL warning at button_event1.v(37): object "busy" assigned a value but never read File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 37
-Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "Bus_interconnect:BUS" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 296
-Info (12128): Elaborating entity "Bus_Arbiter" for hierarchy "Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 108
-Info (12128): Elaborating entity "Bus_mux" for hierarchy "Bus_interconnect:BUS|Bus_mux:Bus_mux1" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 173
-Info (12128): Elaborating entity "slave_4k" for hierarchy "slave_4k:SLAVE_4K" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 321
-Info (12128): Elaborating entity "slave_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 72
-Warning (10230): Verilog HDL assignment warning at slave_port.v(152): truncated value with size 32 to match size of target (4) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 152
-Info (12128): Elaborating entity "slave_in_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 91
-Warning (10036): Verilog HDL or VHDL warning at slave_in_port.v(40): object "data_done" assigned a value but never read File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 40
-Info (12128): Elaborating entity "slave_out_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 101
-Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "tx_data", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
-Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "data_idle", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
-Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "data_done", which holds its previous value in one or more paths through the always construct File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
-Info (10041): Inferred latch for "data_done" at slave_out_port.v(45) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
-Info (10041): Inferred latch for "data_idle" at slave_out_port.v(45) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
-Info (10041): Inferred latch for "tx_data" at slave_out_port.v(45) File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
-Info (12128): Elaborating entity "BRAM" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 81
-Info (12128): Elaborating entity "altsyncram" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 92
-Info (12130): Elaborated megafunction instantiation "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 92
-Info (12133): Instantiated megafunction "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component" with the following parameter: File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 92
+Warning (10230): Verilog HDL assignment warning at top.v(134): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 134
+Warning (10230): Verilog HDL assignment warning at top.v(135): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 135
+Warning (10230): Verilog HDL assignment warning at top.v(136): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 136
+Warning (10230): Verilog HDL assignment warning at top.v(137): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 137
+Info (12128): Elaborating entity "scaledclock" for hierarchy "scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 126
+Warning (10230): Verilog HDL assignment warning at scaledclock.v(23): truncated value with size 32 to match size of target (28) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v Line: 23
+Info (12128): Elaborating entity "bin27" for hierarchy "bin27:DISPLAY5" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 159
+Info (12128): Elaborating entity "decoder" for hierarchy "bin27:DISPLAY5|decoder:display" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 50
+Info (12128): Elaborating entity "master_module" for hierarchy "master_module:MASTER1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 192
+Info (12128): Elaborating entity "master_port" for hierarchy "master_module:MASTER1|master_port:MASTER_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v Line: 88
+Warning (10230): Verilog HDL assignment warning at master_port.v(60): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 60
+Info (12128): Elaborating entity "master_in_port" for hierarchy "master_module:MASTER1|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 74
+Info (12128): Elaborating entity "master_out_port" for hierarchy "master_module:MASTER1|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v Line: 100
+Info (12128): Elaborating entity "button_event1" for hierarchy "master_module:MASTER1|button_event1:BUTTON_EVENT1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v Line: 109
+Warning (10036): Verilog HDL or VHDL warning at button_event1.v(37): object "busy" assigned a value but never read File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v Line: 37
+Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 296
+Info (12128): Elaborating entity "Bus_Arbiter" for hierarchy "Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 108
+Info (12128): Elaborating entity "Bus_mux" for hierarchy "Bus_interconnect:BUS|Bus_mux:Bus_mux1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 173
+Info (12128): Elaborating entity "slave_4k" for hierarchy "slave_4k:SLAVE_4K" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 321
+Info (12128): Elaborating entity "slave_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 72
+Warning (10230): Verilog HDL assignment warning at slave_port.v(152): truncated value with size 32 to match size of target (4) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 152
+Info (12128): Elaborating entity "slave_in_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 91
+Warning (10036): Verilog HDL or VHDL warning at slave_in_port.v(40): object "data_done" assigned a value but never read File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v Line: 40
+Info (12128): Elaborating entity "slave_out_port" for hierarchy "slave_4k:SLAVE_4K|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v Line: 101
+Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "tx_data", which holds its previous value in one or more paths through the always construct File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
+Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "data_idle", which holds its previous value in one or more paths through the always construct File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
+Warning (10240): Verilog HDL Always Construct warning at slave_out_port.v(45): inferring latch(es) for variable "data_done", which holds its previous value in one or more paths through the always construct File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
+Info (10041): Inferred latch for "data_done" at slave_out_port.v(45) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
+Info (10041): Inferred latch for "data_idle" at slave_out_port.v(45) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
+Info (10041): Inferred latch for "tx_data" at slave_out_port.v(45) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v Line: 45
+Info (12128): Elaborating entity "BRAM" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v Line: 81
+Info (12128): Elaborating entity "altsyncram" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 92
+Info (12130): Elaborated megafunction instantiation "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 92
+Info (12133): Instantiated megafunction "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component" with the following parameter: File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v Line: 92
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "4KBRAM.mif"
@@ -1636,14 +1677,14 @@ Info (12133): Instantiated megafunction "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lgl1.tdf
-    Info (12023): Found entity 1: altsyncram_lgl1 File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_lgl1" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_lgl1 File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_lgl1" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated" File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ipb2.tdf
-    Info (12023): Found entity 1: altsyncram_ipb2 File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_ipb2.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_ipb2" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 39
-Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 40
-Info (12130): Elaborated megafunction instantiation "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 40
-Info (12133): Instantiated megafunction "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 40
+    Info (12023): Found entity 1: altsyncram_ipb2 File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_ipb2.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_ipb2" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|altsyncram_ipb2:altsyncram1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 38
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 39
+Info (12130): Elaborated megafunction instantiation "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 39
+Info (12133): Instantiated megafunction "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/altsyncram_lgl1.tdf Line: 39
     Info (12134): Parameter "CVALUE" = "00000000"
     Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
     Info (12134): Parameter "IS_READABLE" = "1"
@@ -1652,11 +1693,11 @@ Info (12133): Instantiated megafunction "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:
     Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
     Info (12134): Parameter "WIDTH_WORD" = "8"
     Info (12134): Parameter "WIDTHAD" = "12"
-Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
-Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
-Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "slave_4k:SLAVE_4K|BRAM:BRAM|altsyncram:altsyncram_component|altsyncram_lgl1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2021.08.29.02:04:25 Progress: Loading slddf4920d8/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2021.08.29.13:02:35 Progress: Loading slddf4920d8/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1667,69 +1708,72 @@ Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification
 Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
 Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
-    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 182
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 182
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/db/ip/slddf4920d8/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_master_valid File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 69
-    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_master_valid File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 57
-    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_master_valid File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 45
+    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s3_master_valid File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 69
+    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_master_valid File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 57
+    Warning (19017): Found clock multiplexer Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_master_valid File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v Line: 45
 Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 28
+Info (13000): Registers with preset signals will power-up high File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 28
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "display1_pin[0]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display1_pin[1]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display1_pin[2]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display1_pin[3]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display1_pin[4]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display1_pin[5]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display1_pin[6]" is stuck at VCC File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
-    Warning (13410): Pin "display3_pin[0]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display3_pin[1]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display3_pin[2]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display3_pin[3]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display3_pin[4]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display3_pin[5]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display3_pin[6]" is stuck at VCC File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
-    Warning (13410): Pin "display5_pin[1]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
-    Warning (13410): Pin "display5_pin[3]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
-    Warning (13410): Pin "display5_pin[4]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
-    Warning (13410): Pin "display5_pin[5]" is stuck at VCC File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
-    Warning (13410): Pin "display5_pin[6]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
-    Warning (13410): Pin "display6_pin[0]" is stuck at VCC File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
-    Warning (13410): Pin "display6_pin[1]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
-    Warning (13410): Pin "display6_pin[2]" is stuck at GND File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
-    Warning (13410): Pin "display6_pin[5]" is stuck at VCC File: D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
+    Warning (13410): Pin "display1_pin[0]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display1_pin[1]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display1_pin[2]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display1_pin[3]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display1_pin[4]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display1_pin[5]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display1_pin[6]" is stuck at VCC File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 26
+    Warning (13410): Pin "display3_pin[0]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display3_pin[1]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display3_pin[2]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display3_pin[3]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display3_pin[4]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display3_pin[5]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display3_pin[6]" is stuck at VCC File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 28
+    Warning (13410): Pin "display5_pin[1]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
+    Warning (13410): Pin "display5_pin[3]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
+    Warning (13410): Pin "display5_pin[4]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
+    Warning (13410): Pin "display5_pin[5]" is stuck at VCC File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
+    Warning (13410): Pin "display5_pin[6]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 30
+    Warning (13410): Pin "display6_pin[0]" is stuck at VCC File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
+    Warning (13410): Pin "display6_pin[1]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
+    Warning (13410): Pin "display6_pin[2]" is stuck at GND File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
+    Warning (13410): Pin "display6_pin[5]" is stuck at VCC File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v Line: 31
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 35 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg
+Info (13000): Registers with preset signals will power-up high File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (144001): Generated suppressed messages file D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1236 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1240 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 61 output pins
-    Info (21061): Implemented 1140 logic cells
+    Info (21061): Implemented 1144 logic cells
     Info (21064): Implemented 24 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Sun Aug 29 02:04:34 2021
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Sun Aug 29 13:02:58 2021
+    Info: Elapsed time: 00:00:56
+    Info: Total CPU time (on all processors): 00:01:36
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/ADS_BUS/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg.
+The suppressed messages can be found in D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg.
 
 
