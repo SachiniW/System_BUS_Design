@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 vcycloneive_and1
-Z0 !s110 1630094801
+Z0 !s110 1630229843
 !i10b 1
 !s100 5nNPZEXCF[4;W4UJ=P>Q31
 IASFR@IZY2W]Y:g3[ODG2H2
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1630094800.000000
+Z7 !s108 1630229842.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/cycloneive_atoms.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|cycloneive_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/cycloneive_atoms.v|
 !i113 1
@@ -702,7 +702,7 @@ R9
 R10
 R11
 UCYCLONEIVE_PRIM_DFFE
-!s110 1630094800
+Z12 !s110 1630229842
 !i10b 1
 !s100 z>VoVbehRE^iMaZ;j:4JT2
 ILCCI8]Ug3f^JadUH?cTGI0
@@ -724,7 +724,7 @@ R10
 R11
 n@c@y@c@l@o@n@e@i@v@e_@p@r@i@m_@d@f@f@e
 UCYCLONEIVE_PRIM_DFFEAS
-R0
+R12
 !i10b 1
 !s100 DkJzFG8DRF2k4>fjFf3J43
 ID_[em6EXZ:0E];ZLYziLh3
@@ -746,7 +746,7 @@ R10
 R11
 n@c@y@c@l@o@n@e@i@v@e_@p@r@i@m_@d@f@f@e@a@s
 UCYCLONEIVE_PRIM_DFFEAS_HIGH
-R0
+R12
 !i10b 1
 !s100 R1F0KJ`5`0VO9VKWVMi?12
 IU;FaN9DTD??nbgC`HJE@h3

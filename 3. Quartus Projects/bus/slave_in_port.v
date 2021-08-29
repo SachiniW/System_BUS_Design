@@ -38,6 +38,8 @@ reg addr_idle = 1;
 reg data_idle = 1;
 reg addr_done = 0;
 reg data_done = 0;
+reg [3:0]addr_counter = 4'd0;
+reg [3:0]data_counter = 4'd0;
 
 assign slave_ready = data_idle & addr_idle;
 assign rx_done = addr_done;
@@ -60,9 +62,6 @@ ADDR_RECIEVE = 1,
 DATA_RECIEVE = 2;
 
 // always @ (posedge handshake) addr_state <= ADDR1;
-
-reg [3:0]addr_counter = 4'd0;
-reg [3:0]data_counter = 4'd0;
 
 always @ (posedge trig_event) 
 begin
