@@ -45,12 +45,6 @@ assign rx_done = addr_done;
 wire handshake = master_valid & slave_ready;
 wire trig_event = clk | reset | handshake;
 
-// wire state_check = 0;  //temp
-assign temp_data_counter = data_counter;
-assign temp_addr_counter = addr_counter;
-assign temp_data_state = data_state; ///temp
-assign temp_addr_state = addr_state; ///temp
-assign temp_signal = handshake; ///temp
 
 // Statemachine to capture the 12 bit address
 
@@ -63,6 +57,13 @@ DATA_RECIEVE = 2;
 
 reg [3:0]addr_counter = 4'd0;
 reg [3:0]data_counter = 4'd0;
+
+// wire state_check = 0;  //temp
+assign temp_data_counter = data_counter;
+assign temp_addr_counter = addr_counter;
+assign temp_data_state = data_state; ///temp
+assign temp_addr_state = addr_state; ///temp
+assign temp_signal = handshake; ///temp
 
 always @ (posedge trig_event) 
 begin

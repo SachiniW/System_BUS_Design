@@ -105,7 +105,7 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.address(address),
 	.data_out(data_out),
 	.tx_data(tx_data), ///temp
-	.state1(temp_state1),///temp
+	.state1(data_out1[3:0]),///temp
 	.temp_state(temp_state)); /////temp
 	
 	

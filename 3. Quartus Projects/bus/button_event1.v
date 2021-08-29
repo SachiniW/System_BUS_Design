@@ -28,7 +28,7 @@ module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter D
 	output reg [SLAVE_LEN-1:0]slave_select,
 	output reg [ADDR_LEN-1:0]address,
 	output reg [DATA_LEN-1:0]data_out,
-	input tx_data,
+	input tx_data,  ///temp
 	input [3:0]state1, ////temp
 	input [3:0]temp_state); ///temp
 	

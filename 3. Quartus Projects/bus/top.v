@@ -170,7 +170,7 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
 	
-	.data_out1(0),    ////////////temp
+	.data_out1(data_out1),    ////////////temp
 	.temp_state1(0),    ////////////temp
 	
 	.arbitor_busy(arbiter_busy),
