@@ -80,7 +80,7 @@ begin
     begin
 		case (slave_addr_state)
 			idle:begin
-				if (start == 1 & arbiter_busy == 0)
+				if (start == 1 & arbiter_busy == 0 & bus_busy == 0)
 				begin
 					slave_addr_state <= addr1;
                 rx_m1_slave[0] <= m1_slave_sel;
