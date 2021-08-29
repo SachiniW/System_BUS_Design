@@ -43,7 +43,7 @@ assign slave_ready = data_idle & addr_idle;
 assign rx_done = addr_done;
 
 wire handshake = master_valid & slave_ready;
-wire trig_event = clk | reset | handshake;
+wire trig_event = clk | reset; //| handshake;
 
 // wire state_check = 0;  //temp
 assign temp_data_counter = data_counter;
@@ -81,7 +81,8 @@ begin
 				if (handshake == 1'd1)
 					begin
 						addr_state <= ADDR_RECIEVE;
-						addr_counter <= 4'd0;
+						addr_counter <= addr_counter + 4'd1;
+						address[addr_counter] <= rx_address;
 						addr_idle <= 0;
 						addr_done <= 0;
 					end
@@ -142,7 +143,8 @@ begin
 				if (handshake == 1'd1) //handshake
 					begin
 						data_state <= DATA_RECIEVE;
-						data_counter <= 0;
+						data_counter <= data_counter + 4'd1;
+						data[data_counter] <= rx_data;
 						data_idle <= 0;
 						data_done <= 0;
 					end
