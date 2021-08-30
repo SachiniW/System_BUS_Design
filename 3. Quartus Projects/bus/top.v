@@ -145,6 +145,7 @@ wire [DATA_LEN-1:0]data2;
 wire [ADDR_LEN:0]address2;
 wire [SLAVE_LEN-1:0]slave2;
 wire [ADDR_LEN:0]burst_num2;
+wire [3:0]config_state;//to LCD display
 
 
 // output port conversions
@@ -155,11 +156,16 @@ assign button1 = ~button1_raw;
 assign button2 = ~button2_raw;
 assign button3 = ~button3_raw;
 
+
 scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 LCD_in LCD(
 	.clock(clock),
 	.rst(rst),
+	.Data_Line1(address1),
+	.Data_Line2(data1),
+	.config_state(config_state),
+	.mode_switch(mode_switch),
    .LCD_ON(LCD_ON),	
    .LCD_BLON(LCD_BLON),	
    .LCD_RW(LCD_RW),	
@@ -181,6 +187,7 @@ command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_L
 	.display2_pin(display2_pin),
 	.display3_pin(display3_pin),
 	.display4_pin(display4_pin),
+	.display_val4(config_state),
 
 	.read1(read1),
 	.write1(write1),

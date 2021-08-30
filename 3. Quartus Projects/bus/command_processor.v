@@ -25,6 +25,7 @@ module command_processor #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, paramet
 	output [6:0]display2_pin,
 	output [6:0]display3_pin,
 	output [6:0]display4_pin,
+	output [3:0]display_val4, //for the LCD display
 
 	output read1,
 	output write1,
@@ -55,7 +56,7 @@ parameter IDLE_CONFIG=0, SELECT_MASTER=1, SELECT_SLAVE=2, SELECT_ADDRESS=3, SELE
 wire [3:0]display_val1;
 wire [3:0]display_val2;
 wire [3:0]display_val3;
-wire [3:0]display_val4;
+//wire [3:0]display_val4;
 
 assign display_val1 = (mode_switch == 0)?(
 							(config_state==1)?{2'b00,master}:
