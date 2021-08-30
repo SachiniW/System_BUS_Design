@@ -1,8 +1,8 @@
 module LCD_in(
 	input clock,
 	input rst,
-	//input [15:0] Data_Line1,
-   //input [15:0] Data_Line2,
+	input [15:0] Data_Line1,
+   input [15:0] Data_Line2,
    output LCD_ON,	// LCD Power ON/OFF
    output LCD_BLON,	// LCD Back Light ON/OFF
    output LCD_RW,	// LCD Read/Write Select, 0 = Write, 1 = Read
@@ -11,10 +11,46 @@ module LCD_in(
    inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 );
 
-//reg [1:0] Data_Type1 = 2'd1; //00-address, 01-data, 10-Master, 11-Selected Slave  
-//reg [1:0] Data_Type2 = 2'd0;
-reg [15:0] Data_Line1 = 16'b1100110011001100;
-reg [15:0] Data_Line2 = 16'b1000100010001000;
+
+wire [7:0] Line11;
+wire [7:0] Line12;
+wire [7:0] Line13;
+wire [7:0] Line14;
+wire [7:0] Line15;
+wire [7:0] Line16;
+wire [7:0] Line17;
+wire [7:0] Line18;
+wire [7:0] Line19;
+wire [7:0] Line110;
+wire [7:0] Line111;
+wire [7:0] Line112;
+wire [7:0] Line113;
+wire [7:0] Line114;
+wire [7:0] Line115;
+wire [7:0] Line116;
+
+wire [7:0] Line21;
+wire [7:0] Line22;
+wire [7:0] Line23;
+wire [7:0] Line24;
+wire [7:0] Line25;
+wire [7:0] Line26;
+wire [7:0] Line27;
+wire [7:0] Line28;
+wire [7:0] Line29;
+wire [7:0] Line210;
+wire [7:0] Line211;
+wire [7:0] Line212;
+wire [7:0] Line213;
+wire [7:0] Line214;
+wire [7:0] Line215;
+wire [7:0] Line216;
+
+
+reg [1:0] Data_Type1 = 2'd0; //00-address, 01-data, 10-Master, 11-Selected Slave  
+reg [1:0] Data_Type2 = 2'd1;
+//reg [13:0] Data_Line1 = 14'b11111111111111;
+//reg [13:0] Data_Line2 = 14'b00000010100010;
 
 lcdlab3 LCD(
 	.clock(clock),
@@ -59,18 +95,21 @@ lcdlab3 LCD(
    .LCD_RS(LCD_RS),	
    .LCD_DATA(LCD_DATA));
 
-//assign Line11    = (Data_Type1 == 2'd0 )? 8'h41 : 
-//						 (Data_Type1 == 2'd1 )? 8'h44 : 
-//						 (Data_Type1 == 2'd2 )? 8'h4D : 
-//						 (Data_Type1 == 2'd3 )? 8'h53 : 8'h41 ; 
-//						 
+	
+
+assign Line11    = (Data_Type1 == 2'd0 )? 8'h41 : 
+						 (Data_Type1 == 2'd1 )? 8'h44 : 
+						 (Data_Type1 == 2'd2 )? 8'h4D : 
+						 (Data_Type1 == 2'd3 )? 8'h53 : 8'h30 ; 
+						 
+assign Line12    = 8'h2D ;							 
 //assign Line12    = (Data_Type1 == 2'd0 )? 8'h44 :
 //						 (Data_Type1 == 2'd1 )? 8'h54 : 
 //						 (Data_Type1 == 2'd2 )? 8'h41 :
 //						 (Data_Type1 == 2'd3 )? 8'h53 : 8'h30 ;
 
-assign Line11    = (Data_Line1[15] == 1'b1 )? 8'h31 : 8'h30 ;       
-assign Line12    = (Data_Line1[14] == 1'b1 )? 8'h31 : 8'h30 ;						 
+//assign Line11    = (Data_Line1[15] == 1'b1 )? 8'h31 : 8'h30 ;       
+//assign Line12    = (Data_Line1[14] == 1'b1 )? 8'h31 : 8'h30 ;						 
 assign Line13    = (Data_Line1[13] == 1'b1 )? 8'h31 : 8'h30 ;       
 assign Line14    = (Data_Line1[12] == 1'b1 )? 8'h31 : 8'h30 ;      
 assign Line15    = (Data_Line1[11] == 1'b1 )? 8'h31 : 8'h30 ;       
@@ -86,18 +125,19 @@ assign Line114    = (Data_Line1[2] ==  1'b1 )? 8'h31 : 8'h30 ;
 assign Line115    = (Data_Line1[1] ==  1'b1 )? 8'h31 : 8'h30 ;       
 assign Line116    = (Data_Line1[0] ==  1'b1 )? 8'h31 : 8'h30 ; 
 
-//assign Line21    = (Data_Type2 == 2'd0 )? 8'h41 : 
-//						 (Data_Type2 == 2'd1 )? 8'h44 : 
-//						 (Data_Type2 == 2'd2 )? 8'h4D : 
-//						 (Data_Type2 == 2'd3 )? 8'h53 : 8'h30 ; 
-//						 
+assign Line21    = (Data_Type2 == 2'd0 )? 8'h41 : 
+						 (Data_Type2 == 2'd1 )? 8'h44 : 
+						 (Data_Type2 == 2'd2 )? 8'h4D : 
+						 (Data_Type2 == 2'd3 )? 8'h53 : 8'h30 ; 
+						 
+assign Line22    = 8'h2D ;								 
 //assign Line22    = (Data_Type2 == 2'd0 )? 8'h44 :
 //						 (Data_Type2 == 2'd1 )? 8'h54 : 
 //						 (Data_Type2 == 2'd2 )? 8'h41 :
 //						 (Data_Type2 == 2'd3 )? 8'h53 : 8'h30 ;
 
-assign Line21   = (Data_Line2[15] == 1'b1 )? 8'h31 : 8'h30 ;       
-assign Line22   = (Data_Line2[14] == 1'b1 )? 8'h31 : 8'h30 ;        
+//assign Line21   = (Data_Line2[15] == 1'b1 )? 8'h31 : 8'h30 ;       
+//assign Line22   = (Data_Line2[14] == 1'b1 )? 8'h31 : 8'h30 ;        
 assign Line23   = (Data_Line2[13] == 1'b1 )? 8'h31 : 8'h30 ;       
 assign Line24   = (Data_Line2[12] == 1'b1 )? 8'h31 : 8'h30 ;      
 assign Line25   = (Data_Line2[11] == 1'b1 )? 8'h31 : 8'h30 ;       
