@@ -15,10 +15,13 @@ module top(
 	input clock,	
 	input rst,
 	input enable,
-	input button1_val,
-	input button2_val,
-	input button1_sel,
-	input button2_sel,
+	input button1_raw,
+	input button2_raw,
+	input button3_raw,
+	input [ADDR_LEN-1:0]switch_array,
+	input mode_switch,
+	input rw_switch1,
+	input rw_switch2,
 	output scaled_clk,
 	output m1_busy,
 	output m2_busy,
@@ -26,6 +29,10 @@ module top(
 	output [6:0]display2_pin,
 	output [6:0]display3_pin,
 	output [6:0]display4_pin,
+	output [6:0]display5_pin,
+	output [6:0]display6_pin,
+	output [6:0]display7_pin,
+	output [6:0]display8_pin,
 	
 	output LCD_ON,	// LCD Power ON/OFF
    output LCD_BLON,	// LCD Back Light ON/OFF
@@ -35,22 +42,15 @@ module top(
    inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 	);
 	
-LCD_in LCD(
-	.clock(clock),
-	.rst(rst),
-   .LCD_ON(LCD_ON),	
-   .LCD_BLON(LCD_BLON),	
-   .LCD_RW(LCD_RW),	
-   .LCD_EN(LCD_EN),	
-   .LCD_RS(LCD_RS),	
-   .LCD_DATA(LCD_DATA));
-
-
 //wire m1_busy1;
 //wire m2_busy2;
 
 //assign m1_busy = m1_button1;
 //assign m2_busy = m1_button2;
+
+parameter SLAVE_LEN=2; 
+parameter ADDR_LEN=12; 
+parameter DATA_LEN=8;
 	
 	
 // Wires in interconnect
@@ -132,37 +132,82 @@ wire s3_slave_valid;
 
 //assign bus_busy=0;
 
-//testing split
-wire split_en;
+// command processor to master
+wire read1;
+wire write1;
+wire [DATA_LEN-1:0]data1;
+wire [ADDR_LEN:0]address1;
+wire [SLAVE_LEN-1:0]slave1;
+wire [ADDR_LEN:0]burst_num1;
+wire read2;
+wire write2;
+wire [DATA_LEN-1:0]data2;
+wire [ADDR_LEN:0]address2;
+wire [SLAVE_LEN-1:0]slave2;
+wire [ADDR_LEN:0]burst_num2;
 
-wire reset;
 
+// output port conversions
+wire reset, button1, button2, button3;
 assign reset = ~rst;
 assign scaled_clk = clk;
+assign button1 = ~button1_raw;
+assign button2 = ~button2_raw;
+assign button3 = ~button3_raw;
 
 scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
-wire m1_button1;
-wire m1_button2;
-wire m2_button1;
-wire m2_button2;
-
-assign m1_button1 = (button1_sel == 1) ? 1:button1_val;
-assign m1_button2 = (button1_sel == 1) ? button1_val:1;
-assign m2_button1 = (button2_sel == 1) ? 1:button2_val;
-assign m2_button2 = (button2_sel == 1) ? button2_val:1;
-
-
-
-
-master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
+LCD_in LCD(
+	.clock(clock),
+	.rst(rst),
+   .LCD_ON(LCD_ON),	
+   .LCD_BLON(LCD_BLON),	
+   .LCD_RW(LCD_RW),	
+   .LCD_EN(LCD_EN),	
+   .LCD_RS(LCD_RS),	
+   .LCD_DATA(LCD_DATA));
+	
+command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) COMMAND(
 	.clk(clk), 
 	.reset(reset),
-	.button1(m1_button1),
-	.button2(m1_button2),
-	.busy(m1_busy),
+	.button1(button1),
+	.button2(button2),
+	.button3(button3),
+	.switch_array(switch_array),
+	.mode_switch(mode_switch),
+	.rw_switch1(rw_switch1),
+	.rw_switch2(rw_switch2),
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
+	.display3_pin(display3_pin),
+	.display4_pin(display4_pin),
+
+	.read1(read1),
+	.write1(write1),
+	.data1(data1),
+	.address1(address1),
+	.slave1(slave1),
+	.burst_num1(burst_num1),
+	.read2(read2),
+	.write2(write2),
+	.data2(data2),
+	.address2(address2),
+	.slave2(slave2),
+	.burst_num2(burst_num2));
+
+master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER1(
+	.clk(clk), 
+	.reset(reset),
+	.busy(m1_busy),
+	.display1_pin(display5_pin),
+	.display2_pin(display6_pin),
+	
+	.read(read1),
+	.write(write1),
+	.data_load(data1),
+	.address_load(address1),
+	.slave_select_load(slave1),
+	.burst_num_load(burst_num1),
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
@@ -182,14 +227,19 @@ master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER1(
 	.write_en(m1_write_en),
 	.read_en(m1_read_en));
 
-master_module #(.SLAVE_LEN(2), .ADDR_LEN(12), .DATA_LEN(8)) MASTER2(
+master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER2(
 	.clk(clk), 
 	.reset(reset),
-	.button1(m2_button1),
-	.button2(m2_button2),
 	.busy(m2_busy),
-	.display1_pin(display3_pin),
-	.display2_pin(display4_pin),
+	.display1_pin(display7_pin),
+	.display2_pin(display8_pin),
+	
+	.read(read2),
+	.write(write2),
+	.data_load(data2),
+	.address_load(address2),
+	.slave_select_load(slave2),
+	.burst_num_load(burst_num2),
 	
 	.arbitor_busy(arbiter_busy),
 	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED

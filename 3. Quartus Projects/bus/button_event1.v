@@ -14,23 +14,28 @@
 module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
 	input clk, 
 	input reset,
-	input button1,
-	input button2,
 	output reg busy,
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
+	
+	input read,
+	input write,
+	input [DATA_LEN-1:0]data_load,
+	input [ADDR_LEN:0]address_load,
+	input [SLAVE_LEN-1:0]slave_select_load,
+	input [ADDR_LEN:0]burst_num_load,
 	
 	input [DATA_LEN-1:0]data_in,
 	input rx_done,
 	input tx_done,
 	input trans_done,
-	output reg [1:0]instruction,
-	output reg [SLAVE_LEN-1:0]slave_select,
-	output reg [ADDR_LEN-1:0]address,
-	output reg [DATA_LEN-1:0]data_out);
+	output reg [1:0]instruction=0,
+	output reg [SLAVE_LEN-1:0]slave_select=1,
+	output reg [ADDR_LEN-1:0]address=0,
+	output reg [DATA_LEN-1:0]data_out=0);
 	
 reg [1:0]state = 0;
-parameter IDLE=0, BUTTON_EVENT_1=1, BUTTON_EVENT_2=2;
+parameter IDLE=0, WRITE_EVENT=1, READ_EVENT=2;
 
 reg [DATA_LEN-1:0]rx_val = 0; 
 
@@ -55,23 +60,23 @@ begin
 		
 		IDLE:
 		begin
-			if (button1==0)
+			if (write==1)
 			begin
-				state <= BUTTON_EVENT_1;
+				state <= WRITE_EVENT;
 				instruction <= 2'b10;
-				slave_select <= 2;
-				address <= 2;
-				data_out <= 77;
+				slave_select <= slave_select_load;
+				address <= address_load;
+				data_out <= data_load;
 				rx_val <= rx_val;
 				busy <= 1;
 			end
-			else if (button2==0)
+			else if (read==1)
 			begin
-				state <= BUTTON_EVENT_2;
+				state <= READ_EVENT;
 				instruction <= 2'b11;
-				slave_select <= 1;
-				address <=  1;
-				data_out <= 85;
+				slave_select <= slave_select_load;
+				address <=  address_load;
+				data_out <= data_load;
 				rx_val <= rx_val;
 				busy <= 1; 
 			end
@@ -87,7 +92,7 @@ begin
 			end
 		end
 		
-		BUTTON_EVENT_1:
+		WRITE_EVENT:
 		begin
 			if (trans_done==1)
 			begin
@@ -101,7 +106,7 @@ begin
 			end
 			else
 			begin
-				state <= BUTTON_EVENT_1;
+				state <= WRITE_EVENT;
 				instruction <= instruction;
 				slave_select <= slave_select;
 				address <= address;
@@ -111,7 +116,7 @@ begin
 			end
 		end
 		
-		BUTTON_EVENT_2:
+		READ_EVENT:
 		begin
 			if (trans_done==1)
 			begin
@@ -125,7 +130,7 @@ begin
 			end
 			else
 			begin
-				state <= BUTTON_EVENT_2;
+				state <= READ_EVENT;
 				instruction <= instruction;
 				slave_select <= slave_select;
 				address <= address;

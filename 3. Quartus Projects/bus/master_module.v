@@ -14,11 +14,16 @@
 module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
 	input clk, 
 	input reset,
-	input button1,
-	input button2,
 	output busy,
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
+	
+	input read,
+	input write,
+	input [DATA_LEN-1:0]data_load,
+	input [ADDR_LEN:0]address_load,
+	input [SLAVE_LEN-1:0]slave_select_load,
+	input [ADDR_LEN:0]burst_num_load,
 	
 	input arbitor_busy,
 	input bus_busy,
@@ -82,11 +87,16 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) M
 button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) BUTTON_EVENT1(
 	.clk(clk), 
 	.reset(reset),
-	.button1(button1),
-	.button2(button2),
 	.busy(busy),
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
+	
+	.read(read),
+	.write(write),
+	.data_load(data_load),
+	.address_load(address_load),
+	.slave_select_load(slave_select_load),
+	.burst_num_load(burst_num_load),
 	
 	.data_in(data_in),
 	.rx_done(rx_done),
