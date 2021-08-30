@@ -11,6 +11,8 @@ module LCD_in(
    inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 );
 
+//reg [1:0] Data_Type1 = 2'd1; //00-address, 01-data, 10-Master, 11-Selected Slave  
+//reg [1:0] Data_Type2 = 2'd0;
 reg [15:0] Data_Line1 = 16'b1100110011001100;
 reg [15:0] Data_Line2 = 16'b1000100010001000;
 
@@ -57,15 +59,25 @@ lcdlab3 LCD(
    .LCD_RS(LCD_RS),	
    .LCD_DATA(LCD_DATA));
 
-assign Line11    = (Data_Line1[15] == 1 )? 8'h31 : 8'h30 ;
-assign Line12    = (Data_Line1[14] == 1 )? 8'h31 : 8'h30 ;       
-assign Line13    = (Data_Line1[13] == 1 )? 8'h31 : 8'h30 ;       
-assign Line14    = (Data_Line1[12] == 1 )? 8'h31 : 8'h30 ;      
-assign Line15    = (Data_Line1[11] == 1 )? 8'h31 : 8'h30 ;       
-assign Line16    = (Data_Line1[10] == 1 )? 8'h31 : 8'h30 ;       
-assign Line17    = (Data_Line1[9] ==  1 )? 8'h31 : 8'h30 ;        
-assign Line18    = (Data_Line1[8] ==  1 )? 8'h31 : 8'h30 ;    
-assign Line19    = (Data_Line1[7] ==  1 )? 8'h31 : 8'h30 ;        
+//assign Line11    = (Data_Type1 == 2'd0 )? 8'h41 : 
+//						 (Data_Type1 == 2'd1 )? 8'h44 : 
+//						 (Data_Type1 == 2'd2 )? 8'h4D : 
+//						 (Data_Type1 == 2'd3 )? 8'h53 : 8'h41 ; 
+//						 
+//assign Line12    = (Data_Type1 == 2'd0 )? 8'h44 :
+//						 (Data_Type1 == 2'd1 )? 8'h54 : 
+//						 (Data_Type1 == 2'd2 )? 8'h41 :
+//						 (Data_Type1 == 2'd3 )? 8'h53 : 8'h30 ;
+
+assign Line11    = (Data_Line1[15] == 1'b1 )? 8'h31 : 8'h30 ;       
+assign Line12    = (Data_Line1[14] == 1'b1 )? 8'h31 : 8'h30 ;						 
+assign Line13    = (Data_Line1[13] == 1'b1 )? 8'h31 : 8'h30 ;       
+assign Line14    = (Data_Line1[12] == 1'b1 )? 8'h31 : 8'h30 ;      
+assign Line15    = (Data_Line1[11] == 1'b1 )? 8'h31 : 8'h30 ;       
+assign Line16    = (Data_Line1[10] == 1'b1 )? 8'h31 : 8'h30 ;       
+assign Line17    =  (Data_Line1[9] ==  1'b1 )? 8'h31 : 8'h30 ;        
+assign Line18    =  (Data_Line1[8] ==  1'b1 )? 8'h31 : 8'h30 ;    
+assign Line19    =  (Data_Line1[7] ==  1'b1 )? 8'h31 : 8'h30 ;        
 assign Line110    = (Data_Line1[6] ==  1'b1 )? 8'h31 : 8'h30 ;        
 assign Line111    = (Data_Line1[5] ==  1'b1 )? 8'h31 : 8'h30 ;        
 assign Line112    = (Data_Line1[4] ==  1'b1 )? 8'h31 : 8'h30 ;        
@@ -74,9 +86,18 @@ assign Line114    = (Data_Line1[2] ==  1'b1 )? 8'h31 : 8'h30 ;
 assign Line115    = (Data_Line1[1] ==  1'b1 )? 8'h31 : 8'h30 ;       
 assign Line116    = (Data_Line1[0] ==  1'b1 )? 8'h31 : 8'h30 ; 
 
+//assign Line21    = (Data_Type2 == 2'd0 )? 8'h41 : 
+//						 (Data_Type2 == 2'd1 )? 8'h44 : 
+//						 (Data_Type2 == 2'd2 )? 8'h4D : 
+//						 (Data_Type2 == 2'd3 )? 8'h53 : 8'h30 ; 
+//						 
+//assign Line22    = (Data_Type2 == 2'd0 )? 8'h44 :
+//						 (Data_Type2 == 2'd1 )? 8'h54 : 
+//						 (Data_Type2 == 2'd2 )? 8'h41 :
+//						 (Data_Type2 == 2'd3 )? 8'h53 : 8'h30 ;
 
-assign Line21   = (Data_Line2[15] == 1'b1 )? 8'h31 : 8'h30 ;
-assign Line22   = (Data_Line2[14] == 1'b1 )? 8'h31 : 8'h30 ;       
+assign Line21   = (Data_Line2[15] == 1'b1 )? 8'h31 : 8'h30 ;       
+assign Line22   = (Data_Line2[14] == 1'b1 )? 8'h31 : 8'h30 ;        
 assign Line23   = (Data_Line2[13] == 1'b1 )? 8'h31 : 8'h30 ;       
 assign Line24   = (Data_Line2[12] == 1'b1 )? 8'h31 : 8'h30 ;      
 assign Line25   = (Data_Line2[11] == 1'b1 )? 8'h31 : 8'h30 ;       
