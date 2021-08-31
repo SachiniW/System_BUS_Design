@@ -184,7 +184,7 @@ assign Line17    = (LCD_state == 4'd0)? 8'h41://A
 						 (LCD_state == 4'd1)? 8'h20: //sp	 	
                    (LCD_state == 4'd2)? 8'h20: //sp	
 						 (LCD_state == 4'd3)? 8'h41://A	
-						 (LCD_state == 4'd4)? 8'h64://d	
+						 (LCD_state == 4'd4)? 8'h44://D	
 						 (LCD_state == 4'd5)? 8'h4E://N	
 						 (LCD_state == 4'd6)? 8'h6F://o	
 						 (LCD_state == 4'd8)? 8'h20://Sp
@@ -289,7 +289,7 @@ assign Line21    = (LCD_state == 4'd0)? 8'h20://sp
 						 (LCD_state == 4'd5)? 8'h42://B	
 						 (LCD_state == 4'd6)? 8'h20://sp
 						 (LCD_state == 4'd8)? 8'h4D://M	
-						 (LCD_state == 4'd7)? 8'h41:8'h30 ; //A 
+						 (LCD_state == 4'd7)? 8'h44:8'h30 ; //D 
 						 
 assign Line22    = (LCD_state == 4'd0)? 8'h20://sp	
 						 (LCD_state == 4'd1)? 8'h20://sp	 	
