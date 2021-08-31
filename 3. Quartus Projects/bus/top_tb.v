@@ -32,7 +32,7 @@ initial begin
 	reset <= 1'b1;
 	button1_val <= 1;
 	button2_val <= 1;
-	button1_sel <= 0;
+	button1_sel <= 1;
 	button2_sel <= 0;
 	//m1_button1 <= 1'b1;
 	//m1_button2 <= 1'b1;
@@ -47,25 +47,25 @@ initial begin
 	
 	#(200*CLK_PERIOD)
 	
-	button1_sel <= 1;
-	button1_val <= 0;
-	#(10*CLK_PERIOD)
-	button1_val <= 1;
+	// button1_sel <= 1;
+	// button1_val <= 0;
+	// #(10*CLK_PERIOD)
+	// button1_val <= 1;
 	
 
-	#(400*CLK_PERIOD)
+	// #(400*CLK_PERIOD)
 
 
-	button2_val <= 0;
-	#(10*CLK_PERIOD)
-	button2_val <= 1;
+	// button2_val <= 0;
+	// #(10*CLK_PERIOD)
+	// button2_val <= 1;
 	
-	#(200*CLK_PERIOD)
+	// #(200*CLK_PERIOD)
 	
-	button2_sel <= 1;
-	button2_val <= 0;
-	#(10*CLK_PERIOD)
-	button2_val <= 1;
+	// button2_sel <= 1;
+	// button2_val <= 0;
+	// #(10*CLK_PERIOD)
+	// button2_val <= 1;
 	
 	#(400*CLK_PERIOD)
 	

@@ -58,14 +58,8 @@ wire rx_done;
 wire slave_tx_done;
 
 reg [3:0]counterReg = 0; 
-reg read_en_in1 = 0;
-reg write_en_in1 = 0;
 
 assign slave_ready = slave_ready_IN & slave_ready_OUT;
-assign read_en_in = rx_done & read_en_in1;
-assign write_en_in = rx_done & write_en_in1;
-// assign read_en_in = rx_done & read_en;
-// assign write_en_in = rx_done & write_en;
 
 reg [1:0]state = 1;
 parameter 
@@ -82,6 +76,7 @@ slave_in_port SLAVE_IN_PORT(
 	.master_valid(master_valid),
 	.read_en(read_en),
 	.write_en(write_en),
+	.slave_valid(slave_valid),
 	.temp_data_state(temp_data_state),
 	.temp_addr_state(temp_addr_state),  /////temp
 	.temp_data_counter(temp_data_counter), ///temp
@@ -90,7 +85,10 @@ slave_in_port SLAVE_IN_PORT(
 	.slave_ready(slave_ready_IN),
 	.rx_done(rx_done),
 	.address(address),
-	.data(data));
+	.data(data),
+	.read_en_in2(read_en_in1),
+	.read_en_in(read_en_in),
+	.write_en_in(write_en_in));
 	
 slave_out_port SLAVE_OUT_PORT(
 	.clk(clk), 
@@ -104,31 +102,6 @@ slave_out_port SLAVE_OUT_PORT(
 	.temp_tx_data_counter(temp_tx_data_counter), //temp
 	.tx_data_state(tx_data_state)); //temp
 	
-
-// always @ (posedge read_en) 		 read_en_in1 <= 1;
-// always @ (posedge write_en)      write_en_in1 <= 1;
-// always @ (negedge rx_done) 
-// begin
-// 	read_en_in1 <= 0;
-// 	write_en_in1 <= 0;
-// end       
-// always @ (posedge slave_tx_done) 
-// begin
-// 	slave_valid <= 0;
-// 	temp <= 0;
-// end
-
-
-
-// always @ (posedge clk)
-// begin
-// 	//Driving the data valid signal at slave
-// 	if ((read_en_in1 == 1) & (rx_done == 1)) 
-// 		temp <= 1;	
-// 	else
-// 		slave_valid <= temp;	
-// end
-
 always @ (posedge clk)
 begin
 	case (state)
@@ -186,37 +159,5 @@ begin
 		end
 	endcase
 end
-
-always @ (posedge clk)
-begin
-
-	// //Driving the data valid signal at slave
-	// if ((read_en_in1 == 1) & (rx_done == 1)) 
-	// // if ((read_en == 1) & (rx_done == 1)) 
-	// 	temp <= 1;
-	// else if((slave_tx_done == 1) & (slave_valid == 1))
-	// begin
-	// 	slave_valid <= 0;
-	// 	temp <= 0;
-	// end
-	// else
-	// 	slave_valid <= temp;
-	
-	//Driving and latching the read_en signal
-	if (read_en == 1)
-		read_en_in1 <= 1;
-	if (((rx_done==1) & (read_en_in1 == 1)) | (slave_valid == 1))
-		read_en_in1 <= 0;
-	
-
-	//Driving and latching the write_en signal
-	if (write_en == 1)
-		write_en_in1 <= 1;
-	if ((rx_done==1) & (write_en_in1 == 1))
-		write_en_in1 <= 0;
-		
-end
-	
-	
 	
 endmodule

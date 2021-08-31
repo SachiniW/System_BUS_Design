@@ -91,7 +91,7 @@ begin
 				master_ready <= 1;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
-				master_valid <= 0;
+				master_valid <= master_valid;
 				write_en <= 0;
 				read_en <= 0;	
 				tx_address <= tx_address;
@@ -456,7 +456,7 @@ begin
 			master_ready <= 1;
 			approval_request <= 0;
 			tx_slave_select <= tx_slave_select;
-			master_valid <= 0;
+			master_valid <= 1;  
 			write_en <= 0;
 			read_en <= 0;	
 			tx_address <= tx_address;
@@ -471,7 +471,7 @@ begin
 			master_ready <= 1;
 			approval_request <= 0;
 			tx_slave_select <= tx_slave_select;
-			master_valid <= 0;
+			master_valid <= 1;  ///changed
 			write_en <= 0;
 			read_en <= 0;	
 			tx_address <= tx_address;

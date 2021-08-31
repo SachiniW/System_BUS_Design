@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 va_graycounter
-Z0 !s110 1630232624
+Z0 !s110 1630301243
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IC?X<0nLZ@W@[X_ZK?`3n60
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1630232623.000000
+Z7 !s108 1630301242.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_mf_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z12 !s110 1630232623
+Z12 !s110 1630301242
 !i10b 1
 !s100 LWTeFO?a^6l3ea7?@d<9?0
 IEFR]79G0_Qza;MW8DYh7I1
@@ -1062,7 +1062,7 @@ R9
 R10
 R11
 vdcfifo_low_latency
-R0
+R12
 !i10b 1
 !s100 IQ4BkE1m]LoK6d_TWCG603
 I6WWbB@oNB<n[iK7_naZH]0
