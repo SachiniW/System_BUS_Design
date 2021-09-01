@@ -52,7 +52,7 @@ wire read_en_in1;
 wire write_en_in1;
 
 reg [3:0]counterReg = 0; 
-reg [11:0]burst = 12'd0;
+reg [12:0]burst = 12'd0;
 
 assign slave_ready = slave_ready_IN & slave_ready_OUT;
 
@@ -145,14 +145,14 @@ begin
 		end
 		VALID:
 		begin
-			if((slave_tx_done == 1) & (slave_valid == 1) & (burst == 1))
+			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[0] == 0))
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b0;
 				split_en <= 1'b0;
 				state <= NORMAL;
 			end
-			if((slave_tx_done == 1) & (slave_valid == 1) & (burst == burst_counter))
+			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[12:1] == burst_counter))
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b1;

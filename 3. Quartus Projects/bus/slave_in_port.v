@@ -21,7 +21,7 @@ module slave_in_port (
 	input master_valid,
 	input read_en,
 	input write_en,
-	input [11:0]burst,
+	input [12:0]burst,
 	output slave_ready,
 	output reg rx_done,
 	output reg[11:0]address = 12'b0,
@@ -142,7 +142,7 @@ begin
 				end
 				else 
 				begin
-					if (burst_counter < burst-1)  
+					if (burst_counter < burst[12:1])  
 					begin
 						addr_state <= ADDR_WAIT_HANDSHAKE;
 						addr_counter <= 0;

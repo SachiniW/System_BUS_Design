@@ -48,27 +48,28 @@ initial begin
 	//////////////////////////////////////////////////
 	// Test without burst
 
-	mode_switch <= 0;
-	switch_array <= 10; 
-	button3_raw <= 0;
-	#(5*scale*CLK_PERIOD)  // Button press (0 to 5)
-	switch_array <= 0; 
-	#(2*scale*CLK_PERIOD)  // Button press (5 to 0)
-	button3_raw <= 1;
+	// mode_switch <= 0;
+	// switch_array <= 10; 
+	// button3_raw <= 0;
+	// #(5*scale*CLK_PERIOD)  // Button press (0 to 5)
+	// switch_array <= 0; 
+	// #(2*scale*CLK_PERIOD)  // Button press (5 to 0)
+	// button3_raw <= 1;
 
-	mode_switch <= 1;
-	button1_raw <= 0;
-	#(scale*CLK_PERIOD)  // Write
-	button1_raw <= 1;
+	// mode_switch <= 1;
+	// button1_raw <= 0;
+	// #(scale*CLK_PERIOD)  // Write
+	// button1_raw <= 1;
 	
-	#(50*scale*CLK_PERIOD)  // Write without burst
+	// #(50*scale*CLK_PERIOD)  // Write without burst
 
-	rw_switch1 <= 1;
-	button1_raw <= 0;
-	#(scale*CLK_PERIOD)  // Read
-	button1_raw <= 1;
+	// rw_switch1 <= 1;
+	// button1_raw <= 0;
+	// #(scale*CLK_PERIOD)  // Read
+	// button1_raw <= 1;
 	
-	#(100*scale*CLK_PERIOD)  // Read without burst
+	// #(100*scale*CLK_PERIOD)  // Read without burst
+
 
 	//////////////////////////////////////////////////
 	// Test with burst
@@ -93,8 +94,7 @@ initial begin
 	button1_raw <= 1; 
 	
 	#(10000*scale*CLK_PERIOD)  // Read without burst
-
-		
+	
 	#30
  
 	$finish;
