@@ -153,7 +153,7 @@ begin
 				split_en <= 1'b0;
 				state <= NORMAL;
 			end
-			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[12:1] == burst_counter))
+			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[12:1] + 1 == burst_counter))
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b1;
