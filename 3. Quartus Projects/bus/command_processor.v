@@ -32,13 +32,13 @@ module command_processor #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, paramet
 	output reg [DATA_LEN-1:0]data1 = 0,
 	output reg [ADDR_LEN:0]address1 = 0,
 	output reg [SLAVE_LEN-1:0]slave1 = 1,
-	output reg [BURST_LEN:0]burst_num1 = 1,
+	output reg [BURST_LEN:0]burst_num1 = 0,
 	output read2,
 	output write2,
 	output reg [DATA_LEN-1:0]data2 = 0,
 	output reg [ADDR_LEN:0]address2 = 0,
 	output reg [SLAVE_LEN-1:0]slave2 = 1,
-	output reg [BURST_LEN:0]burst_num2 = 1);
+	output reg [BURST_LEN:0]burst_num2 = 0);
 	
 reg [2:0]config_state = 0;
 reg [1:0]master = 1;
