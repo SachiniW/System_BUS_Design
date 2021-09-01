@@ -1046,26 +1046,15 @@ begin
 		begin
 			if (count2 >= BURST_LEN-1)
 			begin
-				count <= 0;
+				count <= count+1;
 				if (instruction[0]==0)
 				begin
-					if (burst_num==0)
-					begin
-						state <= FINISH;
-						temp_data <= temp_data;
-						tx_done <= 1;
-					end
-					else
-					begin
-						state <= WAIT_HANDSHAKE;
-						temp_data <= temp_data+1;
-						tx_done <= 0;
-					end
+					state <= WAIT_HANDSHAKE_BURST;
+					tx_done <= 0;
 				end
 				else
 				begin
 					state <= READ_WAIT;
-					temp_data <= temp_data;
 					tx_done <= 1;
 				end
 				master_ready <= 0;
@@ -1075,10 +1064,11 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;
 				tx_address <= tx_address;
-				tx_data <= tx_data;
+				tx_data <= temp_data[count];
+				temp_data <= temp_data;
 				burst_count <= burst_count;
 				tx_burst_num <= burst_num[count2];
-				count2 <= count2+1;
+				count2 <= count2;
 			end
 			
 			else
@@ -1194,7 +1184,7 @@ begin
 			else
 			begin
 				count <= count+1;
-				state <= TRANSMIT_DATA;
+				state <= TRANSMIT_DATA_BURST;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
