@@ -33,7 +33,7 @@ module slave_in_port (
 	output reg rx_done,
 	output reg[11:0]address,
 	output reg[7:0]data,
-	output read_en_in2,
+	output read_en_in2,  /// check the use
 	output read_en_in,
 	output write_en_in,
 	output reg[11:0] burst_counter = 12'd0); //new
@@ -45,7 +45,7 @@ reg [3:0]addr_state   = 4'd13;
 reg [3:0]data_state   = 4'd13;
 reg addr_idle         = 1;
 reg data_idle         = 1;
-reg data_done         = 0;
+reg data_done         = 0;   //removes
 reg [3:0]addr_counter = 4'd0;
 reg [3:0]data_counter = 4'd0;
 reg read_en_in1       = 0;
@@ -54,7 +54,7 @@ reg write_en_in1      = 0;
 reg test_handshake = 1;  //remove
 wire handshake     = master_valid & slave_ready & test_handshake; //remove  -->handshake-->write_handshake
 // wire handshake     = master_valid & slave_ready;
-wire read_handshake = 1;
+wire read_handshake = 1;   //removed
 // wire handshake = write_handshake || read_handshake;
 
 assign slave_ready = data_idle & addr_idle;
