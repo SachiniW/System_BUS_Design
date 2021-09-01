@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
+module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, parameter BURST_LEN=12)(
 	input clk, 
 	input reset,
 	output busy,
@@ -35,6 +35,7 @@ module master_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter D
 	input rx_data,
 	output tx_address,
 	output tx_data,
+	output tx_burst_num,
 	
 	input slave_valid,
 	input slave_ready,
@@ -48,12 +49,14 @@ wire [1:0]instruction;
 wire [SLAVE_LEN-1:0]slave_select;
 wire [ADDR_LEN-1:0]address;
 wire [DATA_LEN-1:0]data_out;
+wire [BURST_LEN-1:0]burst_num;
 wire [DATA_LEN-1:0]data_in;
 wire rx_done;
 wire tx_done;
+wire new_rx;
 	
 
-master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER_PORT(
+master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER_PORT(
 	.clk(clk), 
 	.reset(reset),
 	
@@ -61,9 +64,11 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) M
 	.slave_select(slave_select),
 	.address(address),
 	.data_out(data_out),
+	.burst_num(burst_num),
 	.data_in(data_in),
 	.rx_done(rx_done),
 	.tx_done(tx_done),
+	.new_rx(new_rx),
 	
 	.arbitor_busy(arbitor_busy),
 	.bus_busy(bus_busy),
@@ -76,6 +81,7 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) M
 	.rx_data(rx_data),
 	.tx_address(tx_address),
 	.tx_data(tx_data),
+	.tx_burst_num(tx_burst_num),
 	
 	.slave_valid(slave_valid),
 	.slave_ready(slave_ready),
@@ -84,7 +90,7 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) M
 	.write_en(write_en),
 	.read_en(read_en));
 	
-button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) BUTTON_EVENT1(
+button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) BUTTON_EVENT1(
 	.clk(clk), 
 	.reset(reset),
 	.busy(busy),
@@ -102,10 +108,12 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.rx_done(rx_done),
 	.tx_done(tx_done),
 	.trans_done(trans_done),
+	.new_rx(new_rx),
 	.instruction(instruction),
 	.slave_select(slave_select),
 	.address(address),
-	.data_out(data_out));
+	.data_out(data_out),	
+	.burst_num(burst_num));
 	
 	
 endmodule 

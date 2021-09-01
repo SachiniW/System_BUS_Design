@@ -51,7 +51,7 @@ module top(
 parameter SLAVE_LEN=2; 
 parameter ADDR_LEN=12; 
 parameter DATA_LEN=8;
-	
+parameter BURST_LEN=12;	
 	
 // Wires in interconnect
 wire m1_request; 
@@ -64,6 +64,7 @@ wire arbiter_busy;
 wire m1_master_valid;
 wire m1_tx_address;
 wire m1_tx_data;
+wire m1_tx_burst_num;
 wire m1_rx_data;
 wire m1_write_en;
 wire m1_read_en;
@@ -71,6 +72,7 @@ wire m1_slave_ready;
 wire m2_master_valid;
 wire m2_tx_address;
 wire m2_tx_data;
+wire m2_tx_burst_num;
 wire m2_rx_data;
 wire m2_write_en;
 wire m2_read_en;
@@ -138,13 +140,13 @@ wire write1;
 wire [DATA_LEN-1:0]data1;
 wire [ADDR_LEN:0]address1;
 wire [SLAVE_LEN-1:0]slave1;
-wire [ADDR_LEN:0]burst_num1;
+wire [BURST_LEN:0]burst_num1;
 wire read2;
 wire write2;
 wire [DATA_LEN-1:0]data2;
 wire [ADDR_LEN:0]address2;
 wire [SLAVE_LEN-1:0]slave2;
-wire [ADDR_LEN:0]burst_num2;
+wire [BURST_LEN:0]burst_num2;
 wire [3:0]config_state;//to LCD display
 
 
@@ -173,7 +175,7 @@ LCD_in LCD(
    .LCD_RS(LCD_RS),	
    .LCD_DATA(LCD_DATA));
 	
-command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) COMMAND(
+command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) COMMAND(
 	.clk(clk), 
 	.reset(reset),
 	.button1(button1),
@@ -202,7 +204,7 @@ command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_L
 	.slave2(slave2),
 	.burst_num2(burst_num2));
 
-master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER1(
+master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER1(
 	.clk(clk), 
 	.reset(reset),
 	.busy(m1_busy),
@@ -226,6 +228,7 @@ master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.rx_data(m1_rx_data),
 	.tx_address(m1_tx_address),
 	.tx_data(m1_tx_data),
+	.tx_burst_num(m1_tx_burst_num),
 	
 	.slave_valid(m1_slave_valid), //need port ----> INCLUDED
 	.slave_ready(m1_slave_ready),
@@ -234,7 +237,7 @@ master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.write_en(m1_write_en),
 	.read_en(m1_read_en));
 
-master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER2(
+master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER2(
 	.clk(clk), 
 	.reset(reset),
 	.busy(m2_busy),
@@ -258,6 +261,7 @@ master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN))
 	.rx_data(m2_rx_data),
 	.tx_address(m2_tx_address),
 	.tx_data(m2_tx_data),
+	.tx_burst_num(m2_tx_burst_num),
 	
 	.slave_valid(m2_slave_valid), //need port ----> INCLUDED
 	.slave_ready(m2_slave_ready),

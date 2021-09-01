@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
+module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, parameter BURST_LEN=12)(
 	input clk, 
 	input reset,
 	output reg busy,
@@ -23,16 +23,18 @@ module button_event1 #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter D
 	input [DATA_LEN-1:0]data_load,
 	input [ADDR_LEN:0]address_load,
 	input [SLAVE_LEN-1:0]slave_select_load,
-	input [ADDR_LEN:0]burst_num_load,
+	input [BURST_LEN:0]burst_num_load,
 	
 	input [DATA_LEN-1:0]data_in,
 	input rx_done,
 	input tx_done,
 	input trans_done,
+	input new_rx,
 	output reg [1:0]instruction=0,
 	output reg [SLAVE_LEN-1:0]slave_select=1,
 	output reg [ADDR_LEN-1:0]address=0,
-	output reg [DATA_LEN-1:0]data_out=0);
+	output reg [DATA_LEN-1:0]data_out=0,
+	output reg [BURST_LEN-1:0]burst_num=0);
 	
 reg [1:0]state = 0;
 parameter IDLE=0, WRITE_EVENT=1, READ_EVENT=2;
@@ -51,6 +53,7 @@ begin
 		slave_select <= 1;
 		address <= 0;
 		data_out <= 0;
+		burst_num <= 0;
 		rx_val <= 0;
 		busy <= 0; 
 	end	
@@ -67,6 +70,7 @@ begin
 				slave_select <= slave_select_load;
 				address <= address_load;
 				data_out <= data_load;
+				burst_num <= burst_num_load;
 				rx_val <= rx_val;
 				busy <= 1;
 			end
@@ -77,6 +81,7 @@ begin
 				slave_select <= slave_select_load;
 				address <=  address_load;
 				data_out <= data_load;
+				burst_num <= burst_num_load;
 				rx_val <= rx_val;
 				busy <= 1; 
 			end
@@ -87,6 +92,7 @@ begin
 				slave_select <= slave_select;
 				address <= address;
 				data_out <= data_out;
+				burst_num <= burst_num;
 				rx_val <= rx_val; 
 				busy <= 0;
 			end
@@ -101,6 +107,7 @@ begin
 				slave_select <= slave_select;
 				address <= address;
 				data_out <= data_out;
+				burst_num <= burst_num;
 				rx_val <= rx_val;
 				busy <= 0; 
 			end
@@ -111,6 +118,7 @@ begin
 				slave_select <= slave_select;
 				address <= address;
 				data_out <= data_out;
+				burst_num <= burst_num;
 				rx_val <= rx_val;
 				busy <= 1;
 			end
@@ -118,15 +126,25 @@ begin
 		
 		READ_EVENT:
 		begin
-			if (trans_done==1)
+			if (new_rx==1)
 			begin
-				state <= IDLE;
-				instruction <= 2'b00;
+				if (trans_done==1)
+				begin
+					state <= IDLE;
+					instruction <= 2'b00;
+					busy <= 0; 
+				end
+				else
+				begin
+					state <= READ_EVENT;
+					instruction <= instruction;
+					busy <= 1;
+				end
 				slave_select <= slave_select;
 				address <= address;
 				data_out <= data_out;
+				burst_num <= burst_num;
 				rx_val <= data_in;
-				busy <= 0; 
 			end
 			else
 			begin
@@ -135,6 +153,7 @@ begin
 				slave_select <= slave_select;
 				address <= address;
 				data_out <= data_out;
+				burst_num <= burst_num;
 				rx_val <= rx_val;
 				busy <= 1;
 			end
@@ -147,6 +166,7 @@ begin
 			slave_select <= slave_select;
 			address <= address;
 			data_out <= data_out;
+			burst_num <= burst_num;
 			rx_val <= rx_val;
 			busy <= 0;
 		end

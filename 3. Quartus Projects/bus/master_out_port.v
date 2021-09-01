@@ -12,7 +12,7 @@
  Revision : v1.0 
 */
 
-module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
+module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, parameter BURST_LEN=12)(
 	input clk, 
 	input reset,
 	
@@ -20,6 +20,7 @@ module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter
 	input [1:0]instruction, 
 	input [ADDR_LEN-1:0]address,
 	input [DATA_LEN-1:0]data,
+	input [BURST_LEN-1:0]burst_num,
 	input rx_done,
 	output reg tx_done,
 	
@@ -34,26 +35,22 @@ module master_out_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter
 	output reg write_en,
 	output reg read_en,	
 	output reg tx_address,
-	output reg tx_data);
+	output reg tx_data,
+	output reg tx_burst_num); //check
 
-//reg [3:0]address_state = 0;
-//reg [3:0]data_state = 0;
-//reg address_idle;
-//reg address_done;
-//reg data_idle;
-//reg data_done;
-//wire handshake = master_valid & slave_ready;
-//
-//assign master_ready = data_idle && address_idle;
-//assign master_tx_done = address_done;
-
-reg [3:0]state = 0;
+reg [4:0]state = 0;
+reg [DATA_LEN-1:0]temp_data = 0;
 
 parameter IDLE=0, WAIT_ARBITOR=1, TRANSMIT_SELECT=2, WAIT_APPROVAL=3, WAIT_HANDSHAKE=4, 
-				TRANSMIT_DATA_ADDR=5, TRANSMIT_DATA=6, TRANSMIT_ADDR=7, WAIT_BUS=8, FINISH=9, READ_WAIT=10;
+				TRANSMIT_BURST_ADDR_DATA=5, TRANSMIT_ADDR_DATA=6, TRANSMIT_BURST_ADDR=7, TRANSMIT_BURST_DATA=8,
+				TRANSMIT_BURST=9, TRANSMIT_DATA=10, TRANSMIT_ADDR=11, WAIT_BUS=12, FIRST_BIT_BURST=13,
+				WAIT_HANDSHAKE_BURST=14, TRANSMIT_DATA_BURST=15, FINISH=16, READ_WAIT=17;
+				
 parameter INACTIVE=2'b00, WRITE=2'b10, READ=2'b11;
 
 integer count = 0;
+integer count2 = 0;
+integer burst_count = 0;
 
 always @ (posedge clk or posedge reset) 
 begin
@@ -70,6 +67,10 @@ begin
 		tx_address<= 0;
 		tx_data<= 0;
 		tx_done<= 0;
+		burst_count <= 0;
+		temp_data <= 0;
+		tx_burst_num <= 0;
+		count2 <= 0;
 	end
 	else
 		case (state)
@@ -91,6 +92,10 @@ begin
 					tx_address <= tx_address;
 					tx_data <= tx_data;
 					tx_done <= 0;
+					burst_count <= 0;
+					temp_data <= data;
+					tx_burst_num <= tx_burst_num;
+					count2 <= count2;
 				end
 				else
 				begin
@@ -105,6 +110,10 @@ begin
 					tx_address <= tx_address;
 					tx_data <= tx_data;
 					tx_done <= 0;
+					burst_count <= 0;
+					temp_data <= data;
+					tx_burst_num <= tx_burst_num;
+					count2 <= count2;
 				end
 			end
 			
@@ -121,6 +130,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 		end
@@ -140,6 +153,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			else
 			begin
@@ -154,6 +171,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 		end
 		
@@ -175,6 +196,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else
@@ -190,6 +215,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 		end
 		
@@ -208,6 +237,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else
@@ -223,6 +256,10 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 		end
 		
@@ -247,8 +284,15 @@ begin
 					read_en <= 0;	
 				end
 				tx_address <= address[count];
-				tx_data <= data[count];
+				tx_data <= temp_data[count];
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				if (burst_num==0)
+					tx_burst_num <= 0;
+				else
+					tx_burst_num <= 1;
+				count2 <= 0;
 			end
 			
 			else
@@ -267,6 +311,10 @@ begin
 					tx_address <= tx_address;
 					tx_data <= tx_data;
 					tx_done <= 0;
+					burst_count <= burst_count;
+					temp_data <= temp_data;
+					tx_burst_num <= tx_burst_num;
+					count2 <= count2;
 				end
 				
 				else
@@ -282,6 +330,10 @@ begin
 					tx_address <= tx_address;
 					tx_data <= tx_data;
 					tx_done <= 0;
+					burst_count <= burst_count;
+					temp_data <= temp_data;
+					tx_burst_num <= tx_burst_num;
+					count2 <= count2;
 				end
 
 			end
@@ -292,7 +344,7 @@ begin
 			if (master_valid==1 && slave_ready==1)
 			begin
 				count <= count+1;
-				state <=TRANSMIT_DATA_ADDR;
+				state <=TRANSMIT_BURST_ADDR_DATA;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -300,8 +352,12 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;
 				tx_address <= address[count];
-				tx_data <= data[count];
+				tx_data <= temp_data[count];
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
 			end
 			
 			else
@@ -317,18 +373,39 @@ begin
 				tx_address <= tx_address;
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 		end
 		
-		TRANSMIT_DATA_ADDR:
+		TRANSMIT_BURST_ADDR_DATA:
 		begin
-			if (count >= DATA_LEN-1 && count >= ADDR_LEN-1)
+			if (count >= DATA_LEN-1 && count >= ADDR_LEN-1 && count2 >= BURST_LEN-1)
 			begin
 				count <= 0;
 				if (instruction[0]==0)
-					state <= FINISH;
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
 				else
+				begin
 					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -336,8 +413,207 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;
 				tx_address <= address[count];
-				tx_data <= data[count];
-				tx_done <= 1;
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count < DATA_LEN-1 && count < ADDR_LEN-1 && count2 >= BURST_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_ADDR_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count >= DATA_LEN-1 && count < ADDR_LEN-1 && count2 < BURST_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_BURST_ADDR;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+			
+			else if (count < DATA_LEN-1 && count >= ADDR_LEN-1 && count2 < BURST_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_BURST_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+			
+			else if (count >= DATA_LEN-1 && count < ADDR_LEN-1 && count2 >= BURST_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_ADDR;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count < DATA_LEN-1 && count >= ADDR_LEN-1 && count2 >= BURST_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count >= DATA_LEN-1 && count >= ADDR_LEN-1 && count2 < BURST_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= TRANSMIT_BURST;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					if (burst_num==0)
+					begin
+						state <= READ_WAIT;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= TRANSMIT_BURST;
+						tx_done <= 0;
+					end
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+			
+			else
+			begin
+				count <= count+1;
+				state <= TRANSMIT_BURST_ADDR_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= 0;
+				read_en <= 0;	
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+		end
+		
+		TRANSMIT_ADDR_DATA:
+		begin
+			if (count >= DATA_LEN-1 && count >= ADDR_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else if (count >= DATA_LEN-1 && count < ADDR_LEN-1)
@@ -351,8 +627,12 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;
 				tx_address <= address[count];
-				tx_data <= data[count];
+				tx_data <= temp_data[count];
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else if (count < DATA_LEN-1 && count >= ADDR_LEN-1)
@@ -366,14 +646,18 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;
 				tx_address <= address[count];
-				tx_data <= data[count];
+				tx_data <= temp_data[count];
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else
 			begin
 				count <= count+1;
-				state <= TRANSMIT_DATA_ADDR;
+				state <= TRANSMIT_ADDR_DATA;
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -381,8 +665,254 @@ begin
 				write_en <= 0;
 				read_en <= 0;	
 				tx_address <= address[count];
-				tx_data <= data[count];
+				tx_data <= temp_data[count];
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
+			end
+		end
+		
+		TRANSMIT_BURST_ADDR:
+		begin
+			if (count2 >= BURST_LEN-1 && count >= ADDR_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= tx_data;
+				burst_count <= burst_count;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count2 >= BURST_LEN-1 && count < ADDR_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_ADDR;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= tx_data;
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count2 < BURST_LEN-1 && count >= ADDR_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= TRANSMIT_BURST;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					if (burst_num==0)
+					begin
+						state <= READ_WAIT;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= TRANSMIT_BURST;
+						tx_done <= 0;
+					end
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= address[count];
+				tx_data <= tx_data;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+			
+			else
+			begin
+				count <= count+1;
+				state <= TRANSMIT_BURST_ADDR;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= 0;
+				read_en <= 0;	
+				tx_address <= address[count];
+				tx_data <= tx_data;
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count];
+				count2 <= count2+1;
+			end
+		end
+		
+		TRANSMIT_BURST_DATA:
+		begin
+			if (count >= DATA_LEN-1 && count2 >= BURST_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else if (count >= DATA_LEN-1 && count2 < BURST_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= TRANSMIT_BURST;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					if (burst_num==0)
+					begin
+						state <= READ_WAIT;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= TRANSMIT_BURST;
+						tx_done <= 0;
+					end
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+			
+			else if (count < DATA_LEN-1 && count2 >= BURST_LEN-1)
+			begin
+				count <= count+1;
+				state <= TRANSMIT_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else
+			begin
+				count <= count+1;
+				state <= TRANSMIT_BURST_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= 0;
+				read_en <= 0;	
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
 			end
 		end
 		
@@ -392,9 +922,26 @@ begin
 			begin
 				count <= 0;
 				if (instruction[0]==0)
-					state <= FINISH;
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
 				else
+				begin
 					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -402,8 +949,10 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;
 				tx_address <= tx_address;
-				tx_data <= data[count];
-				tx_done <= 1;
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else
@@ -417,8 +966,12 @@ begin
 				write_en <= write_en;
 				read_en <= read_en;	
 				tx_address <= tx_address;
-				tx_data <= data[count];
+				tx_data <= temp_data[count];
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 		end
 		
@@ -428,9 +981,26 @@ begin
 			begin
 				count <= 0;
 				if (instruction[0]==0)
-					state <= FINISH;
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
 				else
+				begin
 					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
 				master_ready <= 0;
 				approval_request <= 0;
 				tx_slave_select <= tx_slave_select;
@@ -439,7 +1009,9 @@ begin
 				read_en <= read_en;
 				tx_address <= address[count];
 				tx_data <= tx_data;
-				tx_done <= 1;
+				burst_count <= burst_count;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 			
 			else
@@ -455,6 +1027,179 @@ begin
 				tx_address <= address[count];
 				tx_data <= tx_data;
 				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
+			end
+		end
+		
+		TRANSMIT_BURST:
+		begin
+			if (count2 >= BURST_LEN-1)
+			begin
+				count <= 0;
+				if (instruction[0]==0)
+				begin
+					if (burst_num==0)
+					begin
+						state <= FINISH;
+						temp_data <= temp_data;
+						tx_done <= 1;
+					end
+					else
+					begin
+						state <= FIRST_BIT_BURST;
+						temp_data <= temp_data+1;
+						tx_done <= 0;
+					end
+				end
+				else
+				begin
+					state <= READ_WAIT;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= tx_data;
+				burst_count <= burst_count;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2;
+			end
+			
+			else
+			begin
+				count <= count;
+				state <= TRANSMIT_BURST;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= tx_data;
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= burst_num[count2];
+				count2 <= count2+1;
+			end
+		end
+		
+		FIRST_BIT_BURST:
+		begin
+			count <= count+1;
+			state <=WAIT_HANDSHAKE_BURST;
+			master_ready <= 0;
+			approval_request <= 0;
+			tx_slave_select <= tx_slave_select;
+			master_valid <= 1;
+			write_en <= write_en;
+			read_en <= read_en;	
+			tx_address <= tx_address;
+			tx_data <= temp_data[count];
+			tx_done <= 0;
+			burst_count <= burst_count+1;
+			temp_data <= temp_data;	
+			tx_burst_num <= tx_burst_num;
+			count2 <= count2;
+		end
+		
+		WAIT_HANDSHAKE_BURST:
+		begin
+			if (master_valid==1 && slave_ready==1)
+			begin
+				count <= count+1;
+				state <=TRANSMIT_DATA_BURST;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
+			end
+			
+			else
+			begin
+				count <= count;
+				state <= WAIT_HANDSHAKE_BURST;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;	
+				tx_address <= tx_address;
+				tx_data <= tx_data;
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
+			end
+		end
+		
+		TRANSMIT_DATA_BURST:
+		begin
+			if (count >= DATA_LEN-1)
+			begin
+				count <= 0;
+				if (burst_count >= burst_num)
+				begin
+					state <= FINISH;
+					temp_data <= temp_data;
+					tx_done <= 1;
+				end
+				else
+				begin
+					state <= FIRST_BIT_BURST;
+					temp_data <= temp_data+1;
+					tx_done <= 0;
+				end
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				burst_count <= burst_count;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
+			end
+			
+			else
+			begin
+				count <= count+1;
+				state <= TRANSMIT_DATA;
+				master_ready <= 0;
+				approval_request <= 0;
+				tx_slave_select <= tx_slave_select;
+				master_valid <= 1;
+				write_en <= write_en;
+				read_en <= read_en;	
+				tx_address <= tx_address;
+				tx_data <= temp_data[count];
+				tx_done <= 0;
+				burst_count <= burst_count;
+				temp_data <= temp_data;
+				tx_burst_num <= tx_burst_num;
+				count2 <= count2;
 			end
 		end
 		
@@ -474,6 +1219,10 @@ begin
 			tx_address <= tx_address;
 			tx_data <= tx_data;
 			tx_done <= 0;
+			burst_count <= burst_count;
+			temp_data <= temp_data;
+			tx_burst_num <= tx_burst_num;
+			count2 <= count2;
 		end
 		
 		FINISH:
@@ -489,6 +1238,10 @@ begin
 			tx_address <= tx_address;
 			tx_data <= tx_data;
 			tx_done <= 0;
+			burst_count <= burst_count;
+			temp_data <= temp_data;
+			tx_burst_num <= tx_burst_num;
+			count2 <= count2;
 		end
 		
 		default:
@@ -504,6 +1257,10 @@ begin
 			tx_address <= tx_address;
 			tx_data <= tx_data;
 			tx_done <= 0;
+			burst_count <= 0;
+			temp_data <= 0;
+			tx_burst_num <= tx_burst_num;
+			count2 <= 0;
 		end
 		
 		endcase

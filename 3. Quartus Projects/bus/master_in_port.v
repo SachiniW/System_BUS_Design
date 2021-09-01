@@ -13,14 +13,16 @@
  Revision : v1.0 
 */
 
-module master_in_port #(parameter DATA_LEN=8)(
+module master_in_port #(parameter DATA_LEN=8, parameter BURST_LEN=12)(
 	input clk, 
 	input reset,
 	
 	input tx_done,
 	input [1:0]instruction,
+	input [BURST_LEN-1:0]burst_num,
 	output reg[DATA_LEN-1:0]data,
 	output reg rx_done,
+	output reg new_rx,
 	
 	input rx_data,
 	input slave_valid,
@@ -28,10 +30,11 @@ module master_in_port #(parameter DATA_LEN=8)(
 	//output reg read_en);
 	
 reg [2:0]state = 0;
+reg [DATA_LEN-1:0]temp_data;
 parameter IDLE=0, WAIT_HANDSHAKE=1, RECEIVE_DATA=2;
 
-
 integer count = 0;
+integer burst_count = 0;
 
 always @ (posedge clk or posedge reset) 
 begin
@@ -39,9 +42,12 @@ begin
 	begin
 		count <= 0;
 		state <= IDLE;
-		data	<= 0;
+		data  <= 0;
+		temp_data <= 0;
 		rx_done <= 0;
+		new_rx <= 0;
 		master_ready <= 1;
+		burst_count <= 0;
 		//read_en <= 0;
 	end	
 	
@@ -55,8 +61,11 @@ begin
 				count <= 0;
 				state <= WAIT_HANDSHAKE;
 				data	<= data;
+				temp_data <= temp_data;		
 				rx_done <= 0;
+				new_rx <= 0;
 				master_ready <= 1;
+				burst_count <= 0;
 				//read_en <= 0;
 			end
 			
@@ -65,8 +74,11 @@ begin
 				count <= count;
 				state <= IDLE;
 				data	<= data;
+				temp_data <= temp_data;	
 				rx_done <= 0;
+				new_rx <= 0;
 				master_ready <= 1;
+				burst_count <= burst_count;
 				//read_en <= 0;
 			end
 		end
@@ -77,10 +89,13 @@ begin
 			begin
 				count <= count + 1;
 				state <= RECEIVE_DATA;
-				data[count] <= rx_data;
+				temp_data[count] <= rx_data;
+				data <= data;	
 				//data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
 				rx_done <= rx_done;
+				new_rx <= 0;
 				master_ready <= 0;
+				burst_count <= burst_count;
 				//read_en <= read_en;
 			end
 			
@@ -89,8 +104,11 @@ begin
 				count <= count;
 				state <= WAIT_HANDSHAKE;
 				data	<= data;
+				temp_data <= temp_data;	
 				rx_done <= rx_done;
+				new_rx <= 0;
 				master_ready <= 1;
+				burst_count <= burst_count;
 				//read_en <= read_en;
 			end
 		end
@@ -100,11 +118,24 @@ begin
 			if (count >= DATA_LEN-1)
 			begin
 				count <= 0;
-				state <= IDLE;
+				if (burst_count >= burst_num)
+				begin
+					state <= IDLE;
+					rx_done <= 1;
+					burst_count <= burst_count;
+				end
+				else
+				begin
+					state <= WAIT_HANDSHAKE;
+					rx_done <= 0;
+					burst_count <= burst_count+1;
+				end
 				//data[count-1:0] <= data[count-1:0];
+				new_rx <= 1;
+				temp_data[count] <= rx_data;
 				data[count] <= rx_data;
-				rx_done <= 1;
-				master_ready <= 0;
+				data[DATA_LEN-2:0] <= temp_data[DATA_LEN-2:0];
+				master_ready <= 1;
 				//read_en <= read_en;
 			end
 			
@@ -113,10 +144,13 @@ begin
 				count <= count + 1;
 				state <= RECEIVE_DATA;
 				//data[count-1:0] <= data[count-1:0];
-				data[count] <= rx_data;
+				temp_data[count] <= rx_data;
+				data <= data;	
 				//data[DATA_LEN-1:count+1] <= data[DATA_LEN-1:count+1];
 				rx_done <= rx_done;
+				new_rx <= new_rx;
 				master_ready <= 0;
+				burst_count <= burst_count;
 				//read_en <= read_en;
 			end
 		end
@@ -126,8 +160,11 @@ begin
 			count <= count;
 			state <= IDLE;
 			data	<= data;
+			temp_data <= temp_data;	
 			rx_done <= 0;
+			new_rx <= 0;
 			master_ready <= 1;
+			burst_count <= burst_count;
 			//read_en <= 0;
 		end
 		

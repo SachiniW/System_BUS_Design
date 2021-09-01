@@ -13,7 +13,7 @@
  Revision : v1.0 
 */
 
-module master_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
+module master_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, parameter BURST_LEN=12)(
 
 	input clk, 
 	input reset,
@@ -22,9 +22,11 @@ module master_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DAT
 	input [SLAVE_LEN-1:0]slave_select,
 	input [ADDR_LEN-1:0]address,
 	input [DATA_LEN-1:0]data_out,
+	input [BURST_LEN-1:0]burst_num,
 	output [DATA_LEN-1:0]data_in,
 	output rx_done,
 	output tx_done,
+	output new_rx,
 	
 	input arbitor_busy,
 	input bus_busy,
@@ -36,6 +38,7 @@ module master_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DAT
 	input rx_data,
 	output tx_address,
 	output tx_data,
+	output tx_burst_num,
 	
 	input slave_valid,
 	input slave_ready,
@@ -57,21 +60,23 @@ assign master_ready = master_ready_IN && master_ready_OUT;
 
 assign trans_done = (instruction==2'b10) ? tx_done : ((instruction==2'b11) ? rx_done : 0) ;
 
-master_in_port #(.DATA_LEN(DATA_LEN)) MASTER_IN_PORT(
+master_in_port #(.DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER_IN_PORT(
 	.clk(clk), 
 	.reset(reset),
 	
 	.tx_done(tx_done),
 	.instruction(instruction),
+	.burst_num(burst_num),
 	.data(data_in),
 	.rx_done(rx_done),
+	.new_rx(new_rx),
 	
 	.rx_data(rx_data),
 	.slave_valid(slave_valid),
 	.master_ready(master_ready_IN));
 	//.read_en(read_en_IN));
 
-master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN)) MASTER_OUT_PORT(
+master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER_OUT_PORT(
 	.clk(clk), 
 	.reset(reset),
 	
@@ -79,6 +84,7 @@ master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN
 	.instruction(instruction), 
 	.address(address),
 	.data(data_out),
+	.burst_num(burst_num),
 	.rx_done(rx_done),
 	.tx_done(tx_done),
 	
@@ -93,7 +99,8 @@ master_out_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN
 	.write_en(write_en),
 	.read_en(read_en),	
 	.tx_address(tx_address),
-	.tx_data(tx_data));
+	.tx_data(tx_data),
+	.tx_burst_num(tx_burst_num));
 	
 	
 endmodule

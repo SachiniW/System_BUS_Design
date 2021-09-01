@@ -280,15 +280,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch_array[1]",
+					"name" : "switch_array[0]",
 					"strict" : false
 				},
 				{
 					"name" : "mode_switch",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[0]",
 					"strict" : false
 				},
 				{
@@ -300,7 +296,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch_array[5]",
+					"name" : "switch_array[1]",
 					"strict" : false
 				},
 				{
@@ -308,11 +304,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "switch_array[7]",
+					"strict" : false
+				},
+				{
 					"name" : "switch_array[6]",
 					"strict" : false
 				},
 				{
-					"name" : "switch_array[7]",
+					"name" : "switch_array[5]",
 					"strict" : false
 				},
 				{
@@ -324,11 +324,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch_array[10]",
+					"name" : "switch_array[11]",
 					"strict" : false
 				},
 				{
-					"name" : "switch_array[11]",
+					"name" : "switch_array[10]",
 					"strict" : false
 				},
 				{

@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module command_processor #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8)(
+module command_processor #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, parameter BURST_LEN=12)(
 	input clk, 
 	input reset,
 	input button1,
@@ -32,23 +32,24 @@ module command_processor #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, paramet
 	output reg [DATA_LEN-1:0]data1 = 0,
 	output reg [ADDR_LEN:0]address1 = 0,
 	output reg [SLAVE_LEN-1:0]slave1 = 1,
-	output reg [ADDR_LEN:0]burst_num1 = 1,
+	output reg [BURST_LEN:0]burst_num1 = 1,
 	output read2,
 	output write2,
 	output reg [DATA_LEN-1:0]data2 = 0,
 	output reg [ADDR_LEN:0]address2 = 0,
 	output reg [SLAVE_LEN-1:0]slave2 = 1,
-	output reg [ADDR_LEN:0]burst_num2 = 1);
+	output reg [BURST_LEN:0]burst_num2 = 1);
 	
 reg [2:0]config_state = 0;
 reg [1:0]master = 1;
 reg [DATA_LEN-1:0]data = 0;
 reg [ADDR_LEN:0]address = 0;
 reg [SLAVE_LEN-1:0]slave = 1;
-reg [ADDR_LEN:0]burst_num = 1;
+reg [BURST_LEN:0]burst_num = 1;
 
 parameter SLAVE_NUM = 3;
 parameter BURST_MAX = 12'hFFF;
+
 
 parameter IDLE_CONFIG=0, SELECT_MASTER=1, SELECT_SLAVE=2, SELECT_ADDRESS=3, SELECT_DATA=4,
 				SELECT_BURST=5, FINISH=6;
@@ -63,16 +64,16 @@ assign display_val1 = (mode_switch == 0)?(
 							(config_state==2)?{2'b00,slave}:
 							(config_state==3)?switch_array[3:0]:
 							(config_state==4)?switch_array[3:0]:
-							(config_state==5)?burst_num[3:0]:0):0;
+							(config_state==5)?switch_array[3:0]:0):0;
 							
 assign display_val2 = (mode_switch == 0)?(
 							(config_state==3)?switch_array[7:4]:
 							(config_state==4)?switch_array[7:4]:
-							(config_state==5)?burst_num[7:4]:0):0;
+							(config_state==5)?switch_array[7:4]:0):0;
 							
 assign display_val3 = (mode_switch == 0)?(
 							(config_state==3)?switch_array[11:8]:
-							(config_state==5)?burst_num[11:8]:0):0;
+							(config_state==5)?switch_array[11:8]:0):0;
 							
 assign display_val4 = (mode_switch == 0)?{1'b0,config_state}:0;
 				
@@ -289,32 +290,18 @@ begin
 				
 			SELECT_BURST:
 			begin
-				if (button3==1)
+				if (button1==1 || button2==1 || button3==1)
 				begin
 					config_state <= FINISH;
-					burst_num <= burst_num;
+					if (switch_array >= BURST_MAX)
+						burst_num <= BURST_MAX;
+					else
+						burst_num <= switch_array;
 				end
 				else
 				begin
 					config_state <= SELECT_BURST;
-					if (button1==1)
-					begin
-						if (burst_num>=BURST_MAX)
-							burst_num <= 0;
-						else
-							burst_num <= burst_num+1;
-					end
-					else if (button2==1)
-					begin
-						if (burst_num==1)
-							burst_num <= BURST_MAX;
-						else
-							burst_num <= burst_num-1;
-					end
-					else
-					begin
-						burst_num <= burst_num;
-					end
+					burst_num <= burst_num;
 				end
 				master <= master;
 				slave <= slave;
@@ -406,26 +393,4 @@ begin
 end
 
 
-//always @ (posedge clk or posedge reset) 
-//begin
-//	if (reset)
-//	begin
-//		state <= IDLE;
-//		instruction <= 2'b00;
-//		slave_select <= 1;
-//		address <= 0;
-//		data_out <= 0;
-//		rx_val <= 0;
-//		busy <= 0; 
-//	end	
-//	
-//	else
-//		case(state)
-//		
-//		IDLE:
-//		begin
-//		
-//		end
-//		endcase
-//end
 endmodule
