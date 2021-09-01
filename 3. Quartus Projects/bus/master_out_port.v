@@ -523,11 +523,13 @@ begin
 					begin
 						state <= FINISH;
 						tx_done <= 1;
+						temp_data <= temp_data;
 					end
 					else
 					begin
-						state <= TRANSMIT_BURST;
+						state <= TRANSMIT_BURST_FIRST_BIT;
 						tx_done <= 0;
+						temp_data <= temp_data+1;
 					end
 				end
 				else
@@ -536,11 +538,13 @@ begin
 					begin
 						state <= READ_WAIT;
 						tx_done <= 1;
+						temp_data <= temp_data;
 					end
 					else
 					begin
-						state <= TRANSMIT_BURST;
+						state <= TRANSMIT_BURST_FIRST_BIT;
 						tx_done <= 0;
+						temp_data <= temp_data+1;
 					end
 				end
 				master_ready <= 0;
@@ -552,7 +556,6 @@ begin
 				tx_address <= address[count];
 				tx_data <= temp_data[count];
 				burst_count <= burst_count;
-				temp_data <= temp_data;
 				tx_burst_num <= burst_num[count2];
 				count2 <= count2+1;
 			end
@@ -740,11 +743,14 @@ begin
 					if (burst_num==0)
 					begin
 						state <= FINISH;
+						temp_data <= temp_data;
 						tx_done <= 1;
+						
 					end
 					else
 					begin
-						state <= TRANSMIT_BURST;
+						state <= TRANSMIT_BURST_FIRST_BIT;
+						temp_data <= temp_data+1;
 						tx_done <= 0;
 					end
 				end
@@ -753,11 +759,13 @@ begin
 					if (burst_num==0)
 					begin
 						state <= READ_WAIT;
+						temp_data <= temp_data;
 						tx_done <= 1;
 					end
 					else
 					begin
-						state <= TRANSMIT_BURST;
+						state <= TRANSMIT_BURST_FIRST_BIT;
+						temp_data <= temp_data+1;
 						tx_done <= 0;
 					end
 				end
@@ -770,7 +778,6 @@ begin
 				tx_address <= address[count];
 				tx_data <= tx_data;
 				burst_count <= burst_count;
-				temp_data <= temp_data;
 				tx_burst_num <= burst_num[count2];
 				count2 <= count2+1;
 			end
@@ -842,11 +849,13 @@ begin
 					if (burst_num==0)
 					begin
 						state <= FINISH;
+						temp_data <= temp_data;
 						tx_done <= 1;
 					end
 					else
 					begin
-						state <= TRANSMIT_BURST;
+						state <= TRANSMIT_BURST_FIRST_BIT;						
+						temp_data <= temp_data+1;
 						tx_done <= 0;
 					end
 				end
@@ -859,7 +868,7 @@ begin
 					end
 					else
 					begin
-						state <= TRANSMIT_BURST;
+						state <= TRANSMIT_BURST_FIRST_BIT;
 						tx_done <= 0;
 					end
 				end
@@ -872,7 +881,6 @@ begin
 				tx_address <= tx_address;
 				tx_data <= temp_data[count];
 				burst_count <= burst_count;
-				temp_data <= temp_data;
 				tx_burst_num <= burst_num[count2];
 				count2 <= count2+1;
 			end
@@ -1034,7 +1042,7 @@ begin
 			end
 		end
 		
-		TRANSMIT_BURST:
+		TRANSMIT_BURST_FIRST_BIT:
 		begin
 			if (count2 >= BURST_LEN-1)
 			begin
@@ -1049,7 +1057,7 @@ begin
 					end
 					else
 					begin
-						state <= FIRST_BIT_BURST;
+						state <= WAIT_HANDSHAKE;
 						temp_data <= temp_data+1;
 						tx_done <= 0;
 					end
@@ -1070,7 +1078,7 @@ begin
 				tx_data <= tx_data;
 				burst_count <= burst_count;
 				tx_burst_num <= burst_num[count2];
-				count2 <= count2;
+				count2 <= count2+1;
 			end
 			
 			else

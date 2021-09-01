@@ -9,7 +9,7 @@ reg [11:0]switch_array;
 wire m1_busy,m2_busy, scaled_clk; 
 
 parameter CLK_PERIOD=20;
-parameter scale=8;
+parameter scale=10;
 
 top DUT (
 	.clock(clk), 
@@ -61,37 +61,38 @@ initial begin
 	#(scale*CLK_PERIOD)  // Write
 	button1_raw <= 1;
 	
-	#(500*scale*CLK_PERIOD)  // Write without burst
+	#(50*scale*CLK_PERIOD)  // Write without burst
 
 	rw_switch1 <= 1;
 	button1_raw <= 0;
 	#(scale*CLK_PERIOD)  // Read
 	button1_raw <= 1;
 	
-	#(1000*scale*CLK_PERIOD)  // Read without burst
+	#(100*scale*CLK_PERIOD)  // Read without burst
 
 	//////////////////////////////////////////////////
 	// Test with burst
 
-//	mode_switch <= 0;
-//	switch_array <= 10; 
-//	button3_raw <= 0;
-//	#(7*scale*CLK_PERIOD)  // Button press (0 to 0)
-//	button3_raw <= 1;
-//
-//	mode_switch <= 1;
-//	button1_raw <= 0;
-//	#(scale*CLK_PERIOD)  // Write
-//	button1_raw <= 1;
-//	
-//	#(500*scale*CLK_PERIOD)  // Write without burst
-//
-//	rw_switch1 <= 1;
-//	button1_raw <= 0;
-//	#(scale*CLK_PERIOD)  // Read
-//	button1_raw <= 1;
-//	
-//	#(1000*scale*CLK_PERIOD)  // Read without burst
+	mode_switch <= 0;
+	switch_array <= 10; 
+	button3_raw <= 0;
+	#(7*scale*CLK_PERIOD)  // Button press (0 to 0)
+	button3_raw <= 1;
+
+	mode_switch <= 1;
+	rw_switch1 <= 0;
+	button1_raw <= 0;
+	#(scale*CLK_PERIOD)  // Write
+	button1_raw <= 1;
+	
+	#(5000*scale*CLK_PERIOD)  // Write without burst
+
+	rw_switch1 <= 1;
+	button1_raw <= 0;
+	#(scale*CLK_PERIOD)  // Read
+	button1_raw <= 1; 
+	
+	#(10000*scale*CLK_PERIOD)  // Read without burst
 
 		
 	#30
