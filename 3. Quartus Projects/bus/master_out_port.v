@@ -1066,7 +1066,7 @@ begin
 				tx_address <= tx_address;
 				tx_data <= temp_data[count];
 				temp_data <= temp_data;
-				burst_count <= burst_count;
+				burst_count <= burst_count+1;
 				tx_burst_num <= burst_num[count2];
 				count2 <= count2;
 			end
