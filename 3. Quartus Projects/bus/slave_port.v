@@ -50,6 +50,7 @@ wire rx_done;
 wire slave_tx_done;
 wire read_en_in1;
 wire write_en_in1;
+wire read_handshake;
 
 reg [3:0]counterReg = 0; 
 reg [12:0]burst = 12'd0;

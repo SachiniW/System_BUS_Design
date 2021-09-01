@@ -28,6 +28,7 @@ reg data_idle;
 
 wire handshake = slave_valid & master_ready;
 
+
 assign slave_ready = data_idle;
 
 parameter 
