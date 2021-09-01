@@ -18,10 +18,12 @@ module slave_in_port (
 	input reset,
 	input rx_address,
 	input rx_data,
+	// input rx_burst, //new
 	input master_valid,
 	input read_en,
 	input write_en,
 	input slave_valid,
+	input [11:0]burst,  ////new
 	output [3:0]temp_data_state, ///temp
 	output [3:0]temp_addr_state, ///temp
 	output [3:0]temp_data_counter, ///temp
@@ -33,10 +35,12 @@ module slave_in_port (
 	output reg[7:0]data,
 	output read_en_in2,
 	output read_en_in,
-	output write_en_in);
+	output write_en_in,
+	output reg[11:0] burst_counter = 12'd0); //new
 	
-reg [11:0]burst       = 12'd1;
-reg [11:0]burst_counter = 12'd0;
+// reg [11:0]burst       = 12'd4;    
+// reg [11:0]burst       = 12'd4;   ///make burst --> burst in addr
+// reg [11:0]burst_counter = 12'd0;
 reg [3:0]addr_state   = 4'd13;
 reg [3:0]data_state   = 4'd13;
 reg addr_idle         = 1;
@@ -47,7 +51,11 @@ reg [3:0]data_counter = 4'd0;
 reg read_en_in1       = 0;
 reg write_en_in1      = 0;
 
-wire handshake     = master_valid & slave_ready;
+reg test_handshake = 1;  //remove
+wire handshake     = master_valid & slave_ready & test_handshake; //remove  -->handshake-->write_handshake
+// wire handshake     = master_valid & slave_ready;
+wire read_handshake = 1;
+// wire handshake = write_handshake || read_handshake;
 
 assign slave_ready = data_idle & addr_idle;
 assign read_en_in  = rx_done & read_en_in1;
@@ -60,7 +68,7 @@ assign temp_data_state = data_state; ///temp
 assign temp_addr_state = addr_state; ///temp
 assign temp_signal = handshake; ///temp
 
-reg test_handshake = 0;
+
 
 // Statemachine to capture the 12 bit address
 parameter 
@@ -88,7 +96,8 @@ begin
 		case (addr_state)
 			IDLE:
 			begin
-				if ((handshake == 1'd1) && (burst_counter < burst)) 
+				// if ((handshake == 1'd1) && (burst_counter < burst)) 
+				if ((handshake == 1'd1)) 
 					begin
 						addr_state            <= ADDR_RECIEVE;
 						addr_counter          <= addr_counter + 4'd1;
@@ -98,6 +107,7 @@ begin
 						read_en_in1	 		  <= read_en;
 						write_en_in1 		  <= write_en;
 						burst_counter <= 0;
+						// test_handshake <= 1 ;  //remove
 					end
 				else
 					begin
@@ -108,6 +118,7 @@ begin
 						read_en_in1	  <= 0;
 						write_en_in1  <= 0;
 						burst_counter <= burst_counter;
+						// test_handshake <= 0;  //remove
 					end
 			end
 			ADDR_RECIEVE:
@@ -122,14 +133,15 @@ begin
 				end
 				else 
 				begin
-					if ((burst_counter < burst-1) && handshake == 1)        addr_state <= ADDR_INC_BURST;
-					else if ((burst_counter < burst-1) && handshake == 0)   addr_state <= ADDR_WAIT_HANDSHAKE;
-					else 							        addr_state <= IDLE;
+					if ((burst_counter < burst-1) && handshake == 1)        addr_state <= ADDR_INC_BURST;   //change to check 0th bit
+					else if ((burst_counter < burst-1) && handshake == 0)   addr_state <= ADDR_WAIT_HANDSHAKE;  //chnage to check 0th bit
+					else 							                         addr_state <= IDLE;
 					addr_counter          <= 0;
 					address[addr_counter] <= rx_address;
 					addr_idle             <= 1;
 					rx_done 			  <= 1;
 					burst_counter 		  <= burst_counter + 1;
+					test_handshake        <= 0;  //remove
 				end
 			end
 			ADDR_WAIT_HANDSHAKE:
@@ -140,6 +152,12 @@ begin
 					addr_counter <= addr_counter + 1;
 					rx_done <= 0;
 				end
+				// else if (read_en_in1 == 1 && read_handshake == 1)
+				// begin
+				// 	addr_state <= ADDR_INC_BURST;
+				// 	addr_counter <= addr_counter + 1;
+				// 	rx_done <= 0;
+				// end
 				else 
 				begin
 					addr_state <= ADDR_WAIT_HANDSHAKE;
@@ -148,7 +166,8 @@ begin
 			end
 			ADDR_INC_BURST:
 			begin
-				if ((addr_counter < 4'd7) && (burst_counter < burst))
+				// if ((addr_counter < 4'd7) && (burst_counter < burst))
+				if ((addr_counter < 4'd7))
 				begin
 					addr_state <= addr_state;
 					addr_counter <= addr_counter + 4'd1;
@@ -157,7 +176,7 @@ begin
 				end
 				else 
 				begin
-					if (burst-1 > burst_counter)  
+					if (burst_counter < burst-1)  
 					begin
 						addr_state <= ADDR_WAIT_HANDSHAKE;
 						addr_counter <= 0;
@@ -174,6 +193,7 @@ begin
 						burst_counter <= burst_counter + 1;
 						address <= address + 1;
 						rx_done <= 1;
+						test_handshake <= 0;  ///remove this
 					end
 				end
 			end
@@ -203,7 +223,8 @@ begin
 		case (data_state)
 			IDLE:
 			begin
-				if ((handshake == 1'd1) && (burst_counter < burst)) //handshake
+				// if ((handshake == 1'd1) && (burst_counter < burst)) //handshake
+				if (handshake == 1'd1 && (write_en || write_en_in1))
 					begin
 						data_state         <= DATA_RECIEVE;
 						data_counter       <= data_counter + 4'd1;
@@ -219,7 +240,7 @@ begin
 			end
 			DATA_RECIEVE:
 			begin
-				if (data_counter < 4'd7)
+				if (data_counter < 4'd7 && write_en_in1 == 1)
 				begin
 					data_state         <= data_state;
 					data_counter       <= data_counter + 4'd1;
@@ -228,7 +249,7 @@ begin
 				end
 				else 
 				begin
-					if (burst_counter == 0) data_state <= DATA_BURST_GAP;
+					if (burst_counter == 0 && write_en_in1 == 1) data_state <= DATA_BURST_GAP;
 					else 		
 					begin
 						data_state <= IDLE;

@@ -108,7 +108,7 @@ begin
 				//data[count-1:0] <= data[count-1:0];
 				data[count] <= rx_data;
 				rx_done <= 1;
-				master_ready <= 0;
+				master_ready <= 1;
 				//read_en <= read_en;
 			end
 			

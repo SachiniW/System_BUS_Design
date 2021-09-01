@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/sthir/OneDrive - University of Moratuwa/Desktop/ADS Lecture/bus/simulation/modelsim
 valt_bidir_buf
-Z0 !s110 1630301241
+Z0 !s110 1630480204
 !i10b 1
 !s100 `k9N_NNE[omlCfHHm=PO53
 IHGd`aUaPlCfzg=cK;zT9@3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1630301240.000000
+Z7 !s108 1630480204.000000
 Z8 !s107 c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_ver|c:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v|
 !i113 1
@@ -219,7 +219,7 @@ R9
 R10
 R11
 vcarry
-Z12 !s110 1630301240
+R0
 !i10b 1
 !s100 0ICFPGeo=D<cUPW66HGND3
 IRJ]3;I;lV783bP6nFHh:^0
@@ -240,7 +240,7 @@ R9
 R10
 R11
 vcarry_sum
-R12
+R0
 !i10b 1
 !s100 7Wh^>o51d99jMK2ao5S<71
 Io3E]A4ZXI<iQ=_<5OFCzW3
@@ -261,7 +261,7 @@ R9
 R10
 R11
 vcascade
-R12
+R0
 !i10b 1
 !s100 8molX8AzAGGlLiJMkCdJW0
 I=Y?QKbb[`MXF>O=:5a<io3
@@ -429,7 +429,7 @@ R9
 R10
 R11
 vexp
-R12
+R0
 !i10b 1
 !s100 S8Hlo[BJ@]GA_;PLCDLHF0
 Iai3f=gh_KMEfX1fb9;AaG3
@@ -450,7 +450,7 @@ R9
 R10
 R11
 vglobal
-R12
+R0
 !i10b 1
 !s100 PYc0FeJbjBoPb`HNl3=W20
 IaH]WcNIWF:PnYN;d1HA__1
@@ -618,7 +618,7 @@ R9
 R10
 R11
 UPRIM_GDFF_HIGH
-R0
+Z12 !s110 1630480205
 !i10b 1
 !s100 SScBZ?gdYFgRTOVYmj^Jh2
 IPz7D5UKZ8]JM8aW2RhBYn3
@@ -640,7 +640,7 @@ R10
 R11
 n@p@r@i@m_@g@d@f@f_@h@i@g@h
 UPRIM_GDFF_HIGH_SCLR_PRIORITY
-R0
+R12
 !i10b 1
 !s100 F63MIm7BDi6=;U3:nVoTc3
 I2h=C5EJKU120nI:C1a7Kn2
@@ -790,7 +790,7 @@ R9
 R10
 R11
 vsoft
-R12
+R0
 !i10b 1
 !s100 N?lNK?YVRSjaSdS3kflgD0
 IDd^B@PKLg9Gboa=80V?@^3
