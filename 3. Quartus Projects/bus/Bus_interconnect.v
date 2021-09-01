@@ -88,8 +88,13 @@ input s3_slave_ready,
 
 input s1_slave_split_en,
 input s2_slave_split_en,
-input s3_slave_split_en
+input s3_slave_split_en,
 
+input m1_tx_burst_num,
+input m2_tx_burst_num,
+output s1_rx_burst_num,
+output s2_rx_burst_num,
+output s3_rx_burst_num
 );
 
 wire [1:0] bus_grant; 
@@ -129,6 +134,7 @@ Bus_Arbiter Bus_Arbiter1(
 .m1_read_en(m1_read_en),
 .m1_slave_valid(m1_slave_valid),
 .m1_slave_ready(m1_slave_ready),
+.m1_tx_burst_num(m1_tx_burst_num),
 
 .m2_clk(m2_clk), 
 .m2_rst(m2_rst),
@@ -141,6 +147,7 @@ Bus_Arbiter Bus_Arbiter1(
 .m2_read_en(m2_read_en),
 .m2_slave_valid(m2_slave_valid),
 .m2_slave_ready(m2_slave_ready),
+.m2_tx_burst_num(m2_tx_burst_num),
 
 .s1_clk(s1_clk), 
 .s1_rst(s1_rst),
@@ -153,6 +160,7 @@ Bus_Arbiter Bus_Arbiter1(
 .s1_read_en(s1_read_en),
 .s1_slave_valid(s1_slave_valid),
 .s1_slave_ready(s1_slave_ready),
+.s1_rx_burst_num(s1_rx_burst_num),
 
 .s2_clk(s2_clk), 
 .s2_rst(s2_rst),
@@ -165,6 +173,7 @@ Bus_Arbiter Bus_Arbiter1(
 .s2_read_en(s2_read_en),
 .s2_slave_valid(s2_slave_valid),
 .s2_slave_ready(s2_slave_ready),
+.s2_rx_burst_num(s2_rx_burst_num),
 
 .s3_clk(s3_clk), 
 .s3_rst(s3_rst),
@@ -176,7 +185,8 @@ Bus_Arbiter Bus_Arbiter1(
 .s3_write_en(s3_write_en),
 .s3_read_en(s3_read_en),
 .s3_slave_valid(s3_slave_valid),
-.s3_slave_ready(s3_slave_ready)
+.s3_slave_ready(s3_slave_ready),
+.s3_rx_burst_num(s3_rx_burst_num)
 );
 
 

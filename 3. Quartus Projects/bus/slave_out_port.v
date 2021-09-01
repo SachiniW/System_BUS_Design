@@ -20,25 +20,25 @@ module slave_out_port (
 	input [7:0]datain,
 	input slave_valid,
 	output slave_ready,
-	output slave_tx_done,
+	output reg slave_tx_done,
 	output reg tx_data);
 
 reg [3:0]data_state = 0;
 reg data_idle;
-reg data_done;
+
 wire handshake = slave_valid & master_ready;
 
 assign slave_ready = data_idle;
-assign slave_tx_done = data_done;
 
 parameter 
 IDLE  = 4'd13,
-DATA_TRANSMIT = 4'd1;
+DATA_TRANSMIT = 4'd1,
+DATA_TRANSMIT_BURST = 4'd2;
 
 reg [3:0]data_counter = 4'd0;
 
-always @ (posedge clk or posedge reset)
- 
+
+always @ (posedge clk or posedge reset) 
 begin
 	if (reset)
 		data_state <= IDLE;
@@ -53,7 +53,7 @@ begin
 					tx_data <= datain[1];
 					data_counter <= data_counter + 4'd2;
 					data_idle <= 0;
-					data_done <= 0;
+					slave_tx_done <= 0;
 				end
 				else
 				begin 
@@ -61,7 +61,7 @@ begin
 					tx_data <= datain[data_counter];
 					data_counter <= 0;
 					data_idle <= 1;
-					data_done <= 0;
+					slave_tx_done <= 0;
 				end
 			end
 			DATA_TRANSMIT:
@@ -72,15 +72,15 @@ begin
 						tx_data <= datain[data_counter];
 						data_counter <= data_counter + 4'd1;
 						data_idle <= 0;
-						data_done <= 0;
+						slave_tx_done <= 0;
 					end
 				else 
 					begin
 						data_state <= IDLE;
 						tx_data <= datain[data_counter];
 						data_counter <= 0;
-						data_idle <= 0;
-						data_done <= 1;						
+						data_idle <= 0;	
+						slave_tx_done <= 1;				
 					end
 			end 
 			default:

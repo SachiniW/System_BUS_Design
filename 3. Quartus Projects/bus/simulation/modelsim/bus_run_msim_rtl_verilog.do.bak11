@@ -5,6 +5,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/reset_delay.v}
+vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v}
+vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v}
@@ -21,6 +24,8 @@ vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/Syste
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v}
+vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v}
+vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v}
 
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v}
 

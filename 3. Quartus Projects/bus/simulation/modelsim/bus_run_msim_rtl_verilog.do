@@ -21,6 +21,7 @@ vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/Syste
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v}
+vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v}
 
 vlog -vlog01compat -work work +incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3.\ Quartus\ Projects/bus {D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v}
 

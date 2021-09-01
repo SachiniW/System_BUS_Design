@@ -18,7 +18,7 @@ module top(
 	input button1_raw,
 	input button2_raw,
 	input button3_raw,
-	input [ADDR_LEN-1:0]switch_array,
+	input [11:0]switch_array,
 	input mode_switch,
 	input rw_switch1,
 	input rw_switch2,
@@ -32,14 +32,14 @@ module top(
 	output [6:0]display5_pin,
 	output [6:0]display6_pin,
 	output [6:0]display7_pin,
-	output [6:0]display8_pin,
+	output [6:0]display8_pin
 	
-	output LCD_ON,	// LCD Power ON/OFF
-   output LCD_BLON,	// LCD Back Light ON/OFF
-   output LCD_RW,	// LCD Read/Write Select, 0 = Write, 1 = Read
-   output LCD_EN,	// LCD Enable
-   output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
-   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
+//	output LCD_ON,	// LCD Power ON/OFF
+//   output LCD_BLON,	// LCD Back Light ON/OFF
+//   output LCD_RW,	// LCD Read/Write Select, 0 = Write, 1 = Read
+//   output LCD_EN,	// LCD Enable
+//   output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
+//   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 	);
 	
 //wire m1_busy1;
@@ -150,6 +150,9 @@ wire [BURST_LEN:0]burst_num2;
 wire [3:0]config_state;//to LCD display
 
 
+scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+
+
 // output port conversions
 wire reset, button1, button2, button3;
 assign reset = ~rst;
@@ -159,21 +162,19 @@ assign button2 = ~button2_raw;
 assign button3 = ~button3_raw;
 
 
-scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
-
-LCD_in LCD(
-	.clock(clock),
-	.rst(rst),
-	.Data_Line1(address1),
-	.Data_Line2(data1),
-	.config_state(config_state),
-	.mode_switch(mode_switch),
-   .LCD_ON(LCD_ON),	
-   .LCD_BLON(LCD_BLON),	
-   .LCD_RW(LCD_RW),	
-   .LCD_EN(LCD_EN),	
-   .LCD_RS(LCD_RS),	
-   .LCD_DATA(LCD_DATA));
+//LCD_in LCD(
+//	.clock(clock),
+//	.rst(rst),
+//	.Data_Line1(address1),
+//	.Data_Line2(data1),
+//	.config_state(config_state),
+//	.mode_switch(mode_switch),
+//   .LCD_ON(LCD_ON),	
+//   .LCD_BLON(LCD_BLON),	
+//   .LCD_RW(LCD_RW),	
+//   .LCD_EN(LCD_EN),	
+//   .LCD_RS(LCD_RS),	
+//   .LCD_DATA(LCD_DATA));
 	
 command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) COMMAND(
 	.clk(clk), 
@@ -346,7 +347,14 @@ Bus_interconnect BUS(
 	
 	.s1_slave_split_en(s1_slave_split_en),
 	.s2_slave_split_en(s2_slave_split_en),
-	.s3_slave_split_en(s3_slave_split_en));
+	.s3_slave_split_en(s3_slave_split_en),
+
+	.m1_tx_burst_num(m1_tx_burst_num),
+	.m2_tx_burst_num(m2_tx_burst_num),
+
+	.s1_rx_burst_num(s1_rx_burst_num),
+	.s2_rx_burst_num(s2_rx_burst_num),
+	.s3_rx_burst_num(s3_rx_burst_num));
 
 slave_4k SLAVE_4K(
 	.clk(clk), 
@@ -365,6 +373,7 @@ slave_4k SLAVE_4K(
 
 	.rx_address(s1_rx_address),
 	.rx_data(s1_rx_data),
+	.rx_burst(s1_rx_burst_num),
 	.tx_data(s1_tx_data),
 	.split_en(s1_slave_split_en));
 
@@ -384,7 +393,8 @@ slave_4k SLAVE_2K1(
 	.slave_ready(s2_slave_ready),
 
 	.rx_address(s2_rx_address),
-	.rx_data(s2_rx_data),				
+	.rx_data(s2_rx_data),
+	.rx_burst(s2_rx_burst_num),				
 	.tx_data(s2_tx_data),
 	.split_en(s2_slave_split_en));
 
@@ -404,7 +414,8 @@ slave_4k SLAVE_2K2(
 	.slave_ready(s3_slave_ready),
 
 	.rx_address(s3_rx_address),
-	.rx_data(s3_rx_data),					
+	.rx_data(s3_rx_data),	
+	.rx_burst(s3_rx_burst_num),				
 	.tx_data(s3_tx_data),
 	.split_en(s3_slave_split_en));
 

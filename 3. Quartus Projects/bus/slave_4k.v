@@ -28,6 +28,7 @@ module slave_4k(
 
 	input rx_address,
 	input rx_data,
+	input rx_burst,
 	output [7:0]data_out,   ////temp
 
 	// output slave_tx_done,
@@ -56,6 +57,7 @@ assign data_out = data;   ///temp
 	.slave_ready(slave_ready),
 	.rx_address(rx_address),
 	.rx_data(rx_data),
+	.rx_burst(rx_burst),
 	// .slave_tx_done(slave_tx_done),
 	// .rx_done(rx_done),
 	.tx_data(tx_data),

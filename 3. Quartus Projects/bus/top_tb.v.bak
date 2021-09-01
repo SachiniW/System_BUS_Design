@@ -1,205 +1,98 @@
 `timescale 1 ns / 1 ps
 module top_tb();
 
-reg clk, reset, button1, button2;
-wire busy; 
+reg clk, reset, enable, button1_raw, button2_raw, button3_raw, mode_switch, rw_switch1,
+	 rw_switch2;
+
+reg [11:0]switch_array;
+
+wire m1_busy,m2_busy, scaled_clk; 
 
 parameter CLK_PERIOD=20;
+parameter scale=8;
 
 top DUT (
-	.clk(clk), 
-	.reset(reset), 
-	.button1(button1),
-	.button2(button2),
-	.busy(busy));
+	.clock(clk), 
+	.rst(reset), 
+	.enable(enable),
+	.button1_raw(button1_raw),
+	.button2_raw(button2_raw),
+	.button3_raw(button3_raw),
+	.mode_switch(mode_switch),
+	.rw_switch1(rw_switch1),
+	.rw_switch2(rw_switch2),
+	.switch_array(switch_array),
+	.m1_busy(m1_busy),
+	.m2_busy(m2_busy),
+	.scaled_clk(scaled_clk));
+
 						
 always
-		#(CLK_PERIOD/2) i_clk = ~i_clk; 
+		#(CLK_PERIOD/2) clk = ~clk; 
 		
 initial begin
 
-	clk <= 1'b0;
-	reset <= 1'b0;
-	button1 <= 1'b1;
-	button2 <= 1'b1;
+	clk <= 0;
+	reset <= 1;
+	enable <= 1;
+	button1_raw <= 1;
+	button2_raw <= 1;
+	button3_raw <= 1;
+	mode_switch <= 1;
+	rw_switch1 <= 0;
+	rw_switch2 <= 0;
+	switch_array <= 0;
 	
-	#500
-	
-	i_start <= 1'b1;
-	
+	#(scale*CLK_PERIOD)
 
-	#1500000
+	//////////////////////////////////////////////////
+	// Test without burst
+
+	mode_switch <= 0;
+	switch_array <= 10; 
+	button3_raw <= 0;
+	#(5*scale*CLK_PERIOD)  // Button press (0 to 5)
+	switch_array <= 0; 
+	#(2*scale*CLK_PERIOD)  // Button press (5 to 0)
+	button3_raw <= 1;
+
+	mode_switch <= 1;
+	button1_raw <= 0;
+	#(scale*CLK_PERIOD)  // Write
+	button1_raw <= 1;
 	
-	i_start <= 1'b0;
+	#(50*scale*CLK_PERIOD)  // Write without burst
+
+	rw_switch1 <= 1;
+	button1_raw <= 0;
+	#(scale*CLK_PERIOD)  // Read
+	button1_raw <= 1;
 	
-	#500
-	
-	i_start <= 1'b1;
-	
-	
-	#1500000
-//	i_dram_read <= 1'b1;
-//	i_dram_addr <= 16'b0000000000100100;
+	#(100*scale*CLK_PERIOD)  // Read without burst
+
+	//////////////////////////////////////////////////
+	// Test with burst
+
+//	mode_switch <= 0;
+//	switch_array <= 10; 
+//	button3_raw <= 0;
+//	#(7*scale*CLK_PERIOD)  // Button press (0 to 0)
+//	button3_raw <= 1;
+//
+//	mode_switch <= 1;
+//	button1_raw <= 0;
+//	#(scale*CLK_PERIOD)  // Write
+//	button1_raw <= 1;
 //	
-//	#62.5
+//	#(500*scale*CLK_PERIOD)  // Write without burst
+//
+//	rw_switch1 <= 1;
+//	button1_raw <= 0;
+//	#(scale*CLK_PERIOD)  // Read
+//	button1_raw <= 1;
 //	
-//	if (o_dram_data_out == 8'b01111100)
-//		$display("element 1 correct");
-//	else 
-//		$display("element 1 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000100101;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b00101101)
-//		$display("element 2 correct");
-//	else 
-//		$display("element 2 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000100110;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b11000010)
-//		$display("element 3 correct");
-//	else 
-//		$display("element 3 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000100111;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01001001)
-//		$display("element 4 correct");
-//	else 
-//		$display("element 4 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101000;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b11000100)
-//		$display("element 5 correct");
-//	else 
-//		$display("element 5 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101001;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b00110001)
-//		$display("element 6 correct");
-//	else 
-//		$display("element 6 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101010;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01000100)
-//		$display("element 7 correct");
-//	else 
-//		$display("element 7 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101011;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01000011)
-//		$display("element 8 correct");
-//	else 
-//		$display("element 8 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101100;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b11001011)
-//		$display("element 9 correct");
-//	else 
-//		$display("element 9 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101101;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01011000)
-//		$display("element 10 correct");
-//	else 
-//		$display("element 10 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101110;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01101001)
-//		$display("element 11 correct");
-//	else 
-//		$display("element 11 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000101111;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01011111)
-//		$display("element 12 correct");
-//	else 
-//		$display("element 12 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000110000;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b11011100)
-//		$display("element 13 correct");
-//	else 
-//		$display("element 13 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000110001;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b01111101)
-//		$display("element 14 correct");
-//	else 
-//		$display("element 14 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000110010;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b00011111)
-//		$display("element 15 correct");
-//	else 
-//		$display("element 15 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000110011;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b10110001)
-//		$display("element 16 correct");
-//	else 
-//		$display("element 16 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000110100;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b10111111)
-//		$display("element 17 correct");
-//	else 
-//		$display("element 17 wrong");
-//	
-//	i_dram_addr <= 16'b0000000000110101;
-//	
-//	#62.5
-//	
-//	if (o_dram_data_out == 8'b11000111)
-//		$display("element 18 correct");
-//	else 
-//		$display("element 18 wrong");
+//	#(1000*scale*CLK_PERIOD)  // Read without burst
+
 		
 	#30
  
