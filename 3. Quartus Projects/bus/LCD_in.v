@@ -108,66 +108,66 @@ begin
 end	
  
 	
-assign LCD_state =  (mode_switch == 0 & config_state == 4'd0 & config_done == 1'b0)? 4'd0: //Press Any Key	
+assign LCD_state =  (mode_switch == 0 & config_state == 4'd0 & config_done == 1'b0)? 4'd0: //Start Config //Press Any Key	
 					(mode_switch == 0 & config_state == 4'd1)? 4'd1: //Select Master	 	
                     (mode_switch == 0 & config_state == 4'd2)? 4'd2: //Select Slave	
 					(mode_switch == 0 & config_state == 4'd3)? 4'd3: //Input Address SW[0:11]	
 					(mode_switch == 0 & config_state == 4'd4)? 4'd4: //Input Data    SW[0:7]	
 					(mode_switch == 0 & config_state == 4'd5)? 4'd5: //Input Number of Bursts	
 					(mode_switch == 0 & config_state == 4'd6)? 4'd6: //Save Configuration
-					(mode_switch == 0 & config_state == 4'd0 & config_done == 1'b1)? 4'd8: //Switch to Normal Mode
+					(mode_switch == 0 & config_state == 4'd0 & config_done == 1'b1)? 4'd8: //Config Done //Start New Config?
 					(mode_switch == 1 )? 4'd7: 4'd0; 	
 		         	
 		
 //////////////////////////////Line 1//////////////////////////////////////////						 
-assign Line11    = (LCD_state == 4'd0)? 8'h50: //P	
+assign Line11    = (LCD_state == 4'd0)? 8'h53: //S	
 						 (LCD_state == 4'd1)? 8'h53://S	 	
                    (LCD_state == 4'd2)? 8'h53://S	
 						 (LCD_state == 4'd3)? 8'h49://I	
 						 (LCD_state == 4'd4)? 8'h49://I	
 						 (LCD_state == 4'd5)? 8'h49://I	
 						 (LCD_state == 4'd6)? 8'h53://S	
-						 (LCD_state == 4'd8)? 8'h53://S	
+						 (LCD_state == 4'd8)? 8'h43://C	
 						 (LCD_state == 4'd7)? 8'h41:8'h30 ; //A 
 						 
-assign Line12    = (LCD_state == 4'd0)? 8'h72://r	
+assign Line12    = (LCD_state == 4'd0)? 8'h74://t	
 						 (LCD_state == 4'd1)? 8'h65://e	 	
                    (LCD_state == 4'd2)? 8'h65:	//e
 						 (LCD_state == 4'd3)? 8'h6E://n	
 						 (LCD_state == 4'd4)? 8'h6E://n	
 						 (LCD_state == 4'd5)? 8'h6E://n	
 						 (LCD_state == 4'd6)? 8'h61://a
-						 (LCD_state == 4'd8)? 8'h77://w		
+						 (LCD_state == 4'd8)? 8'h6F://o	
 						 (LCD_state == 4'd7)? 8'h2D:8'h30 ; //- 
 						 
-assign Line13    = (LCD_state == 4'd0)? 8'h65://e	
+assign Line13    = (LCD_state == 4'd0)? 8'h61://a	
 						 (LCD_state == 4'd1)? 8'h6C://l	 	
                    (LCD_state == 4'd2)? 8'h6C://l	
 						 (LCD_state == 4'd3)? 8'h70://p	
 						 (LCD_state == 4'd4)? 8'h70://p	
 						 (LCD_state == 4'd5)? 8'h70://p	
 						 (LCD_state == 4'd6)? 8'h76://v
-						 (LCD_state == 4'd8)? 8'h69://i	
+						 (LCD_state == 4'd8)? 8'h6E://n	
 						 (LCD_state == 4'd7 & Data_Line1[13] == 1'b1 )? 8'h31 : 8'h30 ; 
 						 
-assign Line14    = (LCD_state == 4'd0)? 8'h73://s	
+assign Line14    = (LCD_state == 4'd0)? 8'h72://r	
 						 (LCD_state == 4'd1)? 8'h65://e	 	
                    (LCD_state == 4'd2)? 8'h65://e	
 						 (LCD_state == 4'd3)? 8'h75://u	
 						 (LCD_state == 4'd4)? 8'h75://u	
 						 (LCD_state == 4'd5)? 8'h75://u	
 						 (LCD_state == 4'd6)? 8'h65://e
-						 (LCD_state == 4'd8)? 8'h74://t	
+						 (LCD_state == 4'd8)? 8'h66://f	
 						 (LCD_state == 4'd7 & Data_Line1[12] == 1'b1 )? 8'h31 : 8'h30 ;
 						 
-assign Line15    = (LCD_state == 4'd0)? 8'h73://s	
+assign Line15    = (LCD_state == 4'd0)? 8'h74://t	
 						 (LCD_state == 4'd1)? 8'h63://c	 	
                    (LCD_state == 4'd2)? 8'h63://c	
 						 (LCD_state == 4'd3)? 8'h74://t	
 						 (LCD_state == 4'd4)? 8'h74://t	
 						 (LCD_state == 4'd5)? 8'h74://t	
 						 (LCD_state == 4'd6)? 8'h20://sp	
-						 (LCD_state == 4'd8)? 8'h63://c
+						 (LCD_state == 4'd8)? 8'h69://i
 						 (LCD_state == 4'd7 & Data_Line1[11] == 1'b1 )? 8'h31 : 8'h30 ; 
 						 
 assign Line16    = (LCD_state == 4'd0)? 8'h20://sp	
@@ -176,11 +176,11 @@ assign Line16    = (LCD_state == 4'd0)? 8'h20://sp
 						 (LCD_state == 4'd3)? 8'h20://sp	
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h20://sp	
-						 (LCD_state == 4'd6)? 8'h63://c	
-						 (LCD_state == 4'd8)? 8'h68://h
+						 (LCD_state == 4'd6)? 8'h43://C	
+						 (LCD_state == 4'd8)? 8'h67://g
 						 (LCD_state == 4'd7 & Data_Line1[10] == 1'b1 )? 8'h31 : 8'h30 ;
 						 
-assign Line17    = (LCD_state == 4'd0)? 8'h41://A	
+assign Line17    = (LCD_state == 4'd0)? 8'h43://C	
 						 (LCD_state == 4'd1)? 8'h20: //sp	 	
                    (LCD_state == 4'd2)? 8'h20: //sp	
 						 (LCD_state == 4'd3)? 8'h41://A	
@@ -190,17 +190,17 @@ assign Line17    = (LCD_state == 4'd0)? 8'h41://A
 						 (LCD_state == 4'd8)? 8'h20://Sp
 						 (LCD_state == 4'd7 & Data_Line1[9] ==  1'b1 )? 8'h31 : 8'h30 ;
         
-assign Line18    = (LCD_state == 4'd0)? 8'h6E://n	
+assign Line18    = (LCD_state == 4'd0)? 8'h6F://o	
 						 (LCD_state == 4'd1)? 8'h4D: //M	 	
                    (LCD_state == 4'd2)? 8'h73://s	
 						 (LCD_state == 4'd3)? 8'h64://d	
 						 (LCD_state == 4'd4)? 8'h61://a
 						 (LCD_state == 4'd5)? 8'h75://u	
 						 (LCD_state == 4'd6)? 8'h6E://n	
-						 (LCD_state == 4'd8)? 8'h74://t
+						 (LCD_state == 4'd8)? 8'h64://d
 						 (LCD_state == 4'd7 & Data_Line1[8] ==  1'b1 )? 8'h31 : 8'h30 ;    
 
-assign Line19    = (LCD_state == 4'd0)? 8'h79://y	
+assign Line19    = (LCD_state == 4'd0)? 8'h6E://n	
 						 (LCD_state == 4'd1)? 8'h61: //a	 	
                    (LCD_state == 4'd2)? 8'h6C:	//l
 						 (LCD_state == 4'd3)? 8'h64://d	
@@ -210,44 +210,44 @@ assign Line19    = (LCD_state == 4'd0)? 8'h79://y
 						 (LCD_state == 4'd8)? 8'h6F://o
 						 (LCD_state == 4'd7 & Data_Line1[7] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line110    =(LCD_state == 4'd0)? 8'h20://sp	
+assign Line110    =(LCD_state == 4'd0)? 8'h66://f	
 						 (LCD_state == 4'd1)? 8'h73://s	 	
                    (LCD_state == 4'd2)? 8'h61://a	
 						 (LCD_state == 4'd3)? 8'h72://r	
 						 (LCD_state == 4'd4)? 8'h61://a	
 						 (LCD_state == 4'd5)? 8'h62://b	
 						 (LCD_state == 4'd6)? 8'h69://i	
-						 (LCD_state == 4'd8)? 8'h20://Sp
+						 (LCD_state == 4'd8)? 8'h6E://n
 						 (LCD_state == 4'd7 & Data_Line1[6] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line111    =(LCD_state == 4'd0)? 8'h4B://K	
+assign Line111    =(LCD_state == 4'd0)? 8'h69://i	
 						 (LCD_state == 4'd1)? 8'h74: //t	 	
                    (LCD_state == 4'd2)? 8'h76://v	
 						 (LCD_state == 4'd3)? 8'h65://e	
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h65://e	
 						 (LCD_state == 4'd6)? 8'h67://g	
-						 (LCD_state == 4'd8)? 8'h4E://N
+						 (LCD_state == 4'd8)? 8'h65://e
 						 (LCD_state == 4'd7 & Data_Line1[5] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line112    =(LCD_state == 4'd0)? 8'h65://e	
+assign Line112    =(LCD_state == 4'd0)? 8'h67://g	
 						 (LCD_state == 4'd1)? 8'h65://e 	
                    (LCD_state == 4'd2)? 8'h65://e	
 						 (LCD_state == 4'd3)? 8'h73://s	
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h72://r	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h6F://o	
+						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line1[4] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line113    =(LCD_state == 4'd0)? 8'h79://y	
+assign Line113    =(LCD_state == 4'd0)? 8'h20://sp	
 						 (LCD_state == 4'd1)? 8'h72://r	 	
                    (LCD_state == 4'd2)? 8'h20://sp	
 						 (LCD_state == 4'd3)? 8'h73://s	
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h20://sp
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h72://r	
+						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line1[3] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
 assign Line114    =(LCD_state == 4'd0)? 8'h20://sp	
@@ -257,7 +257,7 @@ assign Line114    =(LCD_state == 4'd0)? 8'h20://sp
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h6F://o
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h6D://m	
+						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line1[2] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
 assign Line115    =(LCD_state == 4'd0)? 8'h20:	
@@ -267,7 +267,7 @@ assign Line115    =(LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h66://f
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h61://a	
+						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line1[1] ==  1'b1 )? 8'h31 : 8'h30 ;       
 
 assign Line116    =(LCD_state == 4'd0)? 8'h20:	
@@ -277,58 +277,58 @@ assign Line116    =(LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h20://sp	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h6C://l	
+						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line1[0] ==  1'b1 )? 8'h31 : 8'h30 ; 
 
 ////////////////////////////////Line 2////////////////////////////////////////
-assign Line21    = (LCD_state == 4'd0)? 8'h20://sp	
+assign Line21    = (LCD_state == 4'd0)? 8'h50: //P		
 						 (LCD_state == 4'd1)? 8'h20://sp	 	
                    (LCD_state == 4'd2)? 8'h20://sp
 						 (LCD_state == 4'd3)? 8'h53://S	
 						 (LCD_state == 4'd4)? 8'h53://S	
 						 (LCD_state == 4'd5)? 8'h42://B	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h4D://M	
+						 (LCD_state == 4'd8)? 8'h53://S	
 						 (LCD_state == 4'd7)? 8'h44:8'h30 ; //D 
 						 
-assign Line22    = (LCD_state == 4'd0)? 8'h20://sp	
+assign Line22    = (LCD_state == 4'd0)? 8'h72://r
 						 (LCD_state == 4'd1)? 8'h20://sp	 	
                    (LCD_state == 4'd2)? 8'h20://sp	
 						 (LCD_state == 4'd3)? 8'h57://W	
 						 (LCD_state == 4'd4)? 8'h57://W	
 						 (LCD_state == 4'd5)? 8'h75://u	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h6F://o	
+						 (LCD_state == 4'd8)? 8'h74://t	
 						 (LCD_state == 4'd7)? 8'h2D:8'h30 ; //- 
 						 
-assign Line23    = (LCD_state == 4'd0)? 8'h20://sp	
+assign Line23    = (LCD_state == 4'd0)? 8'h65://e	
 						 (LCD_state == 4'd1)? 8'h20://sp	 	
                    (LCD_state == 4'd2)? 8'h20://sp	
 						 (LCD_state == 4'd3)? 8'h5B://[	
 						 (LCD_state == 4'd4)? 8'h5B://[	
 						 (LCD_state == 4'd5)? 8'h72://r	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h64://d	
+						 (LCD_state == 4'd8)? 8'h61://a	
 						 (LCD_state == 4'd7 & Data_Line2[13] == 1'b1 )? 8'h31 : 8'h30 ; 
 						 
-assign Line24    = (LCD_state == 4'd0)? 8'h20://sp	
+assign Line24    = (LCD_state == 4'd0)? 8'h73://s	
 						 (LCD_state == 4'd1)? 8'h20://sp	 	
                    (LCD_state == 4'd2)? 8'h20://sp	
 						 (LCD_state == 4'd3)? 8'h30://0
 						 (LCD_state == 4'd4)? 8'h30://0	
 						 (LCD_state == 4'd5)? 8'h73://s	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h65://e	
+						 (LCD_state == 4'd8)? 8'h72://r	
 						 (LCD_state == 4'd7 & Data_Line2[12] == 1'b1 )? 8'h31 : 8'h30 ;
 						 
-assign Line25    = (LCD_state == 4'd0)? 8'h20://sp	
+assign Line25    = (LCD_state == 4'd0)? 8'h73://s
 						 (LCD_state == 4'd1)? 8'h20://sp	 	
                    (LCD_state == 4'd2)? 8'h20://sp	
 						 (LCD_state == 4'd3)? 8'h3A://:	
 						 (LCD_state == 4'd4)? 8'h3A://:	
 						 (LCD_state == 4'd5)? 8'h74://t	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h20://Sp	
+						 (LCD_state == 4'd8)? 8'h74://t	
 						 (LCD_state == 4'd7 & Data_Line2[11] == 1'b1 )? 8'h31 : 8'h30 ; 
 						 
 assign Line26    = (LCD_state == 4'd0)? 8'h20:	
@@ -341,34 +341,34 @@ assign Line26    = (LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line2[10] == 1'b1 )? 8'h31 : 8'h30 ;
 						 
-assign Line27    = (LCD_state == 4'd0)? 8'h20:	
+assign Line27    = (LCD_state == 4'd0)? 8'h41://A	
 						 (LCD_state == 4'd1)? 8'h20:	 	
                    (LCD_state == 4'd2)? 8'h20:	
 						 (LCD_state == 4'd3)? 8'h31://1	
 						 (LCD_state == 4'd4)? 8'h5D://]	
 						 (LCD_state == 4'd5)? 8'h20://sp	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h4E://N	
 						 (LCD_state == 4'd7 & Data_Line2[9] ==  1'b1 )? 8'h31 : 8'h30 ;
         
-assign Line28    = (LCD_state == 4'd0)? 8'h20:	
+assign Line28    = (LCD_state == 4'd0)? 8'h6E://n		
 						 (LCD_state == 4'd1)? 8'h20:	 	
                    (LCD_state == 4'd2)? 8'h20:	
 						 (LCD_state == 4'd3)? 8'h5D://]
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h20://sp	
 						 (LCD_state == 4'd6)? 8'h20://sp
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h65://e	
 						 (LCD_state == 4'd7 & Data_Line2[8] ==  1'b1 )? 8'h31 : 8'h30 ;    
 
-assign Line29    = (LCD_state == 4'd0)? 8'h20:	
+assign Line29    = (LCD_state == 4'd0)? 8'h79://y	
 						 (LCD_state == 4'd1)? 8'h20:	 	
                    (LCD_state == 4'd2)? 8'h20:	
 						 (LCD_state == 4'd3)? 8'h20://sp
 						 (LCD_state == 4'd4)? 8'h20://sp	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h77://w	
 						 (LCD_state == 4'd7 & Data_Line2[7] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
 assign Line210    =(LCD_state == 4'd0)? 8'h20:	
@@ -381,34 +381,34 @@ assign Line210    =(LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd8)? 8'h20://sp	
 						 (LCD_state == 4'd7 & Data_Line2[6] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line211    =(LCD_state == 4'd0)? 8'h20:	
+assign Line211    =(LCD_state == 4'd0)? 8'h4B://K	
 						 (LCD_state == 4'd1)? 8'h20:	 	
                    (LCD_state == 4'd2)? 8'h20:	
 						 (LCD_state == 4'd3)? 8'h20:	
 						 (LCD_state == 4'd4)? 8'h20:	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h43://C	
 						 (LCD_state == 4'd7 & Data_Line2[5] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line212    =(LCD_state == 4'd0)? 8'h20:	
+assign Line212    =(LCD_state == 4'd0)? 8'h65://e	
 						 (LCD_state == 4'd1)? 8'h20:	 	
                    (LCD_state == 4'd2)? 8'h20:	
 						 (LCD_state == 4'd3)? 8'h20:	
 						 (LCD_state == 4'd4)? 8'h20:	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h6F://o	
 						 (LCD_state == 4'd7 & Data_Line2[4] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
-assign Line213    =(LCD_state == 4'd0)? 8'h20:	
+assign Line213    =(LCD_state == 4'd0)? 8'h79://y
 						 (LCD_state == 4'd1)? 8'h20:	 	
                    (LCD_state == 4'd2)? 8'h20:	
 						 (LCD_state == 4'd3)? 8'h20:	
 						 (LCD_state == 4'd4)? 8'h20:	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h6E://n	
 						 (LCD_state == 4'd7 & Data_Line2[3] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
 assign Line214    =(LCD_state == 4'd0)? 8'h20:	
@@ -418,7 +418,7 @@ assign Line214    =(LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd4)? 8'h20:	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h66://f	
 						 (LCD_state == 4'd7 & Data_Line2[2] ==  1'b1 )? 8'h31 : 8'h30 ;        
 
 assign Line215    =(LCD_state == 4'd0)? 8'h20:	
@@ -428,7 +428,7 @@ assign Line215    =(LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd4)? 8'h20:	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h69://i	
 						 (LCD_state == 4'd7 & Data_Line2[1] ==  1'b1 )? 8'h31 : 8'h30 ;       
 
 assign Line216    =(LCD_state == 4'd0)? 8'h20:	
@@ -438,7 +438,7 @@ assign Line216    =(LCD_state == 4'd0)? 8'h20:
 						 (LCD_state == 4'd4)? 8'h20:	
 						 (LCD_state == 4'd5)? 8'h20:	
 						 (LCD_state == 4'd6)? 8'h20:
-						 (LCD_state == 4'd8)? 8'h20://sp	
+						 (LCD_state == 4'd8)? 8'h67://g	
 						 (LCD_state == 4'd7 & Data_Line2[0] ==  1'b1 )? 8'h31 : 8'h30 ; 
 	
         	
