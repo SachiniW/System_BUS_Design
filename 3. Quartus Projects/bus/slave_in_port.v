@@ -30,14 +30,15 @@ module slave_in_port (
 	output reg write_en_in1 = 0,
 	output read_en_in,
 	output write_en_in,
-	output reg[11:0] burst_counter = 12'd0);
+	output reg[11:0] burst_counter = 12'd0,
+	output reg[3:0] addr_counter = 4'd0);
 	
 
 reg [3:0]addr_state = 4'd13;
 reg [3:0]data_state = 4'd13;
 reg addr_idle = 1;
 reg data_idle = 1;
-reg [3:0]addr_counter = 4'd0;
+// reg [3:0]addr_counter = 4'd0;
 reg [3:0]data_counter = 4'd0;
 
 wire handshake = master_valid & slave_ready;
@@ -119,7 +120,7 @@ begin
 			end
 			ADDR_WAIT_HANDSHAKE:
 			begin
-				if ((handshake == 1) || (rx_done == 1)) 
+				if ((handshake == 1) || ((rx_done == 1) && (read_en_in1)))    ///changed
 				begin
 					addr_state <= ADDR_INC_BURST;
 					addr_counter <= addr_counter + 1;

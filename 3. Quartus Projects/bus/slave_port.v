@@ -51,9 +51,10 @@ wire slave_tx_done;
 wire read_en_in1;
 wire write_en_in1;
 wire read_handshake;
+wire [3:0]addr_counter;
 
 reg [3:0]counterReg = 0; 
-reg [12:0]burst = 12'd0;
+reg [12:0]burst = 13'd0;
 
 assign slave_ready = slave_ready_IN & slave_ready_OUT;
 
@@ -87,7 +88,8 @@ slave_in_port SLAVE_IN_PORT(
 	.write_en_in1(write_en_in1),
 	.read_en_in(read_en_in),
 	.write_en_in(write_en_in),
-	.burst_counter(burst_counter));
+	.burst_counter(burst_counter),
+	.addr_counter(addr_counter));
 
 slave_out_port SLAVE_OUT_PORT(
 	.clk(clk), 
@@ -119,6 +121,13 @@ begin
 				state <= SPLIT;
 				split_en <= 1'b1;
 			end
+			else if ((addr_counter == 4'd5) && (burst_counter == 12'd7))  //added new
+			begin
+				counterReg <= 4'b0;
+				slave_valid <= 1'b0;
+				state <= SPLIT;
+				split_en <= 1'b1;
+			end
 			else
 			begin
 				counterReg <= 4'b0;
@@ -136,6 +145,13 @@ begin
 				split_en = 1'b1;
 				state <= SPLIT;
 			end
+			else if ((addr_counter == 4'd6) && (burst_counter == 12'd7))  //temporarily added
+			begin
+				counterReg <= counterReg + 4'b1;
+				slave_valid <= 1'b0;
+				split_en = 1'b1;
+				state <= NORMAL;
+			end
 			else
 			begin
 				counterReg <= 4'b0;
@@ -146,14 +162,14 @@ begin
 		end
 		VALID:
 		begin
-			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[0] == 0))
+			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[0] == 1'd0))
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b0;
 				split_en <= 1'b0;
 				state <= NORMAL;
 			end
-			if((slave_tx_done == 1) & (slave_valid == 1) & (burst[12:1] + 1 == burst_counter))
+			else if((slave_tx_done == 1) & (slave_valid == 1) & (burst[12:1] + 1 == burst_counter) & (burst[0] == 1'd1))
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b1;
