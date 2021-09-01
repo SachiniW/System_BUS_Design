@@ -360,7 +360,7 @@ slave_4k SLAVE_4K(
 	.clk(clk), 
 	.reset(reset),
 
-	.slave_delay(6'd10),
+	.slave_delay(6'd0),
 
 	.read_en(s1_read_en),
 	.write_en(s1_write_en),

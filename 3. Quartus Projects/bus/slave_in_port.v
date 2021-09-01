@@ -119,7 +119,7 @@ begin
 			end
 			ADDR_WAIT_HANDSHAKE:
 			begin
-				if (handshake == 1) 
+				if ((handshake == 1) || (rx_done == 1)) 
 				begin
 					addr_state <= ADDR_INC_BURST;
 					addr_counter <= addr_counter + 1;

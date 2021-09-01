@@ -86,14 +86,14 @@ initial begin
 	#(scale*CLK_PERIOD)  // Write
 	button1_raw <= 1;
 	
-	#(5000*scale*CLK_PERIOD)  // Write without burst
+	#(200*scale*CLK_PERIOD)  // Write without burst
 
 	rw_switch1 <= 1;
 	button1_raw <= 0;
 	#(scale*CLK_PERIOD)  // Read
 	button1_raw <= 1; 
 	
-	#(10000*scale*CLK_PERIOD)  // Read without burst
+	#(400*scale*CLK_PERIOD)  // Read without burst
 	
 	#30
  
