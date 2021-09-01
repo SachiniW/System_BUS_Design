@@ -1091,6 +1091,13 @@ begin
 			end
 		end
 		
+		/* 
+		
+		Have to add TRANSMIT_BURST_WAIT_HANDSHAKE and TRANSMIT_BURST_TRANSMIT_DATA for this to work 
+			when more than one burst bit is left to be sent out.
+			
+		*/
+		
 		FIRST_BIT_BURST:
 		begin
 			count <= count+1;
