@@ -8,8 +8,8 @@
 // It then exercises the receive by receiving byte 0x3F
 `timescale 1ns/10ps
  
-`include "UART_TX.v"
-`include "UART_RX.v"
+//`include "UART_TX.v"
+//`include "UART_RX.v"
  
 module UART_TB ();
  

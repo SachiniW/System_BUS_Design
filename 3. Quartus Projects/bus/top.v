@@ -150,7 +150,7 @@ wire [BURST_LEN:0]burst_num2;
 wire [3:0]config_state;//to LCD display
 
 
-scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+scaledclock #(.maxcount(50000000)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 
 // output port conversions

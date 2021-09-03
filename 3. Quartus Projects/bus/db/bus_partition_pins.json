@@ -4,339 +4,103 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "scaled_clk",
+					"name" : "u_tx_data",
 					"strict" : false
 				},
 				{
-					"name" : "m1_busy",
+					"name" : "m_approval_request",
 					"strict" : false
 				},
 				{
-					"name" : "m2_busy",
+					"name" : "m_master_valid",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[0]",
+					"name" : "m_write_en",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[1]",
+					"name" : "s_slave_valid",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[2]",
+					"name" : "s_slave_ready",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[3]",
+					"name" : "s_split_en",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[4]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[5]",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[6]",
+					"name" : "m_bus_busy",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[0]",
+					"name" : "m_approval_grant",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[1]",
+					"name" : "m_arbitor_busy",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[2]",
+					"name" : "bus_clk",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[3]",
+					"name" : "s_slave_delay[4]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[4]",
+					"name" : "s_slave_delay[5]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[5]",
+					"name" : "s_slave_delay[3]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[6]",
+					"name" : "s_slave_delay[2]",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[0]",
+					"name" : "s_slave_delay[1]",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[1]",
+					"name" : "s_slave_delay[0]",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[2]",
+					"name" : "s_master_ready",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[3]",
+					"name" : "s_master_valid",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[4]",
+					"name" : "s_write_en",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[5]",
+					"name" : "m_slave_ready",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[6]",
+					"name" : "s_read_en",
 					"strict" : false
 				},
 				{
-					"name" : "display4_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[0]",
-					"strict" : false
-				},
-				{
-					"name" : "mode_switch",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[1]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[4]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[7]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[6]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[5]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[9]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[8]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[11]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[10]",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
-					"name" : "enable",
-					"strict" : false
-				},
-				{
-					"name" : "button1_raw",
-					"strict" : false
-				},
-				{
-					"name" : "rst",
-					"strict" : false
-				},
-				{
-					"name" : "button2_raw",
-					"strict" : false
-				},
-				{
-					"name" : "button3_raw",
-					"strict" : false
-				},
-				{
-					"name" : "rw_switch1",
-					"strict" : false
-				},
-				{
-					"name" : "rw_switch2",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tms",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tck",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdi",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdo",
+					"name" : "s_rx_burst",
 					"strict" : false
 				}
 			]
