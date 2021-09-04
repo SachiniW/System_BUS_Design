@@ -6,11 +6,11 @@
 // driven high for one clock cycle.
 //
 // Set Parameter CLKS_PER_BIT as follows:
-// CLKS_PER_BIT = (Frequency of i_Clock)/(Frequency of UART)
-// Example: 10 MHz Clock, 115200 baud UART
-// (10000000)/(115200) = 87
+// CLKS_PER_BIT = (Frequency of clk)/(Frequency of UART)
+// Example: 50 MHz Clock, 19200 baud UART
+// (50000000)/(19200) = 2604
   
-module uart_tx #(parameter DATA_LEN=8, parameter CLKS_PER_BIT=87)(
+module uart_tx #(parameter DATA_LEN=8, parameter CLKS_PER_BIT=2604)(
    input       clk,
 	input       reset,
    input       send_sig,

@@ -13,7 +13,7 @@
  Revision : v1.0 
 */
 
-module uart_port #(parameter DATA_LEN=8, parameter CLKS_PER_BIT=87)(
+module uart_port #(parameter DATA_LEN=8, parameter CLKS_PER_BIT=2604)(
 	input clk,
 	input reset,
 	

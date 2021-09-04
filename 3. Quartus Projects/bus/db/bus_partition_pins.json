@@ -4,103 +4,203 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "u_tx_data",
+					"name" : "scaled_clk",
 					"strict" : false
 				},
 				{
-					"name" : "m_approval_request",
+					"name" : "m2_busy",
 					"strict" : false
 				},
 				{
-					"name" : "m_master_valid",
+					"name" : "display1_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "m_write_en",
+					"name" : "display1_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_valid",
+					"name" : "display1_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_ready",
+					"name" : "display1_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "s_split_en",
+					"name" : "display1_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "display1_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "display1_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "m_bus_busy",
+					"name" : "display2_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "m_approval_grant",
+					"name" : "display2_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "m_arbitor_busy",
+					"name" : "display2_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "bus_clk",
+					"name" : "display2_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_delay[4]",
+					"name" : "display2_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_delay[5]",
+					"name" : "display2_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_delay[3]",
+					"name" : "display2_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_delay[2]",
+					"name" : "display3_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_delay[1]",
+					"name" : "display3_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "s_slave_delay[0]",
+					"name" : "display3_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "s_master_ready",
+					"name" : "display3_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "s_master_valid",
+					"name" : "display3_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "s_write_en",
+					"name" : "display3_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "m_slave_ready",
+					"name" : "display3_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "s_read_en",
+					"name" : "display4_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "s_rx_burst",
+					"name" : "display4_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mode_switch",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[5]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[9]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[11]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[10]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "button2_raw",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "button3_raw",
+					"strict" : false
+				},
+				{
+					"name" : "button1_raw",
+					"strict" : false
+				},
+				{
+					"name" : "rw_switch2",
 					"strict" : false
 				}
 			]

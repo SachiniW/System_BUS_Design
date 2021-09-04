@@ -1,5 +1,5 @@
 `timescale 1 ns / 1 ps
-module top_tb();
+module top2_tb();
 
 reg clk, reset, enable, button1_raw, button2_raw, button3_raw, mode_switch, rw_switch1,
 	 rw_switch2;
@@ -74,26 +74,26 @@ initial begin
 	//////////////////////////////////////////////////
 	// Test with burst
 
-	//	mode_switch <= 0;
-	//	switch_array <= 10; 
-	//	button3_raw <= 0;
-	//	#(7*scale*CLK_PERIOD)  // Button press (0 to 0)
-	//	button3_raw <= 1;
-	//
-	//	mode_switch <= 1;
-	//	rw_switch1 <= 0;
-	//	button1_raw <= 0;
-	//	#(scale*CLK_PERIOD)  // Write
-	//	button1_raw <= 1;
-	//	
-	//	#(200*scale*CLK_PERIOD)  // Write with burst
-	//
-	//	rw_switch1 <= 1;
-	//	button1_raw <= 0;
-	//	#(scale*CLK_PERIOD)  // Read
-	//	button1_raw <= 1; 
-	//	
-	//	#(400*scale*CLK_PERIOD)  // Read with burst
+	mode_switch <= 0;
+	switch_array <= 10; 
+	button3_raw <= 0;
+	#(7*scale*CLK_PERIOD)  // Button press (0 to 0)
+	button3_raw <= 1;
+
+	mode_switch <= 1;
+	rw_switch1 <= 0;
+	button1_raw <= 0;
+	#(scale*CLK_PERIOD)  // Write
+	button1_raw <= 1;
+	
+	#(200*scale*CLK_PERIOD)  // Write with burst
+
+	rw_switch1 <= 1;
+	button1_raw <= 0;
+	#(scale*CLK_PERIOD)  // Read
+	button1_raw <= 1; 
+	
+	#(400*scale*CLK_PERIOD)  // Read with burst
 
 	///////////////////////////////////////////////////////////
 	// Test split

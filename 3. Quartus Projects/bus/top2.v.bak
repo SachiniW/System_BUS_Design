@@ -1,5 +1,5 @@
 /* 
- file name : top.v
+ file name : top2.v
 
  Description:
 	A 4k block RAM which acts as a slave
@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module top(
+module top2(
 	input clock,	
 	input rst,
 	input enable,
@@ -51,7 +51,17 @@ module top(
 parameter SLAVE_LEN=2; 
 parameter ADDR_LEN=12; 
 parameter DATA_LEN=8;
-parameter BURST_LEN=12;	
+parameter BURST_LEN=12;
+parameter CLKS_PER_BIT=20;//2604;
+parameter MAX_COUNT=50000;	
+
+// UART wires
+wire i_uart_rx;
+wire i_uart_tx;
+wire o_uart_rx;
+wire o_uart_tx;
+assign i_uart_rx = o_uart_tx;
+assign o_uart_rx = i_uart_tx;
 	
 // Wires in interconnect
 wire m1_request; 
@@ -150,9 +160,10 @@ wire [BURST_LEN:0]burst_num2;
 wire [3:0]config_state;//to LCD display
 
 // output port conversions
-wire reset, button1, button2, button3, clk;
+wire reset, button1, button2, button3, clk_uart, clk;
 assign reset = ~rst;
 assign scaled_clk = clk;
+assign clk_uart = clock && enable;
 assign button1 = ~button1_raw;
 assign button2 = ~button2_raw;
 assign button3 = ~button3_raw;
@@ -204,40 +215,101 @@ command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_L
 	.slave2(slave2),
 	.burst_num2(burst_num2));
 
-master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER1(
-	.clk(clk), 
+bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN),
+					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT)) INPUT_BRIDGE(
+	.clk(clk_uart), 
 	.reset(reset),
-	.busy(m1_busy),
-	.display1_pin(display5_pin),
-	.display2_pin(display6_pin),
+	.bus_clk(clk),
 	
-	.read(read1),
-	.write(write1),
-	.data_load(data1),
-	.address_load(address1),
-	.slave_select_load(slave1),
-	.burst_num_load(burst_num1),
+	//UART	
 	
-	.arbitor_busy(arbiter_busy),
-	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
-	.approval_grant(m1_grant),
-	.approval_request(m1_request),
-	.tx_slave_select(m1_slave_sel),
-	.trans_done(m1_trans_done), //include in bus  ----> INCLUDED
+   .u_rx_data(i_uart_rx),
+   .u_tx_data(i_uart_tx),
 	
-	.rx_data(m1_rx_data),
-	.tx_address(m1_tx_address),
-	.tx_data(m1_tx_data),
-	.tx_burst_num(m1_tx_burst_num),
+	//MASTER
 	
-	.slave_valid(m1_slave_valid), //need port ----> INCLUDED
-	.slave_ready(m1_slave_ready),
-	.master_valid(m1_master_valid),
-	.master_ready(m1_master_ready), //nead port ----> INCLUDED
-	.write_en(m1_write_en),
-	.read_en(m1_read_en));
+	.m_arbitor_busy(arbiter_busy),
+	.m_bus_busy(bus_busy),
+	.m_approval_grant(m1_grant),
+	.m_approval_request(m1_request),
+	.m_tx_slave_select(m1_slave_select),
+	.m_trans_done(m1_trans_done),
+	
+	.m_rx_data(m1_rx_data),
+	.m_tx_address(m1_tx_address),
+	.m_tx_data(m1_tx_data),
+	.m_tx_burst_num(m1_tx_burst_num),
+	
+	.m_slave_valid(m1_slave_valid),
+	.m_slave_ready(m1_slave_ready),
+	.m_master_valid(m1_master_valid),
+	.m_master_ready(m1_master_ready),
+	.m_write_en(m1_write_en),
+	.m_read_en(m1_read_en));
+	
+//	//SLAVE
+//	
+//	.s_slave_delay(6'd0),
+//	.s_read_en(s2_read_en),
+//	.s_write_en(s2_write_en),
+//	.s_master_ready(s2_master_ready),
+//	.s_master_valid(s2_master_valid),
+//	.s_slave_valid(s2_slave_valid),
+//	.s_slave_ready(s2_slave_ready),
+//	.s_rx_address(s2_rx_address),
+//	.s_rx_data(s2_rx_data),
+//	.s_rx_burst(s2_rx_burst),
+//	.s_split_en(s2_split_en),
+//	.s_tx_data(s2_tx_data));	
 
-master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER2(
+bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN),
+					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT)) OUTPUT_BRIDGE(
+	.clk(clk_uart), 
+	.reset(reset),
+	.bus_clk(clk),
+	
+	//UART	
+	
+   .u_rx_data(o_uart_rx),
+   .u_tx_data(o_uart_tx),
+	
+//	//MASTER
+//	
+//	.m_arbitor_busy(arbiter_busy),
+//	.m_bus_busy(bus_busy),
+//	.m_approval_grant(m1_grant),
+//	.m_approval_request(m1_request),
+//	.m_tx_slave_select(m1_slave_select),
+//	.m_trans_done(m1_trans_done),
+//	
+//	.m_rx_data(m1_rx_data),
+//	.m_tx_address(m1_tx_address),
+//	.m_tx_data(m1_tx_data),
+//	.m_tx_burst_num(m1_tx_burst_num),
+//	
+//	.m_slave_valid(m1_slave_valid),
+//	.m_slave_ready(m1_slave_ready),
+//	.m_master_valid(m1_master_valid),
+//	.m_master_ready(m1_master_ready),
+//	.m_write_en(m1_write_en),
+//	.m_read_en(m1_read_en),
+
+	//SLAVE
+	
+	.s_slave_delay(6'd0),
+	.s_read_en(s2_read_en),
+	.s_write_en(s2_write_en),
+	.s_master_ready(s2_master_ready),
+	.s_master_valid(s2_master_valid),
+	.s_slave_valid(s2_slave_valid),
+	.s_slave_ready(s2_slave_ready),
+	.s_rx_address(s2_rx_address),
+	.s_rx_data(s2_rx_data),
+	.s_rx_burst(s2_rx_burst),
+	.s_split_en(s2_split_en),
+	.s_tx_data(s2_tx_data));
+
+increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) INCREMENT(
 	.clk(clk), 
 	.reset(reset),
 	.busy(m2_busy),
@@ -251,24 +323,41 @@ master_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 	.slave_select_load(slave2),
 	.burst_num_load(burst_num2),
 	
-	.arbitor_busy(arbiter_busy),
-	.bus_busy(bus_busy),  //include in bus  ----> INCLUDED
-	.approval_grant(m2_grant),
-	.approval_request(m2_request),
-	.tx_slave_select(m2_slave_sel),
-	.trans_done(m2_trans_done), //include in bus  ----> INCLUDED
+	//MASTER
 	
-	.rx_data(m2_rx_data),
-	.tx_address(m2_tx_address),
-	.tx_data(m2_tx_data),
-	.tx_burst_num(m2_tx_burst_num),
+	.m_arbitor_busy(arbiter_busy),
+	.m_bus_busy(bus_busy),  //include in bus  ----> INCLUDED
+	.m_approval_grant(m2_grant),
+	.m_approval_request(m2_request),
+	.m_tx_slave_select(m2_slave_sel),
+	.m_trans_done(m2_trans_done), //include in bus  ----> INCLUDED
 	
-	.slave_valid(m2_slave_valid), //need port ----> INCLUDED
-	.slave_ready(m2_slave_ready),
-	.master_valid(m2_master_valid),
-	.master_ready(m2_master_ready), //nead port ----> INCLUDED
-	.write_en(m2_write_en),
-	.read_en(m2_read_en));
+	.m_rx_data(m2_rx_data),
+	.m_tx_address(m2_tx_address),
+	.m_tx_data(m2_tx_data),
+	.m_tx_burst_num(m2_tx_burst_num),
+	
+	.m_slave_valid(m2_slave_valid),
+	.m_slave_ready(m2_slave_ready),
+	.m_master_valid(m2_master_valid),
+	.m_master_ready(m2_master_ready),
+	.m_write_en(m2_write_en),
+	.m_read_en(m2_read_en),
+	
+	//SLAVE
+	
+	.s_slave_delay(6'd0),
+	.s_read_en(s1_read_en),
+	.s_write_en(s1_write_en),
+	.s_master_ready(s1_master_ready),
+	.s_master_valid(s1_master_valid),
+	.s_slave_valid(s1_slave_valid),
+	.s_slave_ready(s1_slave_ready),
+	.s_rx_address(s1_rx_address),
+	.s_rx_data(s1_rx_data),
+	.s_rx_burst(s1_rx_burst),
+	.s_split_en(s1_split_en),
+	.s_tx_data(s1_tx_data));
 	
 Bus_interconnect BUS(
 	.sys_clk(clk),
@@ -354,68 +443,5 @@ Bus_interconnect BUS(
 	.s1_rx_burst_num(s1_rx_burst_num),
 	.s2_rx_burst_num(s2_rx_burst_num),
 	.s3_rx_burst_num(s3_rx_burst_num));
-
-slave_4k SLAVE_4K(
-	.clk(clk), 
-	.reset(reset),
-
-	.slave_delay(6'd0),
-
-	.read_en(s1_read_en),
-	.write_en(s1_write_en),
-
-	.master_ready(s1_master_ready),//need port ----> INCLUDED
-	.master_valid(s1_master_valid),
-
-	.slave_valid(s1_slave_valid),//need port -----> INCLUDED
-	.slave_ready(s1_slave_ready),
-
-	.rx_address(s1_rx_address),
-	.rx_data(s1_rx_data),
-	.rx_burst(s1_rx_burst_num),
-	.tx_data(s1_tx_data),
-	.split_en(s1_slave_split_en));
-
-slave_4k SLAVE_2K1(
-	.clk(clk), 
-	.reset(reset),
-
-	.slave_delay(6'd0),	
-
-	.read_en(s2_read_en),
-	.write_en(s2_write_en),
-
-	.master_ready(s2_master_ready),//need port ----> INCLUDED
-	.master_valid(s2_master_valid),
-
-	.slave_valid(s2_slave_valid),//need port -----> INCLUDED
-	.slave_ready(s2_slave_ready),
-
-	.rx_address(s2_rx_address),
-	.rx_data(s2_rx_data),
-	.rx_burst(s2_rx_burst_num),				
-	.tx_data(s2_tx_data),
-	.split_en(s2_slave_split_en));
-
-slave_4k SLAVE_2K2(
-	.clk(clk), 
-	.reset(reset),
-
-	.slave_delay(6'd10),
-
-	.read_en(s3_read_en),
-	.write_en(s3_write_en),
-
-	.master_ready(s3_master_ready),//need port ----> INCLUDED
-	.master_valid(s3_master_valid),
-
-	.slave_valid(s3_slave_valid),//need port -----> INCLUDED
-	.slave_ready(s3_slave_ready),
-
-	.rx_address(s3_rx_address),
-	.rx_data(s3_rx_data),	
-	.rx_burst(s3_rx_burst_num),				
-	.tx_data(s3_tx_data),
-	.split_en(s3_slave_split_en));
 
 endmodule
