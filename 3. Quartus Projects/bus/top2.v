@@ -42,18 +42,24 @@ module top2(
 //   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 	);
 	
-//wire m1_busy1;
-//wire m2_busy2;
-
-//assign m1_busy = m1_button1;
-//assign m2_busy = m1_button2;
-
 parameter SLAVE_LEN=2; 
 parameter ADDR_LEN=12; 
 parameter DATA_LEN=8;
 parameter BURST_LEN=12;
-parameter CLKS_PER_BIT=20;//2604;
-parameter MAX_COUNT=50000;	
+parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+
+/***********************************************************/
+//Change when switching between FPGA and testbench
+
+//FPGA
+parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
+parameter MAX_COUNT_CLK=50000000;	//Clock slow enough to see values getting updated
+
+//Testbench
+parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
+parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
+
+/***********************************************************/
 
 // UART wires
 wire i_uart_rx;
@@ -118,10 +124,6 @@ wire s1_slave_split_en;
 wire s2_slave_split_en;
 wire s3_slave_split_en;
 
-// // slave
-// wire slave_tx_done;
-// wire rx_done;
-
 // master
 wire bus_busy;
 wire m1_trans_done;
@@ -140,9 +142,6 @@ wire m2_slave_valid;
 wire s1_slave_valid;
 wire s2_slave_valid;
 wire s3_slave_valid;
-
-
-//assign bus_busy=0;
 
 // command processor to master
 wire read1;
@@ -168,9 +167,7 @@ assign button1 = ~button1_raw;
 assign button2 = ~button2_raw;
 assign button3 = ~button3_raw;
 
-scaledclock #(.maxcount(4)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
-
-//scaledclock #(.maxcount(50000000)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 //LCD_in LCD(
 //	.clock(clock),
@@ -216,7 +213,7 @@ command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_L
 	.burst_num2(burst_num2));
 
 bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN),
-					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT)) INPUT_BRIDGE(
+					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT_TIMEOUT)) INPUT_BRIDGE(
 	.clk(clk_uart), 
 	.reset(reset),
 	.bus_clk(clk),
@@ -263,7 +260,7 @@ bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 //	.s_tx_data(s2_tx_data));	
 
 bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN),
-					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT)) OUTPUT_BRIDGE(
+					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT_TIMEOUT)) OUTPUT_BRIDGE(
 	.clk(clk_uart), 
 	.reset(reset),
 	.bus_clk(clk),
@@ -326,11 +323,11 @@ increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LE
 	//MASTER
 	
 	.m_arbitor_busy(arbiter_busy),
-	.m_bus_busy(bus_busy),  //include in bus  ----> INCLUDED
+	.m_bus_busy(bus_busy),  
 	.m_approval_grant(m2_grant),
 	.m_approval_request(m2_request),
 	.m_tx_slave_select(m2_slave_sel),
-	.m_trans_done(m2_trans_done), //include in bus  ----> INCLUDED
+	.m_trans_done(m2_trans_done), 
 	
 	.m_rx_data(m2_rx_data),
 	.m_tx_address(m2_tx_address),
