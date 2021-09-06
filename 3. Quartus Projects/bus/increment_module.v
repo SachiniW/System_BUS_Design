@@ -64,8 +64,8 @@ module increment_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, paramete
 	input s_rx_address,
 	input s_rx_data,
 	input s_rx_burst, 
-	output s_tx_data,
-	output s_split_en);
+	output s_split_en,
+	output s_tx_data);
 	
 	
 // MASTER
@@ -87,6 +87,20 @@ wire [11:0]s_address;
 wire [7:0]s_data;
 wire s_read_en_in;
 wire s_write_en_in;
+
+//
+parameter[1:0] INC_IDLE = 2'd0;
+parameter[1:0] INCREMENT = 2'd1;
+parameter[1:0] DISPLAY = 2'd2;
+parameter[1:0] SEND_DATA = 2'd3;
+
+reg [1:0]inc_state =0;
+reg [7:0]output_data;
+reg [7:0]data_to_master;
+reg [5:0]delay_count = 6'd10; // for testing
+reg [5:0]delay_counter = 0;
+
+assign m_data_out = data_to_master;
 
 slave_port SLAVE_PORT(
 	.clk(clk), 
@@ -167,7 +181,63 @@ button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 	.instruction(m_instruction),
 	.slave_select(m_slave_select),
 	.address(m_address),
-	.data_out(m_data_out),	
+	.data_out(), //changed	m_data_out
 	.burst_num(m_burst_num));
+	
+	
+always @(posedge clk or posedge reset)
+begin
+if (reset == 1'd1)
+	begin
+		output_data <= 0;
+		delay_counter <= 0;
+		inc_state <= INC_IDLE;
+	end
+else
+	begin
+		case (inc_state)
+			INC_IDLE:begin
+				if (s_write_en_in == 1) //when reciever done
+				begin
+					//output_data <= s_data; // if the received number needs to be displayed
+					//display1_pin <= output_data;
+					output_data <= 7'd7;
+					inc_state <= INCREMENT;
+				end
+				else
+				begin
+					output_data <= 0;
+					delay_counter <= 0;
+				end
+			end
+			INCREMENT:begin
+					output_data <= output_data + 1;
+					inc_state <= DISPLAY;
+			end
+			DISPLAY:begin
+				if (delay_counter == delay_count)
+				begin
+					delay_counter <= 0;
+					inc_state <= SEND_DATA;					
+				end
+				else
+				begin
+					delay_counter <= delay_counter + 1;
+					//display1_pin <= output_data;
+				end
+			end
+			SEND_DATA:begin
+					data_to_master <= output_data;
+			end
+			default:begin
+					output_data <= 0;
+					delay_counter <= 0;
+				end
+		endcase			
+	end
+end
+	
+	
+	
 								
 endmodule

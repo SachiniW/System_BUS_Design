@@ -45,7 +45,7 @@ parameter[2:0] SPLIT_BUSY_STATE = 3'd7;
 wire slave_split_en = s1_slave_split_en || s2_slave_split_en || s3_slave_split_en ; // No two slaves will issue a split at once
 reg split_enabled;
 
-reg [2:0] arbiter_state;
+reg [2:0] arbiter_state = 0; //added later
 reg [1:0] rx_m1_slave;
 reg [1:0] rx_m2_slave;
 reg [1:0] clk_count;
