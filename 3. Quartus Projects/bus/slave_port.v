@@ -50,7 +50,6 @@ wire rx_done;
 wire slave_tx_done;
 wire read_en_in1;
 wire write_en_in1;
-wire read_handshake;
 wire [3:0]addr_counter;
 
 reg [3:0]counterReg = 0; 
@@ -79,6 +78,8 @@ slave_in_port SLAVE_IN_PORT(
 	.master_valid(master_valid),
 	.read_en(read_en),
 	.write_en(write_en),
+	.slave_valid(slave_valid),
+	.master_ready(master_ready),
 	.burst(burst),
 	.slave_ready(slave_ready_IN),
 	.rx_done(rx_done),
@@ -114,14 +115,14 @@ begin
 				state <= VALID;
 				split_en <= 1'b0;
 			end
-			else if ((read_en_in1 == 1) & (rx_done == 1) & (~(slave_delay < 5)))
+			else if ((read_en_in1 == 1) & (rx_done == 1) & (~(slave_delay < 5))) //slow slave split
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b0;
 				state <= SPLIT;
 				split_en <= 1'b1;
 			end
-			else if ((addr_counter == 4'd5) && (burst_counter == 12'd7))  //added new
+			else if ((addr_counter == 4'd5) && ((burst_counter + 12'd1) % 8 == 0))  //Write burst split
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b0;
@@ -138,20 +139,25 @@ begin
 		end 
 		SPLIT:
 		begin
-			if (counterReg < slave_delay)
+			if (counterReg < slave_delay)  //delayed slave split
 			begin
 				counterReg <= counterReg + 4'b1;
-				slave_valid <= 1'b0;
+				slave_valid <= 1'b0; 
 				split_en = 1'b1;
 				state <= SPLIT;
 			end
-			else if ((addr_counter == 4'd6) && (burst_counter == 12'd7))  //temporarily added
+			else if ((addr_counter == 4'd6) && ((burst_counter + 12'd1) % 8 == 0) && (read_en_in1 == 0))  //write burst split
 			begin
-				counterReg <= counterReg + 4'b1;
 				slave_valid <= 1'b0;
 				split_en = 1'b1;
 				state <= NORMAL;
 			end
+			else if ((addr_counter == 4'd7) && ((burst_counter + 12'd1) % 8 == 0) && (read_en_in1 == 1))  //read burst split
+			begin
+				slave_valid <= 1'b1; 
+				split_en = 1'b1;  
+				state <= VALID;
+			end				
 			else
 			begin
 				counterReg <= 4'b0;
@@ -176,6 +182,13 @@ begin
 				split_en <= 1'b0;
 				state <= BURST_END;
 			end
+			else if ((addr_counter == 4'd6) && ((burst_counter + 12'd1) % 8 == 0))  //read burst split
+			begin
+				counterReg <= 4'b0;
+				slave_valid <= 1'b1;
+				state <= SPLIT;
+				split_en <= 1'b1;  
+			end 
 			else
 			begin
 				counterReg <= 4'b0;

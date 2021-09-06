@@ -21,6 +21,8 @@ module slave_in_port (
 	input master_valid,
 	input read_en,
 	input write_en,
+	input slave_valid,
+	input master_ready,
 	input [12:0]burst,
 	output slave_ready,
 	output reg rx_done,
@@ -54,7 +56,8 @@ ADDR_INC_BURST      = 2,
 DATA_RECIEVE 	    = 3,
 DATA_BURST_GAP      = 4,
 DATA_RECIEVE_BURST  = 5,
-ADDR_WAIT_HANDSHAKE = 6;
+ADDR_WAIT_HANDSHAKE = 6,
+READ_BURST_WAIT_HANDSHAKE = 7;
 
 // Statemachine to capture the 12 bit address
 always @ (posedge clk or posedge reset) 
@@ -120,16 +123,38 @@ begin
 			end
 			ADDR_WAIT_HANDSHAKE:
 			begin
-				if ((handshake == 1) || ((rx_done == 1) && (read_en_in1)))    ///changed
+				if (handshake == 1)  //edited
 				begin
 					addr_state <= ADDR_INC_BURST;
 					addr_counter <= addr_counter + 1;
 					rx_done <= 0;
 				end
+				else if ((rx_done == 1) && (read_en_in1 == 1))
+				begin
+					addr_state <= READ_BURST_WAIT_HANDSHAKE;
+					addr_counter <= addr_counter + 1;
+					rx_done <= 0;					
+				end
 				else 
 				begin
 					addr_state <= ADDR_WAIT_HANDSHAKE;
 					rx_done <= 0;
+				end
+			end
+			READ_BURST_WAIT_HANDSHAKE:
+			begin
+				if (addr_counter == 2 && master_ready == 0 && (burst_counter % 8 == 0))
+				begin
+					addr_counter <= addr_counter;
+					addr_state <= addr_state;
+				end
+				else 
+				begin
+					if (addr_counter == 1) addr_state <= addr_state;
+					else addr_state <= ADDR_INC_BURST;
+					addr_counter <= addr_counter + 4'd1;
+					addr_idle <= 1;
+					rx_done <= 0;			
 				end
 			end
 			ADDR_INC_BURST:
@@ -139,7 +164,7 @@ begin
 					addr_state <= addr_state;
 					addr_counter <= addr_counter + 4'd1;
 					addr_idle <= 1;
-					rx_done <= 0;
+					rx_done <= 0;			
 				end
 				else 
 				begin
