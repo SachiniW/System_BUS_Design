@@ -149,18 +149,17 @@ wire [SLAVE_LEN-1:0]slave2;
 wire [BURST_LEN:0]burst_num2;
 wire [3:0]config_state;//to LCD display
 
-
-scaledclock CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
-
-
 // output port conversions
-wire reset, button1, button2, button3;
+wire reset, button1, button2, button3, clk;
 assign reset = ~rst;
 assign scaled_clk = clk;
 assign button1 = ~button1_raw;
 assign button2 = ~button2_raw;
 assign button3 = ~button3_raw;
 
+scaledclock #(.maxcount(4)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+
+//scaledclock #(.maxcount(50000000)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 //LCD_in LCD(
 //	.clock(clock),

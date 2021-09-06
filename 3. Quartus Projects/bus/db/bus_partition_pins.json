@@ -8,10 +8,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "m1_busy",
-					"strict" : false
-				},
-				{
 					"name" : "m2_busy",
 					"strict" : false
 				},
@@ -128,118 +124,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "display5_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display5_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display6_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display7_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display8_pin[6]",
-					"strict" : false
-				},
-				{
 					"name" : "switch_array[0]",
 					"strict" : false
 				},
@@ -300,7 +184,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "button1_raw",
+					"name" : "button2_raw",
 					"strict" : false
 				},
 				{
@@ -308,35 +192,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "button2_raw",
-					"strict" : false
-				},
-				{
 					"name" : "button3_raw",
 					"strict" : false
 				},
 				{
-					"name" : "rw_switch1",
+					"name" : "button1_raw",
 					"strict" : false
 				},
 				{
 					"name" : "rw_switch2",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tms",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tck",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdi",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdo",
 					"strict" : false
 				}
 			]
