@@ -46,18 +46,19 @@ parameter SLAVE_LEN=2;
 parameter ADDR_LEN=12; 
 parameter DATA_LEN=8;
 parameter BURST_LEN=12;
-parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
 
 /***********************************************************/
 //Change when switching between FPGA and testbench
 
 //FPGA
-parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
-parameter MAX_COUNT_CLK=50000000;	//Clock slow enough to see values getting updated
+//parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
+//parameter MAX_COUNT_CLK=50000000;	//Clock slow enough to see values getting updated
+//parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
 
 //Testbench
 parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
 parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
+parameter MAX_COUNT_TIMEOUT=100; //Fast enough to reduce testbench time
 
 /***********************************************************/
 
@@ -183,34 +184,34 @@ scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .cl
 //   .LCD_RS(LCD_RS),	
 //   .LCD_DATA(LCD_DATA));
 	
-command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) COMMAND(
-	.clk(clk), 
-	.reset(reset),
-	.button1(button1),
-	.button2(button2),
-	.button3(button3),
-	.switch_array(switch_array),
-	.mode_switch(mode_switch),
-	.rw_switch1(rw_switch1),
-	.rw_switch2(rw_switch2),
-	.display1_pin(display1_pin),
-	.display2_pin(display2_pin),
-	.display3_pin(display3_pin),
-	.display4_pin(display4_pin),
-	.display_val4(config_state),
-
-	.read1(read1),
-	.write1(write1),
-	.data1(data1),
-	.address1(address1),
-	.slave1(slave1),
-	.burst_num1(burst_num1),
-	.read2(read2),
-	.write2(write2),
-	.data2(data2),
-	.address2(address2),
-	.slave2(slave2),
-	.burst_num2(burst_num2));
+//command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) COMMAND(
+//	.clk(clk), 
+//	.reset(reset),
+//	.button1(button1),
+//	.button2(button2),
+//	.button3(button3),
+//	.switch_array(switch_array),
+//	.mode_switch(mode_switch),
+//	.rw_switch1(rw_switch1),
+//	.rw_switch2(rw_switch2),
+//	.display1_pin(display1_pin),
+//	.display2_pin(display2_pin),
+//	.display3_pin(display3_pin),
+//	.display4_pin(display4_pin),
+//	.display_val4(config_state),
+//
+//	.read1(read1),
+//	.write1(write1),
+//	.data1(data1),
+//	.address1(address1),
+//	.slave1(slave1),
+//	.burst_num1(burst_num1),
+//	.read2(read2),
+//	.write2(write2),
+//	.data2(data2),
+//	.address2(address2),
+//	.slave2(slave2),
+//	.burst_num2(burst_num2));
 
 bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN),
 					.CLKS_PER_BIT(CLKS_PER_BIT), .MAX_COUNT(MAX_COUNT_TIMEOUT)) INPUT_BRIDGE(
@@ -313,12 +314,8 @@ increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LE
 	.display1_pin(display7_pin),
 	.display2_pin(display8_pin),
 	
-	.read(read2),
-	.write(write2),
-	.data_load(data2),
-	.address_load(address2),
-	.slave_select_load(slave2),
-	.burst_num_load(burst_num2),
+	.button(button1),
+	.sw_array_data(switch_array[7:0]),
 	
 	//MASTER
 	

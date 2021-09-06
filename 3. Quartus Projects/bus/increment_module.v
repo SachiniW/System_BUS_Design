@@ -20,12 +20,8 @@ module increment_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, paramete
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
 	
-	input read,
-	input write,
-	input [DATA_LEN-1:0]data_load,
-	input [ADDR_LEN:0]address_load,
-	input [SLAVE_LEN-1:0]slave_select_load,
-	input [ADDR_LEN:0]burst_num_load,
+	input button,
+	input [7:0]sw_array_data,
 	
 	//MASTER
 	
@@ -88,19 +84,6 @@ wire [7:0]s_data;
 wire s_read_en_in;
 wire s_write_en_in;
 
-//
-parameter[1:0] INC_IDLE = 2'd0;
-parameter[1:0] INCREMENT = 2'd1;
-parameter[1:0] DISPLAY = 2'd2;
-parameter[1:0] SEND_DATA = 2'd3;
-
-reg [1:0]inc_state =0;
-reg [7:0]output_data;
-reg [7:0]data_to_master;
-reg [5:0]delay_count = 6'd10; // for testing
-reg [5:0]delay_counter = 0;
-
-assign m_data_out = data_to_master;
 
 slave_port SLAVE_PORT(
 	.clk(clk), 
@@ -159,85 +142,23 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .
 	.write_en(m_write_en),
 	.read_en(m_read_en));
 								
-button_event1 #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) BUTTON_EVENT1(
-	.clk(clk), 
+increment inc1(
+	.clk(clk),
 	.reset(reset),
-	.busy(busy),
+	
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
+	.button(button),
+	.sw_array_data(sw_array_data),
+
 	
-	.read(read),
-	.write(write),
-	.data_load(data_load),
-	.address_load(address_load),
-	.slave_select_load(slave_select_load),
-	.burst_num_load(burst_num_load),
+	//MASTER	
+	.m_tx_done (m_tx_done),
+	.m_data_out (m_data_out),
 	
-	.data_in(m_data_in),
-	.rx_done(m_rx_done),
-	.tx_done(m_tx_done),
-	.trans_done(m_trans_done),
-	.new_rx(m_new_rx),
-	.instruction(m_instruction),
-	.slave_select(m_slave_select),
-	.address(m_address),
-	.data_out(), //changed	m_data_out
-	.burst_num(m_burst_num));
+	//SLAVE
 	
+	.s_data (s_data),
+	.s_write_en_in(s_write_en_in));
 	
-always @(posedge clk or posedge reset)
-begin
-if (reset == 1'd1)
-	begin
-		output_data <= 0;
-		delay_counter <= 0;
-		inc_state <= INC_IDLE;
-	end
-else
-	begin
-		case (inc_state)
-			INC_IDLE:begin
-				if (s_write_en_in == 1) //when reciever done
-				begin
-					//output_data <= s_data; // if the received number needs to be displayed
-					//display1_pin <= output_data;
-					output_data <= 7'd7;
-					inc_state <= INCREMENT;
-				end
-				else
-				begin
-					output_data <= 0;
-					delay_counter <= 0;
-				end
-			end
-			INCREMENT:begin
-					output_data <= output_data + 1;
-					inc_state <= DISPLAY;
-			end
-			DISPLAY:begin
-				if (delay_counter == delay_count)
-				begin
-					delay_counter <= 0;
-					inc_state <= SEND_DATA;					
-				end
-				else
-				begin
-					delay_counter <= delay_counter + 1;
-					//display1_pin <= output_data;
-				end
-			end
-			SEND_DATA:begin
-					data_to_master <= output_data;
-			end
-			default:begin
-					output_data <= 0;
-					delay_counter <= 0;
-				end
-		endcase			
-	end
-end
-	
-	
-	
-								
 endmodule
