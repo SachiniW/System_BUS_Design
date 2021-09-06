@@ -21,6 +21,7 @@ module increment_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, paramete
 	output [6:0]display2_pin,
 	
 	input button,
+	input mode_switch,
 	input [7:0]sw_array_data,
 	
 	//MASTER
@@ -113,10 +114,10 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .
 	.reset(reset),
 	
 	.instruction(m_instruction),
-	.slave_select(m_slave_select),
+	.slave_select(2'd2),
 	.address(m_address),
 	.data_out(m_data_out),
-	.burst_num(m_burst_num),
+	.burst_num(12'd0),
 	.data_in(m_data_in),
 	.rx_done(m_rx_done),
 	.tx_done(m_tx_done),
@@ -149,12 +150,14 @@ increment inc1(
 	.display1_pin(display1_pin),
 	.display2_pin(display2_pin),
 	.button(button),
+	.mode_switch(mode_switch),
 	.sw_array_data(sw_array_data),
 
 	
 	//MASTER	
 	.m_tx_done (m_tx_done),
 	.m_data_out (m_data_out),
+	.m_instruction(m_instruction),
 	
 	//SLAVE
 	

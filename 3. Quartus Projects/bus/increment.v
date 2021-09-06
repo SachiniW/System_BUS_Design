@@ -1,3 +1,16 @@
+/* 
+ file name : increment.v
+
+ Description:
+	A 4k block RAM which acts as a slave
+	
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
+
 module increment (
 	input clk,
 	input reset,
@@ -6,11 +19,13 @@ module increment (
 	output [6:0]display2_pin,
 	
 	input button,
+	input mode_switch,
 	input [7:0]sw_array_data,
 	
 	//MASTER	
 	input m_tx_done,
 	output [7:0]m_data_out,
+	output reg [1:0]m_instruction,
 	
 	//SLAVE
 	
@@ -41,17 +56,18 @@ if (reset == 1'd1)
 		output_data <= 0;
 		delay_counter <= 0;
 		inc_state <= INC_IDLE;
+		m_instruction <= 2'b00;
 	end
 else
 	begin
 		case (inc_state)
 			INC_IDLE:begin
-				if (s_write_en_in == 1) //when reciever done
+				if (s_write_en_in == 1 && mode_switch == 1) //when reciever done
 				begin
 					output_data <= s_data; // Get data from bridge via slave port
 					inc_state <= DISPLAY_AND_INCREMENT;
 				end
-				else if (button == 1) //when button 1 is pressed (data = sw[7:0])
+				else if (button == 1 && mode_switch == 1) //when button 1 is pressed (data = sw[7:0])
 				begin
 					output_data <= sw_array_data; // Get data from bridge via slave port
 					inc_state <= DATA_SEND;
@@ -60,6 +76,7 @@ else
 				begin
 					output_data <= 0;
 					delay_counter <= 0;
+					m_instruction <= 2'b00;
 				end
 			end
 			DISPLAY_AND_INCREMENT:begin
@@ -78,15 +95,18 @@ else
 				if (m_tx_done == 1) 
 				begin	
 					inc_state <= INC_IDLE;
+					m_instruction <= 2'b00;
 				end
 				else
 				begin
 					data_to_master <= output_data; //send data to bridge via master port
+					m_instruction <= 2'b10;
 				end
 			end
 			default:begin
 					output_data <= 0;
 					delay_counter <= 0;
+					m_instruction <= 2'b00;
 					inc_state <= INC_IDLE;
 				end
 		endcase			

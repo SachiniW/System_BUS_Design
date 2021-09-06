@@ -1,3 +1,15 @@
+/* 
+ file name : LCD_in.v
+
+ Description:
+	A 4k block RAM which acts as a slave
+	
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
 module LCD_in(
 	input clock,
 	input rst,

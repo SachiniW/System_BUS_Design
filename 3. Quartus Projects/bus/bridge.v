@@ -48,14 +48,15 @@ module bridge #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN
 	output reg u_send_sig = 0,
    output reg [DATA_LEN-1:0]u_data_out = 0);
 	
-reg m_state = 0;
-parameter M_IDLE=0, MASTER_OUT=1;
+reg [1:0]m_state = 0;
+parameter M_IDLE=0, MASTER_OUT=1, M_TEMP=2;
 
 reg [2:0]u_state = 0;
 parameter U_IDLE=0, UART_DATA_OUT=1, UART_ACK_OUT=2, UART_ACK_IN=3, U_WAIT=4;
 
 integer count = 0;
 integer time_count = 0;
+integer trans_done_count = 0; 
 								
 always @ (posedge clk or posedge reset) 
 begin
@@ -105,8 +106,16 @@ begin
 		begin
 			if (m_tx_done==1)
 			begin
-				m_state <= M_IDLE;
-				m_instruction <= 2'b00;
+				if (trans_done_count == 9)
+				begin
+					m_state <= M_IDLE;
+					m_instruction <= 2'b10; //check if this works for FPGA (or try m_instruction == 00)
+					trans_done_count <= 0;
+				end
+				else
+				begin
+					trans_done_count <= trans_done_count +1;
+				end
 			end
 			else
 			begin
@@ -117,7 +126,7 @@ begin
 			m_address <= m_address;
 			m_data_out <= m_data_out;
 			m_burst_num <= m_burst_num;
-		end
+		end		
 		
 		default:
 		begin
@@ -272,5 +281,13 @@ begin
 	end
 	
 end
+
+//always @(posedge bus_clk)
+//begin
+//	if (m_state == M_TEMP)
+//	begin
+//		m_state <= M_IDLE;
+//	end
+//end
 								
 endmodule

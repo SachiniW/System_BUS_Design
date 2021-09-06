@@ -315,6 +315,7 @@ increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LE
 	.display2_pin(display8_pin),
 	
 	.button(button1),
+	.mode_switch(mode_switch),
 	.sw_array_data(switch_array[7:0]),
 	
 	//MASTER
