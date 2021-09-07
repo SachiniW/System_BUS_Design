@@ -47,6 +47,23 @@ reg [ADDR_LEN:0]address = 0;
 reg [SLAVE_LEN-1:0]slave = 1;
 reg [BURST_LEN:0]burst_num = 1;
 
+reg button1_old = 0;
+reg button2_old = 0;
+reg button3_old = 0;
+wire button1_edge;
+wire button2_edge;
+wire button3_edge;
+assign button1_edge = (button1_old == 0 && button1 == 1) ? 1 : 0;
+assign button2_edge = (button2_old == 0 && button2 == 1) ? 1 : 0;
+assign button3_edge = (button3_old == 0 && button3 == 1) ? 1 : 0;
+
+always @(posedge clk)
+begin
+	button1_old <= button1;
+	button2_old <= button2;
+	button3_old <= button3;
+end
+
 parameter SLAVE_NUM = 3;
 parameter BURST_MAX = 12'hFFF;
 
@@ -127,7 +144,7 @@ begin
 			
 			IDLE_CONFIG:
 			begin
-				if (button1==1 || button2==1 || button3==1)
+				if (button1_edge==1 || button2_edge==1 || button3_edge==1)
 				begin
 					config_state <= SELECT_MASTER;
 				end
@@ -152,7 +169,7 @@ begin
 			
 			SELECT_MASTER:
 			begin
-				if (button3==1)
+				if (button3_edge==1)
 				begin
 					config_state <= SELECT_SLAVE;
 					master<=master;
@@ -160,14 +177,14 @@ begin
 				else
 				begin
 					config_state <= SELECT_MASTER;
-					if (button1==1)
+					if (button1_edge==1)
 					begin
 						if (master==1)
 							master <= 2;
 						else
 							master <= 1;
 					end
-					else if (button2==1)
+					else if (button2_edge==1)
 					begin
 						if (master==1)
 							master <= 2;
@@ -195,7 +212,7 @@ begin
 			
 			SELECT_SLAVE:
 			begin
-				if (button3==1)
+				if (button3_edge==1)
 				begin
 					config_state <= SELECT_ADDRESS;
 					slave<=slave;
@@ -203,14 +220,14 @@ begin
 				else
 				begin
 					config_state <= SELECT_SLAVE;
-					if (button1==1)
+					if (button1_edge==1)
 					begin
 						if (slave>=SLAVE_NUM)
 							slave <= 0;
 						else
 							slave <= slave+1;
 					end
-					else if (button2==1)
+					else if (button2_edge==1)
 					begin
 						if (slave==1)
 							slave <= SLAVE_NUM;
@@ -238,7 +255,7 @@ begin
 			
 			SELECT_ADDRESS:
 			begin
-				if (button1==1 || button2==1 || button3==1)
+				if (button1_edge==1 || button2_edge==1 || button3_edge==1)
 				begin
 					config_state <= SELECT_DATA;
 					address <= switch_array;
@@ -264,7 +281,7 @@ begin
 			
 			SELECT_DATA:
 			begin
-				if (button1==1 || button2==1 || button3==1)
+				if (button1_edge==1 || button2_edge==1 || button3_edge==1)
 				begin
 					config_state <= SELECT_BURST;
 					data <= switch_array[7:0];
@@ -290,7 +307,7 @@ begin
 				
 			SELECT_BURST:
 			begin
-				if (button1==1 || button2==1 || button3==1)
+				if (button1_edge==1 || button2_edge==1 || button3_edge==1)
 				begin
 					config_state <= FINISH;
 					if (switch_array >= BURST_MAX)
@@ -319,7 +336,7 @@ begin
 		
 			FINISH:
 			begin
-				if (button1==1 || button2==1 || button3==1)
+				if (button1_edge==1 || button2_edge==1 || button3_edge==1)
 				begin
 					config_state <= IDLE_CONFIG;
 					if (master==1)

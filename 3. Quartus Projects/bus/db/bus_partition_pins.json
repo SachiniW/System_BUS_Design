@@ -8,119 +8,67 @@
 					"strict" : false
 				},
 				{
-					"name" : "m2_busy",
+					"name" : "display7_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[0]",
+					"name" : "display7_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[1]",
+					"name" : "display7_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[2]",
+					"name" : "display7_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[3]",
+					"name" : "display7_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[4]",
+					"name" : "display7_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[5]",
+					"name" : "display7_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "display1_pin[6]",
+					"name" : "display8_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[0]",
+					"name" : "display8_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[1]",
+					"name" : "display8_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[2]",
+					"name" : "display8_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[3]",
+					"name" : "display8_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[4]",
+					"name" : "display8_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[5]",
+					"name" : "display8_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "display2_pin[6]",
+					"name" : "clock",
 					"strict" : false
 				},
 				{
-					"name" : "display3_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display3_pin[6]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[3]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[4]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[5]",
-					"strict" : false
-				},
-				{
-					"name" : "display4_pin[6]",
+					"name" : "enable",
 					"strict" : false
 				},
 				{
@@ -129,6 +77,14 @@
 				},
 				{
 					"name" : "mode_switch",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "button1_raw",
 					"strict" : false
 				},
 				{
@@ -157,50 +113,6 @@
 				},
 				{
 					"name" : "switch_array[5]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[9]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[8]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[11]",
-					"strict" : false
-				},
-				{
-					"name" : "switch_array[10]",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
-					"name" : "enable",
-					"strict" : false
-				},
-				{
-					"name" : "button2_raw",
-					"strict" : false
-				},
-				{
-					"name" : "rst",
-					"strict" : false
-				},
-				{
-					"name" : "button3_raw",
-					"strict" : false
-				},
-				{
-					"name" : "button1_raw",
-					"strict" : false
-				},
-				{
-					"name" : "rw_switch2",
 					"strict" : false
 				}
 			]

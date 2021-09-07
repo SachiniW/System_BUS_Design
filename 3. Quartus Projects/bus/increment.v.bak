@@ -74,7 +74,7 @@ else
 				end				
 				else
 				begin
-					output_data <= output_data;
+					output_data <= 0;
 					delay_counter <= 0;
 					m_instruction <= 2'b00;
 				end

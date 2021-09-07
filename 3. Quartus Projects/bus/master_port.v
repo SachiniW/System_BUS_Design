@@ -58,7 +58,7 @@ assign master_ready = master_ready_IN && master_ready_OUT;
 
 //assign read_en = read_en_IN || read_en_OUT;
 
-assign trans_done = (instruction==2'b10) ? tx_done : ((instruction==2'b11) ? rx_done : 0) ;
+assign trans_done = (instruction==2'b10) ? tx_done : ((instruction==2'b11) ? rx_done : tx_done);
 
 master_in_port #(.DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) MASTER_IN_PORT(
 	.clk(clk), 

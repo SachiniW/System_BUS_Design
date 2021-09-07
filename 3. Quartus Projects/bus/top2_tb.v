@@ -136,29 +136,29 @@ initial begin
 
 	mode_switch <= 1;
 	switch_array <= 18; 
-	button3_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Button press (0 to 1)
-	button3_raw <= 1;
+//	button3_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Button press (0 to 1)
+//	button3_raw <= 1;
 	button1_raw <= 0;
 	#(1*scale*CLK_PERIOD)  // Select master 2
 	button1_raw <= 1;
-	button3_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Button press (1 to 2)
-	button3_raw <= 1;
-	//button1_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Select slave 2
-	button1_raw <= 1;
-	button3_raw <= 0;
-	#(3*scale*CLK_PERIOD)  // Button press (2 to 5)
-	//switch_array <= 0;
-	#(2*scale*CLK_PERIOD)  // Button press (5 to 0)
-	button3_raw <= 1;
-
-	mode_switch <= 1;
-	rw_switch2 <= 0;
-	button2_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Write master 2
-	button2_raw <= 1;
+//	button3_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Button press (1 to 2)
+//	button3_raw <= 1;
+//	//button1_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Select slave 2
+//	button1_raw <= 1;
+//	button3_raw <= 0;
+//	#(3*scale*CLK_PERIOD)  // Button press (2 to 5)
+//	//switch_array <= 0;
+//	#(2*scale*CLK_PERIOD)  // Button press (5 to 0)
+//	button3_raw <= 1;
+//
+//	mode_switch <= 1;
+//	rw_switch2 <= 0;
+//	button2_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Write master 2
+//	button2_raw <= 1;
 	
 	#(500*scale*CLK_PERIOD)  // Wait till finish
 

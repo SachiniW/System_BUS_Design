@@ -41,17 +41,26 @@ module top(
 //   output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
 //   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 	);
-	
-//wire m1_busy1;
-//wire m2_busy2;
-
-//assign m1_busy = m1_button1;
-//assign m2_busy = m1_button2;
 
 parameter SLAVE_LEN=2; 
 parameter ADDR_LEN=12; 
 parameter DATA_LEN=8;
 parameter BURST_LEN=12;	
+
+/***********************************************************/
+//Change when switching between FPGA and testbench
+
+//FPGA
+parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
+parameter MAX_COUNT_CLK=5000000;	//Clock slow enough to see values getting updated
+parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+
+//Testbench
+//parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
+//parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
+//parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
+
+/***********************************************************/
 	
 // Wires in interconnect
 wire m1_request; 
@@ -157,9 +166,7 @@ assign button1 = ~button1_raw;
 assign button2 = ~button2_raw;
 assign button3 = ~button3_raw;
 
-scaledclock #(.maxcount(4)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
-
-//scaledclock #(.maxcount(50000000)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 //LCD_in LCD(
 //	.clock(clock),

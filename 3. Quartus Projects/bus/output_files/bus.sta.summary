@@ -3,15 +3,15 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'scaledclock:CLK_DIV|clk'
-Slack : -5.572
-TNS   : -2111.200
+Slack : -5.504
+TNS   : -1238.641
 
 Type  : Slow 1200mV 85C Model Setup 'clock'
-Slack : -5.074
-TNS   : -1836.808
+Slack : -4.463
+TNS   : -1783.756
 
 Type  : Slow 1200mV 85C Model Hold 'clock'
-Slack : 0.256
+Slack : 0.122
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'scaledclock:CLK_DIV|clk'
@@ -24,22 +24,22 @@ TNS   : -645.500
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'scaledclock:CLK_DIV|clk'
 Slack : -1.285
-TNS   : -679.765
+TNS   : -421.480
 
 Type  : Slow 1200mV 0C Model Setup 'scaledclock:CLK_DIV|clk'
-Slack : -5.035
-TNS   : -1892.962
+Slack : -5.017
+TNS   : -1109.592
 
 Type  : Slow 1200mV 0C Model Setup 'clock'
-Slack : -4.563
-TNS   : -1645.921
+Slack : -3.983
+TNS   : -1595.476
 
 Type  : Slow 1200mV 0C Model Hold 'clock'
-Slack : 0.218
+Slack : 0.108
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'scaledclock:CLK_DIV|clk'
-Slack : 0.337
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
@@ -48,30 +48,30 @@ TNS   : -645.500
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'scaledclock:CLK_DIV|clk'
 Slack : -1.285
-TNS   : -679.765
+TNS   : -421.480
 
 Type  : Fast 1200mV 0C Model Setup 'scaledclock:CLK_DIV|clk'
-Slack : -2.317
-TNS   : -778.234
+Slack : -2.190
+TNS   : -447.290
 
 Type  : Fast 1200mV 0C Model Setup 'clock'
-Slack : -1.955
-TNS   : -621.014
+Slack : -1.662
+TNS   : -591.814
 
 Type  : Fast 1200mV 0C Model Hold 'clock'
-Slack : 0.010
-TNS   : 0.000
+Slack : -0.159
+TNS   : -1.263
 
 Type  : Fast 1200mV 0C Model Hold 'scaledclock:CLK_DIV|clk'
-Slack : 0.173
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -505.073
+TNS   : -506.045
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'scaledclock:CLK_DIV|clk'
 Slack : -1.000
-TNS   : -529.000
+TNS   : -328.000
 
 ------------------------------------------------------------

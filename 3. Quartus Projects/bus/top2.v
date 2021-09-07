@@ -51,14 +51,14 @@ parameter BURST_LEN=12;
 //Change when switching between FPGA and testbench
 
 //FPGA
-//parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
-//parameter MAX_COUNT_CLK=50000000;	//Clock slow enough to see values getting updated
-//parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
+parameter MAX_COUNT_CLK=500000;	//Clock slow enough to see values getting updated
+parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
 
 //Testbench
-parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
-parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
-parameter MAX_COUNT_TIMEOUT=100; //Fast enough to reduce testbench time
+//parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
+//parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
+//parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
 
 /***********************************************************/
 
