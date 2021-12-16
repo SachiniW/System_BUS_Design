@@ -13,8 +13,12 @@
 module LCD_in(
 	input clock,
 	input rst,
-	input [15:0] Data_Line1,
-   input [15:0] Data_Line2,
+	input m1_start,
+   input m2_start,
+   input [15:0] address1,
+   input [15:0] data1,
+   input [15:0] address2,
+   input [15:0] data2,
 	input [3:0]config_state,
 	input mode_switch,
    output LCD_ON,	// LCD Power ON/OFF
@@ -27,6 +31,8 @@ module LCD_in(
 
 wire [3:0] LCD_state; 
 reg config_done;
+reg [15:0] Data_Line1;
+reg [15:0] Data_Line2;
 
 wire [7:0] Line11;
 wire [7:0] Line12;
@@ -129,7 +135,20 @@ assign LCD_state =  (mode_switch == 0 & config_state == 4'd0 & config_done == 1'
 					(mode_switch == 0 & config_state == 4'd6)? 4'd6: //Save Configuration
 					(mode_switch == 0 & config_state == 4'd0 & config_done == 1'b1)? 4'd8: //Config Done //Start New Config?
 					(mode_switch == 1 )? 4'd7: 4'd0; 	
-		         	
+
+always @ (posedge m1_start or posedge m2_start)
+begin
+	if (m1_start == 1) 
+	begin
+		Data_Line1 <= address1;
+		Data_Line2 <= data1;
+	end
+	else if (m2_start == 1) 
+	begin
+		Data_Line1 <= address2;
+		Data_Line2 <= data2;
+	end	
+end						
 		
 //////////////////////////////Line 1//////////////////////////////////////////						 
 assign Line11    = (LCD_state == 4'd0)? 8'h53: //S	

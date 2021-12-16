@@ -129,12 +129,12 @@ initial begin
 	#(1*scale*CLK_PERIOD)  // Write master 2
 	button2_raw <= 1;
 	
-	#(500*scale*CLK_PERIOD)  // Wait till finish
-
-	
-	#30
- 
-	$finish;
+//	#(500*scale*CLK_PERIOD)  // Wait till finish
+//
+//	
+//	#30
+// 
+//	$finish;
 end
 						
 endmodule
