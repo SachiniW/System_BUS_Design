@@ -122,7 +122,7 @@ begin
 				state <= SPLIT;
 				split_en <= 1'b1;
 			end
-			else if ((addr_counter == 4'd5) && ((burst_counter + 12'd1) % 8 == 0))  //Write burst split
+			else if ((addr_counter == 4'd5) && ((burst_counter + 12'd1) % 8 == 0) && (burst_counter != burst[12:1]))  //Write burst split
 			begin
 				counterReg <= 4'b0;
 				slave_valid <= 1'b0;
@@ -244,7 +244,7 @@ begin
 			end
 			BURST_BIT_RECIEVE:
 			begin
-				if (burst_bit_counter < 4'd12)
+				if (burst_bit_counter < 4'd12)    // change to 13 ?
 				begin
 					burst[burst_bit_counter] <= rx_burst;
 					burst_bit_counter <= burst_bit_counter + 1;

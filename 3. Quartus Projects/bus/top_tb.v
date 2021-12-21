@@ -44,6 +44,10 @@ initial begin
 	switch_array <= 0;
 	
 	#(scale*CLK_PERIOD)
+	reset <= 0;
+	#(scale*CLK_PERIOD)
+	reset <= 1;
+	#(scale*CLK_PERIOD)
 
 	//////////////////////////////////////////////////
 	// Test without burst
@@ -74,11 +78,36 @@ initial begin
 	//////////////////////////////////////////////////
 	// Test with burst
 
-	//	mode_switch <= 0;
-	//	switch_array <= 10; 
-	//	button3_raw <= 0;
-	//	#(7*scale*CLK_PERIOD)  // Button press (0 to 0)
-	//	button3_raw <= 1;
+	mode_switch <= 0;
+	switch_array <= 7;	
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (0 to 1)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (1 to 2)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (2 to 3)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (3 to 4)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (4 to 5)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (5 to 6)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
+	button3_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Button press (6 to 0)
+	button3_raw <= 1;
+	#(1*scale*CLK_PERIOD)
 	//
 	//	mode_switch <= 1;
 	//	rw_switch1 <= 0;
@@ -98,25 +127,25 @@ initial begin
 	///////////////////////////////////////////////////////////
 	// Test split
 
-	mode_switch <= 0;
-	switch_array <= 18; 
-	button3_raw <= 0;
-	#(8*scale*CLK_PERIOD)  // Button press (0 to 6 to 0 to 1)
-	button3_raw <= 1;
-	button1_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Select master 2
-	button1_raw <= 1;
-	button3_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Button press (1 to 2)
-	button3_raw <= 1;
-	button1_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Select slave 2
-	button1_raw <= 1;
-	button3_raw <= 0;
-	#(3*scale*CLK_PERIOD)  // Button press (2 to 5)
-	switch_array <= 0;
-	#(2*scale*CLK_PERIOD)  // Button press (5 to 0)
-	button3_raw <= 1;
+//	mode_switch <= 0;
+//	switch_array <= 18; 
+//	button3_raw <= 0;
+//	#(8*scale*CLK_PERIOD)  // Button press (0 to 6 to 0 to 1)
+//	button3_raw <= 1;
+//	button1_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Select master 2
+//	button1_raw <= 1;
+//	button3_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Button press (1 to 2)
+//	button3_raw <= 1;
+//	button1_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Select slave 2
+//	button1_raw <= 1;
+//	button3_raw <= 0;
+//	#(3*scale*CLK_PERIOD)  // Button press (2 to 5)
+//	switch_array <= 0;
+//	#(2*scale*CLK_PERIOD)  // Button press (5 to 0)
+//	button3_raw <= 1;
 
 	mode_switch <= 1;
 	rw_switch1 <= 0;
@@ -129,12 +158,12 @@ initial begin
 	#(1*scale*CLK_PERIOD)  // Write master 2
 	button2_raw <= 1;
 	
-//	#(500*scale*CLK_PERIOD)  // Wait till finish
-//
-//	
-//	#30
-// 
-//	$finish;
+	#(500*scale*CLK_PERIOD)  // Wait till finish
+
+	
+	#30
+ 
+	$finish;
 end
 						
 endmodule
