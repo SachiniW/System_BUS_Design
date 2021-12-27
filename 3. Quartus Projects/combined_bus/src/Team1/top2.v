@@ -15,19 +15,9 @@
 //`define TESTBENCH
 `define COMBINED
 
-module top2
-
-	`ifdef TESTBENCH
-		#(parameter MAX_COUNT_CLK=4, //Fast enough to reduce testbench time
-			parameter CLKS_PER_BIT=20,  //Fast enough to reduce testbench time
-			parameter MAX_COUNT_TIMEOUT=500) //Fast enough to reduce testbench time         
-	`else
-		#(parameter MAX_COUNT_CLK=5000000,   //Clock slow enough to see values getting updated
-			parameter CLKS_PER_BIT=2604,    //Baudrate= 19200, Input clock = 50MHz
-			parameter MAX_COUNT_TIMEOUT=50000) // 1ms timeout with 50MHz input clock
-	`endif 
+module top2	#(parameter BAUDRATE=19200, parameter CLOCK_FREQUENCY=50000000, parameter CLOCK_DIVIDE=5000000)(
 	
-	(input clock,	
+	input clock,	
 	input rst,
 	input enable,
 	input button1_raw,
@@ -60,6 +50,19 @@ parameter SLAVE_LEN=2;
 parameter ADDR_LEN=12; 
 parameter DATA_LEN=8;
 parameter BURST_LEN=12;
+
+
+`ifdef TESTBENCH
+	parameter MAX_COUNT_CLK=4;         //Fast enough to reduce testbench time
+	parameter CLKS_PER_BIT=20;         //Fast enough to reduce testbench time
+	parameter MAX_COUNT_TIMEOUT=500;   //Fast enough to reduce testbench time
+	parameter DELAY_COUNT=20;
+`else
+	parameter MAX_COUNT_CLK=CLOCK_DIVIDE/2;                    //Clock slow enough to see values getting updated
+	parameter CLKS_PER_BIT=CLOCK_FREQUENCY/BAUDRATE;           //Baudrate= 19200, Input clock = 50MHz
+	parameter MAX_COUNT_TIMEOUT=CLOCK_FREQUENCY/1000;          // 1ms timeout with 50MHz input clock
+	parameter DELAY_COUNT=(CLOCK_FREQUENCY/CLOCK_DIVIDE)*5;    //5s delay before sending to next 
+`endif
 
 
 // UART wires
@@ -310,7 +313,7 @@ bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 	.s_split_en(s2_slave_split_en),
 	.s_tx_data(s2_tx_data));
 
-increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) INCREMENT(
+increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN), .DELAY_COUNT(DELAY_COUNT)) INCREMENT(
 	.clk(clk), 
 	.reset(reset),
 	.display1_pin(display1_pin),

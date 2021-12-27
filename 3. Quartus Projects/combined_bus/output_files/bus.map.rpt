@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus
-Mon Dec 27 19:58:08 2021
+Mon Dec 27 20:55:53 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -210,25 +210,29 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 202. Parameter Settings for User Entity Instance: top2:top_module_3|increment_module:INCREMENT|increment:inc1
 203. Parameter Settings for User Entity Instance: top2:top_module_3|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1
 204. Port Connectivity Checks: "top2:top_module_3|Bus_interconnect:BUS"
-205. Port Connectivity Checks: "top2:top_module_3|increment_module:INCREMENT"
-206. Port Connectivity Checks: "top2:top_module_3|bridge_module:OUTPUT_BRIDGE"
-207. Port Connectivity Checks: "top2:top_module_3|bridge_module:INPUT_BRIDGE"
-208. Port Connectivity Checks: "top2:top_module_2|Bus_interconnect:BUS"
-209. Port Connectivity Checks: "top2:top_module_2|increment_module:INCREMENT"
-210. Port Connectivity Checks: "top2:top_module_2|bridge_module:OUTPUT_BRIDGE"
-211. Port Connectivity Checks: "top2:top_module_2|bridge_module:INPUT_BRIDGE"
-212. Port Connectivity Checks: "top2:top_module_1|Bus_interconnect:BUS"
-213. Port Connectivity Checks: "top2:top_module_1|increment_module:INCREMENT|master_port:MASTER_PORT"
-214. Port Connectivity Checks: "top2:top_module_1|increment_module:INCREMENT|slave_port:SLAVE_PORT"
-215. Port Connectivity Checks: "top2:top_module_1|increment_module:INCREMENT"
-216. Port Connectivity Checks: "top2:top_module_1|bridge_module:OUTPUT_BRIDGE"
-217. Port Connectivity Checks: "top2:top_module_1|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT"
-218. Port Connectivity Checks: "top2:top_module_1|bridge_module:INPUT_BRIDGE"
-219. Port Connectivity Checks: "scaledclock:CLK_DIV"
-220. Post-Synthesis Netlist Statistics for Top Partition
-221. Elapsed Time Per Partition
-222. Analysis & Synthesis Messages
-223. Analysis & Synthesis Suppressed Messages
+205. Port Connectivity Checks: "top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT"
+206. Port Connectivity Checks: "top2:top_module_3|increment_module:INCREMENT|slave_port:SLAVE_PORT"
+207. Port Connectivity Checks: "top2:top_module_3|increment_module:INCREMENT"
+208. Port Connectivity Checks: "top2:top_module_3|bridge_module:OUTPUT_BRIDGE"
+209. Port Connectivity Checks: "top2:top_module_3|bridge_module:INPUT_BRIDGE"
+210. Port Connectivity Checks: "top2:top_module_2|Bus_interconnect:BUS"
+211. Port Connectivity Checks: "top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT"
+212. Port Connectivity Checks: "top2:top_module_2|increment_module:INCREMENT|slave_port:SLAVE_PORT"
+213. Port Connectivity Checks: "top2:top_module_2|increment_module:INCREMENT"
+214. Port Connectivity Checks: "top2:top_module_2|bridge_module:OUTPUT_BRIDGE"
+215. Port Connectivity Checks: "top2:top_module_2|bridge_module:INPUT_BRIDGE"
+216. Port Connectivity Checks: "top2:top_module_1|Bus_interconnect:BUS"
+217. Port Connectivity Checks: "top2:top_module_1|increment_module:INCREMENT|master_port:MASTER_PORT"
+218. Port Connectivity Checks: "top2:top_module_1|increment_module:INCREMENT|slave_port:SLAVE_PORT"
+219. Port Connectivity Checks: "top2:top_module_1|increment_module:INCREMENT"
+220. Port Connectivity Checks: "top2:top_module_1|bridge_module:OUTPUT_BRIDGE"
+221. Port Connectivity Checks: "top2:top_module_1|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT"
+222. Port Connectivity Checks: "top2:top_module_1|bridge_module:INPUT_BRIDGE"
+223. Port Connectivity Checks: "scaledclock:CLK_DIV"
+224. Post-Synthesis Netlist Statistics for Top Partition
+225. Elapsed Time Per Partition
+226. Analysis & Synthesis Messages
+227. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -254,13 +258,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 27 19:58:08 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 27 20:55:53 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; tops_combined                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,318                                       ;
-;     Total combinational functions  ; 4,153                                       ;
+; Total logic elements               ; 4,316                                       ;
+;     Total combinational functions  ; 4,151                                       ;
 ;     Dedicated logic registers      ; 2,541                                       ;
 ; Total registers                    ; 2541                                        ;
 ; Total pins                         ; 81                                          ;
@@ -409,16 +413,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 4,318 ;
+; Estimated Total logic elements              ; 4,316 ;
 ;                                             ;       ;
-; Total combinational functions               ; 4153  ;
+; Total combinational functions               ; 4151  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1743  ;
-;     -- 3 input functions                    ; 379   ;
-;     -- <=2 input functions                  ; 2031  ;
+;     -- 4 input functions                    ; 1752  ;
+;     -- 3 input functions                    ; 370   ;
+;     -- <=2 input functions                  ; 2029  ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 2439  ;
+;     -- normal mode                          ; 2437  ;
 ;     -- arithmetic mode                      ; 1714  ;
 ;                                             ;       ;
 ; Total registers                             ; 2541  ;
@@ -431,7 +435,7 @@ refer to the applicable agreement for further details.
 ;                                             ;       ;
 ; Maximum fan-out node                        ; rst3  ;
 ; Maximum fan-out                             ; 766   ;
-; Total fan-out                               ; 23359 ;
+; Total fan-out                               ; 23364 ;
 ; Average fan-out                             ; 3.41  ;
 +---------------------------------------------+-------+
 
@@ -441,35 +445,35 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Entity Name      ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |tops_combined                                ; 4153 (3)            ; 2541 (0)                  ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |tops_combined                                                                                                      ; tops_combined    ; work         ;
+; |tops_combined                                ; 4151 (3)            ; 2541 (0)                  ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |tops_combined                                                                                                      ; tops_combined    ; work         ;
 ;    |scaledclock:CLK_DIV|                      ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|scaledclock:CLK_DIV                                                                                  ; scaledclock      ; work         ;
 ;    |top2:top_module_1|                        ; 1366 (2)            ; 836 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1                                                                                    ; top2             ; work         ;
 ;       |Bus_interconnect:BUS|                  ; 55 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
 ;          |Bus_Arbiter:Bus_Arbiter1|           ; 50 (50)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                      ; Bus_Arbiter      ; work         ;
 ;          |Bus_mux:Bus_mux1|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
-;       |bridge_module:INPUT_BRIDGE|            ; 506 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
-;          |bridge:BRIDGE|                      ; 104 (104)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
+;       |bridge_module:INPUT_BRIDGE|            ; 507 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
+;          |bridge:BRIDGE|                      ; 105 (105)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
 ;          |master_port:MASTER_PORT|            ; 185 (0)             ; 92 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
 ;             |master_out_port:MASTER_OUT_PORT| ; 185 (185)           ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
 ;          |uart_port:UART_PORT|                ; 217 (0)             ; 151 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
 ;             |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
 ;             |uart_tx:UART_TX|                 ; 97 (97)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
-;       |bridge_module:OUTPUT_BRIDGE|           ; 429 (0)             ; 285 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
-;          |bridge:BRIDGE|                      ; 118 (118)           ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
+;       |bridge_module:OUTPUT_BRIDGE|           ; 431 (0)             ; 285 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
+;          |bridge:BRIDGE|                      ; 120 (120)           ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
 ;          |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT                                  ; slave_port       ; work         ;
 ;             |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT      ; slave_in_port    ; work         ;
 ;             |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT    ; slave_out_port   ; work         ;
 ;          |uart_port:UART_PORT|                ; 222 (0)             ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
 ;             |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
 ;             |uart_tx:UART_TX|                 ; 102 (102)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
-;       |increment_module:INCREMENT|            ; 332 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT                                                         ; increment_module ; work         ;
+;       |increment_module:INCREMENT|            ; 329 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT                                                         ; increment_module ; work         ;
 ;          |increment:inc1|                     ; 54 (40)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|increment:inc1                                          ; increment        ; work         ;
 ;             |bin27:DISPLAY1|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1                           ; bin27            ; work         ;
 ;                |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display           ; decoder          ; work         ;
 ;             |bin27:DISPLAY2|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2                           ; bin27            ; work         ;
 ;                |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2|decoder:display           ; decoder          ; work         ;
-;          |master_port:MASTER_PORT|            ; 189 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;             |master_out_port:MASTER_OUT_PORT| ; 189 (189)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;          |master_port:MASTER_PORT|            ; 186 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;             |master_out_port:MASTER_OUT_PORT| ; 186 (186)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
 ;          |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|slave_port:SLAVE_PORT                                   ; slave_port       ; work         ;
 ;             |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT       ; slave_in_port    ; work         ;
 ;             |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_1|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT     ; slave_out_port   ; work         ;
@@ -478,10 +482,10 @@ refer to the applicable agreement for further details.
 ;       |Bus_interconnect:BUS|                  ; 55 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
 ;          |Bus_Arbiter:Bus_Arbiter1|           ; 50 (50)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                      ; Bus_Arbiter      ; work         ;
 ;          |Bus_mux:Bus_mux1|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
-;       |bridge_module:INPUT_BRIDGE|            ; 512 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
-;          |bridge:BRIDGE|                      ; 107 (107)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
-;          |master_port:MASTER_PORT|            ; 188 (0)             ; 92 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;             |master_out_port:MASTER_OUT_PORT| ; 188 (188)           ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;       |bridge_module:INPUT_BRIDGE|            ; 510 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
+;          |bridge:BRIDGE|                      ; 106 (106)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
+;          |master_port:MASTER_PORT|            ; 187 (0)             ; 92 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;             |master_out_port:MASTER_OUT_PORT| ; 187 (187)           ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
 ;          |uart_port:UART_PORT|                ; 217 (0)             ; 151 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
 ;             |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
 ;             |uart_tx:UART_TX|                 ; 97 (97)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
@@ -493,45 +497,45 @@ refer to the applicable agreement for further details.
 ;          |uart_port:UART_PORT|                ; 222 (0)             ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
 ;             |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
 ;             |uart_tx:UART_TX|                 ; 102 (102)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
-;       |increment_module:INCREMENT|            ; 330 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT                                                         ; increment_module ; work         ;
+;       |increment_module:INCREMENT|            ; 332 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT                                                         ; increment_module ; work         ;
 ;          |increment:inc1|                     ; 54 (40)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|increment:inc1                                          ; increment        ; work         ;
 ;             |bin27:DISPLAY1|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1                           ; bin27            ; work         ;
 ;                |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display           ; decoder          ; work         ;
 ;             |bin27:DISPLAY2|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2                           ; bin27            ; work         ;
 ;                |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2|decoder:display           ; decoder          ; work         ;
-;          |master_port:MASTER_PORT|            ; 187 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;             |master_out_port:MASTER_OUT_PORT| ; 187 (187)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;          |master_port:MASTER_PORT|            ; 189 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;             |master_out_port:MASTER_OUT_PORT| ; 189 (189)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
 ;          |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|slave_port:SLAVE_PORT                                   ; slave_port       ; work         ;
 ;             |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT       ; slave_in_port    ; work         ;
 ;             |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT     ; slave_out_port   ; work         ;
 ;       |scaledclock:CLK_DIV|                   ; 43 (43)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_2|scaledclock:CLK_DIV                                                                ; scaledclock      ; work         ;
-;    |top2:top_module_3|                        ; 1367 (2)            ; 836 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3                                                                                    ; top2             ; work         ;
-;       |Bus_interconnect:BUS|                  ; 55 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
+;    |top2:top_module_3|                        ; 1365 (2)            ; 836 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3                                                                                    ; top2             ; work         ;
+;       |Bus_interconnect:BUS|                  ; 57 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
 ;          |Bus_Arbiter:Bus_Arbiter1|           ; 50 (50)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                      ; Bus_Arbiter      ; work         ;
-;          |Bus_mux:Bus_mux1|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
+;          |Bus_mux:Bus_mux1|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
 ;       |bridge_module:INPUT_BRIDGE|            ; 507 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
-;          |bridge:BRIDGE|                      ; 105 (105)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
+;          |bridge:BRIDGE|                      ; 106 (106)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
 ;          |master_port:MASTER_PORT|            ; 186 (0)             ; 92 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
 ;             |master_out_port:MASTER_OUT_PORT| ; 186 (186)           ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
-;          |uart_port:UART_PORT|                ; 216 (0)             ; 151 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
+;          |uart_port:UART_PORT|                ; 215 (0)             ; 151 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
 ;             |uart_rx:UART_RX|                 ; 119 (119)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
-;             |uart_tx:UART_TX|                 ; 97 (97)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
-;       |bridge_module:OUTPUT_BRIDGE|           ; 430 (0)             ; 285 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
+;             |uart_tx:UART_TX|                 ; 96 (96)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
+;       |bridge_module:OUTPUT_BRIDGE|           ; 428 (0)             ; 285 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
 ;          |bridge:BRIDGE|                      ; 119 (119)           ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
-;          |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT                                  ; slave_port       ; work         ;
-;             |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT      ; slave_in_port    ; work         ;
+;          |slave_port:SLAVE_PORT|              ; 90 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT                                  ; slave_port       ; work         ;
+;             |slave_in_port:SLAVE_IN_PORT|     ; 67 (67)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT      ; slave_in_port    ; work         ;
 ;             |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT    ; slave_out_port   ; work         ;
-;          |uart_port:UART_PORT|                ; 222 (0)             ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
-;             |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
-;             |uart_tx:UART_TX|                 ; 102 (102)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
-;       |increment_module:INCREMENT|            ; 330 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT                                                         ; increment_module ; work         ;
+;          |uart_port:UART_PORT|                ; 219 (0)             ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
+;             |uart_rx:UART_RX|                 ; 118 (118)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
+;             |uart_tx:UART_TX|                 ; 101 (101)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
+;       |increment_module:INCREMENT|            ; 328 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT                                                         ; increment_module ; work         ;
 ;          |increment:inc1|                     ; 54 (40)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|increment:inc1                                          ; increment        ; work         ;
 ;             |bin27:DISPLAY1|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1                           ; bin27            ; work         ;
 ;                |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display           ; decoder          ; work         ;
 ;             |bin27:DISPLAY2|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2                           ; bin27            ; work         ;
 ;                |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2|decoder:display           ; decoder          ; work         ;
-;          |master_port:MASTER_PORT|            ; 187 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;             |master_out_port:MASTER_OUT_PORT| ; 187 (187)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;          |master_port:MASTER_PORT|            ; 185 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;             |master_out_port:MASTER_OUT_PORT| ; 185 (185)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
 ;          |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|slave_port:SLAVE_PORT                                   ; slave_port       ; work         ;
 ;             |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT       ; slave_in_port    ; work         ;
 ;             |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tops_combined|top2:top_module_3|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT     ; slave_out_port   ; work         ;
@@ -3135,8 +3139,8 @@ Encoding Type:  One-Hot
 ; top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle         ; 7       ;
 ; top2:top_module_3|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle         ; 4       ;
 ; top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready ; 7       ;
-; top2:top_module_2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle         ; 7       ;
-; top2:top_module_2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle         ; 4       ;
+; top2:top_module_2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle         ; 8       ;
+; top2:top_module_2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle         ; 5       ;
 ; top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready ; 7       ;
 ; top2:top_module_1|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle         ; 7       ;
 ; top2:top_module_1|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle         ; 4       ;
@@ -3152,7 +3156,7 @@ Encoding Type:  One-Hot
 ; top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                        ; 1       ;
 ; top2:top_module_2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_2                       ; 14      ;
 ; top2:top_module_1|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_2                       ; 14      ;
-; top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_2                       ; 13      ;
+; top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_2                       ; 14      ;
 ; top2:top_module_2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                       ; 1       ;
 ; top2:top_module_1|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                       ; 1       ;
 ; top2:top_module_3|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                       ; 1       ;
@@ -3320,19 +3324,17 @@ Encoding Type:  One-Hot
 
 +-------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |tops_combined ;
-+--------------------+----------+-----------------------------------------------+
-; Parameter Name     ; Value    ; Type                                          ;
-+--------------------+----------+-----------------------------------------------+
-; MAX_COUNT_CLK1     ; 10000000 ; Signed Integer                                ;
-; MAX_COUNT_CLK2     ; 5000000  ; Signed Integer                                ;
-; MAX_COUNT_CLK3     ; 2500000  ; Signed Integer                                ;
-; CLKS_PER_BIT1      ; 2604     ; Signed Integer                                ;
-; CLKS_PER_BIT2      ; 2604     ; Signed Integer                                ;
-; CLKS_PER_BIT3      ; 1302     ; Signed Integer                                ;
-; MAX_COUNT_TIMEOUT1 ; 50000    ; Signed Integer                                ;
-; MAX_COUNT_TIMEOUT2 ; 50000    ; Signed Integer                                ;
-; MAX_COUNT_TIMEOUT3 ; 25000    ; Signed Integer                                ;
-+--------------------+----------+-----------------------------------------------+
++------------------+----------+-------------------------------------------------+
+; Parameter Name   ; Value    ; Type                                            ;
++------------------+----------+-------------------------------------------------+
+; BAUDRATE         ; 19200    ; Signed Integer                                  ;
+; CLOCK_FREQUENCY1 ; 50000000 ; Signed Integer                                  ;
+; CLOCK_FREQUENCY2 ; 50000000 ; Signed Integer                                  ;
+; CLOCK_FREQUENCY3 ; 12500000 ; Signed Integer                                  ;
+; CLOCK_DIVIDE1    ; 20000000 ; Signed Integer                                  ;
+; CLOCK_DIVIDE2    ; 10000000 ; Signed Integer                                  ;
+; CLOCK_DIVIDE3    ; 10000000 ; Signed Integer                                  ;
++------------------+----------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -3348,13 +3350,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: top2:top_module_1 ;
-+-------------------+----------+---------------------------------+
-; Parameter Name    ; Value    ; Type                            ;
-+-------------------+----------+---------------------------------+
-; MAX_COUNT_CLK     ; 10000000 ; Signed Integer                  ;
-; CLKS_PER_BIT      ; 2604     ; Signed Integer                  ;
-; MAX_COUNT_TIMEOUT ; 50000    ; Signed Integer                  ;
-+-------------------+----------+---------------------------------+
++-----------------+----------+-----------------------------------+
+; Parameter Name  ; Value    ; Type                              ;
++-----------------+----------+-----------------------------------+
+; BAUDRATE        ; 19200    ; Signed Integer                    ;
+; CLOCK_FREQUENCY ; 50000000 ; Signed Integer                    ;
+; CLOCK_DIVIDE    ; 20000000 ; Signed Integer                    ;
++-----------------+----------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -3665,6 +3667,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                   ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                   ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                   ;
+; DELAY_COUNT    ; 10    ; Signed Integer                                                   ;
 +----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -3752,14 +3755,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: top2:top_module_1|increment_module:INCREMENT|increment:inc1 ;
-+-----------------------+-------+--------------------------------------------------------------------------+
-; Parameter Name        ; Value ; Type                                                                     ;
-+-----------------------+-------+--------------------------------------------------------------------------+
-; INC_IDLE              ; 00    ; Unsigned Binary                                                          ;
-; DISPLAY_AND_INCREMENT ; 01    ; Unsigned Binary                                                          ;
-; DATA_SEND             ; 10    ; Unsigned Binary                                                          ;
-; delay_count           ; 22    ; Signed Integer                                                           ;
-+-----------------------+-------+--------------------------------------------------------------------------+
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; DELAY_COUNT    ; 10    ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -3785,13 +3785,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: top2:top_module_2 ;
-+-------------------+---------+----------------------------------+
-; Parameter Name    ; Value   ; Type                             ;
-+-------------------+---------+----------------------------------+
-; MAX_COUNT_CLK     ; 5000000 ; Signed Integer                   ;
-; CLKS_PER_BIT      ; 2604    ; Signed Integer                   ;
-; MAX_COUNT_TIMEOUT ; 50000   ; Signed Integer                   ;
-+-------------------+---------+----------------------------------+
++-----------------+----------+-----------------------------------+
+; Parameter Name  ; Value    ; Type                              ;
++-----------------+----------+-----------------------------------+
+; BAUDRATE        ; 19200    ; Signed Integer                    ;
+; CLOCK_FREQUENCY ; 50000000 ; Signed Integer                    ;
+; CLOCK_DIVIDE    ; 10000000 ; Signed Integer                    ;
++-----------------+----------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -4102,6 +4102,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                   ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                   ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                   ;
+; DELAY_COUNT    ; 25    ; Signed Integer                                                   ;
 +----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4189,14 +4190,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: top2:top_module_2|increment_module:INCREMENT|increment:inc1 ;
-+-----------------------+-------+--------------------------------------------------------------------------+
-; Parameter Name        ; Value ; Type                                                                     ;
-+-----------------------+-------+--------------------------------------------------------------------------+
-; INC_IDLE              ; 00    ; Unsigned Binary                                                          ;
-; DISPLAY_AND_INCREMENT ; 01    ; Unsigned Binary                                                          ;
-; DATA_SEND             ; 10    ; Unsigned Binary                                                          ;
-; delay_count           ; 22    ; Signed Integer                                                           ;
-+-----------------------+-------+--------------------------------------------------------------------------+
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; DELAY_COUNT    ; 25    ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -4222,13 +4220,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: top2:top_module_3 ;
-+-------------------+---------+----------------------------------+
-; Parameter Name    ; Value   ; Type                             ;
-+-------------------+---------+----------------------------------+
-; MAX_COUNT_CLK     ; 2500000 ; Signed Integer                   ;
-; CLKS_PER_BIT      ; 1302    ; Signed Integer                   ;
-; MAX_COUNT_TIMEOUT ; 25000   ; Signed Integer                   ;
-+-------------------+---------+----------------------------------+
++-----------------+----------+-----------------------------------+
+; Parameter Name  ; Value    ; Type                              ;
++-----------------+----------+-----------------------------------+
+; BAUDRATE        ; 19200    ; Signed Integer                    ;
+; CLOCK_FREQUENCY ; 12500000 ; Signed Integer                    ;
+; CLOCK_DIVIDE    ; 10000000 ; Signed Integer                    ;
++-----------------+----------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -4237,7 +4235,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+---------+---------------------------------------------------------+
 ; Parameter Name ; Value   ; Type                                                    ;
 +----------------+---------+---------------------------------------------------------+
-; maxcount       ; 2500000 ; Signed Integer                                          ;
+; maxcount       ; 5000000 ; Signed Integer                                          ;
 +----------------+---------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4251,8 +4249,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                   ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                   ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                   ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                   ;
-; MAX_COUNT      ; 25000 ; Signed Integer                                                   ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                   ;
+; MAX_COUNT      ; 12500 ; Signed Integer                                                   ;
 +----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4263,7 +4261,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                 ;
 +----------------+-------+--------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                       ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                       ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                       ;
 +----------------+-------+--------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4274,7 +4272,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                                 ;
 +----------------+-------+------------------------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                                       ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                                       ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                                       ;
 +----------------+-------+------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4285,7 +4283,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                                 ;
 +----------------+-------+------------------------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                                       ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                                       ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                                       ;
 +----------------+-------+------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4380,8 +4378,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                                 ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                                 ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                                 ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                 ;
-; MAX_COUNT      ; 25000 ; Signed Integer                                                                 ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                 ;
+; MAX_COUNT      ; 12500 ; Signed Integer                                                                 ;
 +----------------+-------+--------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4395,8 +4393,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                    ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                    ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                    ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                    ;
-; MAX_COUNT      ; 25000 ; Signed Integer                                                    ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                    ;
+; MAX_COUNT      ; 12500 ; Signed Integer                                                    ;
 +----------------+-------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4407,7 +4405,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                  ;
 +----------------+-------+---------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                        ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                        ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                        ;
 +----------------+-------+---------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4418,7 +4416,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                                  ;
 +----------------+-------+-------------------------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                                        ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                                        ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                                        ;
 +----------------+-------+-------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4429,7 +4427,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                                  ;
 +----------------+-------+-------------------------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                                        ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                                        ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                                        ;
 +----------------+-------+-------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4524,8 +4522,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                                  ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                                  ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                                  ;
-; CLKS_PER_BIT   ; 1302  ; Signed Integer                                                                  ;
-; MAX_COUNT      ; 25000 ; Signed Integer                                                                  ;
+; CLKS_PER_BIT   ; 651   ; Signed Integer                                                                  ;
+; MAX_COUNT      ; 12500 ; Signed Integer                                                                  ;
 +----------------+-------+---------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4539,6 +4537,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                   ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                   ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                   ;
+; DELAY_COUNT    ; 5     ; Signed Integer                                                   ;
 +----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -4626,14 +4625,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: top2:top_module_3|increment_module:INCREMENT|increment:inc1 ;
-+-----------------------+-------+--------------------------------------------------------------------------+
-; Parameter Name        ; Value ; Type                                                                     ;
-+-----------------------+-------+--------------------------------------------------------------------------+
-; INC_IDLE              ; 00    ; Unsigned Binary                                                          ;
-; DISPLAY_AND_INCREMENT ; 01    ; Unsigned Binary                                                          ;
-; DATA_SEND             ; 10    ; Unsigned Binary                                                          ;
-; delay_count           ; 22    ; Signed Integer                                                           ;
-+-----------------------+-------+--------------------------------------------------------------------------+
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; DELAY_COUNT    ; 5     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -4676,6 +4672,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; s3_read_en      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; s3_rx_burst_num ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top2:top_module_3|increment_module:INCREMENT|master_port:MASTER_PORT"                          ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; slave_select[1] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; slave_select[0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; burst_num       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_in         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rx_done         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; new_rx          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top2:top_module_3|increment_module:INCREMENT|slave_port:SLAVE_PORT"                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; address    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; read_en_in ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -4751,6 +4771,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; s3_read_en      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; s3_rx_burst_num ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top2:top_module_2|increment_module:INCREMENT|master_port:MASTER_PORT"                          ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; slave_select[1] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; slave_select[0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; burst_num       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_in         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rx_done         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; new_rx          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top2:top_module_2|increment_module:INCREMENT|slave_port:SLAVE_PORT"                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; address    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; read_en_in ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -4941,19 +4985,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 96                          ;
 ;     SCLR              ; 35                          ;
 ;     plain             ; 79                          ;
-; cycloneiii_lcell_comb ; 4160                        ;
+; cycloneiii_lcell_comb ; 4158                        ;
 ;     arith             ; 1714                        ;
 ;         2 data inputs ; 1708                        ;
 ;         3 data inputs ; 6                           ;
-;     normal            ; 2446                        ;
+;     normal            ; 2444                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 76                          ;
-;         2 data inputs ; 253                         ;
-;         3 data inputs ; 373                         ;
-;         4 data inputs ; 1743                        ;
+;         2 data inputs ; 251                         ;
+;         3 data inputs ; 364                         ;
+;         4 data inputs ; 1752                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.12                        ;
+; Average LUT depth     ; 4.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -4962,7 +5006,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:20     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -4972,7 +5016,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 27 19:57:29 2021
+    Info: Processing started: Mon Dec 27 20:55:24 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -5083,15 +5127,23 @@ Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(34): creat
 Warning (10236): Verilog HDL Implicit Net warning at tops_combined_tb.v(15): created implicit net for "reset" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined_tb.v Line: 15
 Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(22): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_tx.v Line: 22
 Warning (10222): Verilog HDL Parameter Declaration warning at uart_rx.v(19): Parameter Declaration in module "uart_rx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_rx.v Line: 19
-Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(59): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 59
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(49): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 49
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(50): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 50
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(51): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 51
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(52): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 52
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(60): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 60
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(61): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 61
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(62): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 62
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(63): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 63
 Warning (10222): Verilog HDL Parameter Declaration warning at master_in_port.v(34): Parameter Declaration in module "master_in_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/master_in_port.v Line: 34
 Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(47): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/master_out_port.v Line: 47
 Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(49): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/master_out_port.v Line: 49
 Warning (10222): Verilog HDL Parameter Declaration warning at bridge.v(52): Parameter Declaration in module "bridge" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 52
 Warning (10222): Verilog HDL Parameter Declaration warning at bridge.v(55): Parameter Declaration in module "bridge" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 55
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(36): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 36
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(37): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 37
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(38): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 38
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(40): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 40
 Warning (10222): Verilog HDL Parameter Declaration warning at command_processor.v(67): Parameter Declaration in module "command_processor" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/command_processor.v Line: 67
 Warning (10222): Verilog HDL Parameter Declaration warning at command_processor.v(68): Parameter Declaration in module "command_processor" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/command_processor.v Line: 68
 Warning (10222): Verilog HDL Parameter Declaration warning at command_processor.v(72): Parameter Declaration in module "command_processor" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/command_processor.v Line: 72
@@ -5101,8 +5153,8 @@ Warning (10034): Output port "display1_pin" at tops_combined.v(54) has no driver
 Warning (10034): Output port "display2_pin" at tops_combined.v(55) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 55
 Info (12128): Elaborating entity "scaledclock" for hierarchy "scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 99
 Info (12128): Elaborating entity "top2" for hierarchy "top2:top_module_1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 157
-Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_1|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 174
-Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 249
+Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_1|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 176
+Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 251
 Info (12128): Elaborating entity "uart_port" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge_module.v Line: 107
 Info (12128): Elaborating entity "uart_tx" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 40
 Info (12128): Elaborating entity "uart_rx" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 47
@@ -5143,21 +5195,24 @@ Warning (10230): Verilog HDL assignment warning at bridge.v(108): truncated valu
 Warning (10230): Verilog HDL assignment warning at bridge.v(113): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 113
 Warning (10230): Verilog HDL assignment warning at bridge.v(124): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 124
 Warning (10034): Output port "s_datain" at bridge.v(40) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 40
-Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_1|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 357
+Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_1|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 359
 Info (12128): Elaborating entity "increment" for hierarchy "top2:top_module_1|increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment_module.v Line: 164
 Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 86
 Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 91
 Info (12128): Elaborating entity "bin27" for hierarchy "top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 47
 Info (12128): Elaborating entity "decoder" for hierarchy "top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bin27.v Line: 50
-Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "top2:top_module_1|Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 442
+Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "top2:top_module_1|Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 444
 Info (12128): Elaborating entity "Bus_Arbiter" for hierarchy "top2:top_module_1|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/Bus_interconnect.v Line: 119
 Warning (10036): Verilog HDL or VHDL warning at Bus_Arbiter.v(46): object "split_enabled" assigned a value but never read File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/Bus_Arbiter.v Line: 46
 Info (12128): Elaborating entity "Bus_mux" for hierarchy "top2:top_module_1|Bus_interconnect:BUS|Bus_mux:Bus_mux1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/Bus_interconnect.v Line: 190
 Info (12128): Elaborating entity "top2" for hierarchy "top2:top_module_2" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 177
-Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_2|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 174
+Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_2|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 176
+Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_2|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 359
+Info (12128): Elaborating entity "increment" for hierarchy "top2:top_module_2|increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment_module.v Line: 164
+Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 86
+Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 91
 Info (12128): Elaborating entity "top2" for hierarchy "top2:top_module_3" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 197
-Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_3|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 174
-Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 249
+Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 251
 Info (12128): Elaborating entity "uart_port" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge_module.v Line: 107
 Info (12128): Elaborating entity "uart_tx" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 40
 Info (12128): Elaborating entity "uart_rx" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 47
@@ -5169,6 +5224,10 @@ Warning (10230): Verilog HDL assignment warning at bridge.v(108): truncated valu
 Warning (10230): Verilog HDL assignment warning at bridge.v(113): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 113
 Warning (10230): Verilog HDL assignment warning at bridge.v(124): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 124
 Warning (10034): Output port "s_datain" at bridge.v(40) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 40
+Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_3|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 359
+Info (12128): Elaborating entity "increment" for hierarchy "top2:top_module_3|increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment_module.v Line: 164
+Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 86
+Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 91
 Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/slave_in_port.v Line: 41
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -5192,15 +5251,15 @@ Info (17049): 1248 registers lost all their fanouts during netlist optimizations
 Info (144001): Generated suppressed messages file D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/output_files/bus.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4429 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4427 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 4348 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4841 megabytes
-    Info: Processing ended: Mon Dec 27 19:58:08 2021
-    Info: Elapsed time: 00:00:39
-    Info: Total CPU time (on all processors): 00:01:03
+    Info (21061): Implemented 4346 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 90 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Mon Dec 27 20:55:53 2021
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:50
 
 
 +------------------------------------------+

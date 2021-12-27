@@ -98,15 +98,15 @@ assign clk2 = clock;
 
 scaledclock #(.maxcount(1)) CLK_DIV(.inclk(clock), .ena(1), .clk(clk3));
 
-parameter MAX_COUNT_CLK1 = 10000000;
-parameter MAX_COUNT_CLK2 =  5000000;
-parameter MAX_COUNT_CLK3 =  2500000;
-parameter CLKS_PER_BIT1 = 2604;
-parameter CLKS_PER_BIT2 = 2604;
-parameter CLKS_PER_BIT3 = 1302;
-parameter MAX_COUNT_TIMEOUT1 = 50000;
-parameter MAX_COUNT_TIMEOUT2 = 50000;
-parameter MAX_COUNT_TIMEOUT3 = 25000;
+parameter BAUDRATE = 19200;
+
+parameter CLOCK_FREQUENCY1 = 50000000;
+parameter CLOCK_FREQUENCY2 = 50000000;
+parameter CLOCK_FREQUENCY3 = 12500000;
+parameter CLOCK_DIVIDE1 = 20000000;
+parameter CLOCK_DIVIDE2 = 10000000;
+parameter CLOCK_DIVIDE3 = 10000000;
+
 
 /*********************************************/
 
@@ -136,7 +136,7 @@ parameter MAX_COUNT_TIMEOUT3 = 25000;
 `endif
 
 
-top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK1), .CLKS_PER_BIT(CLKS_PER_BIT1), .MAX_COUNT_TIMEOUT(MAX_COUNT_TIMEOUT1)) 
+top2 #(.BAUDRATE(BAUDRATE), .CLOCK_FREQUENCY(CLOCK_FREQUENCY1), .CLOCK_DIVIDE(CLOCK_DIVIDE1)) 
 	top_module_1(
 	.clock(clk1),	
 	.rst(rst1),
@@ -156,7 +156,7 @@ top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK1), .CLKS_PER_BIT(CLKS_PER_BIT1), .MAX_COUNT_
 	.display2_pin(display2_pin1)
 	);
 
-top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK2), .CLKS_PER_BIT(CLKS_PER_BIT2), .MAX_COUNT_TIMEOUT(MAX_COUNT_TIMEOUT2))
+top2 #(.BAUDRATE(BAUDRATE), .CLOCK_FREQUENCY(CLOCK_FREQUENCY2), .CLOCK_DIVIDE(CLOCK_DIVIDE2))
 	top_module_2(
 	.clock(clk2),	
 	.rst(rst2),
@@ -176,7 +176,7 @@ top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK2), .CLKS_PER_BIT(CLKS_PER_BIT2), .MAX_COUNT_
 	.display2_pin(display2_pin2)
 	);
 
-top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK3), .CLKS_PER_BIT(CLKS_PER_BIT3), .MAX_COUNT_TIMEOUT(MAX_COUNT_TIMEOUT3))
+top2 #(.BAUDRATE(BAUDRATE), .CLOCK_FREQUENCY(CLOCK_FREQUENCY3), .CLOCK_DIVIDE(CLOCK_DIVIDE3))
 	top_module_3(
 	.clock(clk3),	
 	.rst(rst3),

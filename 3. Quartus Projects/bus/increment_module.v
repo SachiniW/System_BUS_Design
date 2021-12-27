@@ -12,7 +12,7 @@
 */
 
 module increment_module #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, 
-								parameter BURST_LEN=12)(
+								parameter BURST_LEN=12, parameter DELAY_COUNT = 20)(
 	input clk,
 	input reset,
 	
@@ -142,7 +142,7 @@ master_port #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .
 	.write_en(m_write_en),
 	.read_en(m_read_en));
 								
-increment inc1(
+increment #(.DELAY_COUNT(DELAY_COUNT)) inc1(
 	.clk(clk),
 	.reset(reset),
 	

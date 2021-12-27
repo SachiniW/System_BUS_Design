@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module increment (
+module increment #(parameter DELAY_COUNT = 20)(  // change this to suit 5s
 	input clk,
 	input reset,
 	
@@ -37,7 +37,7 @@ parameter[1:0] INC_IDLE = 2'd0;
 parameter[1:0] DISPLAY_AND_INCREMENT = 2'd1;
 parameter[1:0] DATA_SEND = 2'd2;
 
-parameter delay_count = 20; // change this to suit 5s
+parameter delay_count = 200/9; // change this to suit 5s
 
 reg [1:0]inc_state =0;
 reg [7:0]output_data;

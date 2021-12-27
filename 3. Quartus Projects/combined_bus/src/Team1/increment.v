@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-module increment (
+module increment #(parameter DELAY_COUNT = 20)(  // change this to suit 5s
 	input clk,
 	input reset,
 	
