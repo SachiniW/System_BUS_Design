@@ -32,18 +32,18 @@ module tops_combined(
 	output scaled_clk2,
 	output scaled_clk3,
 
-	// input  bi_uart_rx1,
-	// input  bo_uart_rx1,
-	// output bi_uart_tx1,
-	// output bo_uart_tx1,
-	// input  bi_uart_rx2,
-	// input  bo_uart_rx2,
-	// output bi_uart_tx2,
-	// output bo_uart_tx2,
-	// input  bi_uart_rx3,
-	// input  bo_uart_rx3,
-	// output bi_uart_tx3,
-	// output bo_uart_tx3,
+	input  bi_uart_rx1,
+	input  bo_uart_rx1,
+	output bi_uart_tx1,
+	output bo_uart_tx1,
+	input  bi_uart_rx2,
+	input  bo_uart_rx2,
+	output bi_uart_tx2,
+	output bo_uart_tx2,
+	input  bi_uart_rx3,
+	input  bo_uart_rx3,
+	output bi_uart_tx3,
+	output bo_uart_tx3,
 
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
@@ -82,25 +82,25 @@ assign display6_pin = display2_pin2;
 assign display3_pin = display1_pin3;
 assign display4_pin = display2_pin3;
 
-wire bi_uart_rx1;
-wire bo_uart_rx1;
-wire bi_uart_tx1;
-wire bo_uart_tx1;
-wire bi_uart_rx2;
-wire bo_uart_rx2;
-wire bi_uart_tx2;
-wire bo_uart_tx2;
-wire bi_uart_rx3;
-wire bo_uart_rx3;
-wire bi_uart_tx3;
-wire bo_uart_tx3;
-
-assign bi_uart_rx1 = bo_uart_tx3;
-assign bi_uart_rx3 = bo_uart_tx2;
-assign bi_uart_rx2 = bo_uart_tx1;
-assign bo_uart_rx1 = bi_uart_tx2;
-assign bo_uart_rx2 = bi_uart_tx3;
-assign bo_uart_rx3 = bi_uart_tx1;
+//wire bi_uart_rx1;
+//wire bo_uart_rx1;
+//wire bi_uart_tx1;
+//wire bo_uart_tx1;
+//wire bi_uart_rx2;
+//wire bo_uart_rx2;
+//wire bi_uart_tx2;
+//wire bo_uart_tx2;
+//wire bi_uart_rx3;
+//wire bo_uart_rx3;
+//wire bi_uart_tx3;
+//wire bo_uart_tx3;
+//
+//assign bi_uart_rx1 = bo_uart_tx3;
+//assign bi_uart_rx3 = bo_uart_tx2;
+//assign bi_uart_rx2 = bo_uart_tx1;
+//assign bo_uart_rx1 = bi_uart_tx2;
+//assign bo_uart_rx2 = bi_uart_tx3;
+//assign bo_uart_rx3 = bi_uart_tx1;
 
 
 top2 top_module_1(

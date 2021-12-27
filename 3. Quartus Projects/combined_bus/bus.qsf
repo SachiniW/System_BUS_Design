@@ -173,56 +173,6 @@ set_location_assignment PIN_N21 -to button_raw2
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE tops_combined_tb.v
-set_global_assignment -name VERILOG_FILE increment.v
-set_global_assignment -name VERILOG_FILE uart_tx.v
-set_global_assignment -name VERILOG_FILE uart_rx.v
-set_global_assignment -name VERILOG_FILE UART_TB.v
-set_global_assignment -name VERILOG_FILE reset_delay.v
-set_global_assignment -name VERILOG_FILE lcdlab3.v
-set_global_assignment -name VERILOG_FILE LCD_Display.v
-set_global_assignment -name VERILOG_FILE slave_port_slow.v
-set_global_assignment -name VERILOG_FILE slave_4k_slow.v
-set_global_assignment -name VERILOG_FILE tester.v
-set_global_assignment -name VERILOG_FILE master_port_tb.v
-set_global_assignment -name VERILOG_FILE master_port.v
-set_global_assignment -name VERILOG_FILE master_out_port_tb.v
-set_global_assignment -name VERILOG_FILE master_out_port.v
-set_global_assignment -name VERILOG_FILE master_module_tb.v
-set_global_assignment -name VERILOG_FILE master_module.v
-set_global_assignment -name VERILOG_FILE master_in_port_tb.v
-set_global_assignment -name VERILOG_FILE master_in_port.v
-set_global_assignment -name VERILOG_FILE Bus_mux_tb.v
-set_global_assignment -name VERILOG_FILE Bus_mux.v
-set_global_assignment -name VERILOG_FILE Bus_interconnect_tb.v
-set_global_assignment -name VERILOG_FILE Bus_interconnect.v
-set_global_assignment -name VERILOG_FILE Bus_Arbiter_tb.v
-set_global_assignment -name VERILOG_FILE Bus_Arbiter.v
-set_global_assignment -name VERILOG_FILE slave_4k_tb.v
-set_global_assignment -name VERILOG_FILE slave_4k.v
-set_global_assignment -name VERILOG_FILE slave_out_port_tb.v
-set_global_assignment -name VERILOG_FILE slave_out_port.v
-set_global_assignment -name VERILOG_FILE slave_in_port_tb.v
-set_global_assignment -name VERILOG_FILE slave_in_port.v
-set_global_assignment -name VERILOG_FILE scaledclock.v
-set_global_assignment -name VERILOG_FILE bin27.v
-set_global_assignment -name VERILOG_FILE slave_port.v
-set_global_assignment -name VERILOG_FILE slave_port_tb.v
-set_global_assignment -name QIP_FILE BRAM.qip
-set_global_assignment -name VERILOG_FILE BRAM_test.v
-set_global_assignment -name MIF_FILE 4KBRAM.mif
-set_global_assignment -name VERILOG_FILE button_event1.v
-set_global_assignment -name VERILOG_FILE top.v
-set_global_assignment -name VERILOG_FILE top_tb.v
-set_global_assignment -name VERILOG_FILE LCD_in.v
-set_global_assignment -name VERILOG_FILE command_processor.v
-set_global_assignment -name VERILOG_FILE uart_port.v
-set_global_assignment -name VERILOG_FILE bridge.v
-set_global_assignment -name VERILOG_FILE bridge_module.v
-set_global_assignment -name VERILOG_FILE top2.v
-set_global_assignment -name VERILOG_FILE increment_module.v
-set_global_assignment -name VERILOG_FILE top2_tb.v
-set_global_assignment -name VERILOG_FILE tops_combined.v
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_in_port_tb.v -section_id slave_in_port_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_out_port_tb.v -section_id slave_out_port_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE slave_port_tb.v -section_id slave_port_tb
@@ -234,4 +184,66 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tops_combined_tb -section_id eda
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tops_combined_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tops_combined_tb -section_id tops_combined_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE tops_combined_tb.v -section_id tops_combined_tb
+set_global_assignment -name VERILOG_FILE src/Team1/uart_tx.v
+set_global_assignment -name VERILOG_FILE src/Team1/UART_TB.v
+set_global_assignment -name VERILOG_FILE src/Team1/uart_rx.v
+set_global_assignment -name VERILOG_FILE src/Team1/uart_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/top2_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/top2.v
+set_global_assignment -name VERILOG_FILE src/Team1/top_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/top.v
+set_global_assignment -name VERILOG_FILE src/Team1/tester.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_port_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_port_slow.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_out_port_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_out_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_in_port_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_in_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_4k_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_4k_slow.v
+set_global_assignment -name VERILOG_FILE src/Team1/slave_4k.v
+set_global_assignment -name VERILOG_FILE src/Team1/scaledclock.v
+set_global_assignment -name VERILOG_FILE src/Team1/reset_delay.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_port_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_out_port_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_out_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_module_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_module.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_in_port_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/master_in_port.v
+set_global_assignment -name VERILOG_FILE src/Team1/lcdlab3.v
+set_global_assignment -name VERILOG_FILE src/Team1/LCD_in.v
+set_global_assignment -name VERILOG_FILE src/Team1/LCD_Display.v
+set_global_assignment -name VERILOG_FILE src/Team1/increment_module.v
+set_global_assignment -name VERILOG_FILE src/Team1/increment.v
+set_global_assignment -name VERILOG_FILE src/Team1/command_processor.v
+set_global_assignment -name VERILOG_FILE src/Team1/button_event1.v
+set_global_assignment -name VERILOG_FILE src/Team1/Bus_mux_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/Bus_mux.v
+set_global_assignment -name VERILOG_FILE src/Team1/Bus_interconnect_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/Bus_interconnect.v
+set_global_assignment -name VERILOG_FILE src/Team1/Bus_Arbiter_tb.v
+set_global_assignment -name VERILOG_FILE src/Team1/Bus_Arbiter.v
+set_global_assignment -name VERILOG_FILE src/Team1/bridge_module.v
+set_global_assignment -name VERILOG_FILE src/Team1/bridge.v
+set_global_assignment -name VERILOG_FILE src/Team1/BRAM_test.v
+set_global_assignment -name VERILOG_FILE src/Team1/BRAM.v
+set_global_assignment -name VERILOG_FILE src/Team1/bin27.v
+set_global_assignment -name VERILOG_FILE tops_combined_tb.v
+set_global_assignment -name VERILOG_FILE tops_combined.v
+set_global_assignment -name SOURCE_FILE db/bus.cmp.rdb
+set_location_assignment PIN_AB22 -to bi_uart_rx1
+set_location_assignment PIN_AC15 -to bi_uart_tx1
+set_location_assignment PIN_AB21 -to bo_uart_rx1
+set_location_assignment PIN_Y17 -to bo_uart_tx1
+set_location_assignment PIN_Y16 -to bi_uart_tx2
+set_location_assignment PIN_AC21 -to bi_uart_rx2
+set_location_assignment PIN_AD21 -to bo_uart_rx2
+set_location_assignment PIN_AE16 -to bo_uart_tx2
+set_location_assignment PIN_AE15 -to bi_uart_tx3
+set_location_assignment PIN_AD15 -to bi_uart_rx3
+set_location_assignment PIN_AC19 -to bo_uart_rx3
+set_location_assignment PIN_AF16 -to bo_uart_tx3
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
