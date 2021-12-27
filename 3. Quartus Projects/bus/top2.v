@@ -13,20 +13,30 @@
 
 
 //`define TESTBENCH
+//`define COMBINED
 
-module top2(
-	input clock,	
+module top2
+	`ifdef TESTBENCH
+		#(MAX_COUNT_CLK=4)         //Fast enough to reduce testbench time
+	`else
+		#(MAX_COUNT_CLK=5000000)   //Clock slow enough to see values getting updated
+	`endif 
+	(input clock,	
 	input rst,
 	input enable,
 	input button1_raw,
 	input [7:0]switch_array,
 	input mode_switch,
 	output scaled_clk,
-
-//	input  bi_uart_rx,
-//	input  bo_uart_rx,
-//	output bi_uart_tx,
-//	output bo_uart_tx,
+	
+	`ifdef COMBINED
+	
+		input  bi_uart_rx,
+		input  bo_uart_rx,
+		output bi_uart_tx,
+		output bo_uart_tx,
+	
+	`endif
 
 
 	output [6:0]display1_pin,
@@ -50,17 +60,15 @@ parameter BURST_LEN=12;
 
 `ifdef TESTBENCH
 
-//Testbench
-parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
-parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
-parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
+	//Testbench
+	parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
+	parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
 
 `else
 
-//FPGA
-parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
-parameter MAX_COUNT_CLK=5000000;	//Clock slow enough to see values getting updated
-parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+	//FPGA
+	parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
+	parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
 
 `endif
 
@@ -68,10 +76,14 @@ parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
 
 // UART wires
 
-wire  bi_uart_rx,  bo_uart_rx, bi_uart_tx, bo_uart_tx;
+`ifndef COMBINED
 
-assign bi_uart_rx = bo_uart_tx;
-assign bo_uart_rx = bi_uart_tx;
+	wire  bi_uart_rx,  bo_uart_rx, bi_uart_tx, bo_uart_tx;
+	
+	assign bi_uart_rx = bo_uart_tx;
+	assign bo_uart_rx = bi_uart_tx;
+	
+`endif
 	
 // Wires in interconnect
 wire m1_request; 

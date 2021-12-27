@@ -16,30 +16,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "bi_uart_tx1",
-					"strict" : false
-				},
-				{
-					"name" : "bo_uart_tx1",
-					"strict" : false
-				},
-				{
-					"name" : "bi_uart_tx2",
-					"strict" : false
-				},
-				{
-					"name" : "bo_uart_tx2",
-					"strict" : false
-				},
-				{
-					"name" : "bi_uart_tx3",
-					"strict" : false
-				},
-				{
-					"name" : "bo_uart_tx3",
-					"strict" : false
-				},
-				{
 					"name" : "display3_pin[0]",
 					"strict" : false
 				},
@@ -224,15 +200,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst_sel1",
+					"name" : "switch_array[0]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
-					"strict" : false
-				},
-				{
-					"name" : "rst_sel2",
+					"name" : "mode_switch3",
 					"strict" : false
 				},
 				{
@@ -240,11 +212,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch_array[0]",
-					"strict" : false
-				},
-				{
-					"name" : "mode_switch3",
+					"name" : "rst",
 					"strict" : false
 				},
 				{
@@ -284,6 +252,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "rst_sel2",
+					"strict" : false
+				},
+				{
 					"name" : "button_raw2",
 					"strict" : false
 				},
@@ -292,31 +264,11 @@
 					"strict" : false
 				},
 				{
+					"name" : "rst_sel1",
+					"strict" : false
+				},
+				{
 					"name" : "button_raw1",
-					"strict" : false
-				},
-				{
-					"name" : "bi_uart_rx1",
-					"strict" : false
-				},
-				{
-					"name" : "bo_uart_rx1",
-					"strict" : false
-				},
-				{
-					"name" : "bi_uart_rx2",
-					"strict" : false
-				},
-				{
-					"name" : "bo_uart_rx2",
-					"strict" : false
-				},
-				{
-					"name" : "bi_uart_rx3",
-					"strict" : false
-				},
-				{
-					"name" : "bo_uart_rx3",
 					"strict" : false
 				}
 			]
