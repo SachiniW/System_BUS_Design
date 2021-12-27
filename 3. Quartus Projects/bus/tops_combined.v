@@ -88,6 +88,29 @@ assign display6_pin = display2_pin2;
 assign display3_pin = display1_pin3;
 assign display4_pin = display2_pin3;
 
+/*********************************************/
+//Changing clocks for the three modules
+
+wire clk1, clk2, clk3;
+assign clk1 = ~clock;
+assign clk2 = clock;
+//assign clk3 = clock;
+
+scaledclock #(.maxcount(1)) CLK_DIV(.inclk(clock), .ena(1), .clk(clk3));
+
+parameter MAX_COUNT_CLK1 = 10000000;
+parameter MAX_COUNT_CLK2 =  5000000;
+parameter MAX_COUNT_CLK3 =  2500000;
+parameter CLKS_PER_BIT1 = 2604;
+parameter CLKS_PER_BIT2 = 2604;
+parameter CLKS_PER_BIT3 = 1302;
+parameter MAX_COUNT_TIMEOUT1 = 50000;
+parameter MAX_COUNT_TIMEOUT2 = 50000;
+parameter MAX_COUNT_TIMEOUT3 = 25000;
+
+/*********************************************/
+
+
 `ifndef EXTERNAL
 
 	wire bi_uart_rx1;
@@ -113,9 +136,9 @@ assign display4_pin = display2_pin3;
 `endif
 
 
-top2 #(.MAX_COUNT_CLK(10000000)) 
+top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK1), .CLKS_PER_BIT(CLKS_PER_BIT1), .MAX_COUNT_TIMEOUT(MAX_COUNT_TIMEOUT1)) 
 	top_module_1(
-	.clock(clock),	
+	.clock(clk1),	
 	.rst(rst1),
 	.enable(enable1),
 	.button1_raw(button_raw1),
@@ -133,9 +156,9 @@ top2 #(.MAX_COUNT_CLK(10000000))
 	.display2_pin(display2_pin1)
 	);
 
-top2 #(.MAX_COUNT_CLK(5000000))
+top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK2), .CLKS_PER_BIT(CLKS_PER_BIT2), .MAX_COUNT_TIMEOUT(MAX_COUNT_TIMEOUT2))
 	top_module_2(
-	.clock(clock),	
+	.clock(clk2),	
 	.rst(rst2),
 	.enable(enable2),
 	.button1_raw(button_raw2),
@@ -153,9 +176,9 @@ top2 #(.MAX_COUNT_CLK(5000000))
 	.display2_pin(display2_pin2)
 	);
 
-top2 #(.MAX_COUNT_CLK(2500000))
+top2 #(.MAX_COUNT_CLK(MAX_COUNT_CLK3), .CLKS_PER_BIT(CLKS_PER_BIT3), .MAX_COUNT_TIMEOUT(MAX_COUNT_TIMEOUT3))
 	top_module_3(
-	.clock(clock),	
+	.clock(clk3),	
 	.rst(rst3),
 	.enable(enable3),
 	.button1_raw(button_raw3),

@@ -1,5 +1,5 @@
 |tops_combined
-clock => clock.IN3
+clock => clock.IN2
 rst => rst1.IN0
 rst => rst2.IN0
 rst => rst3.IN0
@@ -82,6 +82,76 @@ display8_pin[3] <= top2:top_module_1.display2_pin
 display8_pin[4] <= top2:top_module_1.display2_pin
 display8_pin[5] <= top2:top_module_1.display2_pin
 display8_pin[6] <= top2:top_module_1.display2_pin
+
+
+|tops_combined|scaledclock:CLK_DIV
+inclk => count[0].CLK
+inclk => count[1].CLK
+inclk => count[2].CLK
+inclk => count[3].CLK
+inclk => count[4].CLK
+inclk => count[5].CLK
+inclk => count[6].CLK
+inclk => count[7].CLK
+inclk => count[8].CLK
+inclk => count[9].CLK
+inclk => count[10].CLK
+inclk => count[11].CLK
+inclk => count[12].CLK
+inclk => count[13].CLK
+inclk => count[14].CLK
+inclk => count[15].CLK
+inclk => count[16].CLK
+inclk => count[17].CLK
+inclk => count[18].CLK
+inclk => count[19].CLK
+inclk => count[20].CLK
+inclk => count[21].CLK
+inclk => count[22].CLK
+inclk => count[23].CLK
+inclk => count[24].CLK
+inclk => count[25].CLK
+inclk => count[26].CLK
+inclk => count[27].CLK
+inclk => count[28].CLK
+inclk => count[29].CLK
+inclk => count[30].CLK
+inclk => count[31].CLK
+inclk => clk~reg0.CLK
+ena => clk.OUTPUTSELECT
+ena => count[0].ENA
+ena => count[1].ENA
+ena => count[2].ENA
+ena => count[3].ENA
+ena => count[4].ENA
+ena => count[5].ENA
+ena => count[6].ENA
+ena => count[7].ENA
+ena => count[8].ENA
+ena => count[9].ENA
+ena => count[10].ENA
+ena => count[11].ENA
+ena => count[12].ENA
+ena => count[13].ENA
+ena => count[14].ENA
+ena => count[15].ENA
+ena => count[16].ENA
+ena => count[17].ENA
+ena => count[18].ENA
+ena => count[19].ENA
+ena => count[20].ENA
+ena => count[21].ENA
+ena => count[22].ENA
+ena => count[23].ENA
+ena => count[24].ENA
+ena => count[25].ENA
+ena => count[26].ENA
+ena => count[27].ENA
+ena => count[28].ENA
+ena => count[29].ENA
+ena => count[30].ENA
+ena => count[31].ENA
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |tops_combined|top2:top_module_1

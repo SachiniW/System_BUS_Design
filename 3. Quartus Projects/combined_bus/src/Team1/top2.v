@@ -16,11 +16,17 @@
 `define COMBINED
 
 module top2
+
 	`ifdef TESTBENCH
-		#(MAX_COUNT_CLK=4)         //Fast enough to reduce testbench time
+		#(parameter MAX_COUNT_CLK=4, //Fast enough to reduce testbench time
+			parameter CLKS_PER_BIT=20,  //Fast enough to reduce testbench time
+			parameter MAX_COUNT_TIMEOUT=500) //Fast enough to reduce testbench time         
 	`else
-		#(MAX_COUNT_CLK=5000000)   //Clock slow enough to see values getting updated
+		#(parameter MAX_COUNT_CLK=5000000,   //Clock slow enough to see values getting updated
+			parameter CLKS_PER_BIT=2604,    //Baudrate= 19200, Input clock = 50MHz
+			parameter MAX_COUNT_TIMEOUT=50000) // 1ms timeout with 50MHz input clock
 	`endif 
+	
 	(input clock,	
 	input rst,
 	input enable,
@@ -55,24 +61,6 @@ parameter ADDR_LEN=12;
 parameter DATA_LEN=8;
 parameter BURST_LEN=12;
 
-/***********************************************************/
-//Change when switching between FPGA and testbench
-
-`ifdef TESTBENCH
-
-	//Testbench
-	parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
-	parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
-
-`else
-
-	//FPGA
-	parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
-	parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
-
-`endif
-
-/***********************************************************/
 
 // UART wires
 
