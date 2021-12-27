@@ -1,12 +1,11 @@
 `timescale 1 ns / 1 ps
 module top2_tb();
 
-reg clk, reset, enable, button1_raw, button2_raw, button3_raw, mode_switch, rw_switch1,
-	 rw_switch2;
+reg clk, reset, enable, button1_raw, mode_switch;
 
 reg [11:0]switch_array;
 
-wire m1_busy,m2_busy, scaled_clk; 
+wire scaled_clk; 
 
 parameter CLK_PERIOD=20;
 parameter scale=10;
@@ -16,14 +15,8 @@ top2 DUT (
 	.rst(reset), 
 	.enable(enable),
 	.button1_raw(button1_raw),
-	.button2_raw(button2_raw),
-	.button3_raw(button3_raw),
 	.mode_switch(mode_switch),
-	.rw_switch1(rw_switch1),
-	.rw_switch2(rw_switch2),
 	.switch_array(switch_array),
-	.m1_busy(m1_busy),
-	.m2_busy(m2_busy),
 	.scaled_clk(scaled_clk));
 
 						
@@ -36,11 +29,7 @@ initial begin
 	reset <= 1;
 	enable <= 1;
 	button1_raw <= 1;
-	button2_raw <= 1;
-	button3_raw <= 1;
 	mode_switch <= 1;
-	rw_switch1 <= 0;
-	rw_switch2 <= 0;
 	switch_array <= 0;
 	
 	#(scale*CLK_PERIOD)

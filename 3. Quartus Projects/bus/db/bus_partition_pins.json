@@ -8,59 +8,59 @@
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[0]",
+					"name" : "display1_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[1]",
+					"name" : "display1_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[2]",
+					"name" : "display1_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[3]",
+					"name" : "display1_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[4]",
+					"name" : "display1_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[5]",
+					"name" : "display1_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "display7_pin[6]",
+					"name" : "display1_pin[6]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[0]",
+					"name" : "display2_pin[0]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[1]",
+					"name" : "display2_pin[1]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[2]",
+					"name" : "display2_pin[2]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[3]",
+					"name" : "display2_pin[3]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[4]",
+					"name" : "display2_pin[4]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[5]",
+					"name" : "display2_pin[5]",
 					"strict" : false
 				},
 				{
-					"name" : "display8_pin[6]",
+					"name" : "display2_pin[6]",
 					"strict" : false
 				},
 				{

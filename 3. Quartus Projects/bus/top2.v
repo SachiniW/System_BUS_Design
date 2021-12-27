@@ -11,28 +11,26 @@
  Revision : v1.0 
 */
 
+
+`define TESTBENCH
+
 module top2(
 	input clock,	
 	input rst,
 	input enable,
 	input button1_raw,
-	input button2_raw,
-	input button3_raw,
-	input [11:0]switch_array,
+	input [7:0]switch_array,
 	input mode_switch,
-	input rw_switch1,
-	input rw_switch2,
 	output scaled_clk,
-	output m1_busy,
-	output m2_busy,
+
+//	input  bi_uart_rx,
+//	input  bo_uart_rx,
+//	output bi_uart_tx,
+//	output bo_uart_tx,
+
+
 	output [6:0]display1_pin,
-	output [6:0]display2_pin,
-	output [6:0]display3_pin,
-	output [6:0]display4_pin,
-	output [6:0]display5_pin,
-	output [6:0]display6_pin,
-	output [6:0]display7_pin,
-	output [6:0]display8_pin
+	output [6:0]display2_pin
 	
 //	output LCD_ON,	// LCD Power ON/OFF
 //   output LCD_BLON,	// LCD Back Light ON/OFF
@@ -50,25 +48,30 @@ parameter BURST_LEN=12;
 /***********************************************************/
 //Change when switching between FPGA and testbench
 
-//FPGA
-parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
-parameter MAX_COUNT_CLK=500000;	//Clock slow enough to see values getting updated
-parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+`ifdef TESTBENCH
 
 //Testbench
-//parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
-//parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
-//parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
+parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
+parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
+parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
+
+`else
+
+//FPGA
+parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
+parameter MAX_COUNT_CLK=5000000;	//Clock slow enough to see values getting updated
+parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+
+`endif
 
 /***********************************************************/
 
 // UART wires
-wire i_uart_rx;
-wire i_uart_tx;
-wire o_uart_rx;
-wire o_uart_tx;
-assign i_uart_rx = o_uart_tx;
-assign o_uart_rx = i_uart_tx;
+
+wire  bi_uart_rx,  bo_uart_rx, bi_uart_tx, bo_uart_tx;
+
+assign bi_uart_rx = bo_uart_tx;
+assign bo_uart_rx = bi_uart_tx;
 	
 // Wires in interconnect
 wire m1_request; 
@@ -124,6 +127,9 @@ wire s3_slave_ready;
 wire s1_slave_split_en;
 wire s2_slave_split_en;
 wire s3_slave_split_en;
+wire s1_rx_burst_num;
+wire s2_rx_burst_num;
+wire s3_rx_burst_num;
 
 // master
 wire bus_busy;
@@ -160,14 +166,11 @@ wire [BURST_LEN:0]burst_num2;
 wire [3:0]config_state;//to LCD display
 
 // output port conversions
-wire reset, button1, button2, button3, clk_uart, clk;
+wire reset, button, clk_uart, clk;
 assign reset = ~rst;
 assign scaled_clk = clk;
 assign clk_uart = clock && enable;
-assign button1 = ~button1_raw;
-assign button2 = ~button2_raw;
-assign button3 = ~button3_raw;
-
+assign button = ~button1_raw;
 scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
 //LCD_in LCD(
@@ -221,8 +224,8 @@ bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 	
 	//UART	
 	
-   .u_rx_data(i_uart_rx),
-   .u_tx_data(i_uart_tx),
+   .u_rx_data(bi_uart_rx),
+   .u_tx_data(bi_uart_tx),
 	
 	//MASTER
 	
@@ -268,8 +271,8 @@ bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 	
 	//UART	
 	
-   .u_rx_data(o_uart_rx),
-   .u_tx_data(o_uart_tx),
+   .u_rx_data(bo_uart_rx),
+   .u_tx_data(bo_uart_tx),
 	
 //	//MASTER
 //	
@@ -304,19 +307,18 @@ bridge_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN),
 	.s_rx_address(s2_rx_address),
 	.s_rx_data(s2_rx_data),
 	.s_rx_burst(s2_rx_burst_num),
-	.s_split_en(s2_split_en),
+	.s_split_en(s2_slave_split_en),
 	.s_tx_data(s2_tx_data));
 
 increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) INCREMENT(
 	.clk(clk), 
 	.reset(reset),
-	.busy(m2_busy),
-	.display1_pin(display7_pin),
-	.display2_pin(display8_pin),
+	.display1_pin(display1_pin),
+	.display2_pin(display2_pin),
 	
-	.button(button1),
+	.button(button),
 	.mode_switch(mode_switch),
-	.sw_array_data(switch_array[7:0]),
+	.sw_array_data(switch_array),
 	
 	//MASTER
 	
@@ -351,7 +353,7 @@ increment_module #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LE
 	.s_rx_address(s1_rx_address),
 	.s_rx_data(s1_rx_data),
 	.s_rx_burst(s1_rx_burst_num),
-	.s_split_en(s1_split_en),
+	.s_split_en(s1_slave_split_en),
 	.s_tx_data(s1_tx_data));
 	
 Bus_interconnect BUS(

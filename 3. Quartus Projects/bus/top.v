@@ -11,6 +11,8 @@
  Revision : v1.0 
 */
 
+//`define TESTBENCH
+
 module top(
 	input clock,	
 	input rst,
@@ -50,15 +52,17 @@ parameter BURST_LEN=12;
 /***********************************************************/
 //Change when switching between FPGA and testbench
 
-//FPGA
-parameter CLKS_PER_BIT=2604;    //Baudrate= 19200, Input clock = 50MHz
-parameter MAX_COUNT_CLK=5000000;	//Clock slow enough to see values getting updated
-parameter MAX_COUNT_TIMEOUT=50000; // 1ms timeout with 50MHz input clock
+`ifdef TESTBENCH
 
 //Testbench
-//parameter CLKS_PER_BIT=20;  //Fast enough to reduce testbench time
-//parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
-//parameter MAX_COUNT_TIMEOUT=500; //Fast enough to reduce testbench time
+parameter MAX_COUNT_CLK=4;	//Fast enough to reduce testbench time
+
+`else
+
+//FPGA
+parameter MAX_COUNT_CLK=5000000;	//Clock slow enough to see values getting updated
+
+`endif
 
 /***********************************************************/
 	
@@ -116,6 +120,9 @@ wire s3_slave_ready;
 wire s1_slave_split_en;
 wire s2_slave_split_en;
 wire s3_slave_split_en;
+wire s1_rx_burst_num;
+wire s2_rx_burst_num;
+wire s3_rx_burst_num;
 
 // // slave
 // wire slave_tx_done;
