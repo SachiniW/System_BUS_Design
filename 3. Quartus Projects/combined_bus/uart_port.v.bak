@@ -1,0 +1,16 @@
+/* 
+ file name : uart_port.v
+
+ Description:
+	This file contains the uart port 
+	It encapsulated the uart_rx and uart_tx.
+	Sets the control signals of the bus
+	
+ Maintainers : Sanjula Thiranjaya <sthiranjaya@gmail.com>
+					Sachini Wickramasinghe <sswickramasinghe@gmail.com>
+					Kavish Ranawella <kavishranawella@gmail.com>
+					
+ Revision : v1.0 
+*/
+
+module uart_port #(parameter SLAVE_LEN=2, parameter ADDR_LEN=12, parameter DATA_LEN=8, parameter BURST_LEN=12)(
