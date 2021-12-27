@@ -68,12 +68,12 @@ assign rst1 = ~rst_sel1 || rst;
 assign rst2 = ~rst_sel2 || rst;
 assign rst3 = ~rst_sel3 || rst;
 
-wire display1_pin1;
-wire display2_pin1;
-wire display1_pin2;
-wire display2_pin2;
-wire display1_pin3;
-wire display2_pin3;
+wire [6:0]display1_pin1;
+wire [6:0]display2_pin1;
+wire [6:0]display1_pin2;
+wire [6:0]display2_pin2;
+wire [6:0]display1_pin3;
+wire [6:0]display2_pin3;
 
 assign display1_pin1 = display1_pin;
 assign display2_pin1 = display2_pin;

@@ -1,5 +1,5 @@
 Fitter report for bus
-Mon Dec 27 15:11:01 2021
+Mon Dec 27 15:38:37 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -69,15 +69,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Dec 27 15:11:01 2021       ;
+; Fitter Status                      ; Successful - Mon Dec 27 15:38:37 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; top2                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,412 / 114,480 ( 1 % )                     ;
-;     Total combinational functions  ; 1,362 / 114,480 ( 1 % )                     ;
+; Total logic elements               ; 1,416 / 114,480 ( 1 % )                     ;
+;     Total combinational functions  ; 1,369 / 114,480 ( 1 % )                     ;
 ;     Dedicated logic registers      ; 836 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 836                                         ;
 ; Total pins                         ; 28 / 529 ( 5 % )                            ;
@@ -156,14 +156,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.4%      ;
-;     Processor 3            ;   1.7%      ;
-;     Processor 4            ;   1.6%      ;
+;     Processor 2            ;   1.9%      ;
+;     Processor 3            ;   1.3%      ;
+;     Processor 4            ;   1.2%      ;
 +----------------------------+-------------+
 
 
@@ -246,8 +246,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 2268 ) ; 0.00 % ( 0 / 2268 )        ; 0.00 % ( 0 / 2268 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 2268 ) ; 0.00 % ( 0 / 2268 )        ; 0.00 % ( 0 / 2268 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 2275 ) ; 0.00 % ( 0 / 2275 )        ; 0.00 % ( 0 / 2275 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 2275 ) ; 0.00 % ( 0 / 2275 )        ; 0.00 % ( 0 / 2275 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -270,7 +270,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 2258 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 2265 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -286,19 +286,19 @@ The pin-out file can be found in D:/Academics/ADS/Project/Bus_project/System_BUS
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 1,412 / 114,480 ( 1 % ) ;
-;     -- Combinational with no register       ; 576                     ;
-;     -- Register only                        ; 50                      ;
-;     -- Combinational with a register        ; 786                     ;
+; Total logic elements                        ; 1,416 / 114,480 ( 1 % ) ;
+;     -- Combinational with no register       ; 580                     ;
+;     -- Register only                        ; 47                      ;
+;     -- Combinational with a register        ; 789                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 574                     ;
+;     -- 4 input functions                    ; 584                     ;
 ;     -- 3 input functions                    ; 121                     ;
-;     -- <=2 input functions                  ; 667                     ;
-;     -- Register only                        ; 50                      ;
+;     -- <=2 input functions                  ; 664                     ;
+;     -- Register only                        ; 47                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 801                     ;
+;     -- normal mode                          ; 808                     ;
 ;     -- arithmetic mode                      ; 561                     ;
 ;                                             ;                         ;
 ; Total registers*                            ; 836 / 117,053 ( < 1 % ) ;
@@ -324,11 +324,11 @@ The pin-out file can be found in D:/Academics/ADS/Project/Bus_project/System_BUS
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
 ; Average interconnect usage (total/H/V)      ; 0.3% / 0.3% / 0.3%      ;
-; Peak interconnect usage (total/H/V)         ; 4.5% / 5.3% / 3.3%      ;
+; Peak interconnect usage (total/H/V)         ; 4.8% / 4.8% / 5.2%      ;
 ; Maximum fan-out                             ; 767                     ;
 ; Highest non-global fan-out                  ; 767                     ;
-; Total fan-out                               ; 7742                    ;
-; Average fan-out                             ; 3.35                    ;
+; Total fan-out                               ; 7768                    ;
+; Average fan-out                             ; 3.36                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -341,19 +341,19 @@ The pin-out file can be found in D:/Academics/ADS/Project/Bus_project/System_BUS
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 1412 / 114480 ( 1 % )  ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 576                    ; 0                              ;
-;     -- Register only                        ; 50                     ; 0                              ;
-;     -- Combinational with a register        ; 786                    ; 0                              ;
+; Total logic elements                        ; 1416 / 114480 ( 1 % )  ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 580                    ; 0                              ;
+;     -- Register only                        ; 47                     ; 0                              ;
+;     -- Combinational with a register        ; 789                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 574                    ; 0                              ;
+;     -- 4 input functions                    ; 584                    ; 0                              ;
 ;     -- 3 input functions                    ; 121                    ; 0                              ;
-;     -- <=2 input functions                  ; 667                    ; 0                              ;
-;     -- Register only                        ; 50                     ; 0                              ;
+;     -- <=2 input functions                  ; 664                    ; 0                              ;
+;     -- Register only                        ; 47                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 801                    ; 0                              ;
+;     -- normal mode                          ; 808                    ; 0                              ;
 ;     -- arithmetic mode                      ; 561                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Total registers                             ; 836                    ; 0                              ;
@@ -376,8 +376,8 @@ The pin-out file can be found in D:/Academics/ADS/Project/Bus_project/System_BUS
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 7737                   ; 5                              ;
-;     -- Registered Connections               ; 2588                   ; 0                              ;
+;     -- Total Connections                    ; 7763                   ; 5                              ;
+;     -- Registered Connections               ; 2601                   ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 0                      ; 0                              ;
@@ -1315,36 +1315,36 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                 ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                      ; Entity Name      ; Library Name ;
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------+------------------+--------------+
-; |top2                                      ; 1412 (2)    ; 836 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 28   ; 0            ; 576 (2)      ; 50 (0)            ; 786 (0)          ; |top2                                                                                    ; top2             ; work         ;
-;    |Bus_interconnect:BUS|                  ; 60 (0)      ; 30 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (0)       ; 5 (0)             ; 25 (0)           ; |top2|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
-;       |Bus_Arbiter:Bus_Arbiter1|           ; 56 (56)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 5 (5)             ; 25 (25)          ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                      ; Bus_Arbiter      ; work         ;
-;       |Bus_mux:Bus_mux1|                   ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 1 (1)            ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
-;    |bridge_module:INPUT_BRIDGE|            ; 524 (0)     ; 323 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 201 (0)      ; 18 (0)            ; 305 (0)          ; |top2|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
-;       |bridge:BRIDGE|                      ; 116 (116)   ; 80 (80)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (35)      ; 8 (8)             ; 73 (73)          ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
-;       |master_port:MASTER_PORT|            ; 191 (0)     ; 92 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 98 (0)       ; 4 (0)             ; 89 (0)           ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;          |master_out_port:MASTER_OUT_PORT| ; 191 (191)   ; 92 (92)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 98 (98)      ; 4 (4)             ; 89 (89)          ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
-;       |uart_port:UART_PORT|                ; 219 (0)     ; 151 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 68 (0)       ; 6 (0)             ; 145 (0)          ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
-;          |uart_rx:UART_RX|                 ; 117 (117)   ; 79 (79)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 38 (38)      ; 1 (1)             ; 78 (78)          ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
-;          |uart_tx:UART_TX|                 ; 102 (102)   ; 72 (72)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 5 (5)             ; 67 (67)          ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
-;    |bridge_module:OUTPUT_BRIDGE|           ; 442 (0)     ; 285 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 157 (0)      ; 14 (0)            ; 271 (0)          ; |top2|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
-;       |bridge:BRIDGE|                      ; 130 (130)   ; 78 (78)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 51 (51)      ; 10 (10)           ; 69 (69)          ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
-;       |slave_port:SLAVE_PORT|              ; 91 (11)     ; 49 (5)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 42 (6)       ; 0 (0)             ; 49 (5)           ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT                                  ; slave_port       ; work         ;
-;          |slave_in_port:SLAVE_IN_PORT|     ; 68 (68)     ; 36 (36)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 36 (36)          ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT      ; slave_in_port    ; work         ;
-;          |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 8 (8)            ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT    ; slave_out_port   ; work         ;
-;       |uart_port:UART_PORT|                ; 222 (0)     ; 158 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 64 (0)       ; 4 (0)             ; 154 (0)          ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
-;          |uart_rx:UART_RX|                 ; 116 (116)   ; 79 (79)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 37 (37)      ; 0 (0)             ; 79 (79)          ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
-;          |uart_tx:UART_TX|                 ; 106 (106)   ; 79 (79)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 27 (27)      ; 4 (4)             ; 75 (75)          ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
-;    |increment_module:INCREMENT|            ; 341 (0)     ; 165 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 175 (0)      ; 12 (0)            ; 154 (0)          ; |top2|increment_module:INCREMENT                                                         ; increment_module ; work         ;
+; |top2                                      ; 1416 (1)    ; 836 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 28   ; 0            ; 580 (1)      ; 47 (0)            ; 789 (1)          ; |top2                                                                                    ; top2             ; work         ;
+;    |Bus_interconnect:BUS|                  ; 58 (0)      ; 30 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 2 (0)             ; 28 (0)           ; |top2|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
+;       |Bus_Arbiter:Bus_Arbiter1|           ; 53 (53)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 2 (2)             ; 28 (28)          ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                      ; Bus_Arbiter      ; work         ;
+;       |Bus_mux:Bus_mux1|                   ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
+;    |bridge_module:INPUT_BRIDGE|            ; 529 (0)     ; 323 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 206 (0)      ; 20 (0)            ; 303 (0)          ; |top2|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
+;       |bridge:BRIDGE|                      ; 114 (114)   ; 80 (80)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (34)      ; 9 (9)             ; 71 (71)          ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
+;       |master_port:MASTER_PORT|            ; 193 (0)     ; 92 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 101 (0)      ; 6 (0)             ; 86 (0)           ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;          |master_out_port:MASTER_OUT_PORT| ; 193 (193)   ; 92 (92)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 101 (101)    ; 6 (6)             ; 86 (86)          ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;       |uart_port:UART_PORT|                ; 222 (0)     ; 151 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 71 (0)       ; 5 (0)             ; 146 (0)          ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
+;          |uart_rx:UART_RX|                 ; 124 (124)   ; 79 (79)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 45 (45)      ; 4 (4)             ; 75 (75)          ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
+;          |uart_tx:UART_TX|                 ; 98 (98)     ; 72 (72)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 1 (1)             ; 71 (71)          ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
+;    |bridge_module:OUTPUT_BRIDGE|           ; 439 (0)     ; 285 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 153 (0)      ; 10 (0)            ; 276 (0)          ; |top2|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
+;       |bridge:BRIDGE|                      ; 119 (119)   ; 78 (78)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 41 (41)      ; 1 (1)             ; 77 (77)          ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
+;       |slave_port:SLAVE_PORT|              ; 89 (11)     ; 49 (5)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 39 (6)       ; 0 (0)             ; 50 (5)           ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT                                  ; slave_port       ; work         ;
+;          |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)     ; 36 (36)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 36 (36)          ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT      ; slave_in_port    ; work         ;
+;          |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 9 (9)            ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT    ; slave_out_port   ; work         ;
+;       |uart_port:UART_PORT|                ; 231 (0)     ; 158 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 73 (0)       ; 9 (0)             ; 149 (0)          ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
+;          |uart_rx:UART_RX|                 ; 124 (124)   ; 79 (79)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 45 (45)      ; 4 (4)             ; 75 (75)          ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
+;          |uart_tx:UART_TX|                 ; 107 (107)   ; 79 (79)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 5 (5)             ; 74 (74)          ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
+;    |increment_module:INCREMENT|            ; 346 (0)     ; 165 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 14 (0)            ; 151 (0)          ; |top2|increment_module:INCREMENT                                                         ; increment_module ; work         ;
 ;       |increment:inc1|                     ; 62 (48)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (22)      ; 8 (8)             ; 18 (18)          ; |top2|increment_module:INCREMENT|increment:inc1                                          ; increment        ; work         ;
 ;          |bin27:DISPLAY1|                  ; 7 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1                           ; bin27            ; work         ;
 ;             |decoder:display|              ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display           ; decoder          ; work         ;
 ;          |bin27:DISPLAY2|                  ; 7 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2                           ; bin27            ; work         ;
 ;             |decoder:display|              ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2|decoder:display           ; decoder          ; work         ;
-;       |master_port:MASTER_PORT|            ; 190 (0)     ; 90 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 99 (0)       ; 4 (0)             ; 87 (0)           ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;          |master_out_port:MASTER_OUT_PORT| ; 190 (190)   ; 90 (90)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 99 (99)      ; 4 (4)             ; 87 (87)          ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
-;       |slave_port:SLAVE_PORT|              ; 90 (11)     ; 49 (5)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 40 (6)       ; 0 (0)             ; 50 (5)           ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT                                   ; slave_port       ; work         ;
+;       |master_port:MASTER_PORT|            ; 195 (0)     ; 90 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (0)      ; 6 (0)             ; 84 (0)           ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;          |master_out_port:MASTER_OUT_PORT| ; 195 (195)   ; 90 (90)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (105)    ; 6 (6)             ; 84 (84)          ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;       |slave_port:SLAVE_PORT|              ; 89 (11)     ; 49 (5)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 40 (6)       ; 0 (0)             ; 49 (5)           ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT                                   ; slave_port       ; work         ;
 ;          |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)     ; 36 (36)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 36 (36)          ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT       ; slave_in_port    ; work         ;
-;          |slave_out_port:SLAVE_OUT_PORT|   ; 13 (13)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 9 (9)            ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT     ; slave_out_port   ; work         ;
+;          |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 8 (8)            ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT     ; slave_out_port   ; work         ;
 ;    |scaledclock:CLK_DIV|                   ; 44 (44)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 1 (1)             ; 32 (32)          ; |top2|scaledclock:CLK_DIV                                                                ; scaledclock      ; work         ;
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1371,12 +1371,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; display2_pin[5] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; display2_pin[6] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; clock           ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; enable          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; enable          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; switch_array[0] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; mode_switch     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; rst             ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; button1_raw     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; switch_array[3] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; button1_raw     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; switch_array[3] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; switch_array[2] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; switch_array[1] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; switch_array[4] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -1393,40 +1393,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 ; clock                                                                                                                    ;                   ;         ;
 ; enable                                                                                                                   ;                   ;         ;
-;      - scaledclock:CLK_DIV|clk                                                                                           ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[2]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[3]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[4]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[5]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[6]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[7]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[8]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[9]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[10]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[11]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[12]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[13]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[14]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[15]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[16]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[17]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[18]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[19]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[20]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[21]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[22]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[23]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[24]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[25]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[26]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[27]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[28]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[29]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[30]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[31]                                                                                     ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[1]                                                                                      ; 1                 ; 6       ;
-;      - scaledclock:CLK_DIV|count[0]                                                                                      ; 1                 ; 6       ;
-;      - clk_uart                                                                                                          ; 1                 ; 6       ;
+;      - scaledclock:CLK_DIV|clk                                                                                           ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[6]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[7]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[8]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[9]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[10]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[11]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[12]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[13]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[14]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[15]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[16]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[17]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[18]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[19]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[20]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[21]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[22]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[23]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[24]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[25]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[26]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[27]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[28]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[29]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[30]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[31]                                                                                     ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[5]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[4]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[3]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[2]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[1]                                                                                      ; 0                 ; 6       ;
+;      - scaledclock:CLK_DIV|count[0]                                                                                      ; 0                 ; 6       ;
+;      - clk_uart                                                                                                          ; 0                 ; 6       ;
 ; switch_array[0]                                                                                                          ;                   ;         ;
 ;      - increment_module:INCREMENT|increment:inc1|Selector7~0                                                             ; 0                 ; 6       ;
 ; mode_switch                                                                                                              ;                   ;         ;
@@ -1636,8 +1636,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[29]                                      ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[30]                                      ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[31]                                      ; 1                 ; 6       ;
-;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[2]                                                            ; 1                 ; 6       ;
-;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[3]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[4]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[5]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[6]                                                            ; 1                 ; 6       ;
@@ -1698,7 +1696,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[1]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[2]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[3]                                       ; 1                 ; 6       ;
-;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[1]                                                            ; 1                 ; 6       ;
+;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[3]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[0]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[1]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[2]                                       ; 1                 ; 6       ;
@@ -1763,7 +1761,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[29]                                                                ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[30]                                                                ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[31]                                                                ; 1                 ; 6       ;
-;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[0]                                                            ; 1                 ; 6       ;
+;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[2]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[0]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[1]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]                                       ; 1                 ; 6       ;
@@ -1799,6 +1797,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[1]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[0]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]                                      ; 1                 ; 6       ;
+;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[1]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[0]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[1]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[2]                                      ; 1                 ; 6       ;
@@ -1860,6 +1859,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[29]                                     ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[30]                                     ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[31]                                     ; 1                 ; 6       ;
+;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[0]                                                            ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[0]                                                                ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[1]                                                                ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[2]                                                                ; 1                 ; 6       ;
@@ -1892,8 +1892,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[29]                                                               ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[30]                                                               ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[31]                                                               ; 1                 ; 6       ;
-;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[2]                                                           ; 1                 ; 6       ;
-;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[3]                                                           ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[4]                                                           ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[5]                                                           ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[6]                                                           ; 1                 ; 6       ;
@@ -1922,7 +1920,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[29]                                                          ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[30]                                                          ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[31]                                                          ; 1                 ; 6       ;
-;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[1]                                                           ; 1                 ; 6       ;
+;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[3]                                                           ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[4]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[5]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[6]                                      ; 1                 ; 6       ;
@@ -1987,6 +1985,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[1]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[2]                                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[3]                                      ; 1                 ; 6       ;
+;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[2]                                                           ; 1                 ; 6       ;
+;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[1]                                                           ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[0]                                                           ; 1                 ; 6       ;
 ;      - increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101                      ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101                     ; 1                 ; 6       ;
@@ -2197,17 +2197,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_state.UART_ACK_OUT                                                    ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_state.UART_DATA_OUT                                                   ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|state.DATA_BITS                                   ; 1                 ; 6       ;
-;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                                         ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|state.IDLE                                        ; 1                 ; 6       ;
 ;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|state.START_BIT                                   ; 1                 ; 6       ;
+;      - bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                                         ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|tx_data                                            ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|temp_data[2]                                       ; 1                 ; 6       ;
 ;      - bridge_module:INPUT_BRIDGE|bridge:BRIDGE|u_data_out[2]                                                            ; 1                 ; 6       ;
 ; button1_raw                                                                                                              ;                   ;         ;
-;      - increment_module:INCREMENT|increment:inc1|output_data[4]~11                                                       ; 0                 ; 6       ;
-;      - increment_module:INCREMENT|increment:inc1|Selector8~3                                                             ; 0                 ; 6       ;
+;      - increment_module:INCREMENT|increment:inc1|output_data[4]~11                                                       ; 1                 ; 6       ;
+;      - increment_module:INCREMENT|increment:inc1|Selector8~3                                                             ; 1                 ; 6       ;
 ; switch_array[3]                                                                                                          ;                   ;         ;
-;      - increment_module:INCREMENT|increment:inc1|Selector4~0                                                             ; 1                 ; 6       ;
+;      - increment_module:INCREMENT|increment:inc1|Selector4~0                                                             ; 0                 ; 6       ;
 ; switch_array[2]                                                                                                          ;                   ;         ;
 ;      - increment_module:INCREMENT|increment:inc1|Selector5~0                                                             ; 1                 ; 6       ;
 ; switch_array[1]                                                                                                          ;                   ;         ;
@@ -2228,65 +2228,65 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                                   ; Location            ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m2_grant~0                                               ; LCCOMB_X81_Y35_N28  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|previous_slave_sel[0]~0                                  ; LCCOMB_X81_Y35_N30  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|rx_m1_slave[0]~4                                         ; LCCOMB_X80_Y35_N24  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_addr_state.addr1                                   ; FF_X80_Y35_N9       ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[1]~5                                           ; LCCOMB_X81_Y35_N12  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|Selector3~0                                                   ; LCCOMB_X88_Y37_N10  ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[25]~98                                                  ; LCCOMB_X88_Y37_N0   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[7]~0                                               ; LCCOMB_X74_Y37_N20  ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[6]~96                                              ; LCCOMB_X87_Y37_N2   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|u_state.UART_ACK_IN                                           ; FF_X87_Y37_N5       ; 39      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[11]~43       ; LCCOMB_X75_Y37_N10  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~53         ; LCCOMB_X74_Y38_N18  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~58         ; LCCOMB_X74_Y37_N22  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_APPROVAL ; FF_X77_Y37_N25      ; 41      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[1]~0      ; LCCOMB_X77_Y38_N30  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[25]~34                        ; LCCOMB_X89_Y36_N14  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[25]~35                        ; LCCOMB_X91_Y36_N0   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[20]~97                        ; LCCOMB_X91_Y36_N16  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[20]~98                        ; LCCOMB_X88_Y36_N30  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]~96                         ; LCCOMB_X110_Y37_N14 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]~97                         ; LCCOMB_X110_Y37_N4  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[4]~96                         ; LCCOMB_X110_Y37_N2  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[4]~97                         ; LCCOMB_X108_Y37_N30 ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|Selector5~0                                                  ; LCCOMB_X80_Y38_N20  ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[29]~99                                                 ; LCCOMB_X80_Y38_N2   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[5]~32                                             ; LCCOMB_X79_Y40_N10  ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[5]~99                                             ; LCCOMB_X80_Y38_N14  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_state.UART_DATA_OUT                                        ; FF_X79_Y38_N23      ; 34      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.1101          ; FF_X83_Y38_N25      ; 19      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[5]~38      ; LCCOMB_X84_Y38_N0   ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101          ; FF_X81_Y36_N21      ; 8       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[12]~34                       ; LCCOMB_X95_Y38_N30  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[12]~35                       ; LCCOMB_X97_Y38_N30  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[18]~97                       ; LCCOMB_X97_Y38_N14  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[18]~98                       ; LCCOMB_X94_Y38_N0   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|Selector1~0                            ; LCCOMB_X89_Y35_N20  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[28]~34                       ; LCCOMB_X91_Y32_N0   ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[28]~35                       ; LCCOMB_X95_Y32_N0   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[23]~96                       ; LCCOMB_X95_Y32_N22  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[23]~97                       ; LCCOMB_X89_Y35_N30  ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; clk_uart                                                                                               ; LCCOMB_X1_Y36_N14   ; 467     ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m2_grant~0                                               ; LCCOMB_X101_Y33_N16 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|previous_slave_sel[0]~0                                  ; LCCOMB_X102_Y33_N28 ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|rx_m1_slave[0]~4                                         ; LCCOMB_X102_Y33_N8  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_addr_state.addr1                                   ; FF_X102_Y33_N9      ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[1]~5                                           ; LCCOMB_X105_Y33_N30 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|Selector3~0                                                   ; LCCOMB_X98_Y31_N20  ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[25]~98                                                  ; LCCOMB_X98_Y31_N30  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[7]~0                                               ; LCCOMB_X100_Y33_N0  ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[6]~90                                              ; LCCOMB_X99_Y29_N14  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|u_state.UART_ACK_IN                                           ; FF_X99_Y29_N1       ; 40      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[11]~44       ; LCCOMB_X102_Y35_N22 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~61         ; LCCOMB_X101_Y34_N0  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~64         ; LCCOMB_X102_Y34_N2  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_APPROVAL ; FF_X101_Y33_N9      ; 41      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[1]~0      ; LCCOMB_X101_Y31_N16 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[25]~34                        ; LCCOMB_X109_Y30_N14 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[25]~35                        ; LCCOMB_X107_Y30_N30 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[20]~51                        ; LCCOMB_X107_Y30_N12 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[20]~52                        ; LCCOMB_X105_Y30_N2  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]~96                         ; LCCOMB_X108_Y37_N12 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]~97                         ; LCCOMB_X108_Y37_N6  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[4]~96                         ; LCCOMB_X108_Y37_N22 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[4]~97                         ; LCCOMB_X108_Y35_N24 ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|Selector5~0                                                  ; LCCOMB_X111_Y36_N10 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[29]~99                                                 ; LCCOMB_X106_Y36_N14 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[5]~32                                             ; LCCOMB_X106_Y35_N18 ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[5]~93                                             ; LCCOMB_X106_Y36_N28 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_state.UART_DATA_OUT                                        ; FF_X107_Y35_N19     ; 34      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.1101          ; FF_X105_Y37_N23     ; 19      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[5]~38      ; LCCOMB_X105_Y37_N0  ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101          ; FF_X106_Y38_N9      ; 8       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[12]~34                       ; LCCOMB_X110_Y34_N18 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[12]~35                       ; LCCOMB_X112_Y34_N28 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[18]~51                       ; LCCOMB_X112_Y34_N4  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[18]~52                       ; LCCOMB_X114_Y34_N0  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|Selector1~0                            ; LCCOMB_X111_Y39_N24 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[28]~34                       ; LCCOMB_X111_Y38_N0  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[28]~35                       ; LCCOMB_X111_Y38_N30 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[23]~96                       ; LCCOMB_X111_Y38_N16 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[23]~97                       ; LCCOMB_X109_Y39_N30 ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; clk_uart                                                                                               ; LCCOMB_X1_Y36_N14   ; 467     ; Clock                      ; yes    ; Global Clock         ; GCLK1            ; --                        ;
 ; clock                                                                                                  ; PIN_Y2              ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; enable                                                                                                 ; PIN_Y23             ; 34      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|increment:inc1|data_to_master[7]~0                                          ; LCCOMB_X97_Y35_N20  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|increment:inc1|delay_counter[2]~6                                           ; LCCOMB_X98_Y35_N24  ; 7       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|increment:inc1|delay_counter[2]~9                                           ; LCCOMB_X97_Y35_N6   ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|increment:inc1|inc_state.DISPLAY_AND_INCREMENT                              ; FF_X97_Y35_N29      ; 13      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|increment:inc1|output_data[4]~12                                            ; LCCOMB_X105_Y35_N2  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[0]~44        ; LCCOMB_X82_Y35_N20  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~55         ; LCCOMB_X86_Y33_N4   ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~58         ; LCCOMB_X88_Y35_N6   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_APPROVAL ; FF_X88_Y35_N9       ; 40      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[4]~0      ; LCCOMB_X97_Y35_N2   ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.1101           ; FF_X83_Y32_N23      ; 19      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[7]~38       ; LCCOMB_X83_Y32_N6   ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101           ; FF_X84_Y36_N25      ; 8       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|increment:inc1|data_to_master[7]~0                                          ; LCCOMB_X108_Y34_N20 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|increment:inc1|delay_counter[2]~6                                           ; LCCOMB_X108_Y33_N0  ; 7       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|increment:inc1|delay_counter[2]~9                                           ; LCCOMB_X108_Y34_N8  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|increment:inc1|inc_state.DISPLAY_AND_INCREMENT                              ; FF_X108_Y34_N31     ; 13      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|increment:inc1|output_data[4]~12                                            ; LCCOMB_X108_Y34_N24 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[0]~43        ; LCCOMB_X96_Y36_N26  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~52         ; LCCOMB_X97_Y35_N22  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]~55         ; LCCOMB_X99_Y36_N30  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_APPROVAL ; FF_X99_Y36_N23      ; 40      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[4]~0      ; LCCOMB_X100_Y36_N24 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.1101           ; FF_X109_Y36_N9      ; 19      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[7]~38       ; LCCOMB_X109_Y36_N14 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101           ; FF_X110_Y36_N9      ; 7       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
 ; rst                                                                                                    ; PIN_R24             ; 767     ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; scaledclock:CLK_DIV|LessThan0~9                                                                        ; LCCOMB_X99_Y36_N14  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; scaledclock:CLK_DIV|clk                                                                                ; FF_X99_Y36_N23      ; 336     ; Clock                      ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; scaledclock:CLK_DIV|LessThan0~11                                                                       ; LCCOMB_X50_Y38_N30  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; scaledclock:CLK_DIV|clk                                                                                ; FF_X50_Y38_N1       ; 336     ; Clock                      ; yes    ; Global Clock         ; GCLK14           ; --                        ;
 +--------------------------------------------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -2295,9 +2295,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                    ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk_uart                ; LCCOMB_X1_Y36_N14 ; 467     ; 38                                   ; Global Clock         ; GCLK2            ; --                        ;
+; clk_uart                ; LCCOMB_X1_Y36_N14 ; 467     ; 119                                  ; Global Clock         ; GCLK1            ; --                        ;
 ; clock                   ; PIN_Y2            ; 33      ; 2                                    ; Global Clock         ; GCLK4            ; --                        ;
-; scaledclock:CLK_DIV|clk ; FF_X99_Y36_N23    ; 336     ; 9                                    ; Global Clock         ; GCLK8            ; --                        ;
+; scaledclock:CLK_DIV|clk ; FF_X50_Y38_N1     ; 336     ; 10                                   ; Global Clock         ; GCLK14           ; --                        ;
 +-------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -2315,118 +2315,118 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+---------------------------+
 ; Routing Resource Type ; Usage                     ;
 +-----------------------+---------------------------+
-; Block interconnects   ; 1,524 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 34 / 10,120 ( < 1 % )     ;
-; C4 interconnects      ; 534 / 209,544 ( < 1 % )   ;
-; Direct links          ; 449 / 342,891 ( < 1 % )   ;
+; Block interconnects   ; 1,541 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 26 / 10,120 ( < 1 % )     ;
+; C4 interconnects      ; 593 / 209,544 ( < 1 % )   ;
+; Direct links          ; 435 / 342,891 ( < 1 % )   ;
 ; Global clocks         ; 3 / 20 ( 15 % )           ;
-; Local interconnects   ; 1,131 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 56 / 9,963 ( < 1 % )      ;
-; R4 interconnects      ; 866 / 289,782 ( < 1 % )   ;
+; Local interconnects   ; 1,127 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 29 / 9,963 ( < 1 % )      ;
+; R4 interconnects      ; 723 / 289,782 ( < 1 % )   ;
 +-----------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 11.67) ; Number of LABs  (Total = 121) ;
+; Number of Logic Elements  (Average = 11.70) ; Number of LABs  (Total = 121) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 9                             ;
-; 2                                           ; 7                             ;
-; 3                                           ; 4                             ;
-; 4                                           ; 3                             ;
-; 5                                           ; 3                             ;
-; 6                                           ; 2                             ;
+; 1                                           ; 2                             ;
+; 2                                           ; 11                            ;
+; 3                                           ; 6                             ;
+; 4                                           ; 0                             ;
+; 5                                           ; 7                             ;
+; 6                                           ; 6                             ;
 ; 7                                           ; 1                             ;
-; 8                                           ; 5                             ;
-; 9                                           ; 1                             ;
-; 10                                          ; 2                             ;
-; 11                                          ; 5                             ;
-; 12                                          ; 6                             ;
-; 13                                          ; 4                             ;
-; 14                                          ; 7                             ;
-; 15                                          ; 7                             ;
-; 16                                          ; 55                            ;
+; 8                                           ; 2                             ;
+; 9                                           ; 5                             ;
+; 10                                          ; 6                             ;
+; 11                                          ; 0                             ;
+; 12                                          ; 2                             ;
+; 13                                          ; 3                             ;
+; 14                                          ; 3                             ;
+; 15                                          ; 2                             ;
+; 16                                          ; 65                            ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 2.23) ; Number of LABs  (Total = 121) ;
+; LAB-wide Signals  (Average = 2.28) ; Number of LABs  (Total = 121) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 81                            ;
-; 1 Clock                            ; 92                            ;
-; 1 Clock enable                     ; 51                            ;
-; 1 Sync. clear                      ; 40                            ;
+; 1 Async. clear                     ; 84                            ;
+; 1 Clock                            ; 90                            ;
+; 1 Clock enable                     ; 50                            ;
+; 1 Sync. clear                      ; 43                            ;
 ; 1 Sync. load                       ; 1                             ;
-; 2 Clock enables                    ; 3                             ;
-; 2 Clocks                           ; 2                             ;
+; 2 Clock enables                    ; 2                             ;
+; 2 Clocks                           ; 6                             ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 18.52) ; Number of LABs  (Total = 121) ;
+; Number of Signals Sourced  (Average = 18.51) ; Number of LABs  (Total = 121) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 4                             ;
-; 2                                            ; 10                            ;
-; 3                                            ; 5                             ;
+; 1                                            ; 2                             ;
+; 2                                            ; 6                             ;
+; 3                                            ; 9                             ;
 ; 4                                            ; 2                             ;
-; 5                                            ; 3                             ;
-; 6                                            ; 3                             ;
-; 7                                            ; 2                             ;
+; 5                                            ; 5                             ;
+; 6                                            ; 1                             ;
+; 7                                            ; 3                             ;
 ; 8                                            ; 1                             ;
-; 9                                            ; 0                             ;
-; 10                                           ; 0                             ;
+; 9                                            ; 3                             ;
+; 10                                           ; 2                             ;
 ; 11                                           ; 1                             ;
 ; 12                                           ; 5                             ;
-; 13                                           ; 3                             ;
-; 14                                           ; 3                             ;
-; 15                                           ; 3                             ;
-; 16                                           ; 3                             ;
-; 17                                           ; 7                             ;
-; 18                                           ; 3                             ;
-; 19                                           ; 6                             ;
-; 20                                           ; 6                             ;
-; 21                                           ; 3                             ;
+; 13                                           ; 4                             ;
+; 14                                           ; 1                             ;
+; 15                                           ; 1                             ;
+; 16                                           ; 1                             ;
+; 17                                           ; 8                             ;
+; 18                                           ; 1                             ;
+; 19                                           ; 7                             ;
+; 20                                           ; 7                             ;
+; 21                                           ; 1                             ;
 ; 22                                           ; 4                             ;
-; 23                                           ; 1                             ;
-; 24                                           ; 3                             ;
+; 23                                           ; 2                             ;
+; 24                                           ; 4                             ;
 ; 25                                           ; 1                             ;
-; 26                                           ; 1                             ;
-; 27                                           ; 2                             ;
-; 28                                           ; 3                             ;
+; 26                                           ; 2                             ;
+; 27                                           ; 0                             ;
+; 28                                           ; 4                             ;
 ; 29                                           ; 0                             ;
-; 30                                           ; 2                             ;
-; 31                                           ; 0                             ;
-; 32                                           ; 31                            ;
+; 30                                           ; 1                             ;
+; 31                                           ; 5                             ;
+; 32                                           ; 27                            ;
 +----------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 8.34) ; Number of LABs  (Total = 121) ;
+; Number of Signals Sourced Out  (Average = 8.32) ; Number of LABs  (Total = 121) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 16                            ;
+; 1                                               ; 10                            ;
 ; 2                                               ; 14                            ;
-; 3                                               ; 3                             ;
-; 4                                               ; 8                             ;
-; 5                                               ; 5                             ;
-; 6                                               ; 12                            ;
-; 7                                               ; 6                             ;
-; 8                                               ; 5                             ;
-; 9                                               ; 3                             ;
-; 10                                              ; 3                             ;
-; 11                                              ; 5                             ;
-; 12                                              ; 2                             ;
-; 13                                              ; 2                             ;
-; 14                                              ; 3                             ;
-; 15                                              ; 3                             ;
+; 3                                               ; 13                            ;
+; 4                                               ; 4                             ;
+; 5                                               ; 6                             ;
+; 6                                               ; 5                             ;
+; 7                                               ; 9                             ;
+; 8                                               ; 6                             ;
+; 9                                               ; 7                             ;
+; 10                                              ; 6                             ;
+; 11                                              ; 3                             ;
+; 12                                              ; 4                             ;
+; 13                                              ; 0                             ;
+; 14                                              ; 2                             ;
+; 15                                              ; 1                             ;
 ; 16                                              ; 31                            ;
 +-------------------------------------------------+-------------------------------+
 
@@ -2434,46 +2434,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 12.38) ; Number of LABs  (Total = 121) ;
+; Number of Distinct Inputs  (Average = 12.59) ; Number of LABs  (Total = 121) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 1                             ;
-; 3                                            ; 6                             ;
-; 4                                            ; 19                            ;
-; 5                                            ; 19                            ;
-; 6                                            ; 4                             ;
-; 7                                            ; 4                             ;
-; 8                                            ; 9                             ;
+; 2                                            ; 2                             ;
+; 3                                            ; 1                             ;
+; 4                                            ; 16                            ;
+; 5                                            ; 23                            ;
+; 6                                            ; 5                             ;
+; 7                                            ; 5                             ;
+; 8                                            ; 10                            ;
 ; 9                                            ; 3                             ;
-; 10                                           ; 3                             ;
-; 11                                           ; 5                             ;
-; 12                                           ; 1                             ;
+; 10                                           ; 4                             ;
+; 11                                           ; 3                             ;
+; 12                                           ; 4                             ;
 ; 13                                           ; 1                             ;
-; 14                                           ; 4                             ;
-; 15                                           ; 1                             ;
-; 16                                           ; 4                             ;
-; 17                                           ; 5                             ;
+; 14                                           ; 3                             ;
+; 15                                           ; 0                             ;
+; 16                                           ; 6                             ;
+; 17                                           ; 3                             ;
 ; 18                                           ; 2                             ;
-; 19                                           ; 5                             ;
-; 20                                           ; 2                             ;
-; 21                                           ; 4                             ;
-; 22                                           ; 0                             ;
-; 23                                           ; 3                             ;
+; 19                                           ; 1                             ;
+; 20                                           ; 6                             ;
+; 21                                           ; 2                             ;
+; 22                                           ; 2                             ;
+; 23                                           ; 2                             ;
 ; 24                                           ; 1                             ;
-; 25                                           ; 1                             ;
-; 26                                           ; 0                             ;
+; 25                                           ; 0                             ;
+; 26                                           ; 2                             ;
 ; 27                                           ; 0                             ;
-; 28                                           ; 0                             ;
-; 29                                           ; 2                             ;
-; 30                                           ; 1                             ;
+; 28                                           ; 4                             ;
+; 29                                           ; 1                             ;
+; 30                                           ; 0                             ;
 ; 31                                           ; 0                             ;
-; 32                                           ; 6                             ;
-; 33                                           ; 2                             ;
-; 34                                           ; 0                             ;
-; 35                                           ; 2                             ;
-; 36                                           ; 0                             ;
-; 37                                           ; 1                             ;
+; 32                                           ; 1                             ;
+; 33                                           ; 0                             ;
+; 34                                           ; 2                             ;
+; 35                                           ; 1                             ;
+; 36                                           ; 2                             ;
+; 37                                           ; 3                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -2605,58 +2605,126 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary              ;
-+-----------------+----------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
-+-----------------+----------------------+-------------------+
-; clock           ; clock                ; 3.5               ;
-+-----------------+----------------------+-------------------+
++-----------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                               ;
++-------------------------------+-------------------------+-------------------+
+; Source Clock(s)               ; Destination Clock(s)    ; Delay Added in ns ;
++-------------------------------+-------------------------+-------------------+
+; clock                         ; scaledclock:CLK_DIV|clk ; 9.4               ;
+; clock,scaledclock:CLK_DIV|clk ; scaledclock:CLK_DIV|clk ; 3.9               ;
+; clock                         ; clock                   ; 3.5               ;
++-------------------------------+-------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                              ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------+-------------------+
-; Source Register                                                                            ; Destination Register                                      ; Delay Added in ns ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------+-------------------+
-; scaledclock:CLK_DIV|clk                                                                    ; scaledclock:CLK_DIV|clk                                   ; 3.492             ;
-; scaledclock:CLK_DIV|count[29]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[28]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[27]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[26]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[25]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[24]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[23]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[22]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[21]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[20]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[19]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[18]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[17]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[16]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[15]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[14]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[13]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[12]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[11]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[10]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[9]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[8]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[7]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[6]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[5]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[4]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[3]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[2]                                                               ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[30]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; scaledclock:CLK_DIV|count[31]                                                              ; scaledclock:CLK_DIV|clk                                   ; 1.746             ;
-; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|rx_done      ; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_state.U_WAIT  ; 0.221             ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_done ; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_instruction[1] ; 0.179             ;
-; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|write_en_in1 ; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_state.U_WAIT  ; 0.162             ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------+-------------------+
-Note: This table only shows the top 34 path(s) that have the largest delay added for hold.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                                                   ; Destination Register                                                                                     ; Delay Added in ns ;
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-------------------+
+; scaledclock:CLK_DIV|clk                                                                                           ; scaledclock:CLK_DIV|clk                                                                                  ; 3.510             ;
+; scaledclock:CLK_DIV|count[29]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[28]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[27]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[26]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[25]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[24]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[23]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[30]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[21]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[20]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[19]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[18]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[17]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[16]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[15]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[14]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[13]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[12]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[11]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[10]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[9]                                                                                      ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[8]                                                                                      ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[7]                                                                                      ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[6]                                                                                      ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[22]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; scaledclock:CLK_DIV|count[31]                                                                                     ; scaledclock:CLK_DIV|clk                                                                                  ; 1.713             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[7]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[7]          ; 1.172             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[2]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[2]          ; 1.172             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[1]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[1]          ; 1.172             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[5]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[5]          ; 1.005             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[6]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[6]          ; 1.005             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[4]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[4]          ; 1.005             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[0]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[0]          ; 1.005             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_data_out[3]                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[3]          ; 1.005             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.00000                    ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_SELECT ; 0.951             ;
+; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_instruction[1]                                                         ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_SELECT ; 0.951             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_ARBITOR             ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_SELECT ; 0.951             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.FINISH                   ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.00000           ; 0.548             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_APPROVAL            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_slave_select       ; 0.433             ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m1_grant                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_slave_select       ; 0.433             ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_busy                                                            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_slave_select       ; 0.433             ;
+; Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|arbiter_busy                                                        ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|approval_request      ; 0.295             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[30]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[29]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[28]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[27]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[26]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[25]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[24]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[23]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[22]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[21]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[20]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[19]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[18]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[17]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[16]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[15]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[14]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[13]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[12]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[11]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[10]                     ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[9]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[8]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[7]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[6]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[5]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[4]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[3]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[2]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[1]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[0]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_DATA            ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_ADDR_DATA       ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_BURST_ADDR_DATA ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_BURST_ADDR      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_SELECT          ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[28]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[27]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[26]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[25]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[24]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[23]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[22]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[21]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[20]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[19]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[18]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[17]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[16]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[15]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[14]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[13]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[12]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[11]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[10]                      ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[9]                       ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[8]                       ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[5]              ; 0.196             ;
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2774,17 +2842,17 @@ Warning (15705): Ignored locations or region assignments to the following nodes
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X81_Y24 to location X91_Y36
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X104_Y24 to location X115_Y36
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 1.44 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.16 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2793,10 +2861,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 71 warnings
-    Info: Peak virtual memory: 5711 megabytes
-    Info: Processing ended: Mon Dec 27 15:11:02 2021
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 5714 megabytes
+    Info: Processing ended: Mon Dec 27 15:38:38 2021
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +----------------------------+

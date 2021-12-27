@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/output_files/") File("bus.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/output_files/") File("bus.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

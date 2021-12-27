@@ -16,6 +16,174 @@
 					"strict" : false
 				},
 				{
+					"name" : "display3_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display3_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display4_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display5_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display6_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display7_pin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display8_pin[6]",
+					"strict" : false
+				},
+				{
 					"name" : "clock",
 					"strict" : false
 				},
@@ -29,6 +197,78 @@
 				},
 				{
 					"name" : "enable3",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mode_switch3",
+					"strict" : false
+				},
+				{
+					"name" : "rst_sel3",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "button_raw3",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switch_array[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mode_switch2",
+					"strict" : false
+				},
+				{
+					"name" : "rst_sel2",
+					"strict" : false
+				},
+				{
+					"name" : "button_raw2",
+					"strict" : false
+				},
+				{
+					"name" : "mode_switch1",
+					"strict" : false
+				},
+				{
+					"name" : "rst_sel1",
+					"strict" : false
+				},
+				{
+					"name" : "button_raw1",
 					"strict" : false
 				}
 			]

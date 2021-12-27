@@ -12,7 +12,7 @@
 */
 
 
-`define TESTBENCH
+//`define TESTBENCH
 
 module top2(
 	input clock,	
