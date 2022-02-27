@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus
-Mon Dec 27 20:55:53 2021
+Mon Dec 27 21:39:36 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -258,7 +258,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 27 20:55:53 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 27 21:39:36 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; tops_combined                               ;
@@ -5006,7 +5006,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:12     ;
+; Top            ; 00:00:22     ;
 +----------------+--------------+
 
 
@@ -5016,7 +5016,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 27 20:55:24 2021
+    Info: Processing started: Mon Dec 27 21:38:53 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -5131,10 +5131,10 @@ Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(49): Parame
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(50): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 50
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(51): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 51
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(52): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 52
-Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(60): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 60
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(61): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 61
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(62): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 62
 Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(63): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 63
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(64): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 64
 Warning (10222): Verilog HDL Parameter Declaration warning at master_in_port.v(34): Parameter Declaration in module "master_in_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/master_in_port.v Line: 34
 Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(47): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/master_out_port.v Line: 47
 Warning (10222): Verilog HDL Parameter Declaration warning at master_out_port.v(49): Parameter Declaration in module "master_out_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/master_out_port.v Line: 49
@@ -5153,8 +5153,8 @@ Warning (10034): Output port "display1_pin" at tops_combined.v(54) has no driver
 Warning (10034): Output port "display2_pin" at tops_combined.v(55) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 55
 Info (12128): Elaborating entity "scaledclock" for hierarchy "scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 99
 Info (12128): Elaborating entity "top2" for hierarchy "top2:top_module_1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 157
-Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_1|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 176
-Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 251
+Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_1|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 177
+Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 252
 Info (12128): Elaborating entity "uart_port" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge_module.v Line: 107
 Info (12128): Elaborating entity "uart_tx" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 40
 Info (12128): Elaborating entity "uart_rx" for hierarchy "top2:top_module_1|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 47
@@ -5195,24 +5195,24 @@ Warning (10230): Verilog HDL assignment warning at bridge.v(108): truncated valu
 Warning (10230): Verilog HDL assignment warning at bridge.v(113): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 113
 Warning (10230): Verilog HDL assignment warning at bridge.v(124): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 124
 Warning (10034): Output port "s_datain" at bridge.v(40) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 40
-Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_1|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 359
+Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_1|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 360
 Info (12128): Elaborating entity "increment" for hierarchy "top2:top_module_1|increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment_module.v Line: 164
 Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 86
 Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 91
 Info (12128): Elaborating entity "bin27" for hierarchy "top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 47
 Info (12128): Elaborating entity "decoder" for hierarchy "top2:top_module_1|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bin27.v Line: 50
-Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "top2:top_module_1|Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 444
+Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "top2:top_module_1|Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 445
 Info (12128): Elaborating entity "Bus_Arbiter" for hierarchy "top2:top_module_1|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/Bus_interconnect.v Line: 119
 Warning (10036): Verilog HDL or VHDL warning at Bus_Arbiter.v(46): object "split_enabled" assigned a value but never read File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/Bus_Arbiter.v Line: 46
 Info (12128): Elaborating entity "Bus_mux" for hierarchy "top2:top_module_1|Bus_interconnect:BUS|Bus_mux:Bus_mux1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/Bus_interconnect.v Line: 190
 Info (12128): Elaborating entity "top2" for hierarchy "top2:top_module_2" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 177
-Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_2|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 176
-Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_2|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 359
+Info (12128): Elaborating entity "scaledclock" for hierarchy "top2:top_module_2|scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 177
+Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_2|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 360
 Info (12128): Elaborating entity "increment" for hierarchy "top2:top_module_2|increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment_module.v Line: 164
 Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 86
 Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 91
 Info (12128): Elaborating entity "top2" for hierarchy "top2:top_module_3" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/tops_combined.v Line: 197
-Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 251
+Info (12128): Elaborating entity "bridge_module" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 252
 Info (12128): Elaborating entity "uart_port" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge_module.v Line: 107
 Info (12128): Elaborating entity "uart_tx" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 40
 Info (12128): Elaborating entity "uart_rx" for hierarchy "top2:top_module_3|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/uart_port.v Line: 47
@@ -5224,7 +5224,7 @@ Warning (10230): Verilog HDL assignment warning at bridge.v(108): truncated valu
 Warning (10230): Verilog HDL assignment warning at bridge.v(113): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 113
 Warning (10230): Verilog HDL assignment warning at bridge.v(124): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 124
 Warning (10034): Output port "s_datain" at bridge.v(40) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/bridge.v Line: 40
-Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_3|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 359
+Info (12128): Elaborating entity "increment_module" for hierarchy "top2:top_module_3|increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/top2.v Line: 360
 Info (12128): Elaborating entity "increment" for hierarchy "top2:top_module_3|increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment_module.v Line: 164
 Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 86
 Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/combined_bus/src/Team1/increment.v Line: 91
@@ -5256,10 +5256,10 @@ Info (21057): Implemented 4427 device resources after synthesis - the final reso
     Info (21059): Implemented 59 output pins
     Info (21061): Implemented 4346 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 90 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Mon Dec 27 20:55:53 2021
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Peak virtual memory: 4840 megabytes
+    Info: Processing ended: Mon Dec 27 21:39:36 2021
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:07
 
 
 +------------------------------------------+
