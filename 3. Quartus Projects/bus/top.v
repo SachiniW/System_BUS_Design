@@ -11,7 +11,7 @@
  Revision : v1.0 
 */
 
-//`define TESTBENCH
+`define TESTBENCH
 
 module top(
 	input clock,	
@@ -34,14 +34,19 @@ module top(
 	output [6:0]display5_pin,
 	output [6:0]display6_pin,
 	output [6:0]display7_pin,
-	output [6:0]display8_pin,
+	output [6:0]display8_pin
 	
-	output LCD_ON,	// LCD Power ON/OFF
-   output LCD_BLON,	// LCD Back Light ON/OFF
-   output LCD_RW,	// LCD Read/Write Select, 0 = Write, 1 = Read
-   output LCD_EN,	// LCD Enable
-   output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
-   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
+	`ifndef TESTBENCH
+		
+		,
+		output LCD_ON,	// LCD Power ON/OFF
+		output LCD_BLON,	// LCD Back Light ON/OFF
+		output LCD_RW,	// LCD Read/Write Select, 0 = Write, 1 = Read
+		output LCD_EN,	// LCD Enable
+		output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
+		inout [7:0] LCD_DATA	// LCD Data bus 8 bits
+	
+	`endif
 	);
 
 parameter SLAVE_LEN=2; 
@@ -175,23 +180,28 @@ assign button3 = ~button3_raw;
 
 scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
 
-LCD_in LCD(
-	.clock(clock),
-	.rst(rst),
-	.m1_start(m1_busy&((~arbiter_busy)||(~bus_busy))),
-	.m2_start(m2_busy&((~arbiter_busy)||(~bus_busy))),
-	.address1(address1),
-	.data1(data1),
-	.address2(address2),
-	.data2(data2),
-	.config_state(config_state),
-	.mode_switch(mode_switch),
-   .LCD_ON(LCD_ON),	
-   .LCD_BLON(LCD_BLON),	
-   .LCD_RW(LCD_RW),	
-   .LCD_EN(LCD_EN),	
-   .LCD_RS(LCD_RS),	
-   .LCD_DATA(LCD_DATA));
+`ifndef TESTBENCH
+		
+	LCD_in LCD(
+		.clock(clock),
+		.rst(rst),
+		.m1_start(m1_busy&((~arbiter_busy)||(~bus_busy))),
+		.m2_start(m2_busy&((~arbiter_busy)||(~bus_busy))),
+		.address1(address1),
+		.data1(data1),
+		.address2(address2),
+		.data2(data2),
+		.config_state(config_state),
+		.mode_switch(mode_switch),
+		.LCD_ON(LCD_ON),	
+		.LCD_BLON(LCD_BLON),	
+		.LCD_RW(LCD_RW),	
+		.LCD_EN(LCD_EN),	
+		.LCD_RS(LCD_RS),	
+		.LCD_DATA(LCD_DATA));
+	
+`endif
+
 	
 command_processor #(.SLAVE_LEN(SLAVE_LEN), .ADDR_LEN(ADDR_LEN), .DATA_LEN(DATA_LEN), .BURST_LEN(BURST_LEN)) COMMAND(
 	.clk(clk), 

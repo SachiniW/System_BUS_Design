@@ -797,7 +797,7 @@ begin
 				tx_done <= 0;
 				burst_count <= burst_count;
 				temp_data <= temp_data;
-				tx_burst_num <= burst_num[count];
+				tx_burst_num <= burst_num[count2];
 				count2 <= count2+1;
 			end
 		end
