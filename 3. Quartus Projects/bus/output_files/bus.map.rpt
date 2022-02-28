@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus
-Mon Dec 27 15:38:18 2021
+Mon Feb 28 13:47:25 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -117,16 +117,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 27 15:38:18 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 28 13:47:25 2022       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; bus                                         ;
 ; Top-level Entity Name              ; top2                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,424                                       ;
-;     Total combinational functions  ; 1,369                                       ;
+; Total logic elements               ; 1,415                                       ;
+;     Total combinational functions  ; 1,360                                       ;
 ;     Dedicated logic registers      ; 836                                         ;
 ; Total registers                    ; 836                                         ;
-; Total pins                         ; 28                                          ;
+; Total pins                         ; 32                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -258,6 +258,7 @@ refer to the applicable agreement for further details.
 ; scaledclock.v                    ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v      ;         ;
 ; bin27.v                          ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v            ;         ;
 ; slave_port.v                     ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v       ;         ;
+; top.v                            ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v              ;         ;
 ; uart_port.v                      ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v        ;         ;
 ; bridge.v                         ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v           ;         ;
 ; bridge_module.v                  ; yes             ; User Verilog HDL File  ; D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v    ;         ;
@@ -271,30 +272,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,424     ;
+; Estimated Total logic elements              ; 1,415     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1369      ;
+; Total combinational functions               ; 1360      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 584       ;
-;     -- 3 input functions                    ; 121       ;
-;     -- <=2 input functions                  ; 664       ;
+;     -- 4 input functions                    ; 576       ;
+;     -- 3 input functions                    ; 119       ;
+;     -- <=2 input functions                  ; 665       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 808       ;
+;     -- normal mode                          ; 799       ;
 ;     -- arithmetic mode                      ; 561       ;
 ;                                             ;           ;
 ; Total registers                             ; 836       ;
 ;     -- Dedicated logic registers            ; 836       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 28        ;
+; I/O pins                                    ; 32        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
 ; Maximum fan-out                             ; 767       ;
-; Total fan-out                               ; 7725      ;
-; Average fan-out                             ; 3.42      ;
+; Total fan-out                               ; 7695      ;
+; Average fan-out                             ; 3.40      ;
 +---------------------------------------------+-----------+
 
 
@@ -303,33 +304,33 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Entity Name      ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+------------------+--------------+
-; |top2                                      ; 1369 (2)            ; 836 (0)                   ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |top2                                                                                    ; top2             ; work         ;
+; |top2                                      ; 1360 (2)            ; 836 (0)                   ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |top2                                                                                    ; top2             ; work         ;
 ;    |Bus_interconnect:BUS|                  ; 55 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|Bus_interconnect:BUS                                                               ; Bus_interconnect ; work         ;
 ;       |Bus_Arbiter:Bus_Arbiter1|           ; 50 (50)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1                                      ; Bus_Arbiter      ; work         ;
 ;       |Bus_mux:Bus_mux1|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1                                              ; Bus_mux          ; work         ;
-;    |bridge_module:INPUT_BRIDGE|            ; 508 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
-;       |bridge:BRIDGE|                      ; 105 (105)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
-;       |master_port:MASTER_PORT|            ; 186 (0)             ; 92 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;          |master_out_port:MASTER_OUT_PORT| ; 186 (186)           ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
-;       |uart_port:UART_PORT|                ; 217 (0)             ; 151 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
-;          |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
+;    |bridge_module:INPUT_BRIDGE|            ; 503 (0)             ; 323 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE                                                         ; bridge_module    ; work         ;
+;       |bridge:BRIDGE|                      ; 106 (106)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE                                           ; bridge           ; work         ;
+;       |master_port:MASTER_PORT|            ; 184 (0)             ; 92 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;          |master_out_port:MASTER_OUT_PORT| ; 184 (184)           ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;       |uart_port:UART_PORT|                ; 213 (0)             ; 151 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT                                     ; uart_port        ; work         ;
+;          |uart_rx:UART_RX|                 ; 116 (116)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                     ; uart_rx          ; work         ;
 ;          |uart_tx:UART_TX|                 ; 97 (97)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                     ; uart_tx          ; work         ;
-;    |bridge_module:OUTPUT_BRIDGE|           ; 429 (0)             ; 285 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
-;       |bridge:BRIDGE|                      ; 118 (118)           ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
+;    |bridge_module:OUTPUT_BRIDGE|           ; 427 (0)             ; 285 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE                                                        ; bridge_module    ; work         ;
+;       |bridge:BRIDGE|                      ; 120 (120)           ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE                                          ; bridge           ; work         ;
 ;       |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT                                  ; slave_port       ; work         ;
 ;          |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT      ; slave_in_port    ; work         ;
 ;          |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT    ; slave_out_port   ; work         ;
-;       |uart_port:UART_PORT|                ; 222 (0)             ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
-;          |uart_rx:UART_RX|                 ; 120 (120)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
+;       |uart_port:UART_PORT|                ; 218 (0)             ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT                                    ; uart_port        ; work         ;
+;          |uart_rx:UART_RX|                 ; 116 (116)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX                    ; uart_rx          ; work         ;
 ;          |uart_tx:UART_TX|                 ; 102 (102)           ; 79 (79)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX                    ; uart_tx          ; work         ;
-;    |increment_module:INCREMENT|            ; 332 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT                                                         ; increment_module ; work         ;
+;    |increment_module:INCREMENT|            ; 330 (0)             ; 165 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT                                                         ; increment_module ; work         ;
 ;       |increment:inc1|                     ; 54 (40)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|increment:inc1                                          ; increment        ; work         ;
 ;          |bin27:DISPLAY1|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1                           ; bin27            ; work         ;
 ;             |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display           ; decoder          ; work         ;
 ;          |bin27:DISPLAY2|                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2                           ; bin27            ; work         ;
 ;             |decoder:display|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|increment:inc1|bin27:DISPLAY2|decoder:display           ; decoder          ; work         ;
-;       |master_port:MASTER_PORT|            ; 189 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
-;          |master_out_port:MASTER_OUT_PORT| ; 189 (189)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
+;       |master_port:MASTER_PORT|            ; 187 (0)             ; 90 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT                                 ; master_port      ; work         ;
+;          |master_out_port:MASTER_OUT_PORT| ; 187 (187)           ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT ; master_out_port  ; work         ;
 ;       |slave_port:SLAVE_PORT|              ; 89 (11)             ; 49 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT                                   ; slave_port       ; work         ;
 ;          |slave_in_port:SLAVE_IN_PORT|     ; 66 (66)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT       ; slave_in_port    ; work         ;
 ;          |slave_out_port:SLAVE_OUT_PORT|   ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT     ; slave_out_port   ; work         ;
@@ -1018,20 +1019,7 @@ Encoding Type:  One-Hot
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[0],                          ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[0],                                                          ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|read_en_in1,                           ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[0],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[1],                                                         ;
 ;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|read_en_in1,                          ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[2],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[3],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[4],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[5],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[6],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[7],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[8],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[9],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[10],                                                        ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[11],                                                        ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[12],                                                        ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[1],                                                          ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[2],                                                          ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[3],                                                          ;
@@ -1044,19 +1032,14 @@ Encoding Type:  One-Hot
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[10],                                                         ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[11],                                                         ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst[12],                                                         ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|state.BURST_END,                                                  ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|state.BURST_END,                                                   ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst_bit_counter[2],                                              ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst_bit_counter[3],                                              ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst_bit_counter[4],                                              ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[2],                                             ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[3],                                             ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[4],                                             ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.READ_BURST_WAIT_HANDSHAKE,  ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.READ_BURST_WAIT_HANDSHAKE, ;
 ;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_WAIT_HANDSHAKE,        ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_WAIT_HANDSHAKE,       ;
-;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_INC_BURST,             ;
-;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_INC_BURST             ;
+;                                                                                                                   ;                           ; increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_INC_BURST              ;
 ; bridge_module:INPUT_BRIDGE|bridge:BRIDGE|m_instruction[0]                                                         ; Stuck at GND              ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[31],                         ;
 ;                                                                                                                   ; due to stuck port data_in ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[30],                         ;
 ;                                                                                                                   ;                           ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[29],                         ;
@@ -1108,6 +1091,23 @@ Encoding Type:  One-Hot
 ;                                                                                                                   ;                           ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[2],                       ;
 ;                                                                                                                   ;                           ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[1],                       ;
 ;                                                                                                                   ;                           ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[0]                        ;
+; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_BURST_FIRST_BIT ; Stuck at GND              ; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_burst_num,                    ;
+;                                                                                                                   ; due to stuck port data_in ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[0],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[1],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[2],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[3],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[4],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[5],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[6],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[7],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[8],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[9],                                                         ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[10],                                                        ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[11],                                                        ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst[12],                                                        ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|state.BURST_END,                                                  ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_WAIT_HANDSHAKE,       ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_INC_BURST             ;
 ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst[0]                                                         ; Stuck at GND              ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[4],                                              ;
 ;                                                                                                                   ; due to stuck port data_in ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[3],                                              ;
 ;                                                                                                                   ;                           ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[2],                                              ;
@@ -1169,6 +1169,10 @@ Encoding Type:  One-Hot
 ;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_ADDR_DATA,       ;
 ;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_BURST_ADDR,      ;
 ;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_HANDSHAKE_BURST      ;
+; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_state~6                                                   ; Lost Fanouts              ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[2],                                             ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[3],                                             ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[4],                                             ;
+;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_state.BURST_BIT_RECIEVE                                     ;
 ; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|m_burst_num[11]                                                         ; Stuck at GND              ; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|m_instruction[1],                                                         ;
 ;                                                                                                                   ; due to stuck port data_in ; bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_done,                        ;
 ;                                                                                                                   ;                           ; bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|m_state                                                                   ;
@@ -1184,15 +1188,12 @@ Encoding Type:  One-Hot
 ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle                            ; Lost Fanouts              ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[3]                        ;
 ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.1101                      ; Lost Fanouts              ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_state.DATA_BURST_GAP              ;
 ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst_state~6                                                    ; Lost Fanouts              ; increment_module:INCREMENT|slave_port:SLAVE_PORT|burst_state.BURST_BIT_RECIEVE                                      ;
-; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_state~6                                                   ; Lost Fanouts              ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|burst_state.BURST_BIT_RECIEVE                                     ;
 ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_state~6                                                    ; Lost Fanouts              ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_state.BURST_BIT_RECIEVE                                      ;
 ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|state~3                                                          ; Lost Fanouts              ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|state.SPLIT                                                        ;
 ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state~6                         ; Lost Fanouts              ; bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_state.ADDR_RECIEVE                ;
 ; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.FIRST_BIT_BURST          ; Stuck at GND              ; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_HANDSHAKE_BURST       ;
 ;                                                                                                                   ; due to stuck port data_in ;                                                                                                                     ;
 ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.FIRST_BIT_BURST          ; Stuck at GND              ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.WAIT_HANDSHAKE_BURST       ;
-;                                                                                                                   ; due to stuck port data_in ;                                                                                                                     ;
-; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state.TRANSMIT_BURST_FIRST_BIT ; Stuck at GND              ; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|tx_burst_num                     ;
 ;                                                                                                                   ; due to stuck port data_in ;                                                                                                                     ;
 ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|state.WAIT_HANDSHAKE             ; Stuck at GND              ; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|master_ready                       ;
 ;                                                                                                                   ; due to stuck port data_in ;                                                                                                                     ;
@@ -1230,10 +1231,10 @@ Encoding Type:  One-Hot
 ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_idle         ; 7       ;
 ; bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_idle         ; 4       ;
 ; increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready ; 7       ;
-; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready ; 2       ;
 ; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_2                        ; 14      ;
-; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                        ; 1       ;
 ; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_2                       ; 14      ;
+; bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|master_ready ; 2       ;
+; bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                        ; 1       ;
 ; bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|rx_data_1                       ; 1       ;
 ; Total number of inverted registers = 10                                                         ;         ;
 +-------------------------------------------------------------------------------------------------+---------+
@@ -1244,82 +1245,78 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[4] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_data_out[6]                                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[1] ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[0]                           ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[21]     ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|increment:inc1|delay_counter[2]                                      ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[25]                                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|u_data_out[0]                                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|temp_data[6] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|burst_bit_counter[1]                           ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[0]      ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|increment:inc1|delay_counter[4]                                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE|count[13]                                              ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_counter[1]  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_counter[3] ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[29]      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|increment:inc1|output_data[4]                                        ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[29]                                             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_out_port:SLAVE_OUT_PORT|data_counter[1] ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[0]       ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|increment:inc1|output_data[3]                                        ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|count[30]                                             ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[2]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[1]   ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|data_counter[0]   ;
 ; 6:1                ; 12 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[11]  ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[12]                   ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[28]                   ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[25]                    ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[2]                     ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[5]       ;
-; 7:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[7]   ;
-; 7:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[5]  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[23]                   ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[4]                     ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[6]                                          ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[1]    ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[18]                   ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[20]                    ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[5]                                         ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[10]                   ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[11]                   ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|bit_count[14]                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|bit_count[29]                    ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_in_port:MASTER_IN_PORT|count[10]      ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[11]  ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|burst_counter[11] ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[22]                   ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX|clk_count[15]                    ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|bridge:BRIDGE|time_count[20]                                         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[3]    ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[14]                   ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX|clk_count[17]                    ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|bridge:BRIDGE|time_count[10]                                        ;
 ; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[2]    ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[0]   ;
-; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[27]  ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 2 LEs                ; 14 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|write_en     ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[0]    ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[11]   ;
-; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_grant[0]                                      ;
-; 15:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[1]                                      ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|slave_port:SLAVE_PORT|slave_in_port:SLAVE_IN_PORT|addr_counter[2]   ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[10]  ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 2 LEs                ; 14 LEs                 ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|read_en      ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[5]    ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count2[1]    ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|bus_grant[1]                                      ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|slave_sel[0]                                      ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; Yes        ; |top2|Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1|m2_grant                                          ;
-; 26:1               ; 32 bits   ; 544 LEs       ; 32 LEs               ; 512 LEs                ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[17]   ;
-; 30:1               ; 32 bits   ; 640 LEs       ; 32 LEs               ; 608 LEs                ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]     ;
-; 30:1               ; 32 bits   ; 640 LEs       ; 32 LEs               ; 608 LEs                ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[2]     ;
+; 26:1               ; 32 bits   ; 544 LEs       ; 32 LEs               ; 512 LEs                ; Yes        ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[25]   ;
+; 30:1               ; 32 bits   ; 640 LEs       ; 32 LEs               ; 608 LEs                ; Yes        ; |top2|increment_module:INCREMENT|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[3]     ;
+; 30:1               ; 32 bits   ; 640 LEs       ; 32 LEs               ; 608 LEs                ; Yes        ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|count[0]     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m2_slave_ready                                            ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_rx_burst_num                                           ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_rx_burst_num                                           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s2_master_ready                                           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1|s1_read_en                                                ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state       ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top2|Bus_interconnect:BUS|Bus_mux:Bus_mux1|m1_slave_valid                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state        ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top2|bridge_module:OUTPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state       ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top2|bridge_module:INPUT_BRIDGE|master_port:MASTER_PORT|master_out_port:MASTER_OUT_PORT|state        ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top2|increment_module:INCREMENT|increment:inc1|Selector8                                             ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top2|increment_module:INCREMENT|increment:inc1|Selector10                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |top2 ;
-+-------------------+---------+----------------------------------------+
-; Parameter Name    ; Value   ; Type                                   ;
-+-------------------+---------+----------------------------------------+
-; SLAVE_LEN         ; 2       ; Signed Integer                         ;
-; ADDR_LEN          ; 12      ; Signed Integer                         ;
-; DATA_LEN          ; 8       ; Signed Integer                         ;
-; BURST_LEN         ; 12      ; Signed Integer                         ;
-; CLKS_PER_BIT      ; 2604    ; Signed Integer                         ;
-; MAX_COUNT_CLK     ; 5000000 ; Signed Integer                         ;
-; MAX_COUNT_TIMEOUT ; 50000   ; Signed Integer                         ;
-+-------------------+---------+----------------------------------------+
++-----------------+----------+-----------------------------------------+
+; Parameter Name  ; Value    ; Type                                    ;
++-----------------+----------+-----------------------------------------+
+; BAUDRATE        ; 19200    ; Signed Integer                          ;
+; CLOCK_FREQUENCY ; 50000000 ; Signed Integer                          ;
+; CLOCK_DIVIDE    ; 1        ; Signed Integer                          ;
++-----------------+----------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: scaledclock:CLK_DIV ;
-+----------------+---------+---------------------------------------+
-; Parameter Name ; Value   ; Type                                  ;
-+----------------+---------+---------------------------------------+
-; maxcount       ; 5000000 ; Signed Integer                        ;
-+----------------+---------+---------------------------------------+
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; maxcount       ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1332,8 +1329,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                 ;
 ; DATA_LEN       ; 8     ; Signed Integer                                 ;
 ; BURST_LEN      ; 12    ; Signed Integer                                 ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                 ;
-; MAX_COUNT      ; 50000 ; Signed Integer                                 ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                 ;
+; MAX_COUNT      ; 500   ; Signed Integer                                 ;
 +----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1344,7 +1341,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                               ;
 +----------------+-------+--------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                     ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                     ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                     ;
 +----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1355,7 +1352,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                               ;
 +----------------+-------+------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                     ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                                     ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                                     ;
 +----------------+-------+------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1366,7 +1363,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                               ;
 +----------------+-------+------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                     ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                                     ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                                     ;
 +----------------+-------+------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1461,8 +1458,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                               ;
 ; DATA_LEN       ; 8     ; Signed Integer                                               ;
 ; BURST_LEN      ; 12    ; Signed Integer                                               ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                               ;
-; MAX_COUNT      ; 50000 ; Signed Integer                                               ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                               ;
+; MAX_COUNT      ; 500   ; Signed Integer                                               ;
 +----------------+-------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1476,8 +1473,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                  ;
 ; DATA_LEN       ; 8     ; Signed Integer                                  ;
 ; BURST_LEN      ; 12    ; Signed Integer                                  ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                  ;
-; MAX_COUNT      ; 50000 ; Signed Integer                                  ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                  ;
+; MAX_COUNT      ; 500   ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1488,7 +1485,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                ;
 +----------------+-------+---------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                      ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                      ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                      ;
 +----------------+-------+---------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1499,7 +1496,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                ;
 +----------------+-------+-------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                      ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                                      ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                                      ;
 +----------------+-------+-------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1510,7 +1507,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                                ;
 +----------------+-------+-------------------------------------------------------------------------------------+
 ; DATA_LEN       ; 8     ; Signed Integer                                                                      ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                                      ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                                      ;
 +----------------+-------+-------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1605,8 +1602,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                                ;
 ; DATA_LEN       ; 8     ; Signed Integer                                                ;
 ; BURST_LEN      ; 12    ; Signed Integer                                                ;
-; CLKS_PER_BIT   ; 2604  ; Signed Integer                                                ;
-; MAX_COUNT      ; 50000 ; Signed Integer                                                ;
+; CLKS_PER_BIT   ; 20    ; Signed Integer                                                ;
+; MAX_COUNT      ; 500   ; Signed Integer                                                ;
 +----------------+-------+---------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1620,6 +1617,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_LEN       ; 12    ; Signed Integer                                 ;
 ; DATA_LEN       ; 8     ; Signed Integer                                 ;
 ; BURST_LEN      ; 12    ; Signed Integer                                 ;
+; DELAY_COUNT    ; 20    ; Signed Integer                                 ;
 +----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1707,14 +1705,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: increment_module:INCREMENT|increment:inc1 ;
-+-----------------------+-------+--------------------------------------------------------+
-; Parameter Name        ; Value ; Type                                                   ;
-+-----------------------+-------+--------------------------------------------------------+
-; INC_IDLE              ; 00    ; Unsigned Binary                                        ;
-; DISPLAY_AND_INCREMENT ; 01    ; Unsigned Binary                                        ;
-; DATA_SEND             ; 10    ; Unsigned Binary                                        ;
-; delay_count           ; 20    ; Signed Integer                                         ;
-+-----------------------+-------+--------------------------------------------------------+
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; DELAY_COUNT    ; 20    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1851,7 +1846,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 28                          ;
+; boundary_port         ; 32                          ;
 ; cycloneiii_ff         ; 836                         ;
 ;     CLR               ; 145                         ;
 ;     CLR SLD           ; 2                           ;
@@ -1862,18 +1857,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 32                          ;
 ;     SCLR              ; 1                           ;
 ;     plain             ; 26                          ;
-; cycloneiii_lcell_comb ; 1371                        ;
+; cycloneiii_lcell_comb ; 1362                        ;
 ;     arith             ; 561                         ;
 ;         2 data inputs ; 559                         ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 810                         ;
+;     normal            ; 801                         ;
 ;         1 data inputs ; 25                          ;
-;         2 data inputs ; 82                          ;
-;         3 data inputs ; 119                         ;
-;         4 data inputs ; 584                         ;
+;         2 data inputs ; 83                          ;
+;         3 data inputs ; 117                         ;
+;         4 data inputs ; 576                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.17                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.09                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1882,7 +1877,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1892,7 +1887,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 27 15:38:02 2021
+    Info: Processing started: Mon Feb 28 13:47:01 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus -c bus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1987,7 +1982,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file bridge.
 Info (12021): Found 1 design units, including 1 entities, in source file bridge_module.v
     Info (12023): Found entity 1: bridge_module File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file top2.v
-    Info (12023): Found entity 1: top2 File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 17
+    Info (12023): Found entity 1: top2 File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file increment_module.v
     Info (12023): Found entity 1: increment_module File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment_module.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file top2_tb.v
@@ -1996,6 +1991,9 @@ Warning (10236): Verilog HDL Implicit Net warning at Bus_interconnect_tb.v(65): 
 Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(32): created implicit net for "s1_split_enabled" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 32
 Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(33): created implicit net for "s2_split_enabled" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 33
 Warning (10236): Verilog HDL Implicit Net warning at Bus_Arbiter_tb.v(34): created implicit net for "s3_split_enabled" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter_tb.v Line: 34
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(36): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v Line: 36
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(37): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v Line: 37
+Warning (10222): Verilog HDL Parameter Declaration warning at increment.v(38): Parameter Declaration in module "increment" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v Line: 38
 Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(22): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_tx.v Line: 22
 Warning (10222): Verilog HDL Parameter Declaration warning at uart_rx.v(19): Parameter Declaration in module "uart_rx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_rx.v Line: 19
 Warning (10222): Verilog HDL Parameter Declaration warning at master_in_port.v(34): Parameter Declaration in module "master_in_port" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v Line: 34
@@ -2007,9 +2005,17 @@ Warning (10222): Verilog HDL Parameter Declaration warning at command_processor.
 Warning (10222): Verilog HDL Parameter Declaration warning at command_processor.v(72): Parameter Declaration in module "command_processor" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v Line: 72
 Warning (10222): Verilog HDL Parameter Declaration warning at bridge.v(52): Parameter Declaration in module "bridge" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v Line: 52
 Warning (10222): Verilog HDL Parameter Declaration warning at bridge.v(55): Parameter Declaration in module "bridge" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v Line: 55
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(51): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 51
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(52): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 52
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(53): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 53
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(54): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 54
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(58): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 58
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(59): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 59
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(60): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 60
+Warning (10222): Verilog HDL Parameter Declaration warning at top2.v(61): Parameter Declaration in module "top2" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 61
 Info (12127): Elaborating entity "top2" for the top level hierarchy
-Info (12128): Elaborating entity "scaledclock" for hierarchy "scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 174
-Info (12128): Elaborating entity "bridge_module" for hierarchy "bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 249
+Info (12128): Elaborating entity "scaledclock" for hierarchy "scaledclock:CLK_DIV" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 179
+Info (12128): Elaborating entity "bridge_module" for hierarchy "bridge_module:INPUT_BRIDGE" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 254
 Info (12128): Elaborating entity "uart_port" for hierarchy "bridge_module:INPUT_BRIDGE|uart_port:UART_PORT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v Line: 107
 Info (12128): Elaborating entity "uart_tx" for hierarchy "bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_tx:UART_TX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v Line: 40
 Info (12128): Elaborating entity "uart_rx" for hierarchy "bridge_module:INPUT_BRIDGE|uart_port:UART_PORT|uart_rx:UART_RX" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v Line: 47
@@ -2050,13 +2056,13 @@ Warning (10230): Verilog HDL assignment warning at bridge.v(108): truncated valu
 Warning (10230): Verilog HDL assignment warning at bridge.v(113): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v Line: 113
 Warning (10230): Verilog HDL assignment warning at bridge.v(124): truncated value with size 32 to match size of target (1) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v Line: 124
 Warning (10034): Output port "s_datain" at bridge.v(40) has no driver File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v Line: 40
-Info (12128): Elaborating entity "increment_module" for hierarchy "increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 357
+Info (12128): Elaborating entity "increment_module" for hierarchy "increment_module:INCREMENT" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 362
 Info (12128): Elaborating entity "increment" for hierarchy "increment_module:INCREMENT|increment:inc1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment_module.v Line: 164
 Warning (10230): Verilog HDL assignment warning at increment.v(86): truncated value with size 32 to match size of target (8) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v Line: 86
 Warning (10230): Verilog HDL assignment warning at increment.v(91): truncated value with size 32 to match size of target (6) File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v Line: 91
 Info (12128): Elaborating entity "bin27" for hierarchy "increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v Line: 47
 Info (12128): Elaborating entity "decoder" for hierarchy "increment_module:INCREMENT|increment:inc1|bin27:DISPLAY1|decoder:display" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v Line: 50
-Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 442
+Info (12128): Elaborating entity "Bus_interconnect" for hierarchy "Bus_interconnect:BUS" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v Line: 447
 Info (12128): Elaborating entity "Bus_Arbiter" for hierarchy "Bus_interconnect:BUS|Bus_Arbiter:Bus_Arbiter1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 119
 Warning (10036): Verilog HDL or VHDL warning at Bus_Arbiter.v(46): object "split_enabled" assigned a value but never read File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v Line: 46
 Info (12128): Elaborating entity "Bus_mux" for hierarchy "Bus_interconnect:BUS|Bus_mux:Bus_mux1" File: D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v Line: 190
@@ -2068,15 +2074,15 @@ Info (17049): 416 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/output_files/bus.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1462 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 1434 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
-    Info: Peak virtual memory: 4785 megabytes
-    Info: Processing ended: Mon Dec 27 15:38:18 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:29
+Info (21057): Implemented 1457 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 1425 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Mon Feb 28 13:47:25 2022
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:45
 
 
 +------------------------------------------+

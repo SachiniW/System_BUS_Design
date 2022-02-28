@@ -15,7 +15,9 @@
 //`define TESTBENCH
 `define COMBINED
 
-module top2	#(parameter BAUDRATE=19200, parameter CLOCK_FREQUENCY=50000000, parameter CLOCK_DIVIDE=5000000)(
+//5000000
+
+module top2	#(parameter BAUDRATE=19200, parameter CLOCK_FREQUENCY=50000000, parameter CLOCK_DIVIDE=1)(
 	
 	input clock,	
 	input rst,

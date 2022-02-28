@@ -79,7 +79,7 @@ initial begin
 	// Test with burst
 
 	mode_switch <= 0;
-	switch_array <= 7;	
+	switch_array <= 129;	
 	button3_raw <= 0;
 	#(1*scale*CLK_PERIOD)  // Button press (0 to 1)
 	button3_raw <= 1;
@@ -152,13 +152,22 @@ initial begin
 	button1_raw <= 0;
 	#(1*scale*CLK_PERIOD)  // Write master 1
 	button1_raw <= 1;
-	#(3*scale*CLK_PERIOD)  // Wait 3 cycles
-	rw_switch2 <= 0;
-	button2_raw <= 0;
-	#(1*scale*CLK_PERIOD)  // Write master 2
-	button2_raw <= 1;
 	
-	#(500*scale*CLK_PERIOD)  // Wait till finish
+	
+	#(1500*scale*CLK_PERIOD)  // Wait till finish
+	mode_switch <= 1;
+	rw_switch1 <= 1;
+	button1_raw <= 0;
+	#(1*scale*CLK_PERIOD)  // Write master 1
+	button1_raw <= 1;
+	
+//	#(3*scale*CLK_PERIOD)  // Wait 3 cycles
+//	rw_switch2 <= 0;
+//	button2_raw <= 0;
+//	#(1*scale*CLK_PERIOD)  // Write master 2
+//	button2_raw <= 1;
+	
+	#(1500*scale*CLK_PERIOD)  // Wait till finish
 
 	
 	#30

@@ -8,6 +8,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "bi_uart_tx",
+					"strict" : false
+				},
+				{
+					"name" : "bo_uart_tx",
+					"strict" : false
+				},
+				{
 					"name" : "display1_pin[0]",
 					"strict" : false
 				},
@@ -72,15 +80,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
 					"name" : "switch_array[0]",
 					"strict" : false
 				},
 				{
 					"name" : "mode_switch",
-					"strict" : false
-				},
-				{
-					"name" : "rst",
 					"strict" : false
 				},
 				{
@@ -113,6 +121,14 @@
 				},
 				{
 					"name" : "switch_array[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bi_uart_rx",
+					"strict" : false
+				},
+				{
+					"name" : "bo_uart_rx",
 					"strict" : false
 				}
 			]

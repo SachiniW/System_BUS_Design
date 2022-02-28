@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/simulation/modelsim
 vbin27
-Z1 !s110 1640598547
+Z1 !s110 1645957328
 !i10b 1
 !s100 S0B6X=h`3l;]YZZm`fSO[1
 Ih]<1`diZSYz6efZB@>T3m0
@@ -23,59 +23,38 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1640598547.000000
+Z7 !s108 1645957328.000000
 Z8 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bin27.v|
 !i113 1
 Z10 o-vlog01compat -work work
 Z11 !s92 -vlog01compat -work work {+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus}
 Z12 tCvgOpt 0
-vbridge
+vBRAM
 R1
 !i10b 1
-!s100 fMQ]]Ld3j?E@DD<=?bY:E0
-I_EZaW9j2B7FnCzLlGz4R>1
+!s100 Ro@TgCK8B;ZV@PzdSbdH>0
+IHH3^Q5R_YW1WD6^9]S_5R3
 R2
 R0
-w1640116815
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v
-Z13 L0 14
+w1629536463
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v
+Z13 L0 40
 R6
 r1
 !s85 0
 31
 R7
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge.v|
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/BRAM.v|
 !i113 1
 R10
 R11
 R12
-vbridge_module
-R1
-!i10b 1
-!s100 EOj4]hV8aW^OWPEA1?8;O1
-IAbfmQ80j;z`eIXD5?H<_52
-R2
-R0
-w1630785874
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v
-R13
-R6
-r1
-!s85 0
-31
-R7
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/bridge_module.v|
-!i113 1
-R10
-R11
-R12
+n@b@r@a@m
 vBus_Arbiter
-Z14 !s110 1640598546
+Z14 !s110 1645957327
 !i10b 1
 !s100 OJ3legmW3:ama0Hd2Ohab2
 Ie:8]>@18kmn`<Kmm`HVd>2
@@ -84,12 +63,12 @@ R0
 Z15 w1630987098
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v
-R13
+Z16 L0 14
 R6
 r1
 !s85 0
 31
-Z16 !s108 1640598546.000000
+Z17 !s108 1645957327.000000
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_Arbiter.v|
 !i113 1
@@ -107,12 +86,12 @@ R0
 w1630496764
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v
-R13
+R16
 R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_interconnect.v|
 !i113 1
@@ -130,12 +109,12 @@ R0
 w1630496768
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v
-R13
+R16
 R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/Bus_mux.v|
 !i113 1
@@ -143,6 +122,50 @@ R10
 R11
 R12
 n@bus_mux
+vbutton_event1
+R1
+!i10b 1
+!s100 BB2NJeBHQ]QQ?zIab_FFK1
+I9gH]Q36<m_BRHDV>3bA;V3
+R2
+R0
+w1630773173
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v
+R16
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/button_event1.v|
+!i113 1
+R10
+R11
+R12
+vcommand_processor
+!s110 1645957329
+!i10b 1
+!s100 RM^lXVoB`LJDkRgkY:Ho_0
+IVY9aB3f[miN:oTo[3Ve=[2
+R2
+R0
+w1640112937
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v
+R16
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/command_processor.v|
+!i113 1
+R10
+R11
+R12
 vdecoder
 R1
 !i10b 1
@@ -165,46 +188,93 @@ R9
 R10
 R11
 R12
-vincrement
-R14
+vLCD_Display
+Z18 !s110 1645957326
 !i10b 1
-!s100 QhQAMC[j0FFo5S758Z?3c2
-If9:g03EFNEn[bMeA:OMjz2
+!s100 kka8==Mf9CXPJ47Z>UIz@0
+IFRZ13]I5He=zLdVW8gag03
 R2
 R0
-w1631019523
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v
+Z19 w1630406002
+Z20 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v
+Z21 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v
 R13
 R6
 r1
 !s85 0
 31
-R16
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment.v|
+Z22 !s108 1645957326.000000
+Z23 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v|
+Z24 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_Display.v|
 !i113 1
 R10
 R11
 R12
-vincrement_module
-R1
+n@l@c@d_@display
+vLCD_display_string
+R18
 !i10b 1
-!s100 <k`fE<E`fS?FROdn49U2M1
-IZh5G[`ASAJ@gbBVPa3OF62
+!s100 YgY^l9UQX9E3GbbzA@b=71
+IJVg:jdzSleKWOPZf<67OF3
 R2
 R0
-w1640587903
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment_module.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment_module.v
-R13
+R19
+R20
+R21
+L0 367
+R6
+r1
+!s85 0
+31
+R22
+R23
+R24
+!i113 1
+R10
+R11
+R12
+n@l@c@d_display_string
+vLCD_in
+R1
+!i10b 1
+!s100 _G9GDQC>T@5ajOLV_:zK;2
+IKk0oz_Re0cY8_9Enjc]f62
+R2
+R0
+w1640116810
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v
+L0 13
 R6
 r1
 !s85 0
 31
 R7
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment_module.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/increment_module.v|
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/LCD_in.v|
+!i113 1
+R10
+R11
+R12
+n@l@c@d_in
+vlcdlab3
+R18
+!i10b 1
+!s100 Z:ag4F@Tb9i<k:>z[cEFA0
+I>`Nh0NhONa5I6:?J027HI0
+R2
+R0
+Z25 w1630244731
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v
+L0 1
+R6
+r1
+!s85 0
+31
+R22
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/lcdlab3.v|
 !i113 1
 R10
 R11
@@ -219,26 +289,48 @@ R0
 w1630484010
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v
-Z17 L0 16
+Z26 L0 16
 R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_in_port.v|
 !i113 1
 R10
 R11
 R12
-vmaster_out_port
+vmaster_module
 R14
 !i10b 1
-!s100 4f6?f5c^boWXDYeQ]KVaa0
-I@`hShA01V10fh95S_a1[53
+!s100 K6?QDOmdPS3X]H2j^OIFD1
+Ion7Z>jnaSRg?@`R<ld]WY1
 R2
 R0
-w1630511790
+w1630484157
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v
+R16
+R6
+r1
+!s85 0
+31
+R17
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_module.v|
+!i113 1
+R10
+R11
+R12
+vmaster_out_port
+!s110 1645985404
+!i10b 1
+!s100 kmcWJ58]7dTK`4zQ_1E?42
+I2`fOTlb0Zm^fbz0OQ`hA@1
+R2
+R0
+w1645985218
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v
 L0 15
@@ -246,7 +338,7 @@ R6
 r1
 !s85 0
 31
-R16
+!s108 1645985404.000000
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_out_port.v|
 !i113 1
@@ -254,7 +346,7 @@ R10
 R11
 R12
 vmaster_port
-R14
+R18
 !i10b 1
 !s100 z[m;MnmG>eW18meY<oSh=0
 I@BIVh>BME2Ko^AOUem[4b2
@@ -263,18 +355,41 @@ R0
 w1631017670
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v
-R17
+R26
 R6
 r1
 !s85 0
 31
-R16
+R22
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/master_port.v|
 !i113 1
 R10
 R11
 R12
+vReset_Delay
+R18
+!i10b 1
+!s100 dHN_gLf;L2j9`fZ8VE5hX1
+I]5_O72e_oSzbD[Uz6XZ1[1
+R2
+R0
+R25
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/reset_delay.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/reset_delay.v
+L0 1
+R6
+r1
+!s85 0
+31
+R22
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/reset_delay.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/reset_delay.v|
+!i113 1
+R10
+R11
+R12
+n@reset_@delay
 vscaledclock
 R1
 !i10b 1
@@ -290,15 +405,37 @@ R6
 r1
 !s85 0
 31
-R16
+R7
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/scaledclock.v|
 !i113 1
 R10
 R11
 R12
-vslave_in_port
+vslave_4k
 R14
+!i10b 1
+!s100 ^iRkZIAeH_HTo[;Ai8J@Y3
+I_@>bzabin>0PKZd]WOoZF3
+R2
+R0
+w1630669435
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v
+R16
+R6
+r1
+!s85 0
+31
+R17
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_4k.v|
+!i113 1
+R10
+R11
+R12
+vslave_in_port
+R1
 !i10b 1
 !s100 `=2YHcMUc28efESMbG44I2
 IELGVP:=F8L9BmPJ2XB>Oh1
@@ -307,12 +444,12 @@ R0
 R15
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v
-R17
+R26
 R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_in_port.v|
 !i113 1
@@ -329,12 +466,12 @@ R0
 w1630509316
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v
-R17
+R26
 R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_out_port.v|
 !i113 1
@@ -351,7 +488,7 @@ R0
 w1640116651
 8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v
 FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/slave_port.v
-R17
+R26
 R6
 r1
 !s85 0
@@ -363,112 +500,46 @@ R7
 R10
 R11
 R12
-vtop2
+vtop
 R1
 !i10b 1
-!s100 5YL^XB8?@=zm0[aU=FGfO1
-IUURIQIMzM4N?RO^Y;JCeK2
+!s100 aRFjCRC]L[zT3[lBl3^I60
+I>2zkcLO?_YC7^E1?97GSf1
 R2
 R0
-w1640597892
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v
-L0 17
+w1645956965
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v
+R26
 R6
 r1
 !s85 0
 31
 R7
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2.v|
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top.v|
 !i113 1
 R10
 R11
 R12
-vtop2_tb
-!s110 1640598702
+vtop_tb
+!s110 1645983800
 !i10b 1
-!s100 7S?V>Wlh^6kPkCH=bl[>_3
-IMazAXHh_=>mAVzDM_ni0S0
+!s100 ^Q=NfDjGZ]l6n]f4zfP^13
+I_zcE9RI2`kWFXEGj9^lUZ0
 R2
 R0
-w1640598637
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2_tb.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2_tb.v
+w1645983789
+8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v
+FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v
 L0 2
 R6
 r1
 !s85 0
 31
-!s108 1640598702.000000
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top2_tb.v|
-!i113 1
-R10
-R11
-R12
-vuart_port
-R1
-!i10b 1
-!s100 b9X2aczN5_jdOKm8NYL^S1
-INbS0DcVF?[dO^ZCG?FN:f0
-R2
-R0
-w1630776057
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v
-R17
-R6
-r1
-!s85 0
-31
-R7
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_port.v|
-!i113 1
-R10
-R11
-R12
-vuart_rx
-R14
-!i10b 1
-!s100 mdP:^==LG14P2fKV_il]H2
-I888d771<<hYY[NoIn0XnE0
-R2
-R0
-w1630776039
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_rx.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_rx.v
-L0 12
-R6
-r1
-!s85 0
-31
-R16
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_rx.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_rx.v|
-!i113 1
-R10
-R11
-R12
-vuart_tx
-R14
-!i10b 1
-!s100 Q`ANz=zob68SAaI5W`T9_0
-IK42gjPeWT7FV85ln`4;8:3
-R2
-R0
-w1630776036
-8D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_tx.v
-FD:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_tx.v
-L0 13
-R6
-r1
-!s85 0
-31
-R16
-!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_tx.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/uart_tx.v|
+!s108 1645983800.000000
+!s107 D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus|D:/Academics/ADS/Project/Bus_project/System_BUS_Design/3. Quartus Projects/bus/top_tb.v|
 !i113 1
 R10
 R11
