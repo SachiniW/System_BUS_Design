@@ -34,7 +34,7 @@ module tops_combined(
 	output scaled_clk3,
 
 	
-	`ifdef EXTERNAL
+	//`ifdef EXTERNAL
 	
 		input  bi_uart_rx1,
 		input  bo_uart_rx1,
@@ -49,7 +49,7 @@ module tops_combined(
 		output bi_uart_tx3,
 		output bo_uart_tx3,
 	
-	`endif
+	//`endif
 
 	output [6:0]display1_pin,
 	output [6:0]display2_pin,
@@ -103,40 +103,40 @@ parameter BAUDRATE = 19200;
 parameter CLOCK_FREQUENCY1 = 50000000;
 parameter CLOCK_FREQUENCY2 = 50000000;
 parameter CLOCK_FREQUENCY3 = 12500000;
-parameter CLOCK_DIVIDE1 = 20000000;
-parameter CLOCK_DIVIDE2 = 10000000;
-parameter CLOCK_DIVIDE3 = 10000000;
-//parameter CLOCK_DIVIDE1 = 2;
-//parameter CLOCK_DIVIDE2 = 1;
-//parameter CLOCK_DIVIDE3 = 1;
+//parameter CLOCK_DIVIDE1 = 20000000;
+//parameter CLOCK_DIVIDE2 = 10000000;
+//parameter CLOCK_DIVIDE3 = 10000000;
+parameter CLOCK_DIVIDE1 = 1;
+parameter CLOCK_DIVIDE2 = 2;
+parameter CLOCK_DIVIDE3 = 1;
 
 
 /*********************************************/
 
 
-`ifndef EXTERNAL
-
-	wire bi_uart_rx1;
-	wire bo_uart_rx1;
-	wire bi_uart_tx1;
-	wire bo_uart_tx1;
-	wire bi_uart_rx2;
-	wire bo_uart_rx2;
-	wire bi_uart_tx2;
-	wire bo_uart_tx2;
-	wire bi_uart_rx3;
-	wire bo_uart_rx3;
-	wire bi_uart_tx3;
-	wire bo_uart_tx3;
-	
-	assign bi_uart_rx1 = bo_uart_tx3;
-	assign bi_uart_rx3 = bo_uart_tx2;
-	assign bi_uart_rx2 = bo_uart_tx1;
-	assign bo_uart_rx1 = bi_uart_tx2;
-	assign bo_uart_rx2 = bi_uart_tx3;
-	assign bo_uart_rx3 = bi_uart_tx1;
-	
-`endif
+//`ifndef EXTERNAL
+//
+//	wire bi_uart_rx1;
+//	wire bo_uart_rx1;
+//	wire bi_uart_tx1;
+//	wire bo_uart_tx1;
+//	wire bi_uart_rx2;
+//	wire bo_uart_rx2;
+//	wire bi_uart_tx2;
+//	wire bo_uart_tx2;
+//	wire bi_uart_rx3;
+//	wire bo_uart_rx3;
+//	wire bi_uart_tx3;
+//	wire bo_uart_tx3;
+//	
+//	assign bi_uart_rx1 = bo_uart_tx3;
+//	assign bi_uart_rx3 = bo_uart_tx2;
+//	assign bi_uart_rx2 = bo_uart_tx1;
+//	assign bo_uart_rx1 = bi_uart_tx2;
+//	assign bo_uart_rx2 = bi_uart_tx3;
+//	assign bo_uart_rx3 = bi_uart_tx1;
+//	
+//`endif
 
 
 top2 #(.BAUDRATE(BAUDRATE), .CLOCK_FREQUENCY(CLOCK_FREQUENCY1), .CLOCK_DIVIDE(CLOCK_DIVIDE1)) 

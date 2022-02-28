@@ -59,6 +59,7 @@ parameter BURST_LEN=12;
 	parameter DELAY_COUNT=20;
 `else
 	parameter MAX_COUNT_CLK=CLOCK_DIVIDE/2;                    //Clock slow enough to see values getting updated
+//	parameter MAX_COUNT_CLK=1;
 	parameter CLKS_PER_BIT=CLOCK_FREQUENCY/BAUDRATE;           //Baudrate= 19200, Input clock = 50MHz
 	parameter MAX_COUNT_TIMEOUT=CLOCK_FREQUENCY/1000;          // 1ms timeout with 50MHz input clock
 	parameter DELAY_COUNT=(CLOCK_FREQUENCY/CLOCK_DIVIDE)*5;    //5s delay before sending to next 
@@ -174,7 +175,9 @@ assign reset = ~rst;
 assign scaled_clk = clk;
 assign clk_uart = clock && enable;
 assign button = ~button1_raw;
-scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+//scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+
+assign clk = clock;
 
 //LCD_in LCD(
 //	.clock(clock),

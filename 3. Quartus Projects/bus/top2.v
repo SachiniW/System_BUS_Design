@@ -17,7 +17,7 @@
 
 //5000000
 
-module top2	#(parameter BAUDRATE=19200, parameter CLOCK_FREQUENCY=50000000, parameter CLOCK_DIVIDE=1)(
+module top2	(
 	
 	input clock,	
 	input rst,
@@ -47,6 +47,9 @@ module top2	#(parameter BAUDRATE=19200, parameter CLOCK_FREQUENCY=50000000, para
 //   output LCD_RS,	// LCD Command/Data Select, 0 = Command, 1 = Data
 //   inout [7:0] LCD_DATA	// LCD Data bus 8 bits
 	);
+parameter BAUDRATE=19200;
+parameter CLOCK_FREQUENCY=50000000;
+parameter CLOCK_DIVIDE=1;
 	
 parameter SLAVE_LEN=2; 
 parameter ADDR_LEN=12; 
@@ -54,17 +57,17 @@ parameter DATA_LEN=8;
 parameter BURST_LEN=12;
 
 
-`ifdef TESTBENCH
-	parameter MAX_COUNT_CLK=4;         //Fast enough to reduce testbench time
-	parameter CLKS_PER_BIT=20;         //Fast enough to reduce testbench time
-	parameter MAX_COUNT_TIMEOUT=500;   //Fast enough to reduce testbench time
-	parameter DELAY_COUNT=20;
-`else
+//`ifndef TESTBENCH
 	parameter MAX_COUNT_CLK=CLOCK_DIVIDE/2;                    //Clock slow enough to see values getting updated
 	parameter CLKS_PER_BIT=CLOCK_FREQUENCY/BAUDRATE;           //Baudrate= 19200, Input clock = 50MHz
 	parameter MAX_COUNT_TIMEOUT=CLOCK_FREQUENCY/1000;          // 1ms timeout with 50MHz input clock
 	parameter DELAY_COUNT=(CLOCK_FREQUENCY/CLOCK_DIVIDE)*5;    //5s delay before sending to next 
-`endif
+//`else	
+//	parameter MAX_COUNT_CLK=4;         //Fast enough to reduce testbench time
+//	parameter CLKS_PER_BIT=20;         //Fast enough to reduce testbench time
+//	parameter MAX_COUNT_TIMEOUT=500;   //Fast enough to reduce testbench time
+//	parameter DELAY_COUNT=20;
+//`endif
 
 
 // UART wires
@@ -176,7 +179,10 @@ assign reset = ~rst;
 assign scaled_clk = clk;
 assign clk_uart = clock && enable;
 assign button = ~button1_raw;
-scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+
+//scaledclock #(.maxcount(MAX_COUNT_CLK)) CLK_DIV(.inclk(clock), .ena(enable), .clk(clk));
+
+assign clk = clock;
 
 //LCD_in LCD(
 //	.clock(clock),

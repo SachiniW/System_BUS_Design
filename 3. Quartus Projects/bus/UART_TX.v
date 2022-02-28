@@ -36,7 +36,7 @@ begin
 		clk_count <= 0;
 		bit_count <= 0;
 		temp_data <= 0;
-		tx_data <= 0;
+		tx_data <= 1;
 		tx_busy <= 0;
 		tx_done <= 0;
 	end

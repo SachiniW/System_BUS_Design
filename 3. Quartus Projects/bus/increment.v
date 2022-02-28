@@ -42,7 +42,7 @@ parameter[1:0] DATA_SEND = 2'd2;
 reg [1:0]inc_state =0;
 reg [7:0]output_data;
 reg [7:0]data_to_master = 0;
-reg [5:0]delay_counter = 0;
+integer delay_counter = 0;
 
 bin27 DISPLAY1 (.clock(clk), .reset(reset), .io_bin(output_data[3:0]), .io_seven(display1_pin));
 bin27 DISPLAY2 (.clock(clk), .reset(reset), .io_bin(output_data[7:4]), .io_seven(display2_pin));	
@@ -80,7 +80,7 @@ else
 				end
 			end
 			DISPLAY_AND_INCREMENT:begin
-				if (delay_counter == DELAY_COUNT)
+				if (delay_counter >= DELAY_COUNT)
 				begin
 					delay_counter <= 0;
 					output_data <= output_data + 1; //increment and display the data

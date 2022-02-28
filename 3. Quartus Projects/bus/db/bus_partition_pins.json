@@ -76,10 +76,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "enable",
-					"strict" : false
-				},
-				{
 					"name" : "rst",
 					"strict" : false
 				},
@@ -121,6 +117,10 @@
 				},
 				{
 					"name" : "switch_array[5]",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
 					"strict" : false
 				},
 				{
