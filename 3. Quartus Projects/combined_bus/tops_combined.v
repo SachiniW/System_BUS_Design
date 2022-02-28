@@ -106,6 +106,9 @@ parameter CLOCK_FREQUENCY3 = 12500000;
 parameter CLOCK_DIVIDE1 = 20000000;
 parameter CLOCK_DIVIDE2 = 10000000;
 parameter CLOCK_DIVIDE3 = 10000000;
+//parameter CLOCK_DIVIDE1 = 2;
+//parameter CLOCK_DIVIDE2 = 1;
+//parameter CLOCK_DIVIDE3 = 1;
 
 
 /*********************************************/
